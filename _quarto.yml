@@ -1,0 +1,134 @@
+project:
+  type: book
+
+book:
+  title: "Knowledge"
+  subtitle: "A Human Interest Story"
+  author: "Brian Weatherson"
+  date: now
+  downloads: [pdf, epub, docx]
+  repo-url: https://github.com/bweatherson/kahis-quarto
+  repo-actions:
+    - issue
+  chapters:
+    - index.qmd
+    - overture.qmd
+    - interests.qmd
+    - beliefs.qmd
+    - knowledge.qmd
+    - inquiry.qmd
+    - ties.qmd
+    - changes.qmd
+    - rationality.qmd
+    - evidence.qmd
+    - power.qmd
+    - references.qmd
+  sidebar:
+    search: true
+    collapse-level: 3
+    title: "Knowledge: <br>A Human Interest Story"
+  navbar:
+    title: "Brian Weatherson" 
+    right:
+      - text: "Papers"
+        menu:
+          - text: "All Papers"
+            href: https://brian.weatherson.org/quarto/papers.html
+          - text: "Epistemology"
+            href: https://brian.weatherson.org/quarto/epist.html
+          - text: "Games and Decisions"
+            href: https://brian.weatherson.org/quarto/gdt.html
+          - text: "On Books"
+            href: https://brian.weatherson.org/quarto/books.html
+      - text: "Books"
+        menu: 
+           - text: "Normative Externalism"
+             href: https://brian.weatherson.org/ne/
+           - text: "A History of Philosophy Journals"
+             href: https://lda.weatherson.org/
+           - text: "Knowledge: A Human Interest Story"
+             href: https://brian.weatherson.org/kahis/
+      - text: "CV"
+        href: https://brian.weatherson.org/quarto/cv.html
+      - text: "Teaching Notes"
+        href: https://brian.weatherson.org/quarto/teaching.html
+    tools:
+      - icon: google
+        href: https://scholar.google.com/citations?user=rz5RF8kAAAAJ&hl=en&oi=ao
+      - icon: mailbox
+        href: "mailto: brian@weatherson.org"
+
+bibliography: references.bib
+csl: ergo.csl
+
+comments:
+  hypothesis: 
+    theme: clean
+
+format:
+  html:
+    theme: 
+      light: 
+        - solar
+        - html-fonts.scss
+        - solar-defaults.scss
+      dark:
+        - solar
+        - html-fonts.scss
+        - dark-table.scss
+    linestretch: 1.6
+    toc: true
+    toc-title: "In this chapter:"
+    toc-depth: 3
+    toc-location: right
+    reference-location: margin
+    margin-header: "&nbsp;"
+    fontsize: 1.2em
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+    mainfont: "ff-scala-sans-pro, sans-serif"
+    html-math-method: mathjax
+    self-contained: false
+  pdf:
+    documentclass: scrbook
+    classoption: twoside
+    geometry: "left=1in,
+               right=1in,
+               top=0.8in,
+               bottom=0.8in,
+               paperheight=9.5in,
+               paperwidth=6.5in,
+               includemp=TRUE,
+               marginparwidth=0in,
+               marginparsep=0in"
+    mathspec: false
+    mathfont: Garamond-Math
+    mainfont: EB Garamond Math
+    sansfont: Europa-Bold
+    mainfontoptions: 
+      - ItalicFont=EB Garamond Italic
+      - BoldFont=EB Garamond Bold
+    fontsize: 10pt
+    indent: true
+    linkcolor: black
+    urlcolor: black
+    colorlinks: false
+    linestretch: 1.1
+    link-citations: true
+    keep-tex: true
+    pdf-engine: xelatex
+    include-in-header:
+      - file: quarto2024-book.tex
+    date-format: "YYYY"
+  docx:
+    toc: true
+    reference-doc: kahis-template.docx
+    output-file: "Knowledge"
+    number-sections: true
+  epub:
+    toc: true
+    number-sections: true
+
+editor: source
+
