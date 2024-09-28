@@ -2,8 +2,7 @@ project:
   type: book
 
 book:
-  title: "Knowledge"
-  subtitle: "A Human Interest Story"
+  title: "On Uncertainty"
   author: "Brian Weatherson"
   date: now
   downloads: [pdf, epub, docx]
@@ -12,17 +11,9 @@ book:
     - issue
   chapters:
     - index.qmd
-    - overture.qmd
-    - interests.qmd
-    - beliefs.qmd
-    - knowledge.qmd
-    - inquiry.qmd
-    - ties.qmd
-    - changes.qmd
-    - rationality.qmd
-    - evidence.qmd
-    - power.qmd
-    - references.qmd
+    - original.qmd
+    - acknowledgments.qmd
+    - _take-one.qmd
   sidebar:
     search: true
     collapse-level: 3
@@ -58,7 +49,7 @@ book:
       - icon: mailbox
         href: "mailto: brian@weatherson.org"
 
-bibliography: references.bib
+bibliography: phdbib.bib
 csl: ergo.csl
 
 comments:
@@ -124,7 +115,7 @@ format:
   docx:
     toc: true
     reference-doc: kahis-template.docx
-    output-file: "Knowledge"
+    output-file: "On Uncertainty"
     number-sections: true
   epub:
     toc: true
