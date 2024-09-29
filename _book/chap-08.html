@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.523">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>On Uncertainty - 8&nbsp; Constructivist Probability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chap-09.html" rel="next">
+<link href="./chap-07.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Brian Weatherson</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-papers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Papers</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-papers">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/papers.html">
+ <span class="dropdown-text">All Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/epist.html">
+ <span class="dropdown-text">Epistemology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/gdt.html">
+ <span class="dropdown-text">Games and Decisions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/books.html">
+ <span class="dropdown-text">On Books</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-books" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Books</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-books">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/ne/">
+ <span class="dropdown-text">Normative Externalism</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://lda.weatherson.org/">
+ <span class="dropdown-text">A History of Philosophy Journals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/kahis/">
+ <span class="dropdown-text">Knowledge: A Human Interest Story</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/teaching.html"> 
+<span class="menu-text">Teaching Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/bweatherson/kahis-quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap-08.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synopsis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Declaration of Originality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What Probability Isn’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What Degrees of Belief Are</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Probability Is</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Supervaluations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-08.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Economic Consequences of Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#motivations-for-a-constructivist-approach-to-probability" id="toc-motivations-for-a-constructivist-approach-to-probability" class="nav-link active" data-scroll-target="#motivations-for-a-constructivist-approach-to-probability"><span class="header-section-number">8.1</span> 8.1 Motivations for a Constructivist Approach to Probability</a></li>
+  <li><a href="#the-morgan---leblanc---mares-calculus" id="toc-the-morgan---leblanc---mares-calculus" class="nav-link" data-scroll-target="#the-morgan---leblanc---mares-calculus"><span class="header-section-number">8.2</span> 8.2 The Morgan - Leblanc - Mares Calculus</a></li>
+  <li><a href="#developing-a-constructivist-probability-calculus" id="toc-developing-a-constructivist-probability-calculus" class="nav-link" data-scroll-target="#developing-a-constructivist-probability-calculus"><span class="header-section-number">8.3</span> 8.3 Developing a Constructivist Probability Calculus</a></li>
+  <li><a href="#kripke-trees" id="toc-kripke-trees" class="nav-link" data-scroll-target="#kripke-trees"><span class="header-section-number">8.4</span> 8.4 Kripke Trees</a></li>
+  <li><a href="#intuitionist-probability" id="toc-intuitionist-probability" class="nav-link" data-scroll-target="#intuitionist-probability"><span class="header-section-number">8.5</span> 8.5 Intuitionist Probability</a></li>
+  <li><a href="#updating-1" id="toc-updating-1" class="nav-link" data-scroll-target="#updating-1"><span class="header-section-number">8.6</span> 8.6 Updating</a></li>
+  <li><a href="#objections" id="toc-objections" class="nav-link" data-scroll-target="#objections"><span class="header-section-number">8.7</span> 8.7 Objections</a></li>
+  <li><a href="#appendix-8a-proof-of-soundness-of-the-axioms" id="toc-appendix-8a-proof-of-soundness-of-the-axioms" class="nav-link" data-scroll-target="#appendix-8a-proof-of-soundness-of-the-axioms"><span class="header-section-number">8.8</span> Appendix 8A Proof of Soundness of the Axioms</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/kahis-quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chap-8" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>It is a standard claim of modern epistemology that reasonable epistemic states should be representable by probability functions. I’ll call theories which make this claim <em>classical</em>, which seems an accurate enough label. That claim is relaxed in this dissertation only to the extent of allowing vague credences, i.e.&nbsp;allowing epistemic states to be vague over a set of probability functions. It is the set of functions, rather than a single function, which represents the epistemic state. However, there have been a number of authors who have opposed this claim. For example, it has been claimed that epistemic states should be representable by Zadeh’s fuzzy sets, Dempster and Shafer’s evidence functions, Shackle’s potential surprise functions, Cohen’s inductive probabilities or Schmeidler’s non-additive probabilities.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Indeed the move to allowing vagueness has grown to some extent from this opposition to orthodoxy.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For more details, see Zadeh (1978), Dempster (1967), Shafer (1976), Shackle (1972), Cohen (1977), Schmeidler (1989).</p></li></div><p>In this chapter I will argue that many of their motivations can be better captured by what I’ll call <em>constructivist</em> theories of probability. These theories allow axiomatisations which are virtually identical in their formal structure to classical axiomatisations of probability. In the classical axiomatisation, however, there is reference to an entailment relation. The principle difference is that constructivist theories interpret this as a reference to intuitionist entailment, and classical theories as a reference to classical entailment.</p>
+<section id="motivations-for-a-constructivist-approach-to-probability" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="motivations-for-a-constructivist-approach-to-probability"><span class="header-section-number">8.1</span> 8.1 Motivations for a Constructivist Approach to Probability</h2>
+<p>There are four main reasons for grounding the axioms of probability theory in an intuitionist entailment relation rather than a classical one. These are: a commitment to verificationism, a commitment to anti-realism, preservation of the axiom of addition, and avoidance of direct arguments for the orthodox approach. Now some of these will be viewed by some people as bad reasons for adopting the given position, and I have some sympathy with that view. In particular, the verificationist and anti-realist elements of the theory might well be viewed as negatives. These arguments are principally directed at showing that by their own lights, various heterodox theorists would be well advised to adopt the constuctivist theory outlined here. For this reason, I think that this theory is the best competitor to the theory developed in the earlier chapters.</p>
+<p>A standard objection to classical approaches is that they have no way of representing complete uncertainty. Because of the failures of Laplace’s principle of indifference, it can’t be said that uncertainty about <em>p</em> is best represented by assigning credence 1/2 to <em>p</em>. Heterodox approaches usually allow the assignment of credence 0 to both <em>p</em> and ¬<em>p</em> when an agent has no evidence at all as to whether or not <em>p</em> is true. Because these approaches generally require an agent to assign credence 1 to classical tautologies, including <em>p</em>&nbsp;∨&nbsp;¬<em>p</em>, these theories must give up what I’ll call the <em>axiom of addition</em>.</p>
+<p><em>Addition</em>: For disjoint <em>A</em>, <em>B</em>: <em>Bel</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;=&nbsp;<em>Bel</em>(<em>A</em>)&nbsp;+&nbsp;<em>Bel</em>(<em>B</em>).</p>
+<p>Where no ambiguity results I’ll also use the term ‘axiom of addition’ to refer to the equivalent rule for probabilities. Now in some writings (particularly Shafer) the grounding for this is openly verificationist. Shafer says that when an agent has no evidence for <em>p</em>, they should assign degree of belief 0 to <em>p</em>. Degrees of belief, under this approach, must be proportional to evidence<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. In recent philosophical literature, this kind of verificationism is often accompanied by an insistence that only intuitionistically valid deductions are sound arguments.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This assumption was shared by many of the participants in the symposium on probability in legal reasoning, reported in the Boston University Law Review 66 (1986).</p></li></div><p>A similar kind of argument is made by Harman (1983). He notes that when we don’t distinguish between the truth conditions for a sentence and its assertibility conditions, the resultant logic is intuitionist. And when we’re considering gambles, something like this is correct. When betting on <em>p</em> we don’t, in general, care if <em>p</em> is true as opposed to whether it will be discovered that <em>p</em> is true. A <em>p</em>‑bet becomes a winning bet not when <em>p</em> occurs, but when <em>p</em> becomes assertible. So perhaps not just verificationists like Shafer, but all those who analyse degrees of belief as propensity to bet should adopt constructivist approaches to probability.</p>
+<p>To see the point Harman is making, consider this example. We are invited to quote for <em>p</em>‑bets and ¬<em>p</em>‑bets, where <em>p</em> is <em>O. J. Simpson murdered his wife</em>. If we are to take the Californian legal system literally, the probability of that given the evidence is strictly between one-half and one. To avoid one objection, these bets don’t just pay $1 if the bettor guesses correctly. Rather they pay $1 invested at market rates of interest at the time the bet is placed. The idea is that if we pay <em>x</em> cents for the bet now, when it is discovered that we have bet correctly we will receive a sum of money that is worth exactly as much as $1 now. Still, I claim, it might be worthwhile to quote less than 50 cents for each of the bets. Even if we will receive $1 worth of reward if we wager correctly, there is every possibility that we’ll never find out. So it might be that placing a bet would be a losing play either way. To allow for this, the sum of our quotes for the <em>p</em>‑bet and the ¬<em>p</em>‑bet may be less than $1. As Harman points out, to reply by wielding a Dutch Book argument purporting to show that this betting practice is incoherent would be blatantly question-begging. That argument simply assumes that <em>p</em>&nbsp;∨&nbsp;¬<em>p</em> is a tautology, which is presumably part of what’s at issue.</p>
+<p>Harman’s point is not to argue for a constructivist approach to probability. Rather, he is arguing against using probabilistic semantics for ordinary propositional logic. Such an approach he claims would be bound to lead to having an intuitionist logic for the reasons given above. He thinks this would be an error, hence the move to probabilistic semantics is simply an error. Whatever we think of this conclusion, we can press into service his arguments for constructivist probability.</p>
+<p>The second argument for this approach turns on the anti-realism of some heterodox theorists. So George Shackle, for example, argues that if we are anti-realist about the future, we will assign positive probability to no future-directed proposition. The following summary is from a sympathetic interpreter of Shackle’s writing.</p>
+<blockquote class="blockquote">
+<p>[T]here is every reason to refuse additivity: [it] implies that the certainty that would be assigned to the set of possibilities should be ‘distributed’ between different events. Now this set of events is undetermined as the future – that exists only in imagination – is. (Ponsonnet, 1996: 171)</p>
+</blockquote>
+<p>Shackle’s anti-realism is motivated by what most theorists would regard as a philosophical howler; he regards realism about the future as incompatible with human freedom, and holds that humans are free. The second premise here seems harmless enough, but the first is rather difficult to motivate. Nevertheless, there are some better arguments than this for anti-realism about the future. If we adopt these, it isn’t clear why we should ‘assign certainty’ to the set of possibilities.</p>
+<p>Shackle is here assuming that for any proposition <em>p</em>, even a proposition about the future, <em>p</em>&nbsp;∨&nbsp;¬<em>p</em> is now true, although neither disjunct is true. Given his interests it seems better to follow Dummett here and say that if we are anti-realists about a subject then for propositions <em>p</em> about that subject, <em>p</em>&nbsp;∨&nbsp;¬<em>p</em> fails to be true. Hence we have no need to ‘assign certainty to the set of possibilities’. Or perhaps more accurately, assigning certainty to the set of possibilities does not mean assigning probability 1 to <em>p</em>&nbsp;∨&nbsp;¬<em>p</em>.</p>
+<p>The third motivation for adopting a constructivist approach to probability is that it allows us to retain the Kolmogorov axioms for probability, and, in particular, to retain the axiom of addition. This axiom has, to my mind at least, some intuitive motivation. And the counter-examples levelled against it by heterodox theorists seem rather weak from the constructivist perspective. For they all are cases where we might feel it appropriate to assign a low probability to a proposition and its negation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Hence if we are committed to saying <em>Pr</em>(<em>p</em>&nbsp;∨&nbsp;¬<em>p</em>)&nbsp;=&nbsp;1 for all <em>p</em>, we must give up the axiom of addition. But the constructivist simply denies that in these cases <em>Pr</em>(<em>p</em>&nbsp;∨&nbsp;¬<em>p</em>)&nbsp;=&nbsp;1, so there is no counter-example to addition.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Again, the discussion in Shafer (1976, chapter 2) is the most obvious example of this, but similar examples abound in the literature.</p></li></div><p>The final argument for taking a constructivist approach is that it provides a justification for rejecting the arguments of <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a>. There I provided a new justification for requiring coherent degrees of belief to be representable by the classical probability calculus. The justification, however, simply assumed classical, rather than say intuitionist, logical reasoning was appropriate. The constructivist has a principled reason for rejecting those arguments. The person who adopts a classical propositional logic, but a non-classical probability logic, has not.</p>
+</section>
+<section id="the-morgan---leblanc---mares-calculus" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="the-morgan---leblanc---mares-calculus"><span class="header-section-number">8.2</span> 8.2 The Morgan - Leblanc - Mares Calculus</h2>
+<p>In a series of papers (Morgan and Leblanc (1983a, 1983b), Morgan and Mares (1995)) an approach to probability grounded in intuitionist logic has been developed. The motivation is as follows. A machine contains an unknown set of propositions <em>S</em>, which need not be consistent. <em>Pr</em>(<em>A</em>, <em>B</em>) is the maximal price we’d pay for a bet that <em>S</em> and <em>B</em> intuitionistically entail <em>A</em>. By standard Dutch Book arguments, we obtain axioms for a probability calculus which has some claim to being constructivist. The point of this section is to point out the shortcomings of this approach as a theory of uncertain reasoning from evidence. That is, I point out the implausibility of interpreting the axioms they derive as normative constraints on degress of belief.</p>
+<p>The axiomatisations given in the 1983 papers differs a little from that given in the 1995 paper, but the criticisms levelled here apply to their common elements. In particular, the following four axioms are in both sets.</p>
+<p>(C1) 0 ≤ <em>Pr</em>(<em>A</em>, <em>B</em>)&nbsp;≤&nbsp;1</p>
+<p>(C2) <em>Pr</em>(<em>A</em>, <em>A</em>&nbsp;&amp;&nbsp;<em>B</em>) = 1</p>
+<p>(C3) <em>Pr</em>(<em>A</em>, <em>B</em>&nbsp;&amp;&nbsp;<em>C</em>)&nbsp;· <em>Pr</em>(<em>B</em>, <em>C</em>) = <em>Pr</em>(<em>B</em>, <em>A</em>&nbsp;&amp;&nbsp;<em>C</em>)&nbsp;· <em>Pr</em>(<em>A</em>, <em>C</em>)</p>
+<p>(C4) <em>Pr</em>(<em>A</em>&nbsp;⊃&nbsp;<em>B</em>, <em>C</em>) = <em>Pr</em>(<em>B</em>, <em>A</em>&nbsp;&amp;&nbsp;<em>C</em>)</p>
+<p>These four are enough to get both the unwanted consequences. In particular, from these we get the ‘no negative evidence’ rule: <em>Pr</em>(<em>A</em>, <em>B</em>&nbsp;&amp;&nbsp;<em>C</em>)&nbsp;≥ <em>Pr</em>(<em>A</em>, <em>B</em>). The proof is in Morgan and Mares (1995: 458). Now given the semantic interpretation they have adopted, this is perhaps not so bad. After all, if we can prove <em>A</em> from <em>B</em> and <em>S</em>, we can certainly prove it from <em>B</em>&nbsp;&amp;&nbsp;<em>C</em> and <em>S</em>, but the converse does not hold. However, for the purposes we have adopted it seems a little implausible. In particular, if <em>C</em> is ¬<em>A</em>, it seems we should have <em>Pr</em>(<em>A</em>, <em>B</em>&nbsp;&amp;&nbsp;¬<em>A</em>) = 0 unless <em>B</em>&nbsp;entails&nbsp;<em>A</em>, in which case <em>Pr</em>(<em>A</em>, <em>B</em>&nbsp;&amp;&nbsp;¬<em>A</em>) is undefined.</p>
+<p>It shouldn’t be too surprising that we get odd results given (C4). Lewis (1976) shows that adopting it for a defined connective ‘→’ within the classical probability calculus leads to triviality. And neither the arguments he uses there nor the arguments for some stronger conclusions in Lewis (1986) rely heavily on classical principles. The 1983 papers by Morgan and Leblanc don’t discuss this threat, but the 1995 paper takes it seriously. While Morgan and Mares claim to have escaped the threat of triviality, they seem to have done so only by lowering the threshold.</p>
+<p>In intuitionist logic we often take the falsum ⊥ as a primitive connective, with ⊥&nbsp;⊃&nbsp;<em>A</em> a theorem for any proposition <em>A</em>. Hence a set of propositions <em>S</em> is consistent iff it doesn’t entail ⊥. Now it seems plausible, at least from the perspective we’ve adopted, to take the following as an axiom.</p>
+<p>(C⊥) For consistent <em>B</em>, <em>Pr</em>(⊥, <em>B</em>) = 0.</p>
+<p>Given consistent evidence, we have no evidence at all that the falsum is true. Hence we should set the probability of the falsum to 0. Given Morgan and Leblanc’s original semantic interpretation there is less motivation for adopting (C⊥), since <em>S</em> might be inconsistent. The restriction to consistent <em>B</em> in (C⊥) is because I take <em>Pr</em>(<em>A</em>, <em>B</em>) to be undefined for inconsistent <em>B</em>. Morgan, Leblanc and Mares take it to be set at 1. The choice here is a little arbitrary, the only decisive factor seems to be what makes for easier statement of theorems. Intuitionistically, ¬&nbsp;is often introduced as a defined connective, as follows.</p>
+<p>¬<em>A</em>&nbsp;=<sub>df</sub> <em>A</em>&nbsp;⊃&nbsp;⊥</p>
+<p>Assuming <em>A</em> &amp; <em>B</em> is consistent, it follows from (C4) and (C⊥) that <em>Pr</em>(¬<em>A</em>, <em>B</em>) = 0. Again, from my perspective this is an implausible result. The main purpose of this section has been to show that the Morgan - Leblanc - Mares probability calculus cannot do the work I am wanting a probability calculus to do. That is, it is implausible to regard their <em>Pr</em>(<em>A</em>, <em>B</em>) as the reasonable degree of belief in <em>A</em> given <em>B</em>. Hence the logic they have developed cannot be the constructivist one that I argued in section 1 heterodox theorists should endorse.</p>
+</section>
+<section id="developing-a-constructivist-probability-calculus" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="developing-a-constructivist-probability-calculus"><span class="header-section-number">8.3</span> 8.3 Developing a Constructivist Probability Calculus</h2>
+<p>The principle motivation for constructivist approaches to probability was a form of verificationism. This should be reflected in a constructivist interpretation of probability sentences, and indeed of sentences about degrees of belief. On a classical approach I interpreted <em>Bel</em>(<em>A</em>) = 1/2 as meaning the agent has the same degree of belief in <em>A</em> as they have in a fair coin landing heads if tossed. On the constructivist approach I interpret <em>Bel</em>(<em>A</em>) = 1/2 as meaning that the agent has as much evidence for <em>A</em> as they have for the proposition ‘The coin will land heads’. There is a difference between the epistemic attitude they take towards <em>A</em> and the attitude they take to the coin toss. More evidence could come in for <em>A</em> in the sense that they could (at least in some cases) become more confident in <em>A</em> without becoming less confident in its negation. In the case of the coin this is not possible. Any evidence for <em>A</em>, like seeing the coin, or hearing someone say, “The coin landed heads” will be evidence against ¬<em>A</em>.</p>
+<p>This difference with the classical approach is reflected in how I model probabilistic beliefs. In the classical approach I required that if <em>Bel</em>(<em>A</em>) = 1/2 then there were dummy propositions <em>p</em><sub>1</sub>, <em>p</em><sub>2</sub> such that <em>A</em>&nbsp;&nbsp;<em>p</em><sub>1</sub> is an element of the model, as is ¬<em>A</em>&nbsp;&nbsp;<em>p</em><sub>2</sub>. I then imposed further conditions reflecting the fact that <em>p</em><sub>1</sub> and <em>p</em><sub>2</sub> are modelling exclusive, exhaustive and equally probable propositions. In fact, given these conditions, we can deduce ¬<em>A</em>&nbsp;&nbsp;<em>p</em><sub>2</sub> from <em>A</em>&nbsp;&nbsp;<em>p</em><sub>1</sub>, and hence it follows that if <em>Bel</em>(<em>A</em>) = 1/2 then also <em>Bel</em>(¬<em>A</em>)&nbsp;=&nbsp;1/2. Since this is not a result constructively that is wanted, I need to change something. The considerations of the previous paragraph suggest that I shouldn’t require <em>A</em>&nbsp;&nbsp;<em>p</em><sub>1</sub> to hold in the model. Rather I should just require <em>p</em><sub>1</sub>&nbsp;⊃&nbsp;<em>A</em>. This is interpreted as meaning that for any evidence we have for <em>p</em><sub>1</sub> there is matching evidence for <em>A</em>, but there might be more evidence for <em>A</em> to come.</p>
+<p>To ease the exposition, I’ll simply define a constructivist probability function at this stage as any function from sentences to reals satisfying the following three axioms, with the justification of this description coming later.</p>
+<p>(CP1) 0&nbsp;= <em>Pr</em>(⊥) ≤ <em>Pr</em>(<em>A</em>)&nbsp;≤&nbsp;<em>Pr</em>(<em>A</em>&nbsp;⊃&nbsp;<em>A</em>) = 1</p>
+<p>(CP2) If <em>A</em>&nbsp; <em>B</em> then <em>Pr</em>(<em>A</em>)&nbsp;≤&nbsp;<em>Pr</em>(<em>B</em>)</p>
+<p>(CP3) <em>Pr</em>(<em>A</em>)&nbsp;+&nbsp;<em>Pr</em>(<em>B</em>) = <em>Pr</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;+&nbsp;<em>Pr</em>(<em>A</em>&nbsp;&amp;&nbsp;<em>B</em>)</p>
+<p>In Appendix 8A I show that any epistemic state which is coherent under the above definition of degrees of belief must be representable by a constructivist probability function. Under the simplifying assumption that all degrees of belief are rational numbers, the proofs are entirely constructive; however, in the general case where we just assume degrees of belief are real numbers I can’t get all the results constructively.</p>
+<p>The entailment here in (CP2) is read intuitionistically. As noted already, these axioms take probability to be a function from sentences to numbers, whereas, in the classical case, the domain of the function was a set of propositions. That equivalent sentences have the same probability is a theorem we quickly derive from (CP2). Given that, the axioms as stated are just about independent. (Once we have 0&nbsp;= <em>Pr</em>(⊥) and <em>Pr</em>(<em>A</em>&nbsp;⊃&nbsp;<em>A</em>) = 1 the rest of (CP1) follows from (CP2)). In particular, (CP3) is not entailed by the axiom of addition along with (CP1) and (CP2), as it is classically, although the axiom of addition does follow from (CP3) and (CP1).</p>
+</section>
+<section id="kripke-trees" class="level2 page-columns page-full" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="kripke-trees"><span class="header-section-number">8.4</span> 8.4 Kripke Trees</h2>
+<p>Classically, probability theory is just a special case of measure theory. A probability function is a normalised measure over a possibility space. Indeed, a function is a probability function iff it can be expressed as a normalised measure over a possibility space. It would be convenient for technical purposes if we could find a similar way of characterising constructivist probability functions. An attempt to do this will be made here, but it isn’t yet a totally successful attempt. A measure-theoretic account of constructivist probability functions will be developed which is sound with respect to the axioms given above, but I have no proof that it is complete. That is, any function which can be expressed as a measure of the type I am discussing is a constructivist probability function, but I don’t have a proof that all constructivist probability functions can be so expressed.</p>
+<p>There is still I hope some interest in this measure-theoretic approach. First, it might be subsequently proven that the semantics provided here are complete with respect to the axioms set out above. Secondly, if it turns out not to be complete, we can always add more axioms to make it complete. And if this happens we might have some reason for thinking that the new axioms are justified. That is, the measure-theoretic semantics might give us a clearer guide as to what should be the coherence constraints on reasonable belief.</p>
+<p>I ought to clarify the direction of the argument here. As in the classical approach, I take the definition of quantitative credences to be basic. Whatever coherence constraints there are on credences should be justified in terms of these definitions. In the previous section, I noted that the three axioms could be so justified. The measure-theoretic account given here is a different attempt to capture the class of coherent functions. To the extent that this approach follows the definitions more closely, the coherence constraints derivable from it seem plausible candidates for real normative constraints on rational agents.</p>
+<p>In Kripke (1965), a semantics for intuitionist propositional and predicate logic is developed. I’m only interested here in the semantics for propositional logic. The semantics is similar in some ways to the semantics he had earlier developed for classical modal logic. The semantics is based around what are now know as Kripke trees. These are partially ordered sets with a certain type of valuation on them. It is a little misleading to think of the elements of the sets as possible worlds, and the valuations as saying what is true and false at these worlds. This is misleading because the notion of truth at a world employed in this interpretation is non-constructive.</p>
+<p>A better (though still perhaps not entirely accurate) interpretation is to say that elements of the set (what we’ll call <em>nodes</em>) are knowledge states. So the valuation assigns to each node the set of propositions discovered by that time. We don’t say that propositions not discovered by that node are not true there, unless we know that we will not discover the proposition to be true at any later node. The formal definitions are as follows<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>:</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The setting out here follows closely Troelstra and Van Dalen (1987: 75-78).</p></li><li id="fn5"><p><sup>5</sup>&nbsp;Constructively, saying that a set has elements, is inhabited, is stronger than merely saying it is non-empty.</p></li></div><p>A Kripke tree for a propositional language (i.e.&nbsp;set of proposition letters) L is a triple (K, ≤, ) where (K,&nbsp;≤) is an inhabited<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> partially ordered set and is a subset of K × L such that:</p>
+<p>(1) <em>k</em>, <em>k</em>´&nbsp;∈ K, if <em>k</em>&nbsp;&nbsp;<em>p</em> and <em>k</em>´ ≥ <em>k</em> then <em>k</em>´ &nbsp;<em>p</em></p>
+<p>We read <em>k</em>&nbsp;&nbsp;<em>p</em> as <em>k</em> forces <em>p</em>. We extend to compounds by the following definitions.</p>
+<p>K1 <em>k</em>&nbsp;&nbsp;<em>A</em>&nbsp;&amp;&nbsp;<em>B</em> iff <em>k</em>&nbsp;&nbsp;<em>A</em> and <em>k</em>&nbsp;&nbsp;<em>B</em></p>
+<p>K2 <em>k</em>&nbsp;&nbsp;<em>A</em>&nbsp;∨&nbsp;<em>B</em> iff <em>k</em> &nbsp;<em>A</em> or <em>k</em>&nbsp; <em>B</em></p>
+<p>K3 <em>k</em>&nbsp;&nbsp;<em>A</em>&nbsp;→&nbsp;<em>B</em> iff for all <em>k</em>´ ≥ <em>k</em> if <em>k</em>´ &nbsp;<em>A</em> then <em>k</em>´ &nbsp;<em>B</em></p>
+<p>K4 not <em>k</em>&nbsp;&nbsp;⊥</p>
+<p>We then introduce ¬ as a defined connective, ¬<em>A</em>&nbsp;=<sub>df</sub> <em>A</em>&nbsp;⊃&nbsp;⊥. If we interpret <em>k</em>´ ≥ <em>k</em> as <em>k</em>´ is subsequent to <em>k</em> then (1) implies that whatever is discovered is not forgotten. (1), K3 and K4 imply that we only discover ¬<em>A</em> when we know that we won’t ever discover <em>A</em>. K2 implies that we can only discover a disjunct by discovering one or other disjunct. The following tree shows how we can discover ¬¬<em>A</em> at a node without discovering <em>A</em> at that node.</p>
+<p><img src="media/image9.emf" class="img-fluid"></p>
+<p>At node 0 we have not discovered <em>A</em>. However, we do know that whenever we discover ¬<em>A</em> we’ll discover ⊥. This follows from the fact that we know we’ll never discover ¬<em>A</em>. So node 0 forces ¬¬<em>A</em> without forcing <em>A</em>. So at 0 neither ¬¬<em>A</em>&nbsp;⊃ <em>A</em> nor <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> are forced.</p>
+<p>The following example shows that ¬<em>A</em> ∨&nbsp;¬¬<em>A</em> is not forced at all nodes. At node 2 we have not discovered <em>A</em> and there are no subsequent nodes, so we know we won’t discover <em>A</em>. Hence 2&nbsp;&nbsp;¬<em>A</em>. So we don’t have 0&nbsp;&nbsp;¬<em>A</em>. And since 1&nbsp;&nbsp;<em>A</em>, we don’t have 0&nbsp;&nbsp;¬¬<em>A</em>. Hence we don’t have 0&nbsp;&nbsp;¬<em>A</em>&nbsp;∨&nbsp;¬¬<em>A</em>.</p>
+<p><img src="media/image10.emf" class="img-fluid"></p>
+<p>Kripke models are important because for every sequent which is not intuitionistically valid there is a Kripke model with a node which forces all the premises but which does not force the conclusion. The original proof of this in Kripke (1965) was non-constructive; however, it has subsequently been constructively proven. None of this is at all new to readers familiar with intuitionist logic. However, since at least part of the purpose of this chapter is to promote constructivist approaches to theorists presumably unfamiliar with them, a small background is probably in order.</p>
+<p>With the Kripke trees, we can develop a measure-theoretic semantics for constructivist probability. In short, a constructivist probability function is a normalised measure on a Kripke tree. This needs some explaining and some justifying; the explaining first.</p>
+<p>Strictly speaking, since Kripke trees can be uncountably large, we need to be more precise than just saying a measure is placed on the tree. Rather, for any tree (K, ≤, ) and language L we must first define a field F of subsets of K as follows. For any sentence <em>A</em> of L, define K<sub><em>A</em></sub> to be the set of nodes of K which force <em>A</em>. (Languages, by the way, are customarily taken to have only a denumerable number of sentence letters in them. I’ll follow this convention here. From this it follows there are only denumerably many finite sentences of L.) Let F be the smallest set of subsets of K which includes K<sub><em>A</em></sub> for every sentence <em>A</em>, and is closed under complementation, finite<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> intersection and union.</p>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;The definition of F could be extended to ensure it is closed under countable intersection and union, and similarly the definition of measure to ensure it is countably additive. This would of course ensure that an axiom stronger than (CP3) was needed. Since constructive approaches were developed out of a desire to remove completed infinities from theory, perhaps this would be a mistake, but I don’t intend to go into this question here.</p></li></div><p>Now define a measure <em>m</em> on F to be any function onto reals satisfying the following rules. (<em>D</em> and <em>E</em> are arbitrary elements of F. )</p>
+<p>(m1) <em>m</em>(∅) = 0 ≤ <em>m</em>(<em>D</em>)&nbsp;≤&nbsp;1 = <em>m</em>(K)</p>
+<p>(m2) If <em>D</em>&nbsp;∩&nbsp;<em>E</em> = ∅ then <em>m</em>(<em>D</em>)&nbsp;+&nbsp;<em>m</em>(<em>E</em>) = <em>m</em>(<em>D</em>&nbsp;∪&nbsp;<em>E</em>)</p>
+<p>I then define a constructivist probability function as <em>Pr</em>(<em>A</em>) = <em>m</em>(K<sub><em>A</em></sub>) for any sentence <em>A</em>. A non-constructive proof that probability functions so defined will satisfy the CP-axioms can be easily given. The proof requires the assumption that for any node <em>k</em>, <em>k</em>&nbsp;∈&nbsp;K<sub><em>A</em></sub> or <em>k</em>&nbsp;∉ K<sub><em>A</em></sub>, equivalently that <em>k</em> either forces or doesn’t force <em>A</em>. I could perhaps fix this problem by insisting that the trees be finite. (Intuitionist logic is complete with respect to finite Kripke trees.) However, that would generate problems of its own. For example, there ought be at least one probability function with <em>Pr</em>(<em>q</em><sub>i</sub>) = 1/i for all i, yet this would be ruled out if we said all probability functions were measures on finite trees.</p>
+<p>If I weakened (CP3) to just say that, when <em>A</em> and <em>B</em> are provably disjoint, the probability of their disjunction is the sum of their probabilities, then I can give a constructive proof that all probability functions defined by a measure will satisfy the axioms. However, there appear to be good reasons (from the definition of degrees of belief) to insist on the stronger axiom. Perhaps the best solution here is to stipulate that is decidable by definition. The justification is that the nodes are not real states but rather representation of states of inquiry. That is, the nodes are individuated by what will be known at each node. Hence we should be able to tell, by virtue of the fact that we can individuate the nodes, what will be known there. An alternative solution is to allow that the metatheory is classical, but I am aiming here to do as much as possible constructively.</p>
+<p>So assuming is decidable, I’ll quickly list the proofs that all the probability functions defined in this way satisfy the CP-axioms. Since K<sub>⊥</sub> = ∅, and <em>m</em>(∅) = 0, <em>Pr</em>(⊥) = 0. Similarly K<sub><em>A</em>&nbsp;⊃&nbsp;<em>A</em></sub>&nbsp;=&nbsp;K, so <em>Pr</em>(<em>A</em>&nbsp;⊃&nbsp;<em>A</em>) = <em>m</em>(K)&nbsp;=&nbsp;1. For any <em>A</em>, <em>m</em>(K<sub><em>A</em></sub>) ∈ [0, 1], hence <em>Pr</em>(<em>A</em>)&nbsp;∈&nbsp;[0, 1]. This proves (CP1).</p>
+<p>Assume <em>A</em>&nbsp;&nbsp;<em>B</em>. Hence K<sub><em>A</em></sub>&nbsp;⊆&nbsp;K<sub><em>B</em></sub>. So K<sub><em>B</em></sub> = K<sub><em>A</em></sub>&nbsp;∪&nbsp;(K<sub><em>B</em></sub>&nbsp;∩&nbsp;K<sub><em>A</em></sub><sup>c</sup> ). Since <em>m</em>(K<sub><em>B</em></sub>&nbsp;∩&nbsp;K<sub><em>A</em></sub><sup>c</sup> )&nbsp;≥ 0, and <em>m</em>(K<sub><em>B</em></sub>) = <em>m</em>(K<sub><em>A</em></sub>) + <em>m</em>(K<sub><em>B</em></sub>&nbsp;∩&nbsp;K<sub><em>A</em></sub><sup>c</sup> ), <em>m</em>(K<sub><em>B</em></sub>) ≥&nbsp;<em>m</em>(K<sub><em>A</em></sub>). Hence <em>Pr</em>(<em>B</em>)&nbsp;≥&nbsp;<em>Pr</em>(<em>A</em>), proving (CP2). The proof here would be non-constructive if I wasn’t assuming is decidable, but this could be fixed if I added to the definition of measure that no subset has greater measure than its superset.</p>
+<p>Finally, K<sub><em>A</em>&nbsp;&amp;&nbsp;<em>B</em></sub> = K<sub><em>A</em></sub>&nbsp;∩&nbsp;K<sub><em>B</em></sub>, and K<sub><em>A</em>&nbsp;∨&nbsp;<em>B</em></sub> = K<sub><em>A</em></sub>&nbsp;∩&nbsp;K<sub><em>B</em></sub> by the definition of Kripke trees, so by (m2) it follows that <em>m</em>(K<sub><em>A</em>&nbsp;&amp;&nbsp;<em>B</em></sub>) + <em>m</em>(K<sub><em>A</em>&nbsp;∨&nbsp;<em>B</em></sub>)&nbsp;=&nbsp;<em>m</em>(K<sub><em>A</em></sub>)&nbsp;+&nbsp;<em>m</em>(K<sub><em>B</em></sub>). From this (CP3) follows trivially. This requires that K<sub><em>A</em></sub>&nbsp;=&nbsp;(K<sub><em>A</em></sub>&nbsp;∩&nbsp;K<sub><em>B</em></sub>)&nbsp;∪&nbsp;(K<sub><em>A</em></sub>&nbsp;∩&nbsp;K<sub><em>B</em></sub><sup>c</sup>), which wouldn’t be a legitimate assumption constructively unless I had assumed is decidable.</p>
+<p>Why might we think that such measures are representations of reasonable epistemic states? In contrast to the classical case, it doesn’t make a lot of sense to regard the measure of individual nodes as particularly meaningful. Rather, the figure relevant to each node is the measure of its descendants. For simplicity, define <em>m</em>´(<em>k</em>) = <em>m</em>({<em>k</em>´: <em>k</em>´&nbsp;≥ <em>k</em>})<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. This is the probability that we will reach this node in our explorations; that we will discover all the propositions which are forced by this node. This second level probability behaves classically. Note that all classical probability functions are constructivist probability functions, but that the converse is not the case.</p>
+<div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;This might not be defined in some cases. Whenever a set of nodes <em>D</em> is not an element of F we can approximate its measure above as the lower bound on {<em>m</em>(<em>E</em>): <em>E</em>&nbsp;⊃&nbsp;<em>D</em>} and below as the upper bound on {<em>m</em>(<em>E</em>):&nbsp;<em>E</em>&nbsp;⊃&nbsp;<em>D</em>}.</p></li></div><p>The intuitive justification for the measure theoretic semantics is that as we acquire evidence for a proposition, we increase the probability that we will discover that proposition to be true. When we have little evidence for a proposition, the claim is that we don’t have much likelihood of discovering it to be true. This does require a rather generous interpretation of evidence; a method for discovering whether or not <em>p</em> is true counts as evidence both for and against <em>p</em> because it increases the likelihood of discovering <em>p</em> and discovering ¬<em>p</em>. Such an interpretation is quite natural constructively, but doesn’t make a lot of sense classically. So a motivation for the measure theoretic approach can be found within the definition of numerical credences, which as I said above remains the core test.</p>
+</section>
+<section id="intuitionist-probability" class="level2 page-columns page-full" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="intuitionist-probability"><span class="header-section-number">8.5</span> 8.5 Intuitionist Probability</h2>
+<p>A constructivist probability function can satisfy <em>Pr</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>) = 1 without satisfying <em>Pr</em>(<em>A</em>) = 1 or <em>Pr</em>(<em>B</em>)&nbsp;=&nbsp;1. To the extent that the assertibility of a proposition is given by its having probability 1, this means that an agent can assert disjunctions without being able to assert either disjunct. Since the denial of this possibility is sometimes taken to be a distinctively intuitionist claim, it seems constructivist probability functions are not intuitionistically acceptable. It seems that it would be more acceptable from this approach to use a probability calculus based, say, on fuzzy logic, such that the probability of a disjunction is the higher of the probabilities of the two disjuncts.</p>
+<p>We don’t need to be so radical. The intuitionist probability functions can be defined as those constructivist probability functions that satisfy the following axiom, (again <em>A</em> and <em>B</em> range over all propositions):</p>
+<p>(CP4) If <em>Pr</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;=&nbsp;1 then <em>Pr</em>(<em>A</em>)&nbsp;= 1 or <em>Pr</em>(<em>B</em>) = 1.</p>
+<p>I mentioned above that all classical probability functions were constructivist probability functions. However, they will not, in general, be intuitionist probability functions. Indeed, by letting <em>B</em> be ¬<em>A</em>, the only classical probability functions which will satisfy (CP4) are those that set <em>Pr</em>(<em>A</em>) = 0 or 1 for all propositions; what Lewis calls ‘opinionated functions’.</p>
+<p>It’s non-trivial to specify necessary and sufficient conditions on measures such that they satisfy (CP4)<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. One clearly sufficient condition (which has some independent motivation) is the following. Say a Kripke tree (K, ≤, ) is grounded iff there is a <em>k</em><sub>g</sub>&nbsp;∈ K such that for all <em>k</em>´ ∈ K, <em>k</em>´&nbsp;≥ <em>k</em><sub>g</sub>. Then a sufficient condition for (CP4) is that <em>m</em>(<em>k</em><sub>g</sub>) &gt; 0. If this is the case then the only propositions which receive probability 1 will be those which are forced by every node, and this can’t be true of a disjunction unless it is true of one or other disjunct.</p>
+<div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Part of the difficulty is the role of . Usually if we were trying to find necessary conditions for a condition like this we would try to find conditions on triples (K, ≤, <em>m</em>) such that for any , (CP4) is satisfied. So, as in the case of the sufficient condition given in the text, the answer will be independent of . And this simplifies the theoretical task; a proposed condition is shown to be is necessary by finding a such that a breach of that condition combined with that valuation will lead to a breach of (CP4). But when is fixed this can’t be done. And since <em>m</em> is defined in part in terms of , it doesn’t make sense to let the valuation vary as the measure stays constant.</p></li></div><p>I don’t want to say that rational agents ought to have their degrees of belief be intuitionist probability functions; (CP4) is, for reasons I’ll set out soon, an unreasonable constraint. The only reason I bring it up is to consider this condition on Kripke trees. I claim that it is reasonable to insist that the trees are grounded, but it is unreasonable to require the ground to have positive measure. This restriction is important, as we’ll see below, for the interpretation of conditionalisation in this theory.</p>
+<p>The nodes represent possible states of knowledge. The paths through the tree represent possible chains of discoveries. But all these possible real-world paths have a common starting point, what we now know. Hence all the paths in the tree should have a common starting point, and hence be grounded.</p>
+<p>This doesn’t impose any new axioms. To see this, note that we can easily turn an ungrounded tree (K,&nbsp;≤,&nbsp;) into a grounded one (K´, ≤´, ´) in the following way:</p>
+<p>K´ = K ∪ {<em>k</em><sub>g</sub>}</p>
+<p><em>k</em>&nbsp;≤´ <em>l</em> iff <em>k</em>&nbsp;≤&nbsp;<em>l</em> or <em>k</em>&nbsp;=&nbsp;<em>k</em><sub>g</sub></p>
+<p><em>k</em>&nbsp;´ <em>A</em> iff <em>k</em>&nbsp; <em>A</em> or <em>k</em>&nbsp;=&nbsp;<em>k</em><sub>g</sub> and <em>l</em>&nbsp;∈&nbsp;K: <em>l</em>&nbsp;&nbsp;<em>A</em></p>
+<p>By putting the same measure on (K´, ≤´, ´) as we put on (K,&nbsp;≤,&nbsp;) we can recover the same probability function from a grounded tree that we originally had. So any probability function which can be expressed as a measure on an ungrounded tree can be expressed as a measure on a grounded tree.</p>
+<p>The above construction relied on the acceptability of giving the ground measure 0. This can lead to breaches of (CP4). However, these seem perfectly acceptable. To simplify, we’ll consider whether it can ever be reasonable to give probability 1 to <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> without giving probability 1 to either <em>A</em> or to ¬<em>A</em>. Knowing <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> is constructively equivalent to knowing <em>A</em> is decidable in principle. And this is weaker than knowing which of these is true. For example, it is constructively acceptable to say that a certain large number, say 5691364391 is either prime or not prime without being able to say which, simply because we know that there is a way of finding out which is true.</p>
+<p>So we only can’t assert <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> when we don’t have evidence to say that <em>A</em> will be decidable in principle. It is, however, a little difficult in practice to know how to apply this. The constructivist rules for assertibility were developed with specific applicability to mathematics, and there we have a much tighter definition of ‘in principle’ than in the real world. To take a simple example, should we say it’s decidable ‘in principle’ whether a Democrat will win the 2200 U.S. Presidency. No one reading this will, I presume, ever know whether this is true. So ought it count as something undecidable? More importantly, can we come up with a rule which determines what is and isn’t decidable in principle?</p>
+<p>The main reason this is important is that the reductive definition of quantitative degrees of belief only makes sense if it is assumed that lotteries, or at least dummy lotteries, are decidable. I assumed implicitly that one could assign probability 1 to the proposition <em>Some ticket will win</em> without assigning probability 1 (indeed while assigning probability 1/<em>n</em>) to any proposition of the form <em>This ticket will win</em>. So the definition of decidability has to be set so that these lotteries are decidable, but arbitrary future events need not be.</p>
+<p>The best way out of this, I think, is to amend the definition of the dummy lotteries. These were already a little fanciful because we assumed the agent knew them to be fair. Let’s add the extra assumption that the agent knows them to be fair and decidable. That is, the agent knows that they will, shortly, know the result of the lottery. I can then take a rather strict stance on what is decidable in the real world. In particular any proposition about the unobserved, be it past, present or future unobserved, is not known to be decidable. I am using ‘observed’ in an odd way here because we can on this usage observe any decidable mathematical proposition. We can observe that is, whatever Brouwer’s ideal mathematician could observe.</p>
+<p>Despite this restrictive use of decidability in relation to real world events, I leave open the possibility that we can coherently stipulate a proposition to be known to be decidable without it being known whether the proposition is true or false. This is important for getting a reductive definition of quantitative degrees of belief, without which we cannot develop a probability calculus. So even if there aren’t any falsifying instances of (CP4) in the real world (that is, if a rational agent in the real world never believes a disjunction to degree 1 without believing one or other disjunct to degree 1) it oughtn’t to be a general normative requirement.</p>
+</section>
+<section id="updating-1" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="updating-1"><span class="header-section-number">8.6</span> 8.6 Updating</h2>
+<p>There are several problems with accurately capturing updating within the constructivist probability calculus. Some of these can be attributed to the fact that updating, as it is usually discussed within the classical literature, essentially uses non-constructive language. Thus, in part, the difficulties we discover can be attributed to the non-constructive character of updating rules. However, it isn’t clear that they all can be so avoided, and the impossibility of finding a fully justified updating rule within the constructivist approach to probability should count against it to some degree.</p>
+<p>To see the problem, just consider a simple example. Say an agent has degree of belief 1/3 in <em>A</em> and 1/3 in ¬<em>A</em>. It is as if we have an urn with <em>n</em> red marbles, <em>n</em> black marbles and <em>n</em> white marbles, from which we know one will be drawn at random. The agent has as much evidence that <em>A</em> as she has that a black marble will be drawn, and as much evidence that ¬<em>A</em> as that a white marble will be drawn. So we develop a fiction in which the drawing determines what really happens; if a white marble is drawn, ¬<em>A</em> happens; if a black marble is drawn, <em>A</em> happens; and we don’t have the evidence to say what happens if a red marble is drawn.</p>
+<p>Classically, discovering <em>A</em> was taken to have the same effect as discovering a black marble will be drawn. However, it isn’t clear why this should hold constructively. After all, the agent doesn’t know (even in the fictional model) that the only way for <em>A</em> to be true is that a black marble be drawn. The drawing of a black marble is a sufficient but unnecessary condition for <em>A</em>. So should we treat a discovery that <em>A</em> as being equivalent to finding out that a white marble will not be drawn?</p>
+<p>No, and for two reasons. This would seem to have the consequence of saying <em>Pr</em>(<em>B</em>&nbsp;|&nbsp;<em>A</em>) = <em>Pr</em>(<em>A</em>&nbsp;&amp;&nbsp;<em>B</em>) / 1&nbsp;‑&nbsp;<em>Pr</em>(¬<em>A</em>), which would imply that in general <em>Pr</em>(<em>A</em>&nbsp;|&nbsp;<em>A</em>) 1. If we just add to the above evidence the knowledge that a white marble won’t be drawn, we don’t have any reason to be certain that <em>A</em> will happen. A red marble might mean that <em>A</em> happens, but it might not. Since <em>Pr</em>(<em>A</em>&nbsp;|&nbsp;<em>A</em>) = 1 looks like a pretty good candidate axiom, more care is needed with the semantics.</p>
+<p>Secondly, problems arise if we know something about the red marbles. Say we know that half the black marbles and half the red marbles are <em>B</em> marbles (i.e.&nbsp;if they are drawn, <em>B</em> will happen). And we know the other half of the red and black marbles are ¬<em>B</em> marbles. By the above formulae <em>Pr</em>(<em>B</em>&nbsp;|&nbsp;<em>A</em>) = 1/4, which seems absurdly low, the same way that <em>Pr</em>(<em>A</em> |&nbsp;<em>A</em>) = 1/2 seemed low. However, there isn’t a particularly easy way to fix this problem.</p>
+<p>The difficulty is that it seems <em>Pr</em>(<em>B</em> | <em>A</em>) should be set as the greatest lower bound of the possible ratio of <em>B</em> marbles left to total marbles left, after taking this new evidence into account. We know that all the white marbles have been removed, but we don’t know what has happened to the red marbles. We can fix the problem for determining <em>Pr</em>(<em>A</em> |&nbsp;<em>A</em>) by saying we know that all the red marbles which really were ¬<em>A</em> marbles have been removed, hence the ratio of <em>A</em> marbles to total marbles must be 1. However, for <em>Pr</em>(<em>B</em>&nbsp;|&nbsp;<em>A</em>) the situation is more complicated. There is the possibility that all the red marbles which are <em>B</em> marbles are also ¬<em>A</em> marbles. So in the worst case scenario, there are <em>n</em> black marbles left, half of which imply <em>B</em> and half of which imply ¬<em>B</em>, and <em>n</em> /&nbsp;2 red marbles left, all of which imply ¬<em>B</em>. So only 1/3 of the remaining marbles are <em>B</em> marbles. Hence <em>Pr</em>(<em>B</em>&nbsp;|&nbsp;<em>A</em>) = 1/3. Similar reasoning shows that <em>Pr</em>(¬<em>B</em>&nbsp;|&nbsp;<em>A</em>) = 1/3. However, whatever happens to the red marbles, we know they all imply <em>B</em>&nbsp;∨&nbsp;¬<em>B</em>. So <em>Pr</em>(<em>B</em>&nbsp;∨&nbsp;¬<em>B</em>&nbsp;|&nbsp;<em>A</em>) = 1. Hence <em>Pr</em>(&nbsp;•&nbsp;|&nbsp;<em>A</em>) is not a constructivist probability function.</p>
+<p>The only way to get out of this problem is to define <em>Pr</em>(<em>B</em>&nbsp;|&nbsp;<em>A</em>) using Bayes’s rule, however hard it is to give a constructivist justification of this using the same approach we used in <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a> for the classical justification of it. We might be able to get a better motivation using the Kripke trees discussed in section 4. The nodes in a Kripke tree were interpreted to be possible states of knowledge. If we discover <em>A</em> we must, therefore, move to one of the nodes at which <em>A</em> has been discovered. So if we amend the tree by eliminating all those nodes at which <em>A</em> is not forced and re-normalise the measure by multiplying through by a constant, we will have a plausible updated tree. And the updated measure of K<sub><em>B</em></sub>, i.e.&nbsp;the updated probability of <em>B</em>, will be given by Bayes’s rule.</p>
+<p>There are some problems too with this approach. The first is that it isn’t clear why we should re-normalise in this approach. We could re-normalise by something akin to imaging, moving the measure from the deleted nodes to the nearest undeleted nodes. There’s no reason why we should do things this way, but on the other hand I can’t see a knock-down argument as to why we shouldn’t.</p>
+<p>The second is that the updated tree will not necessarily be grounded. This is connected to the problem I mentioned above that updating might not be a constructively acceptable concept. Again, it’s simpler to see what’s going on in the non-probabilistic case. The following sequent is not constructively valid.</p>
+<p><em>A</em>&nbsp;⊃&nbsp;(<em>B</em>&nbsp;∨&nbsp;<em>C</em>)&nbsp; <em>A</em>&nbsp;⊃&nbsp;<em>B</em>&nbsp;∨&nbsp;<em>A</em>&nbsp;⊃&nbsp;<em>C</em></p>
+<p>This follows from the constructive interpretation of ⊃. There, <em>A</em>&nbsp;⊃&nbsp;<em>B</em> is interpreted as meaning there is a construction which transforms every proof of <em>A</em> into a proof of <em>B</em>. The above sequent fails because there might be a construction which transforms every proof of <em>A</em> into either a proof of <em>B</em> or a proof of <em>C</em>, but the transformation takes some proofs of <em>A</em> into proofs of <em>B</em> and some into proofs of <em>C</em>.</p>
+<p>So we can imagine a rational agent who believes <em>p</em>&nbsp;⊃&nbsp;(<em>q</em>&nbsp;∨&nbsp;<em>r</em>) without believing either <em>p</em>&nbsp;⊃&nbsp;<em>q</em> or <em>p</em>&nbsp;⊃ <em>r</em>. Assume that this agent follows the intuitionist rule of never believing a disjunction without believing one or other disjunct. And assume too that the agent follows the plausible updating rule of coming to believe <em>B</em> iff there is some <em>A</em> such that they believe <em>A</em>&nbsp;⊃&nbsp;<em>B</em> and discover <em>A</em>. What should the agent do upon discovering only that <em>p</em> is true? At first it looks like they should come to believe <em>q</em>&nbsp;∨&nbsp;<em>r</em> without believing either disjunct. But this is misleading, for we cannot say constructively that they only discover <em>p</em>. When they discover <em>p</em> they must discover it by some process. And that process will either be one which is also a discovery of <em>q</em> or is also a discovery or <em>r</em>. So they will come to believe one of <em>q</em> and <em>r</em>, but without knowing how they have discovered <em>p</em> we can’t know which one.</p>
+<p>The point of the story is that just saying that an agent discovers a certain proposition to be true without specifying a process of discovery is not constructively acceptable. In the probabilistic case, if the agent updates with respect to any full process of discovery they will, presumably, move to a certain node in the Kripke tree, and hence the updated tree will be grounded. Having our agents update on a proposition without a discovery process is not constructively acceptable.</p>
+<p>In sum, the only plausible constructivist updating rule is Bayes’s rule. It isn’t obvious that this can be justified, implying that there might be no justifiable updating rule. However, this mightn’t be a problem if the constructivist can argue that they should not be required to produce an updating rule because such rules use non-constructive language. It doesn’t make sense, goes the objection, to ask what a rational agent would do if they had discovered <em>A</em> but had no process of discovering <em>A</em>. On the other hand if they do have a process of discovery they have more information than just <em>A</em>, and this should be used too, and in these cases Bayes’s rule seems unproblematic.</p>
+</section>
+<section id="objections" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="objections"><span class="header-section-number">8.7</span> 8.7 Objections</h2>
+<p>Despite my promotion of the constructivist approach in the previous section, it is not the approach which I am endorsing in this dissertation. As mentioned above, it is a good candidate for the second best approach to representing rational states of uncertainty. The advantage it enjoys over the precise classical approach is that it has a way of representing complete ignorance. And this, I think, is a large advantage. So I think going constructivist would be a forward step for theorists who object to the classical approach, even in its imprecise form as advocated throughout this dissertation. There are, though, good objections to be raised. I suspect none of these will be good <em>ad hominen</em> arguments; they involve, on the whole, rejecting the constructivist program rather than specifically showing there to be flaws in the constructivist approach to probability.</p>
+<p>The first type of objection rests on simply rejecting the philosophical motivation. The motivations I mentioned above were verificationism and anti-realism. But neither of these seem at all attractive as philosophical theories. The defeat of verificationism is one of the great successes of twentieth-century philosophy. And while the realism / anti-realism debate has some life left in it, the kind of anti-realism needed to motivate this approach to probability seems much too far fetched.</p>
+<p>I used Shackle’s anti-realism about the future to motivate a constructivist approach. And if we’re anti-realist about the future we can reasonably have degrees of belief in statements about the future, say <em>A</em>, such that <em>Bel</em>(<em>A</em>) + <em>Bel</em>(¬<em>A</em>) &lt; 1. However, if this is plausible for statements about the future it seems just as plausible for statements about the past. There is little justification for requiring agents’ degrees of belief about past-directed statements to be a classical probability function. Hence, to motivate a general constructivist approach we have to give up not only realism about the future, but realism about the past. And that just seems implausible.</p>
+<p>The second type of objection turns on the plausibility of classical standards of validity. That is, despite all that has been said above, it does seem we can assert <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> for any proposition <em>A</em> on any evidence whatsoever. Equivalently, we can assert if ¬¬<em>A</em> then <em>A</em> for any <em>A</em> again on any evidence. As an objection this is fairly question-begging; it is much like those occasions where someone claims they can show their opponent is wrong by simply stating their opponent’s position loudly and clearly and exclaiming, “No one could believe that!” Still, sometimes it is worth doing. And in fundamental questions, where there is disagreement even about what counts as a conclusive argument, it will be difficult to get arguments which at the end of the day aren’t question begging.</p>
+<p>Ramsey, in <em>Mathematical Logic</em> (1926b), thought he could dismiss intuitionism on this ground, and the extent of his argument was little more than a quote from Lewis Carroll.</p>
+<blockquote class="blockquote">
+<p>“It’s very long,” said the Knight, “but it’s very <em>very</em> beautiful. Everybody that hears me sing it – either it brings the <em>tears</em> into their eyes, or else –”. “Or else what?” said Alice, for the Knight had made a sudden pause. “Or else it doesn’t, you know.” (Carroll, 1871, 306)</p>
+</blockquote>
+<p>Ramsey of course had a conversion to intuitionism (not quite on his death-bed, but in the last year or so of his life), so perhaps arguments founded on Carroll’s jokes are not too secure. For many, it’s just a Moorean fact that sentences <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> are all true. Now Moorean facts come in many varieties; some aren’t even facts. There is perhaps a scale with “Moore had two hands” at one end, and “A set has more elements than any of its proper subsets” at the other. Every claim on the scale is <em>prima facie</em> plausible. Somewhere down the line the claims stop being acceptable without argument; presumably, this is a little before they stop being true.</p>
+<p>There is a slightly less question-begging approach. It is well known that we cannot conservatively add a classical negation operator to constructivist logic. Assume we have a constructivist propositional logic, with ¬ as the negation operator. Then <em>A</em>&nbsp;∨&nbsp;¬<em>A</em> is not a theorem. However, if we added a classical negation operator ~, so that we had ~~<em>A</em>&nbsp;⊃&nbsp;<em>A</em>, and (<em>A</em>&nbsp;⊃&nbsp;⊥)&nbsp;⊃&nbsp;~<em>A</em>, we would be able to prove not only <em>A</em>&nbsp;∨&nbsp;~<em>A</em>, (as we want) but <em>A</em>&nbsp;∨&nbsp;¬<em>A</em>, which isn’t wanted. Hence constructivists have to say that the classical interpretation of the connectives is “unintelligible” (Dummett 1977, 11) that they do not understand what the classical connectives mean. But this last claim beggars belief. When we look at the work constructivists have done in classical logic and mathematics it is perfectly clear they do understand the connectives, perhaps better than most of their opponents.</p>
+<p>I don’t expect any of the above to change anyone’s position. It is more a statement of why I don’t think a constructivist approach ought, in the end, to be adopted, rather than an argument against it. The only argument for this which isn’t question-begging is the difficulty constructivist approaches have in dealing with updating. Even here, there is the possibility of an argument that this would be an unfair requirement. So arguably what we have here are differing approaches which are each internally coherent and which are effectively immune to external challenge. This wouldn’t be a disastrous result; if it were true, my preference for a classical approach would be just a matter of taste, and the theory developed in this chapter provides a useful alternative for those with different tastes.</p>
+</section>
+<section id="appendix-8a-proof-of-soundness-of-the-axioms" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="appendix-8a-proof-of-soundness-of-the-axioms"><span class="header-section-number">8.8</span> Appendix 8A Proof of Soundness of the Axioms</h2>
+<p>This appendix formally sets out the constructivist definition of degrees of belief, and proves that this definition entails that (CP1), (CP2) and (CP3) are coherence constraints on degrees of belief.</p>
+<p>Let <em>Bel</em>(<em>A</em>) be a function from sentences to the degrees of belief on an agent. Let Γ be a finite set of sentences, closed under negation, conjunction and disjunction, such that for all <em>A</em> in Γ, <em>Bel</em>(<em>A</em>) is rational, and <em>y</em> be the lowest common denominator of the values <em>Bel</em>(<em>A</em>) takes. Let <em>P</em> be the set of dummy propositions {<em>p</em><sub>1</sub>, …, <em>p<sub>y</sub></em>}, which are defined such that the agent has no beliefs about any of the <em>p</em><sub>i</sub>. In the classical case I could make this last condition strict; here, I need to employ a primitive notion of disconnectedness.</p>
+<p>The agent’s beliefs about Γ are coherent iff they can be modelled by K<sup>*</sup>, which is a set of sentences closed under (intuitionist) entailment, and satisfies the following conditions:</p>
+<p>(1) For all <em>A</em>, <em>x</em>, <em>Bel</em>(<em>A</em>)&nbsp;≥ <em>x / y</em> iff ∃<em>S</em>: (<em>S</em>&nbsp;⊆ <em>P</em> &amp; |<em>S</em>| = <em>x</em> &amp; (<em>S</em>&nbsp;⊃&nbsp;<em>A</em> ∈ K<sup>*</sup>))</p>
+<p>(2) For all <em>S</em>&nbsp;⊂ <em>P</em>, <em>S</em>&nbsp;∉ K<sup>*</sup></p>
+<p>(3) <em>P</em>&nbsp;∈&nbsp;K<sup>*</sup></p>
+<p>(4) For all i, j ¬(<em>p</em><sub>i</sub>&nbsp;&amp;&nbsp;<em>p</em><sub>j</sub>) ∈ K<sup>*</sup></p>
+<p>(5) For all i, <em>A</em>, <em>B</em> if (<em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∨&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em>) ∈&nbsp;K<sup>*</sup> then <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup> or <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em>&nbsp;∈&nbsp;K<sup>*</sup></p>
+<p>As in the earlier account, for simplicity I sometimes identify a set with the disjunction of its elements. From (3) and (4) it follows that, for all i, <em>p</em><sub>i</sub>&nbsp;∨&nbsp;¬<em>p</em><sub>i</sub>&nbsp;∈&nbsp;K<sup>*</sup>, a fact I use in some of the proofs below. The justification of (5) is the constructive construal of disjunction. The idea is that we can’t be able to say in the model that we either have evidence for <em>A</em> or for <em>B</em> without being able to say one or the other. The aim now is to prove that if <em>Bel</em> can be modelled by K<sup>*</sup> satisfying (1) to (4), it must be a constructivist probability function, that is it must satisfy (CP1) to (CP3).</p>
+<p>I have assumed that <em>Bel</em>(<em>A</em>) is a rational number whose denominator is a factor of <em>y</em>. Hence there are only finitely many values <em>Bel</em>(<em>A</em>) can take; <em>y</em>&nbsp;+&nbsp;1 to be precise. We also know that it takes at least one value (we’ll prove soon it takes at most one). So if we can prove that <em>Bel</em>(<em>A</em>) is not equal to <em>y</em> of these possible values, we will have proven that it must equal the other one. This insight allows us to use <em>reductio</em> arguments that are not in general constructively acceptable.</p>
+<p>Assume <em>Bel</em>(⊥) &gt; 0, so <em>Bel</em>(⊥) ≥ 1/<em>y</em>. Hence there is a <em>p</em><sub>i</sub> such that <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;⊥ ∈&nbsp;K<sup>*</sup>. Since this is the same as ¬<em>p</em><sub>i</sub> ∈&nbsp;K<sup>*</sup>, and since <em>P</em>&nbsp;∈&nbsp;K<sup>*</sup>, it follows by disjunctive syllogism that <em>P</em> / {<em>p</em><sub>i</sub>}&nbsp;∈&nbsp;K<sup>*</sup>, contradicting (2). As <em>Bel</em>(⊥) must take some value, this implies it must be zero.</p>
+<p>As <em>A</em>&nbsp;⊃&nbsp;<em>A</em> is a theorem, so is <em>P</em>&nbsp;⊃ (<em>A</em>&nbsp;⊃&nbsp;<em>A</em>). As K<sup>*</sup> is closed under entailment, <em>P</em>&nbsp;⊃&nbsp;(<em>A</em>&nbsp;⊃&nbsp;<em>A</em>) ∈&nbsp;K<sup>*</sup>. So by (1) <em>Bel</em>(<em>A</em>&nbsp;⊃ <em>A</em>) = 1.</p>
+<p>Assume <em>A</em>&nbsp; <em>B</em>. So <em>A</em>&nbsp;⊃&nbsp;<em>B</em> is a theorem, and hence is in K<sup>*</sup>. Assume <em>Bel</em>(<em>A</em>) = <em>x / y</em>. So there is an <em>S</em> of size <em>x</em> such that <em>S</em>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup>. By <em>modus ponens</em>, this implies <em>S</em>&nbsp;⊃&nbsp;<em>B</em> ∈&nbsp;K<sup>*</sup>. So <em>Bel</em>(<em>B</em>) ≥ <em>x / y</em> = <em>Bel</em>(<em>A</em>). This proves (CP2), and as ⊥ <em>A</em> <em>A</em>&nbsp;⊃&nbsp;<em>A</em>, this completes the proof of (CP1).</p>
+<p>The proof of (CP3) meets one early difficulty. The following classically valid inference is not intuitionistically valid.</p>
+<p><em>p</em><sub>i</sub>&nbsp;⊃ (<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃ <em>A</em>&nbsp;∨&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em></p>
+<p>So I can’t say straight away that evidence for <em>A</em>&nbsp;∨&nbsp;<em>B</em> is evidence for <em>A</em> or evidence for <em>B</em>. However, the following is valid.</p>
+<p><em>p</em><sub>i</sub>&nbsp;⊃ (<em>A</em>&nbsp;∨&nbsp;<em>B</em>), <em>p</em><sub>i</sub>&nbsp;∨&nbsp;¬<em>p</em><sub>i</sub>&nbsp;&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃ <em>A</em>&nbsp;∨&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em></p>
+<p>Since I already have <em>p</em><sub>i</sub>&nbsp;∨&nbsp;¬<em>p</em><sub>i</sub>, the inference goes through. So if <em>p</em><sub>i</sub>&nbsp;⊃ (<em>A</em>&nbsp;∨&nbsp;<em>B</em>) ∈ K<sup>*</sup>, then <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em> ∨&nbsp;<em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em> ∈ K<sup>*</sup>, and hence by (5) <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup> or <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em>&nbsp;∈ K<sup>*</sup>. Assume <em>Bel</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;= <em>x / y</em>, and <em>S</em>&nbsp;⊃&nbsp;(<em>A</em>&nbsp;∨&nbsp;<em>B</em>)&nbsp;∈&nbsp;K<sup>*</sup>, with |<em>S</em>| = <em>x</em>. Then for all <em>p</em><sub>i</sub> in <em>S</em>, <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup> or <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>B</em>&nbsp;∈ K<sup>*</sup>. For all <em>p</em><sub>i</sub> not in <em>S</em>, <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∨&nbsp;<em>B</em> cannot be in K<sup>*</sup> or else (1) would be breached.</p>
+<p>Let <em>S<sub>A</sub></em> be the set of <em>p</em><sub>i</sub> such that <em>p</em><sub>i</sub>&nbsp;∈ <em>S</em> and <em>p</em><sub>i</sub>&nbsp;⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup>, with <em>S<sub>B</sub></em> defined similarly. Since <em>S<sub>A</sub></em> is the largest subset <em>S</em>´ of <em>P</em> such that <em>S</em>´ ⊃&nbsp;<em>A</em>&nbsp;∈&nbsp;K<sup>*</sup>, so <em>Bel</em>(<em>A</em>) = |<em>S<sub>A</sub></em>| / <em>y</em>. Similarly <em>Bel</em>(<em>B</em>) = |<em>S<sub>B</sub></em>| / <em>y</em>. Further (<em>S<sub>A</sub></em>&nbsp;∩&nbsp;<em>S<sub>B</sub></em>)&nbsp;⊃&nbsp;(<em>A</em>&nbsp;&amp;&nbsp;<em>B</em>) ∈&nbsp;K<sup>*</sup>, and this will not be the case for any larger set, again because if it were (1) would be breached. So <em>Bel</em>(<em>A</em>&nbsp;&amp;&nbsp;<em>B</em>) = |<em>S<sub>A</sub></em> ∩&nbsp;<em>S<sub>B</sub></em>| / <em>y</em>. Finally, because of the results of the last paragraph, <em>S</em>&nbsp;= <em>S<sub>A</sub></em>&nbsp;∪&nbsp;<em>S<sub>B</sub></em>, so <em>Bel</em>(<em>A</em>&nbsp;∨&nbsp;<em>B</em>) = |<em>S<sub>A</sub></em>&nbsp;∪&nbsp;<em>S<sub>B</sub></em>| / <em>y</em>. In general, for finite decidable sets, |<em>S<sub>A</sub></em>| + |<em>S<sub>B</sub></em>| = |<em>S<sub>A</sub></em>&nbsp;∪&nbsp;<em>S<sub>B</sub></em>| + |<em>S<sub>A</sub></em>&nbsp;∩&nbsp;<em>S<sub>B</sub></em>|, and this proves (CP3).</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chap-07.html" class="pagination-link  aria-label=" &lt;span="" predecessors&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chap-09.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Vague Decision Theory</span>">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

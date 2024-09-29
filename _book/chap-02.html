@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.523">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>On Uncertainty - 2&nbsp; What Degrees of Belief Aren’t</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chap-03.html" rel="next">
+<link href="./chap-01.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Brian Weatherson</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-papers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Papers</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-papers">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/papers.html">
+ <span class="dropdown-text">All Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/epist.html">
+ <span class="dropdown-text">Epistemology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/gdt.html">
+ <span class="dropdown-text">Games and Decisions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/books.html">
+ <span class="dropdown-text">On Books</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-books" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Books</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-books">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/ne/">
+ <span class="dropdown-text">Normative Externalism</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://lda.weatherson.org/">
+ <span class="dropdown-text">A History of Philosophy Journals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/kahis/">
+ <span class="dropdown-text">Knowledge: A Human Interest Story</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/teaching.html"> 
+<span class="menu-text">Teaching Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/bweatherson/kahis-quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap-02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren't</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synopsis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Declaration of Originality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What Probability Isn’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What Degrees of Belief Are</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Probability Is</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Supervaluations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Economic Consequences of Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#analyses-of-degree-of-belief" id="toc-analyses-of-degree-of-belief" class="nav-link active" data-scroll-target="#analyses-of-degree-of-belief"><span class="header-section-number">2.1</span> 2.1 Analyses of Degree of Belief</a></li>
+  <li><a href="#why-the-betting-analysis-of-degrees-of-belief-fails" id="toc-why-the-betting-analysis-of-degrees-of-belief-fails" class="nav-link" data-scroll-target="#why-the-betting-analysis-of-degrees-of-belief-fails"><span class="header-section-number">2.2</span> 2.2 Why the Betting Analysis of Degrees of Belief Fails</a></li>
+  <li><a href="#dutch-book-arguments-fail" id="toc-dutch-book-arguments-fail" class="nav-link" data-scroll-target="#dutch-book-arguments-fail"><span class="header-section-number">2.3</span> 2.3 Dutch Book Arguments Fail</a></li>
+  <li><a href="#other-critiques-of-dutch-book-arguments" id="toc-other-critiques-of-dutch-book-arguments" class="nav-link" data-scroll-target="#other-critiques-of-dutch-book-arguments"><span class="header-section-number">2.4</span> 2.4 Other Critiques of Dutch Book Arguments</a></li>
+  <li><a href="#the-betting-analysis-as-analogy" id="toc-the-betting-analysis-as-analogy" class="nav-link" data-scroll-target="#the-betting-analysis-as-analogy"><span class="header-section-number">2.5</span> 2.5 The Betting Analysis as Analogy</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/kahis-quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chap-2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren’t</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ramsey objected to Keynes’s view that <em>probability</em> means reasonable degree of belief on the grounds that Keynes had provided no explanation of what degrees of belief were. So he proceeded to provide such an explanation, what I’ll call the betting analysis. The point of this chapter is to show that Ramsey’s analysis can’t work, and that even if it did work the Dutch Book arguments based upon it are unsound. With this a major motivation for the betting analysis disappears.</p>
+<section id="analyses-of-degree-of-belief" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="analyses-of-degree-of-belief"><span class="header-section-number">2.1</span> 2.1 Analyses of Degree of Belief</h2>
+<p>At his first, and most famous, attempt Ramsey said that having degree of belief <em>r</em> in <em>A</em> is thinking the bet (1&nbsp;‑&nbsp;<em>r</em>,&nbsp;<em>A</em>,&nbsp;<em>r</em>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is fair. That is, its expected worth is zero, and an agent who makes this evaluation will be prepared to buy this bet for any price less than zero, or sell it for any price greater than zero. I’ll call this the betting analysis of degrees of belief. There is an important qualification to this analysis. I haven’t specified in what units the payouts are quantified. If the payouts are quantified in units like dollars with a declining marginal utility, what I’m calling Ramsey’s approach won’t work. It only works when the payouts are quantified in ‘utils’ or something equivalent. We can get around this problem in two ways. First, we can follow Ramsey and work out the utility of every possible outcome. Alternatively, we could set the payouts in a good which ought have constant marginal utility. Savage (1954) and Smith (1961) suggest that lottery tickets have this property, and hence develop their theories using lottery tickets as a currency.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The bet (<em>x</em>,&nbsp;<em>p</em>,&nbsp;<em>y</em>) is the bet which pays <em>x</em> if <em>p</em> and costs <em>y</em> otherwise.</p></li></div><p>There are, however, approaches to defining degrees of belief other than in terms of evaluations of bets and dispositions to bet. Indeed, one of these is set out by Ramsey himself in a later paper. For this approach we have to assume that people can compare, introspectively, their degrees of belief in different propositions. In his earlier paper Ramsey puts forward some arguments against this, but I think these arguments have to fail. To see why we just have to consider Ramsey’s arguments carefully.</p>
+<p>Ramsey discusses and rejects various possible introspective feelings that could serve as degrees of belief. One of these is ‘intensity of feeling’ (1926: 169). Ramsey simply rejects this by an example. We have much more intense feelings about some beliefs which, if pressed, we would admit we believe to a lower degree than those things which we take for granted. For example, in terms of intensity, my belief that ‘Lowering tariffs improves welfare’ is stronger than my belief ‘The earth is round’. On the other hand, my degree of belief in the latter is higher than in the former. Indeed, I suspect my degree of belief that the latter is true is stronger than is my degree of belief that the former is even truth-apt. So my degrees of belief are not mapped by my intensity of feelings. I suspect that for most people we can find examples showing the same effect.</p>
+<p>So this particular argument of Ramsey’s is effective. But look at what we take as evidence. I simply accepted the introspective evidence that my degree of belief in those things which I take for granted, such as ‘The earth is round’ is high. Now perhaps even if we didn’t have such introspective evidence we could still run Ramsey’s argument by looking at the external evidence, such as betting behaviour, to determine our relative degrees of belief in the two propositions. However, I suspect no reader actually did that or anything like it when considering the examples. As Mellor (1980) notes, this point of Ramsey’s serves to highlight the pretheoretic plausibility of saying we can introspectively make <em>qualitative</em> judgements about our degrees of belief.</p>
+<p>This is an important positive argument for the analysis in the next chapter, but it is also a negative argument against the betting analysis. Because Ramsey thinks degrees of belief don’t relate to any property determinable by introspection, he thinks that we have to look at what causal impact they have. That is, we have to look at their behavioural implications. Given this the betting analysis seems the most plausible candidate. I agree that if “the kind of measurement of belief with which probability is concerned is … belief <em>qua</em> basis of action” (1926, 171) the betting analysis seems the only plausible approach. However, the above argument, and the existence of the analysis developed in the next chapter, make this premise dubious. The reason the existence of a positive analysis is important is that the early Ramsey denies that there is any ‘introspected feeling’ which could be measured in the right type of units to be probability. The equivalence analysis shows that we can find such a feeling.</p>
+</section>
+<section id="why-the-betting-analysis-of-degrees-of-belief-fails" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="why-the-betting-analysis-of-degrees-of-belief-fails"><span class="header-section-number">2.2</span> 2.2 Why the Betting Analysis of Degrees of Belief Fails</h2>
+<p>Since the definition of degrees of belief in terms of bets is the orthodoxy, I have to show why I think it is untenable before I can justify an alternative outlook. Before going into detail about why I think the identification of degrees of belief with propensities to bet is wrong, I’ll simply list the objections:</p>
+<ul>
+<li><p>Our propensity to bet is affected by our attitudes towards gambling.</p></li>
+<li><p>Our intuitions about what is reasonable to do on the assumption that the marginal utility of the currency is constant are distorted by our intuitions about everyday situations.</p></li>
+<li><p>On a betting analysis we can’t get our probability logic in order until we have worked out our logic of preference, but this has many foundational difficulties.</p></li>
+<li><p>In betting situations there is no operational difference between a proposition being true and its truth being discovered, and if these are significantly different, the betting mechanism will determine our degree of belief in the wrong proposition.</p></li>
+<li><p>The betting analysis presupposes that norms of practice are epistemic norms, but if this is true it is something which must be proven not presupposed.</p></li>
+<li><p>For at least <em>some</em> incoherent agents, the analysis looks like it gives the wrong answers.</p></li>
+<li><p>The betting analysis cannot support Dutch Book arguments, as is commonly assumed, and hence does not ground the norms we want, whereas the analysis in this dissertation does ground these norms.</p></li>
+</ul>
+<p>The first objection is a common one, and perhaps not too serious. It has been suggested that we get around this problem by not looking at whether people would bet but rather at which gambles they would accept if offered a choice from a set of desirable gambles<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The latter approach runs into problems of its own because, in cases where agents are susceptible to Dutch Books, the problem won’t be the relatively serious one that they can be made to lose money, but the relatively trivial one that they will receive a smaller gift than they could have. Even in these cases, the experimental evidence is that people have a preference for choices which seem to involve less of a gamble, in some undefined and possibly incoherent sense<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The worry is just that these dispositions for or against gambling itself will pollute our information about degrees of belief. Indeed the fact that we can, it appears, sensibly talk about attitudes to gambling polluting the information about degrees of belief seems to count against the idea that we can <em>analyse</em> degrees of belief as dispositions to gamble. Certainly attitudes to gambling do not pollute any information we might get about dispositions to gamble. Perhaps though this last point merely shows that the betting analysis is not obviously true, not that it is false.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This move is made in Savage (1954: 28). He credits de Finetti (1937) as the inspiration for it.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;The experiments I am thinking of are of the following form. Assume we have two goods, <em>B</em> and <em>C</em>, such that <em>C</em> is considerably better than <em>B</em> but not overwhelmingly so. If we aren’t paying our experimental subjects, <em>B</em> could be $1 million and <em>C</em> $5 million. If offered the choice between a 20% chance of <em>C</em> and a 25% chance of <em>B</em>, subjects will, on the whole, choose the former. The same choice can be seemingly set up as a two-stage process. Whatever the subjects choose, there is a 25% chance of qualifying for the ‘second round’. If they qualify they will receive either <em>B</em> for certain or an 80% chance of <em>C</em>, but they have to say before they know whether they’ve qualified which they would choose. Even though this seems functionally equivalent to the first choice, here subjects will overwhelmingly choose <em>B</em>, because it doesn’t involve a gamble. There is no consequentialist sense in which these choices are coherent. These experiments are reported in Kahnemann and Tversky (1979: 273ff). They refer to the choice pattern exhibited as ‘the isolation effect’. I’ll discuss the relationship between dynamic and static choices in appendix 3C and also in <a href="chap-09.html" class="quarto-xref"><span>Chapter&nbsp;9</span></a>.</p></li></div><p>The second objection is related to the first, but it is more pragmatic. Ramsey argues that what we mean when we say a belief is reasonable is that it was formed by a reasonable habit (1926b: 194ff). But what habits are reasonable depends in part on our surroundings. In particular, our reasonable habits may become unreasonable if we are placed in a radically different situation. A similar situation arises in ethics where if we think behaving ethically is behaving in accord with certain sets of rules we have to acknowledge the possibility that in certain unusual situations good actions will have less desirable expected outcomes than bad actions. The objection is that in situations where we are making bets in ‘utils’ are so different to everyday life that what is reasonable in our situation may be unreasonable in those. Hence our intuitions about what would be reasonable seem unreliable. Since the main point of the betting analysis is to work out what is reasonable, and our basic data is our intuitions about the reasonableness of specific acts, this vitiates the usefulness of the analysis.</p>
+<p>On a betting analysis, we work out what degrees of belief are reasonable by looking at what preferences are reasonable. This, however, increases unduly our workload in the foundations of probability. For example, Good (1952) notes that we have to work out how to deal with infinite utilities (or show their impossibility) as a foundational task in probability logic on a betting analysis. I don’t doubt there are various plausible ways of doing this, but I would prefer my theory of probability was <em>not</em> held hostage to a particular analysis of infinity if possible. For a different example, Savage’s axioms of preference in his (1954) are much more contentious than the probability logic he derived from them. The point is simply the pragmatic one that the less contentious philosophy we have in our foundations the better.</p>
+<p>When we place a bet, we don’t care directly about whether or not the proposition on which we bet is true. On the contrary, we care directly about whether we and our bettor will come to know that it is true, so we can claim our winnings. So the betting analysis of degrees of belief should lead to our logic of degrees of belief being intuitionist not classical (Harman 1983). Ramsey gets around this by assuming the bookmaker has the power of the Almighty. It would be distressing if our commitment to classical logic depended on being theists. (There is an interesting comparison here with Dummett’s arguments in ‘Truth’ for the claim that opposing intuitionism requires some kind of commitment to the supernatural.) Even if we accept that it is possible for the bookmaker to have this power, the concern from the last paragraph about the usefulness of our intuitions in these circumstances remains.</p>
+<p>It has been pointed out by several authors that Dutch Book arguments grounded on the betting analysis, even if sound, make a large presupposition<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. That presupposition is that norms of action, such as ‘don’t buy Dutch Books’, are epistemic norms. Now it may be possible to prove that prudential norms are epistemic; indeed I suspect the analysis here goes some way to proving that. But it is a surprising result, and one for which we ought develop arguments. It isn’t something that can be safely supposed, as it appears to be under a betting analysis.</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;For a recent example, see Kvanvig (1994).</p></li></div><p>Christensen (1996) argues for what he calls a ‘metaphysical separation’ between degrees of belief and betting practices. At one level his argument is an old-fashioned open question argument. Even if we know that someone has degree of belief 0.2 in <em>p</em>, we can still ask what evaluations they would make of bets on <em>p</em>. Now such arguments aren’t particularly telling; it’s no refutation of an analysis that it isn’t obvious. Christensen, however, has in reserve a somewhat more subtle argument. Assume I will pay 30 cents for the bet ($1, <em>p</em>, 0) but only 20 cents for the bet ($1, <em>p</em>&nbsp;∨&nbsp;<em>q</em>,&nbsp;0). My evaluations are, in a sense I will get to, incoherent. The best justification for the betting analysis is that we have to identify mental states by their functional role. If we were to assume the only role a degree of belief plays is in bet-evaluation, there might be a functionalist argument for the betting analysis. As Christensen notes, however, in this case my degree of belief in <em>p</em>, whatever it is, performs at least two roles. One is in helping determine how much I’ll pay for ($1, <em>p</em>, 0), and the other in helping determine how much I’ll pay for ($1, <em>p</em>&nbsp;∨&nbsp;<em>q</em>, 0). In fact there is a third role; helping determine what my degree of belief in <em>p</em>&nbsp;∨&nbsp;<em>q</em> is. When we’re coherent, there will be no tension between these roles. But incoherence, at least of preference, is clearly possible. Christensen’s point, I take it, is that for incoherent cases the betting analysis unjustifiably privileges one particular functional role to the exclusion of others, and hence it can be challenged on its own ground.</p>
+<p>Finally, one of the advertised strengths of the betting analysis is that through Dutch Book arguments we can provide a justification for degrees of belief obeying axioms of the probability calculus. This was originally argued by Ramsey, and has been extended to dynamic settings by Lewis and van Fraassen. If these arguments succeed they show that the betting analysis has great practical usefulness. However, I show in the next section that these arguments are invalid, or at least unsound. On the other hand, I prove in the next chapter that all the results which Dutch Book arguments claim to achieve can be grounded in a purely epistemic analysis.</p>
+</section>
+<section id="dutch-book-arguments-fail" class="level2 page-columns page-full" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="dutch-book-arguments-fail"><span class="header-section-number">2.3</span> 2.3 Dutch Book Arguments Fail</h2>
+<p>For simplicity, let’s define <em>the A‑bet</em> to be the bet (1,&nbsp;<em>A</em>,&nbsp;0), where the unit is of some currency with constant marginal utility and <em>Bel</em>(<em>A</em>) to be my degree of belief in <em>A</em>. The following is a paradigm Dutch Book argument. Assume <em>Bel</em>(<em>p</em>) is 0.6 and <em>Bel</em>(¬<em>p</em>) is 0.55. Then, by the betting analysis, I will be prepared to pay <em>Bel</em>(<em>A</em>) units for an <em>A</em> bet, or at least <em>Bel</em>(<em>A</em>)&nbsp;‑&nbsp;ε, for arbitrarily small ε. We’ll assume for the sake of the argument that the marginal utility of money is constant in small amounts<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Hence I will pay $1.15 for a <em>p</em>‑bet together with a ¬<em>p</em>‑bet. The sum of these bets is (($2,&nbsp;¬<em>p</em>,&nbsp;$1),&nbsp;<em>p</em>,&nbsp;($1,&nbsp;¬<em>p</em>,&nbsp;0)) or, in other words, a bet which pays $2 if <em>p</em>&nbsp;and&nbsp;¬<em>p</em>, $1 if <em>p</em>&nbsp;or ¬<em>p</em> but not both, and nothing if neither <em>p</em> nor ¬<em>p</em>. Since it is impossible that <em>p</em> and ¬<em>p</em> it is impossible that this bet will pay more than $1, hence my betting practices are normatively flawed. And since by assumption norms of betting behaviour are epistemic norms, I must be irrational. Such arguments can be used to show that my beliefs ought obey all the axioms of the probability calculus.</p>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;This is a common enough assumption in this field, but I don’t see any economic reason for it. If we assume, as is standard, that the utility of any particular level of wealth is independent of our actual wealth, there is no reason to think that the marginal utility of money will be constant around our actual position than it would be around any other positions. If, on the other hand, the marginal utility of money in small quantities really is constant, this leads to problems for orthodox utility theory. I don’t want to argue for either of these assumptions and against the other, but it is worth noting that despite the frequency with which each is assumed they are in strong tension.</p></li></div><p>I agree that if I was prepared to pay 60 cents for a <em>p</em>‑bet and 55 cents for a ¬<em>p</em>‑bet this would be irrational. That is, I accept for the sake of argument the identification of norms of betting with epistemic norms. However, I don’t see how it follows from having certain degrees of belief that I ought be prepared to pay these amounts. The problem is that the argument assumes I will not use any strategic pricing, yet it gives no reason for thinking that I oughtn’t price strategically. Indeed it seems implicit in the argument that I ought price strategically. By strategic pricing I mean setting a price for a good that is not determined solely by its intrinsic usefulness, but by how much I could either sell the good for or obtain the good from other sources.</p>
+<p>Adam Smith noted some 220 years ago that the price of goods bore no interesting relationship to their usefulness. Nothing is more useful than water, yet it is almost free, nor less useful than diamonds, but they have massive value. We have since learnt that there is in some specified circumstances a determinate relationship between what we’ll call the value of a good and its usefulness. If a consumer’s budget is at equilibrium then the ratio of the marginal utility of a good to its marginal price will be constant for all goods the consumer purchases provided the utility function of every good is differentiable (Slutsky 1915). Still, in general, i.e.&nbsp;at disequilibrium, Smith’s observation holds. Moreover, since we are assuming that, for the bets in question, the marginal utility of both the payouts of the bets and the currency we use to buy them is constant, unless all people have the same degree of belief in all propositions we can’t trade our way to an equilibrium position.</p>
+<p>The principle flaw in Dutch Book arguments is that they ignore Smith’s observation. My degree of belief in <em>A</em> can determine at most the usefulness of an <em>A</em>‑bet. Yet it is assumed that it will also determine the price I am prepared to pay for <em>A</em>‑bets. Hence it is assumed that there is a correlation between how useful bets are and how much I will or ought be prepared to pay for them. As Smith showed, in general this cannot be the case.</p>
+<p>We can find simple examples where it would be unreasonable to pay <em>Bel</em>(<em>A</em>) for an <em>A</em>‑bet. Assume that I know I can sell a <em>p</em>‑bet for 90 cents, and <em>Bel</em>(<em>p</em>) is 0.7. I am offered a <em>p</em>‑bet for 80 cents, should I accept? According to the betting analysis I should not, because I am being asked to pay 80 cents for something which has an expected value of 70. However, it seems at least plausible that I should accept the bet and then sell it for a sure profit. Alternatively, assume I know I can buy as many <em>p</em>‑bets as I like for 70 cents each in the market, and <em>Bel</em>(<em>p</em>) is 0.9. Again I am offered a <em>p</em>‑bet for 80 cents. The betting analysis says I should accept, but again it’s plausible that I should instead buy <em>p</em>‑bets at the cheaper market price.</p>
+<p>This may not look at first like a major difficulty. After all, we know the correlation between fair prices for <em>A</em>‑bets and degrees of belief in <em>A</em> only holds under restricted conditions. All these examples show is that we have to be more careful in specifying the initial conditions. As far as it goes, this response is correct. Provided we have good reason to believe that we oughtn’t use strategic pricing, the correlation will hold. The problem for Dutch Book arguments is that the only way we can know this is if there is no possibility of later bets, so we can know that we can’t buy the bets for less on the market nor make a profit by resale. However, as we saw above Dutch Book arguments in general only work by using retrade. Hence they rely on the correlation between degree of beliefs and betting prices for rational agents holding in a context in which only irrational agents would price bets this way, so the arguments fail.</p>
+<p>This conclusion is of major importance for what follows, so I should restate the argument which I have used. Dutch Book arguments rely on there being entailments from agents having certain degrees of belief to their propensity to buy certain bets. They conclude that if some set of our degrees of belief are probabilistically incoherent, we will buy a set of bets which incurs sure loss, and hence we must be irrational. However, the entailment in question only holds under restricted circumstances. One of the restrictions is that there be no possibility for later trade in bets. When there are retrade possibilities, as there must be for most types of Dutch Books to be made, the entailment does not hold. So Dutch Book arguments make inconsistent presuppositions, and hence fail.</p>
+<p>It might be objected that if an agent whose beliefs were not coherent with the probability calculus believed falsely that there was no possibility of retrade they would make trades which led to sure loss. However, the only way a bookmaker could exploit this is if she had more knowledge than the agent. And the fact that a bookmaker with more knowledge than us can sell us bets which, given the bookmaker’s knowledge, have to lose, is no proof that we are irrational. If it was we would be able to show that any person whose degree of belief was less than 1 for any true proposition, or greater than 0 for any false proposition, is irrational. Moreover, even if we regard such an agent as irrational, it is not clear that it is because her beliefs don’t follow the probability calculus that she’s irrational. All we can tell from the fact that she will suffer a sure loss is that she’s made a mistake somewhere; this might be concerning her misplaced certainty that the market is closed rather than her degrees of belief in the proposition on which bets are placed.</p>
+<p>Alternatively, it might be objected that an agent who is completely ignorant of the state of the market will price bets by their expected return even if they think there is the possibility of retrade. The problem with this objection is that it is, famously, very hard to pin down what it is to be completely ignorant. Saying that if I am completely ignorant of whether or not it is the case that <em>p</em> then my degree of belief in <em>p</em> is, or ought to be, 1/2 leads to well-known contradictions. It certainly would be odd to say that if we are completely ignorant of the likely effects of a certain class of events we should ignore them, which would seem to be the line of attack here. In part 2, particularly in <a href="chap-09.html" class="quarto-xref"><span>Chapter&nbsp;9</span></a>, I’ll look at various theories about how we ought make decisions under ignorance. Under several of these (particularly maximin approaches) if the agent knows nothing about the market she should make no trades at all rather than pricing according to mathematical expectation. Finally, if the approach advocated in this dissertation is correct and there are necessary probabilities, then in many circumstances an agent is irrational to be completely ignorant in some strong sense. So again, even if the agent is irrational, the Dutch Book argument can’t prove that it is the incoherence of degrees of belief with the probability calculus that is making the agent irrational.</p>
+<p>In the literature there is generally a distinction drawn between synchronic and diachronic Dutch Book arguments, with the latter being referred to as Dutch Strategy arguments. These latter type are used to infer coherence constraints on how our degrees of belief should change over time. Though the above argument refutes both Dutch Book and Dutch Strategy arguments, the results concerning Dutch Strategy arguments are more striking. Unlike Dutch Book arguments, Dutch Strategy arguments appear to have occasionally led to authors drawing mistaken conclusions.</p>
+<p>In his latest argument for a principle called Reflection, van Fraassen discusses the case of Pierino, whom he claims is irrational (1995: 11). Pierino is a young child who today prefers blocks to marbles, but knows that in a year when he has acquired older tastes, he will prefer marbles to blocks. He is in the predicament of today having 9 marbles. Van Fraassen stipulates that Pierino is indifferent between keeping his 9 marbles and trading them for 3 blocks, knowing full well that in a year’s time he’ll be indifferent between holding these blocks and trading them for a single marble. And this, van Fraassen claims, must be irrational, for if he made the two trades he would have lost 8 marbles. To the obvious response that he will have gained in enjoyment in the short term by having more blocks which he can use now, van Fraassen replies that since he was indifferent to the trades, he can’t gain anything.</p>
+<p>van Fraassen’s reply makes the mistake we have attempted to highlight here. Pierino’s indifference to the trades tells us that at each time the exchange-value of the bundles on offer was equal, but we can’t from this infer that the use-value of the two bundles was equivalent. Indeed, assuming Pierino preferred more marbles to fewer in year 2, we must assume that the value of having 3 blocks in year 1 was greater than the value of having 9 marbles, and indeed so much greater that it made up for the expected losses in year 2.</p>
+<p>We can make a formal model for Pierino that satisfies these constraints. Assume that U<sub>1</sub> is the utility he gets from toys in year 1, and U<sub>2</sub> the utility he gets in year 2. Assume his aim is to maximise U<sub>1</sub>U<sub>2</sub>, and hence that he is indifferent as to the amount of toys he holds at the end of year 2. Let B<sub>i</sub> and M<sub>i</sub> be the amounts of marbles and blocks he has in year i, and assume his utility functions are as follows.</p>
+<p>U<sub>1</sub> = 27B<sub>1</sub> + M<sub>1</sub>;</p>
+<p>U<sub>2</sub> = B<sub>2</sub> + 3M<sub>2</sub>.</p>
+<p>Given that he starts with 9 marbles, if he just holds marbles his net utility across the two years will be 9&nbsp;·&nbsp;27&nbsp;=&nbsp;243. If he trades the 9 marbles for 3 blocks, knowing that these can only be traded for 1 marble at the end of year 1, his net utility will be 81&nbsp;·&nbsp;3&nbsp;=&nbsp;243. Hence his indifference to the trade. He could increase his utility if it is possible to trade say 6 marbles for 2 blocks, but we have no reason to assume that that trade is allowed. For reasons I will outline in the next chapter, I think van Fraassen’s main conclusion, that all rational agents are Reflective, is sound, but the arguments he uses to get there are mistaken.</p>
+<p>One final point ought be noted. When an agent holds a Dutch Book what is important is not that there is no winning outcome. What’s important is that all the winning outcomes are impossible. Assume as above that I bought a <em>p</em>‑bet for 60 cents and a ¬<em>p</em>‑bet for 55 cents. Then if it’s the case that <em>p</em> and ¬<em>p</em> I will win 85 cents, and if it’s the case that neither <em>p</em> nor ¬<em>p</em> I will lose $1.15. However, in all possible situations I will lose 15 cents. This has two interesting consequences.</p>
+<p>First, Dutch Book arguments presuppose a certain logic; in particular one where <em>p</em> &amp; ¬<em>p</em> is impossible and <em>p</em>&nbsp;∨&nbsp;¬<em>p</em> is a tautology. There’s nothing wrong with this, but it is a presupposition which should be noted. (Harman (1983) notes that because of this attempts to use the probability calculus to prove the semantics for natural language ought be classical are question-begging). Unless otherwise stated, I will presuppose classical logic. That is, when I say <em>A</em> is impossible I will mean ¬<em>A</em> is a classical theorem, and when I say <em>A</em> entails <em>B</em> I will mean it classically entails <em>B</em>.</p>
+<p>Secondly, there is a <em>sound</em> Dutch Book argument which can be made against a person whose degree of belief in any contradiction is positive, or whose degree of belief in any tautology is less than 1. I’ll just illustrate the first. Assume my degree of belief that the four-colour map theorem is false is 0.1. Then I’ll buy a bet against it for 5 cents. As there’s no possibility of this bet winning, this is a sure loser. And since there’s only one bet involved, I didn’t assume that retrade was possible, so the above objections to Dutch Book arguments don’t apply. The objector who says that it is an <em>epistemic</em> possibility that the four colour map theorem is false has a much deeper objection to Dutch Book arguments than I. After all, <em>p</em>&nbsp;&amp;&nbsp;¬<em>p</em> might be an epistemic possibility too, so on this approach we could object directly to the toy Dutch Book argument with which I opened this section. Rather than take this road, I will simply assume that in this field we are interested in an epistemology for agents whose beliefs are closed under entailment.</p>
+</section>
+<section id="other-critiques-of-dutch-book-arguments" class="level2 page-columns page-full" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="other-critiques-of-dutch-book-arguments"><span class="header-section-number">2.4</span> 2.4 Other Critiques of Dutch Book Arguments</h2>
+<p>The critique of Dutch Book arguments given here is unique in two respects. First, it is the only one, to my knowledge, to rely on Adam Smith’s distinction between usefulness and exchange-value. Secondly, as will be seen in the next chapter I concur with the most famous conclusions of Dutch Book arguments. The usual motivation for criticising these arguments is to motivate dissent with their conclusions. Here the motivation is to provide a cleaner separation of epistemology and decision-theory.</p>
+<p>The closest argument in the literature to mine is given by Schick (1986). He argues that Dutch Book arguments fail because they assume that the value of bets is additive. That is, they assume the value of an <em>A</em>‑bet is independent of whether or not the agent holds a <em>B</em>‑bet. Since bets might be complementary in an economic sense, this is a false assumption, so these arguments fail. This objection is similar to mine in that it relies on a simple economic theory to refute the Dutch Book argument, and because as Schick notes it doesn’t apply to ‘single‑bet’ books (1986: 116). However, it is not a successful refutation.</p>
+<p>The alleged flaw with Dutch Book arguments on which Schick relies was noted by Ramsey when he originally put the argument. (Ramsey 1926: 173-4). Not only does Ramsey point out the alleged flaw, he notes its prima facie implausibility and offers a small argument to try and defend it. Ramsey claims that when all the final payouts<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> of all bets are ‘ultimate goods’, the value of the bets is additive. Now Ramsey’s claim here might be wrong, but we should get an argument to this end. Instead, Schick simply assumes that when bets are denominated in utils (equivalently when the marginal utility of money is assumed to be constant) we will get similar economic results to those we’d get were bets denominated in dollars. Schick’s mistake (if it is a mistake) is instructive; as I noted above the fact that we don’t, even on reflection, have particularly clear intuitions about trading utils is a good reason for not founding our theory of probability on the types of bets Ramsey discusses.</p>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;When I say the ‘final payouts’ of bets are of type <em>X</em> I mean the following. The set of all bets whose ‘final payouts’ are of type <em>X</em> is the smallest set of bets including all those whose payouts are of type <em>X</em> such that any bet such that each of the payouts is a bet in the set is also in the set. If we allow bets to have more than two possible payouts we can amend this last condition accordingly.</p></li></div><p>Levi (1987) and Maher (1992) argue that agents who are not Reflective will ‘see the Dutch Book coming’ and hence refuse to take the bets which lead to being Dutch Booked. Their argument is principally developed to defeat van Fraassen’s conclusion that ideally rational agents are Reflective, though it isn’t clear why it wouldn’t also apply to synchronic Dutch Book arguments. Since it doesn’t actually work it isn’t particularly worthwhile to speculate how far it would reach were it successful.</p>
+<p>The kinds of cases they are thinking of are like the following. Assume I today believe that the probability of <em>p</em> is 0.5, and believe that tomorrow I’ll believe the chance is 0.3. Assume also I’m offered a <em>p</em>‑bet for 40 cents. I know that if I buy it I will be prepared to sell it tomorrow for say 32 cents, for a sure 8-cent loss. That is, I’ll be Dutch Booked. But wait! If I see this coming I won’t buy the original bet for 40 cents, and thus avoid holding the book. Levi and Maher claim that the availability of this path to unreflective agents blocks the Dutch Book argument.</p>
+<p>This response to Reflection fails for the simple reason that being ‘Dutch Bookable’ is not a necessary condition of irrationality. Assume I don’t buy the original 40 cent bet. I won’t now be able to sell this bet for 32 cents tomorrow. However, I will still be able to buy a ¬<em>p</em> bet for 68 cents. If I take Levi and Maher’s advice, I’ll have converted a sure loss of 8 cents into an expected loss of 18 cents. There might be an argument to show that this is a rational option, but I’d like to see what it is<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;The practicalities of this situation are very difficult, and it is impossible to get clear intuitions about what we should do given the assumption of constant marginal utility of money. If I know that tomorrow my degree of belief in <em>p</em> will be 0.3, ideally I will take steps to prevent myself acting on this later belief. That is, I should take the Ulysses option. Now buying <em>p</em>‑bets today for 40 cents to sell tomorrow at a sure loss will, as is noted in the text, reduce my <em>expected</em> loss. However, that is assuming that the number of ¬<em>p</em>‑bets I will buy (number of <em>p</em>‑bets I will sell) tomorrow is independent of the number of <em>p</em>‑bets I buy today. The idea is that taking Levi and Maher’s advice <em>may</em> in some circumstances, have the effect of tying me to the mast and not trading tomorrow. It <em>will</em> have this consequence if the marginal utility of money is not constant, but when it is there are few clear intuitions on the matter.</p></li></div><p>There is a bigger problem for Levi and Maher’s approach. As we saw above, when used by de Finetti and Savage the Dutch Book argument does not require the agent to incur an actual dollar loss. Rather, since the choices are between gifts, the incoherent agent incurs a sure <em>opportunity</em> loss. Now when I refuse the original offer of a <em>p</em>‑bet for 40 cents, I have already incurred an opportunity loss. Admittedly it is again an <em>expected</em> opportunity loss rather than a sure one, but it isn’t clear why incurring an expected loss rather than a sure one is an epistemic improvement.</p>
+<p>Bacchus, Kyburg and Thalos (1990) run a series of responses to Dutch Book arguments. Their responses to dynamic Dutch Book arguments will be discussed in <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a> as possible objections to my arguments for dynamic coherence; here I’ll stick to discussing their general comments on Dutch Book arguments. Put in slogan form, they endorse the position that bad betting is bad betting, not bad believing. I agree, but I’m a bit worried about the way they get to this slogan.</p>
+<p>Having incoherent degrees of belief (and even the disposition to convert these directly into bets) does not guarantee sure loss. Only this combined with a rather clever and devious bookie does. Note two important consequences of this qualification. First, we now say that certain sets of degrees of belief will not <em>always</em> lead to losses, but will sometimes lead to losses. But we knew all along that any degrees of belief (except certain kinds of dogmatic acceptance of only tautologies) <em>might</em> lead to losses. Why, we can ask, are the losses caused by devious bookies signs of irrationality, but not the losses caused by taking attractive but ultimately losing bets? I suspect this raises problems for a certain type of pragmatist, but I can’t see it as a general problem. The problem isn’t that some possibility claim, i.e.&nbsp;we might lose if a certain type of bookie exists, is true, but rather an existence claim, i.e.&nbsp;that a certain type of acceptable but losing bet exists. The second consequence Bacchus, Kyburg and Thalos draw is that the Dutch Book argument only works if we make the paranoid assumption that devious bookies exist. Consistency isn’t just the sign of a small mind, but of a paranoid one too. Again, this looks like a good refutation of a certain strictly pragmatic Dutch Book argument. However, we don’t need to formulate Dutch Book arguments as strictly pragmatic, and when we don’t I suspect this objection loses its force. That is, the possibility of the agent buying a Dutch Book seems at least as great an epistemic flaw as actually making the purchase, and hence anyone who runs a Dutch Book argument is just making an avoidable mistake if they assume an actual pernicious bookie.</p>
+</section>
+<section id="the-betting-analysis-as-analogy" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="the-betting-analysis-as-analogy"><span class="header-section-number">2.5</span> 2.5 The Betting Analysis as Analogy</h2>
+<p>Although I don’t regard the betting analysis as correct, or even that useful generally given the failure of Dutch Book arguments, it may be a helpful analogy. Much of this section is motivated by Shafer (1981), who also regards betting prices as an occasionally useful analogy to degrees of belief, though he’s considerably more sceptical than I about the applicability of this analogy. To see when this analogy might be useful, we first have to consider the known limitations on its applicability.</p>
+<p>The only way I will use betting examples is to test whether <em>Bel</em>(<em>p</em>) is reasonable by considering whether it is reasonable to accept or reject offers to buy or sell <em>p</em>‑bets. If, for example, in appropriate circumstances it would be unreasonable to reject an offer of a <em>p</em>‑bet for 0.2, this can be taken as a good argument for saying that <em>Bel</em>(<em>p</em>)&nbsp;≤&nbsp;0.2 is unreasonable. First we must consider what circumstances are ‘appropriate’, or since this seems a bit open-ended, which circumstances are known to be inappropriate. The following have already been mentioned.</p>
+<ul>
+<li><p>When the units in which the bet is denominated or traded are of variable marginal utility.</p></li>
+<li><p>When there is a time-delay between when the bet is or would be traded and when winnings would be paid.</p></li>
+<li><p>When there is a possibility of trading in other bets at a later time.</p></li>
+</ul>
+<p>The last is actually a bit broader than what we used above. We have to rule out not just trade in this particular bet, but in other bets as well because some bets are complementary in the economic sense. This is very common in real life. For example, it is worthwhile to buy insurance on your car but not on someone else’s despite the fact that the cost of the bets are the same and the expected returns may well be identical (unless say you know you are a worse driver than other people). In part this will be because insurance bets are denominated in a currency with declining marginal utility. However, it seems presumptive to think that complementation is only caused by this effect. Experimental evidence suggests that for many agents the fact that their degree of belief in some propositions is vague leads to a complementation effect. So we have in general to assume this is the last possible trade.</p>
+<p>This assumption also gets us around a problem noted by Pargetter and Davidson (1985). Assume I know that your degree of belief in <em>p</em> is 0.7, and mine is 0.9. You offer to sell me a <em>p</em>‑bet for 0.85. Assuming all other circumstances are in order, this trade will be worthwhile for me. However, I know that if I counter-offer to buy it for 0.71, you will still find the trade worthwhile, and I will have bought the bet for 0.14 less. Pargetter and Davidson thought we could only get around this by assuming the agent under investigation knows the bookmaker has the same degrees of belief as they. However, once we know this is the last chance to bet, i.e.&nbsp;that the counter-offer possibility is closed, we don’t need to make this extra restriction, and since we need to have a closed market after the bet in question for other reasons, Pargetter and Davidson’s restriction seems redundant.</p>
+<p>Even though it is not needed in these cases, however, we might want to restrict attention to cases where each party to the bet is known to have the same information for the following reason. Degrees of belief can at most determine dispositions to bet, not actual betting practices. Even if I have a disposition to buy <em>p</em>‑bets for 0.2, if I am offered a <em>p</em>‑bet for that price I might not buy. This seems contradictory, but it is not. Dispositions can be finkish (Martin 1994, Lewis 1997). I might have a disposition to in circumstances <em>C</em>, yet be in a situation such that whenever circumstances <em>C</em> arise I will lose the disposition.</p>
+<p>Assume I have next to no evidence about the players in a certain tennis match, and let <em>p</em> be the proposition that the player who serves first will win. Even if I have a disposition to buy <em>p</em>‑bets for 0.1, say, if someone were to offer me a <em>p</em>‑bet for that price I would most likely refuse. That is, the disposition would be finkish. The reason I would refuse is that the fact I was offered the bet would count as a new piece of information (the information that someone who most likely knows more about the match than I thinks <em>p</em>‑bets are worth less than 0.1) and in the state with this extra information I’m not disposed to make the purchase. If I did have the disposition this would be just like paradigm cases of finkish dispositions because the occurrence of the circumstances which are meant to ‘trigger’ the disposition causes me to lose that disposition in an easily identifiable way.</p>
+<p>How could we tell that I originally had a finkish disposition rather than having no disposition at all? The best test seems to be whether I would buy the bet if I knew that the person offering it had the same information I did, and hence that there was little information in the fact that the bet was offered. So the Pargetter and Davidson restriction to circumstances where the offeree knows the offerer has the same beliefs they do is important for cases of complete ignorance to eliminate the effect of finkish dispositions. This will be used in later chapters.</p>
+<p>Given these restrictions, it seems the analogy with bets is worthwhile. We will have to be careful to use it only in appropriate circumstances, and to remember that it is only an analogy, and perhaps not the only one. Where possible it will be preferable to use the analysis of degrees of belief to be developed in <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a>.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chap-01.html" class="pagination-link  aria-label=" &lt;span="" probability="" isn&#39;t&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What Probability Isn’t</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chap-03.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>What Degrees of Belief Are</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What Degrees of Belief Are</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

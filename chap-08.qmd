@@ -1,0 +1,284 @@
+# Constructivist Probability {#sec-chap-8}
+
+It is a standard claim of modern epistemology that reasonable epistemic states should be representable by probability functions. I'll call theories which make this claim *classical*, which seems an accurate enough label. That claim is relaxed in this dissertation only to the extent of allowing vague credences, i.e. allowing epistemic states to be vague over a set of probability functions. It is the set of functions, rather than a single function, which represents the epistemic state. However, there have been a number of authors who have opposed this claim. For example, it has been claimed that epistemic states should be representable by Zadeh's fuzzy sets, Dempster and Shafer's evidence functions, Shackle's potential surprise functions, Cohen's inductive probabilities or Schmeidler's non-additive probabilities.[^103] Indeed the move to allowing vagueness has grown to some extent from this opposition to orthodoxy.
+
+[^103]: For more details, see Zadeh (1978), Dempster (1967), Shafer (1976), Shackle (1972), Cohen (1977), Schmeidler (1989).
+
+In this chapter I will argue that many of their motivations can be better captured by what I'll call *constructivist* theories of probability. These theories allow axiomatisations which are virtually identical in their formal structure to classical axiomatisations of probability. In the classical axiomatisation, however, there is reference to an entailment relation. The principle difference is that constructivist theories interpret this as a reference to intuitionist entailment, and classical theories as a reference to classical entailment.
+
+## 8.1 Motivations for a Constructivist Approach to Probability {#motivations-for-a-constructivist-approach-to-probability}
+
+There are four main reasons for grounding the axioms of probability theory in an intuitionist entailment relation rather than a classical one. These are: a commitment to verificationism, a commitment to anti-realism, preservation of the axiom of addition, and avoidance of direct arguments for the orthodox approach. Now some of these will be viewed by some people as bad reasons for adopting the given position, and I have some sympathy with that view. In particular, the verificationist and anti-realist elements of the theory might well be viewed as negatives. These arguments are principally directed at showing that by their own lights, various heterodox theorists would be well advised to adopt the constuctivist theory outlined here. For this reason, I think that this theory is the best competitor to the theory developed in the earlier chapters.
+
+A standard objection to classical approaches is that they have no way of representing complete uncertainty. Because of the failures of Laplace's principle of indifference, it can't be said that uncertainty about *p* is best represented by assigning credence 1/2 to *p*. Heterodox approaches usually allow the assignment of credence 0 to both *p* and ¬*p* when an agent has no evidence at all as to whether or not *p* is true. Because these approaches generally require an agent to assign credence 1 to classical tautologies, including *p* ∨ ¬*p*, these theories must give up what I'll call the *axiom of addition*.
+
+*Addition*: For disjoint *A*, *B*: *Bel*(*A* ∨ *B*) = *Bel*(*A*) + *Bel*(*B*).
+
+Where no ambiguity results I'll also use the term 'axiom of addition' to refer to the equivalent rule for probabilities. Now in some writings (particularly Shafer) the grounding for this is openly verificationist. Shafer says that when an agent has no evidence for *p*, they should assign degree of belief 0 to *p*. Degrees of belief, under this approach, must be proportional to evidence[^104]. In recent philosophical literature, this kind of verificationism is often accompanied by an insistence that only intuitionistically valid deductions are sound arguments.
+
+[^104]: This assumption was shared by many of the participants in the symposium on probability in legal reasoning, reported in the Boston University Law Review 66 (1986).
+
+A similar kind of argument is made by Harman (1983). He notes that when we don't distinguish between the truth conditions for a sentence and its assertibility conditions, the resultant logic is intuitionist. And when we're considering gambles, something like this is correct. When betting on *p* we don't, in general, care if *p* is true as opposed to whether it will be discovered that *p* is true. A *p*‑bet becomes a winning bet not when *p* occurs, but when *p* becomes assertible. So perhaps not just verificationists like Shafer, but all those who analyse degrees of belief as propensity to bet should adopt constructivist approaches to probability.
+
+To see the point Harman is making, consider this example. We are invited to quote for *p*‑bets and ¬*p*‑bets, where *p* is *O. J. Simpson murdered his wife*. If we are to take the Californian legal system literally, the probability of that given the evidence is strictly between one-half and one. To avoid one objection, these bets don't just pay \$1 if the bettor guesses correctly. Rather they pay \$1 invested at market rates of interest at the time the bet is placed. The idea is that if we pay *x* cents for the bet now, when it is discovered that we have bet correctly we will receive a sum of money that is worth exactly as much as \$1 now. Still, I claim, it might be worthwhile to quote less than 50 cents for each of the bets. Even if we will receive \$1 worth of reward if we wager correctly, there is every possibility that we'll never find out. So it might be that placing a bet would be a losing play either way. To allow for this, the sum of our quotes for the *p*‑bet and the ¬*p*‑bet may be less than \$1. As Harman points out, to reply by wielding a Dutch Book argument purporting to show that this betting practice is incoherent would be blatantly question-begging. That argument simply assumes that *p* ∨ ¬*p* is a tautology, which is presumably part of what's at issue.
+
+Harman's point is not to argue for a constructivist approach to probability. Rather, he is arguing against using probabilistic semantics for ordinary propositional logic. Such an approach he claims would be bound to lead to having an intuitionist logic for the reasons given above. He thinks this would be an error, hence the move to probabilistic semantics is simply an error. Whatever we think of this conclusion, we can press into service his arguments for constructivist probability.
+
+The second argument for this approach turns on the anti-realism of some heterodox theorists. So George Shackle, for example, argues that if we are anti-realist about the future, we will assign positive probability to no future-directed proposition. The following summary is from a sympathetic interpreter of Shackle's writing.
+
+> \[T\]here is every reason to refuse additivity: \[it\] implies that the certainty that would be assigned to the set of possibilities should be 'distributed' between different events. Now this set of events is undetermined as the future -- that exists only in imagination -- is. (Ponsonnet, 1996: 171)
+
+Shackle's anti-realism is motivated by what most theorists would regard as a philosophical howler; he regards realism about the future as incompatible with human freedom, and holds that humans are free. The second premise here seems harmless enough, but the first is rather difficult to motivate. Nevertheless, there are some better arguments than this for anti-realism about the future. If we adopt these, it isn't clear why we should 'assign certainty' to the set of possibilities.
+
+Shackle is here assuming that for any proposition *p*, even a proposition about the future, *p* ∨ ¬*p* is now true, although neither disjunct is true. Given his interests it seems better to follow Dummett here and say that if we are anti-realists about a subject then for propositions *p* about that subject, *p* ∨ ¬*p* fails to be true. Hence we have no need to 'assign certainty to the set of possibilities'. Or perhaps more accurately, assigning certainty to the set of possibilities does not mean assigning probability 1 to *p* ∨ ¬*p*.
+
+The third motivation for adopting a constructivist approach to probability is that it allows us to retain the Kolmogorov axioms for probability, and, in particular, to retain the axiom of addition. This axiom has, to my mind at least, some intuitive motivation. And the counter-examples levelled against it by heterodox theorists seem rather weak from the constructivist perspective. For they all are cases where we might feel it appropriate to assign a low probability to a proposition and its negation[^105]. Hence if we are committed to saying *Pr*(*p* ∨ ¬*p*) = 1 for all *p*, we must give up the axiom of addition. But the constructivist simply denies that in these cases *Pr*(*p* ∨ ¬*p*) = 1, so there is no counter-example to addition.
+
+[^105]: Again, the discussion in Shafer (1976, chapter 2) is the most obvious example of this, but similar examples abound in the literature.
+
+The final argument for taking a constructivist approach is that it provides a justification for rejecting the arguments of @sec-chap-3. There I provided a new justification for requiring coherent degrees of belief to be representable by the classical probability calculus. The justification, however, simply assumed classical, rather than say intuitionist, logical reasoning was appropriate. The constructivist has a principled reason for rejecting those arguments. The person who adopts a classical propositional logic, but a non-classical probability logic, has not.
+
+## 8.2 The Morgan - Leblanc - Mares Calculus {#the-morgan---leblanc---mares-calculus}
+
+In a series of papers (Morgan and Leblanc (1983a, 1983b), Morgan and Mares (1995)) an approach to probability grounded in intuitionist logic has been developed. The motivation is as follows. A machine contains an unknown set of propositions *S*, which need not be consistent. *Pr*(*A*, *B*) is the maximal price we'd pay for a bet that *S* and *B* intuitionistically entail *A*. By standard Dutch Book arguments, we obtain axioms for a probability calculus which has some claim to being constructivist. The point of this section is to point out the shortcomings of this approach as a theory of uncertain reasoning from evidence. That is, I point out the implausibility of interpreting the axioms they derive as normative constraints on degress of belief.
+
+The axiomatisations given in the 1983 papers differs a little from that given in the 1995 paper, but the criticisms levelled here apply to their common elements. In particular, the following four axioms are in both sets.
+
+(C1) 0 ≤ *Pr*(*A*, *B*) ≤ 1
+
+(C2) *Pr*(*A*, *A* & *B*) = 1
+
+(C3) *Pr*(*A*, *B* & *C*) · *Pr*(*B*, *C*) = *Pr*(*B*, *A* & *C*) · *Pr*(*A*, *C*)
+
+(C4) *Pr*(*A* ⊃ *B*, *C*) = *Pr*(*B*, *A* & *C*)
+
+These four are enough to get both the unwanted consequences. In particular, from these we get the 'no negative evidence' rule: *Pr*(*A*, *B* & *C*) ≥ *Pr*(*A*, *B*). The proof is in Morgan and Mares (1995: 458). Now given the semantic interpretation they have adopted, this is perhaps not so bad. After all, if we can prove *A* from *B* and *S*, we can certainly prove it from *B* & *C* and *S*, but the converse does not hold. However, for the purposes we have adopted it seems a little implausible. In particular, if *C* is ¬*A*, it seems we should have *Pr*(*A*, *B* & ¬*A*) = 0 unless *B* entails *A*, in which case *Pr*(*A*, *B* & ¬*A*) is undefined.
+
+It shouldn't be too surprising that we get odd results given (C4). Lewis (1976) shows that adopting it for a defined connective '→' within the classical probability calculus leads to triviality. And neither the arguments he uses there nor the arguments for some stronger conclusions in Lewis (1986) rely heavily on classical principles. The 1983 papers by Morgan and Leblanc don't discuss this threat, but the 1995 paper takes it seriously. While Morgan and Mares claim to have escaped the threat of triviality, they seem to have done so only by lowering the threshold.
+
+In intuitionist logic we often take the falsum ⊥ as a primitive connective, with ⊥ ⊃ *A* a theorem for any proposition *A*. Hence a set of propositions *S* is consistent iff it doesn't entail ⊥. Now it seems plausible, at least from the perspective we've adopted, to take the following as an axiom.
+
+(C⊥) For consistent *B*, *Pr*(⊥, *B*) = 0.
+
+Given consistent evidence, we have no evidence at all that the falsum is true. Hence we should set the probability of the falsum to 0. Given Morgan and Leblanc's original semantic interpretation there is less motivation for adopting (C⊥), since *S* might be inconsistent. The restriction to consistent *B* in (C⊥) is because I take *Pr*(*A*, *B*) to be undefined for inconsistent *B*. Morgan, Leblanc and Mares take it to be set at 1. The choice here is a little arbitrary, the only decisive factor seems to be what makes for easier statement of theorems. Intuitionistically, ¬ is often introduced as a defined connective, as follows.
+
+¬*A* =~df~ *A* ⊃ ⊥
+
+Assuming *A* & *B* is consistent, it follows from (C4) and (C⊥) that *Pr*(¬*A*, *B*) = 0. Again, from my perspective this is an implausible result. The main purpose of this section has been to show that the Morgan - Leblanc - Mares probability calculus cannot do the work I am wanting a probability calculus to do. That is, it is implausible to regard their *Pr*(*A*, *B*) as the reasonable degree of belief in *A* given *B*. Hence the logic they have developed cannot be the constructivist one that I argued in section 1 heterodox theorists should endorse.
+
+## 8.3 Developing a Constructivist Probability Calculus {#developing-a-constructivist-probability-calculus}
+
+The principle motivation for constructivist approaches to probability was a form of verificationism. This should be reflected in a constructivist interpretation of probability sentences, and indeed of sentences about degrees of belief. On a classical approach I interpreted *Bel*(*A*) = 1/2 as meaning the agent has the same degree of belief in *A* as they have in a fair coin landing heads if tossed. On the constructivist approach I interpret *Bel*(*A*) = 1/2 as meaning that the agent has as much evidence for *A* as they have for the proposition 'The coin will land heads'. There is a difference between the epistemic attitude they take towards *A* and the attitude they take to the coin toss. More evidence could come in for *A* in the sense that they could (at least in some cases) become more confident in *A* without becoming less confident in its negation. In the case of the coin this is not possible. Any evidence for *A*, like seeing the coin, or hearing someone say, "The coin landed heads" will be evidence against ¬*A*.
+
+This difference with the classical approach is reflected in how I model probabilistic beliefs. In the classical approach I required that if *Bel*(*A*) = 1/2 then there were dummy propositions *p*~1~, *p*~2~ such that *A*  *p*~1~ is an element of the model, as is ¬*A*  *p*~2~. I then imposed further conditions reflecting the fact that *p*~1~ and *p*~2~ are modelling exclusive, exhaustive and equally probable propositions. In fact, given these conditions, we can deduce ¬*A*  *p*~2~ from *A*  *p*~1~, and hence it follows that if *Bel*(*A*) = 1/2 then also *Bel*(¬*A*) = 1/2. Since this is not a result constructively that is wanted, I need to change something. The considerations of the previous paragraph suggest that I shouldn't require *A*  *p*~1~ to hold in the model. Rather I should just require *p*~1~ ⊃ *A*. This is interpreted as meaning that for any evidence we have for *p*~1~ there is matching evidence for *A*, but there might be more evidence for *A* to come.
+
+To ease the exposition, I'll simply define a constructivist probability function at this stage as any function from sentences to reals satisfying the following three axioms, with the justification of this description coming later.
+
+(CP1) 0 = *Pr*(⊥) ≤ *Pr*(*A*) ≤ *Pr*(*A* ⊃ *A*) = 1
+
+(CP2) If *A*  *B* then *Pr*(*A*) ≤ *Pr*(*B*)
+
+(CP3) *Pr*(*A*) + *Pr*(*B*) = *Pr*(*A* ∨ *B*) + *Pr*(*A* & *B*)
+
+In Appendix 8A I show that any epistemic state which is coherent under the above definition of degrees of belief must be representable by a constructivist probability function. Under the simplifying assumption that all degrees of belief are rational numbers, the proofs are entirely constructive; however, in the general case where we just assume degrees of belief are real numbers I can't get all the results constructively.
+
+The entailment here in (CP2) is read intuitionistically. As noted already, these axioms take probability to be a function from sentences to numbers, whereas, in the classical case, the domain of the function was a set of propositions. That equivalent sentences have the same probability is a theorem we quickly derive from (CP2). Given that, the axioms as stated are just about independent. (Once we have 0 = *Pr*(⊥) and *Pr*(*A* ⊃ *A*) = 1 the rest of (CP1) follows from (CP2)). In particular, (CP3) is not entailed by the axiom of addition along with (CP1) and (CP2), as it is classically, although the axiom of addition does follow from (CP3) and (CP1).
+
+## 8.4 Kripke Trees {#kripke-trees}
+
+Classically, probability theory is just a special case of measure theory. A probability function is a normalised measure over a possibility space. Indeed, a function is a probability function iff it can be expressed as a normalised measure over a possibility space. It would be convenient for technical purposes if we could find a similar way of characterising constructivist probability functions. An attempt to do this will be made here, but it isn't yet a totally successful attempt. A measure-theoretic account of constructivist probability functions will be developed which is sound with respect to the axioms given above, but I have no proof that it is complete. That is, any function which can be expressed as a measure of the type I am discussing is a constructivist probability function, but I don't have a proof that all constructivist probability functions can be so expressed.
+
+There is still I hope some interest in this measure-theoretic approach. First, it might be subsequently proven that the semantics provided here are complete with respect to the axioms set out above. Secondly, if it turns out not to be complete, we can always add more axioms to make it complete. And if this happens we might have some reason for thinking that the new axioms are justified. That is, the measure-theoretic semantics might give us a clearer guide as to what should be the coherence constraints on reasonable belief.
+
+I ought to clarify the direction of the argument here. As in the classical approach, I take the definition of quantitative credences to be basic. Whatever coherence constraints there are on credences should be justified in terms of these definitions. In the previous section, I noted that the three axioms could be so justified. The measure-theoretic account given here is a different attempt to capture the class of coherent functions. To the extent that this approach follows the definitions more closely, the coherence constraints derivable from it seem plausible candidates for real normative constraints on rational agents.
+
+In Kripke (1965), a semantics for intuitionist propositional and predicate logic is developed. I'm only interested here in the semantics for propositional logic. The semantics is similar in some ways to the semantics he had earlier developed for classical modal logic. The semantics is based around what are now know as Kripke trees. These are partially ordered sets with a certain type of valuation on them. It is a little misleading to think of the elements of the sets as possible worlds, and the valuations as saying what is true and false at these worlds. This is misleading because the notion of truth at a world employed in this interpretation is non-constructive.
+
+A better (though still perhaps not entirely accurate) interpretation is to say that elements of the set (what we'll call *nodes*) are knowledge states. So the valuation assigns to each node the set of propositions discovered by that time. We don't say that propositions not discovered by that node are not true there, unless we know that we will not discover the proposition to be true at any later node. The formal definitions are as follows[^106]:
+
+[^106]: The setting out here follows closely Troelstra and Van Dalen (1987: 75-78).
+
+A Kripke tree for a propositional language (i.e. set of proposition letters) L is a triple (K, ≤, ) where (K, ≤) is an inhabited[^107] partially ordered set and is a subset of K × L such that:
+
+[^107]: Constructively, saying that a set has elements, is inhabited, is stronger than merely saying it is non-empty.
+
+\(1\) *k*, *k*´ ∈ K, if *k*  *p* and *k*´ ≥ *k* then *k*´  *p*
+
+We read *k*  *p* as *k* forces *p*. We extend to compounds by the following definitions.
+
+K1 *k*  *A* & *B* iff *k*  *A* and *k*  *B*
+
+K2 *k*  *A* ∨ *B* iff *k*  *A* or *k*  *B*
+
+K3 *k*  *A* → *B* iff for all *k*´ ≥ *k* if *k*´  *A* then *k*´  *B*
+
+K4 not *k*  ⊥
+
+We then introduce ¬ as a defined connective, ¬*A* =~df~ *A* ⊃ ⊥. If we interpret *k*´ ≥ *k* as *k*´ is subsequent to *k* then (1) implies that whatever is discovered is not forgotten. (1), K3 and K4 imply that we only discover ¬*A* when we know that we won't ever discover *A*. K2 implies that we can only discover a disjunct by discovering one or other disjunct. The following tree shows how we can discover ¬¬*A* at a node without discovering *A* at that node.
+
+![](media/image9.emf)
+
+At node 0 we have not discovered *A*. However, we do know that whenever we discover ¬*A* we'll discover ⊥. This follows from the fact that we know we'll never discover ¬*A*. So node 0 forces ¬¬*A* without forcing *A*. So at 0 neither ¬¬*A* ⊃ *A* nor *A* ∨ ¬*A* are forced.
+
+The following example shows that ¬*A* ∨ ¬¬*A* is not forced at all nodes. At node 2 we have not discovered *A* and there are no subsequent nodes, so we know we won't discover *A*. Hence 2  ¬*A*. So we don't have 0  ¬*A*. And since 1  *A*, we don't have 0  ¬¬*A*. Hence we don't have 0  ¬*A* ∨ ¬¬*A*.
+
+![](media/image10.emf)
+
+Kripke models are important because for every sequent which is not intuitionistically valid there is a Kripke model with a node which forces all the premises but which does not force the conclusion. The original proof of this in Kripke (1965) was non-constructive; however, it has subsequently been constructively proven. None of this is at all new to readers familiar with intuitionist logic. However, since at least part of the purpose of this chapter is to promote constructivist approaches to theorists presumably unfamiliar with them, a small background is probably in order.
+
+With the Kripke trees, we can develop a measure-theoretic semantics for constructivist probability. In short, a constructivist probability function is a normalised measure on a Kripke tree. This needs some explaining and some justifying; the explaining first.
+
+Strictly speaking, since Kripke trees can be uncountably large, we need to be more precise than just saying a measure is placed on the tree. Rather, for any tree (K, ≤, ) and language L we must first define a field F of subsets of K as follows. For any sentence *A* of L, define K~*A*~ to be the set of nodes of K which force *A*. (Languages, by the way, are customarily taken to have only a denumerable number of sentence letters in them. I'll follow this convention here. From this it follows there are only denumerably many finite sentences of L.) Let F be the smallest set of subsets of K which includes K~*A*~ for every sentence *A*, and is closed under complementation, finite[^108] intersection and union.
+
+[^108]: The definition of F could be extended to ensure it is closed under countable intersection and union, and similarly the definition of measure to ensure it is countably additive. This would of course ensure that an axiom stronger than (CP3) was needed. Since constructive approaches were developed out of a desire to remove completed infinities from theory, perhaps this would be a mistake, but I don't intend to go into this question here.
+
+Now define a measure *m* on F to be any function onto reals satisfying the following rules. (*D* and *E* are arbitrary elements of F. )
+
+(m1) *m*(∅) = 0 ≤ *m*(*D*) ≤ 1 = *m*(K)
+
+(m2) If *D* ∩ *E* = ∅ then *m*(*D*) + *m*(*E*) = *m*(*D* ∪ *E*)
+
+I then define a constructivist probability function as *Pr*(*A*) = *m*(K~*A*~) for any sentence *A*. A non-constructive proof that probability functions so defined will satisfy the CP-axioms can be easily given. The proof requires the assumption that for any node *k*, *k* ∈ K~*A*~ or *k* ∉ K~*A*~, equivalently that *k* either forces or doesn't force *A*. I could perhaps fix this problem by insisting that the trees be finite. (Intuitionist logic is complete with respect to finite Kripke trees.) However, that would generate problems of its own. For example, there ought be at least one probability function with *Pr*(*q*~i~) = 1/i for all i, yet this would be ruled out if we said all probability functions were measures on finite trees.
+
+If I weakened (CP3) to just say that, when *A* and *B* are provably disjoint, the probability of their disjunction is the sum of their probabilities, then I can give a constructive proof that all probability functions defined by a measure will satisfy the axioms. However, there appear to be good reasons (from the definition of degrees of belief) to insist on the stronger axiom. Perhaps the best solution here is to stipulate that is decidable by definition. The justification is that the nodes are not real states but rather representation of states of inquiry. That is, the nodes are individuated by what will be known at each node. Hence we should be able to tell, by virtue of the fact that we can individuate the nodes, what will be known there. An alternative solution is to allow that the metatheory is classical, but I am aiming here to do as much as possible constructively.
+
+So assuming is decidable, I'll quickly list the proofs that all the probability functions defined in this way satisfy the CP-axioms. Since K~⊥~ = ∅, and *m*(∅) = 0, *Pr*(⊥) = 0. Similarly K~*A* ⊃ *A*~ = K, so *Pr*(*A* ⊃ *A*) = *m*(K) = 1. For any *A*, *m*(K~*A*~) ∈ \[0, 1\], hence *Pr*(*A*) ∈ \[0, 1\]. This proves (CP1).
+
+Assume *A*  *B*. Hence K~*A*~ ⊆ K~*B*~. So K~*B*~ = K~*A*~ ∪ (K~*B*~ ∩ K~*A*~^c^ ). Since *m*(K~*B*~ ∩ K~*A*~^c^ ) ≥ 0, and *m*(K~*B*~) = *m*(K~*A*~) + *m*(K~*B*~ ∩ K~*A*~^c^ ), *m*(K~*B*~) ≥ *m*(K~*A*~). Hence *Pr*(*B*) ≥ *Pr*(*A*), proving (CP2). The proof here would be non-constructive if I wasn't assuming is decidable, but this could be fixed if I added to the definition of measure that no subset has greater measure than its superset.
+
+Finally, K~*A* & *B*~ = K~*A*~ ∩ K~*B*~, and K~*A* ∨ *B*~ = K~*A*~ ∩ K~*B*~ by the definition of Kripke trees, so by (m2) it follows that *m*(K~*A* & *B*~) + *m*(K~*A* ∨ *B*~) = *m*(K~*A*~) + *m*(K~*B*~). From this (CP3) follows trivially. This requires that K~*A*~ = (K~*A*~ ∩ K~*B*~) ∪ (K~*A*~ ∩ K~*B*~^c^), which wouldn't be a legitimate assumption constructively unless I had assumed is decidable.
+
+Why might we think that such measures are representations of reasonable epistemic states? In contrast to the classical case, it doesn't make a lot of sense to regard the measure of individual nodes as particularly meaningful. Rather, the figure relevant to each node is the measure of its descendants. For simplicity, define *m*´(*k*) = *m*({*k*´: *k*´ ≥ *k*})[^109]. This is the probability that we will reach this node in our explorations; that we will discover all the propositions which are forced by this node. This second level probability behaves classically. Note that all classical probability functions are constructivist probability functions, but that the converse is not the case.
+
+[^109]: This might not be defined in some cases. Whenever a set of nodes *D* is not an element of F we can approximate its measure above as the lower bound on {*m*(*E*): *E* ⊃ *D*} and below as the upper bound on {*m*(*E*): *E* ⊃ *D*}.
+
+The intuitive justification for the measure theoretic semantics is that as we acquire evidence for a proposition, we increase the probability that we will discover that proposition to be true. When we have little evidence for a proposition, the claim is that we don't have much likelihood of discovering it to be true. This does require a rather generous interpretation of evidence; a method for discovering whether or not *p* is true counts as evidence both for and against *p* because it increases the likelihood of discovering *p* and discovering ¬*p*. Such an interpretation is quite natural constructively, but doesn't make a lot of sense classically. So a motivation for the measure theoretic approach can be found within the definition of numerical credences, which as I said above remains the core test.
+
+## 8.5 Intuitionist Probability {#intuitionist-probability}
+
+A constructivist probability function can satisfy *Pr*(*A* ∨ *B*) = 1 without satisfying *Pr*(*A*) = 1 or *Pr*(*B*) = 1. To the extent that the assertibility of a proposition is given by its having probability 1, this means that an agent can assert disjunctions without being able to assert either disjunct. Since the denial of this possibility is sometimes taken to be a distinctively intuitionist claim, it seems constructivist probability functions are not intuitionistically acceptable. It seems that it would be more acceptable from this approach to use a probability calculus based, say, on fuzzy logic, such that the probability of a disjunction is the higher of the probabilities of the two disjuncts.
+
+We don't need to be so radical. The intuitionist probability functions can be defined as those constructivist probability functions that satisfy the following axiom, (again *A* and *B* range over all propositions):
+
+(CP4) If *Pr*(*A* ∨ *B*) = 1 then *Pr*(*A*) = 1 or *Pr*(*B*) = 1.
+
+I mentioned above that all classical probability functions were constructivist probability functions. However, they will not, in general, be intuitionist probability functions. Indeed, by letting *B* be ¬*A*, the only classical probability functions which will satisfy (CP4) are those that set *Pr*(*A*) = 0 or 1 for all propositions; what Lewis calls 'opinionated functions'.
+
+It's non-trivial to specify necessary and sufficient conditions on measures such that they satisfy (CP4)[^110]. One clearly sufficient condition (which has some independent motivation) is the following. Say a Kripke tree (K, ≤, ) is grounded iff there is a *k*~g~ ∈ K such that for all *k*´ ∈ K, *k*´ ≥ *k*~g~. Then a sufficient condition for (CP4) is that *m*(*k*~g~) \> 0. If this is the case then the only propositions which receive probability 1 will be those which are forced by every node, and this can't be true of a disjunction unless it is true of one or other disjunct.
+
+[^110]: Part of the difficulty is the role of . Usually if we were trying to find necessary conditions for a condition like this we would try to find conditions on triples (K, ≤, *m*) such that for any , (CP4) is satisfied. So, as in the case of the sufficient condition given in the text, the answer will be independent of . And this simplifies the theoretical task; a proposed condition is shown to be is necessary by finding a such that a breach of that condition combined with that valuation will lead to a breach of (CP4). But when is fixed this can't be done. And since *m* is defined in part in terms of , it doesn't make sense to let the valuation vary as the measure stays constant.
+
+I don't want to say that rational agents ought to have their degrees of belief be intuitionist probability functions; (CP4) is, for reasons I'll set out soon, an unreasonable constraint. The only reason I bring it up is to consider this condition on Kripke trees. I claim that it is reasonable to insist that the trees are grounded, but it is unreasonable to require the ground to have positive measure. This restriction is important, as we'll see below, for the interpretation of conditionalisation in this theory.
+
+The nodes represent possible states of knowledge. The paths through the tree represent possible chains of discoveries. But all these possible real-world paths have a common starting point, what we now know. Hence all the paths in the tree should have a common starting point, and hence be grounded.
+
+This doesn't impose any new axioms. To see this, note that we can easily turn an ungrounded tree (K, ≤, ) into a grounded one (K´, ≤´, ´) in the following way:
+
+K´ = K ∪ {*k*~g~}
+
+*k* ≤´ *l* iff *k* ≤ *l* or *k* = *k*~g~
+
+*k* ´ *A* iff *k*  *A* or *k* = *k*~g~ and *l* ∈ K: *l*  *A*
+
+By putting the same measure on (K´, ≤´, ´) as we put on (K, ≤, ) we can recover the same probability function from a grounded tree that we originally had. So any probability function which can be expressed as a measure on an ungrounded tree can be expressed as a measure on a grounded tree.
+
+The above construction relied on the acceptability of giving the ground measure 0. This can lead to breaches of (CP4). However, these seem perfectly acceptable. To simplify, we'll consider whether it can ever be reasonable to give probability 1 to *A* ∨ ¬*A* without giving probability 1 to either *A* or to ¬*A*. Knowing *A* ∨ ¬*A* is constructively equivalent to knowing *A* is decidable in principle. And this is weaker than knowing which of these is true. For example, it is constructively acceptable to say that a certain large number, say 5691364391 is either prime or not prime without being able to say which, simply because we know that there is a way of finding out which is true.
+
+So we only can't assert *A* ∨ ¬*A* when we don't have evidence to say that *A* will be decidable in principle. It is, however, a little difficult in practice to know how to apply this. The constructivist rules for assertibility were developed with specific applicability to mathematics, and there we have a much tighter definition of 'in principle' than in the real world. To take a simple example, should we say it's decidable 'in principle' whether a Democrat will win the 2200 U.S. Presidency. No one reading this will, I presume, ever know whether this is true. So ought it count as something undecidable? More importantly, can we come up with a rule which determines what is and isn't decidable in principle?
+
+The main reason this is important is that the reductive definition of quantitative degrees of belief only makes sense if it is assumed that lotteries, or at least dummy lotteries, are decidable. I assumed implicitly that one could assign probability 1 to the proposition *Some ticket will win* without assigning probability 1 (indeed while assigning probability 1/*n*) to any proposition of the form *This ticket will win*. So the definition of decidability has to be set so that these lotteries are decidable, but arbitrary future events need not be.
+
+The best way out of this, I think, is to amend the definition of the dummy lotteries. These were already a little fanciful because we assumed the agent knew them to be fair. Let's add the extra assumption that the agent knows them to be fair and decidable. That is, the agent knows that they will, shortly, know the result of the lottery. I can then take a rather strict stance on what is decidable in the real world. In particular any proposition about the unobserved, be it past, present or future unobserved, is not known to be decidable. I am using 'observed' in an odd way here because we can on this usage observe any decidable mathematical proposition. We can observe that is, whatever Brouwer's ideal mathematician could observe.
+
+Despite this restrictive use of decidability in relation to real world events, I leave open the possibility that we can coherently stipulate a proposition to be known to be decidable without it being known whether the proposition is true or false. This is important for getting a reductive definition of quantitative degrees of belief, without which we cannot develop a probability calculus. So even if there aren't any falsifying instances of (CP4) in the real world (that is, if a rational agent in the real world never believes a disjunction to degree 1 without believing one or other disjunct to degree 1) it oughtn't to be a general normative requirement.
+
+## 8.6 Updating {#updating-1}
+
+There are several problems with accurately capturing updating within the constructivist probability calculus. Some of these can be attributed to the fact that updating, as it is usually discussed within the classical literature, essentially uses non-constructive language. Thus, in part, the difficulties we discover can be attributed to the non-constructive character of updating rules. However, it isn't clear that they all can be so avoided, and the impossibility of finding a fully justified updating rule within the constructivist approach to probability should count against it to some degree.
+
+To see the problem, just consider a simple example. Say an agent has degree of belief 1/3 in *A* and 1/3 in ¬*A*. It is as if we have an urn with *n* red marbles, *n* black marbles and *n* white marbles, from which we know one will be drawn at random. The agent has as much evidence that *A* as she has that a black marble will be drawn, and as much evidence that ¬*A* as that a white marble will be drawn. So we develop a fiction in which the drawing determines what really happens; if a white marble is drawn, ¬*A* happens; if a black marble is drawn, *A* happens; and we don't have the evidence to say what happens if a red marble is drawn.
+
+Classically, discovering *A* was taken to have the same effect as discovering a black marble will be drawn. However, it isn't clear why this should hold constructively. After all, the agent doesn't know (even in the fictional model) that the only way for *A* to be true is that a black marble be drawn. The drawing of a black marble is a sufficient but unnecessary condition for *A*. So should we treat a discovery that *A* as being equivalent to finding out that a white marble will not be drawn?
+
+No, and for two reasons. This would seem to have the consequence of saying *Pr*(*B* \| *A*) = *Pr*(*A* & *B*) / 1 ‑ *Pr*(¬*A*), which would imply that in general *Pr*(*A* \| *A*) 1. If we just add to the above evidence the knowledge that a white marble won't be drawn, we don't have any reason to be certain that *A* will happen. A red marble might mean that *A* happens, but it might not. Since *Pr*(*A* \| *A*) = 1 looks like a pretty good candidate axiom, more care is needed with the semantics.
+
+Secondly, problems arise if we know something about the red marbles. Say we know that half the black marbles and half the red marbles are *B* marbles (i.e. if they are drawn, *B* will happen). And we know the other half of the red and black marbles are ¬*B* marbles. By the above formulae *Pr*(*B* \| *A*) = 1/4, which seems absurdly low, the same way that *Pr*(*A* \| *A*) = 1/2 seemed low. However, there isn't a particularly easy way to fix this problem.
+
+The difficulty is that it seems *Pr*(*B* \| *A*) should be set as the greatest lower bound of the possible ratio of *B* marbles left to total marbles left, after taking this new evidence into account. We know that all the white marbles have been removed, but we don't know what has happened to the red marbles. We can fix the problem for determining *Pr*(*A* \| *A*) by saying we know that all the red marbles which really were ¬*A* marbles have been removed, hence the ratio of *A* marbles to total marbles must be 1. However, for *Pr*(*B* \| *A*) the situation is more complicated. There is the possibility that all the red marbles which are *B* marbles are also ¬*A* marbles. So in the worst case scenario, there are *n* black marbles left, half of which imply *B* and half of which imply ¬*B*, and *n* / 2 red marbles left, all of which imply ¬*B*. So only 1/3 of the remaining marbles are *B* marbles. Hence *Pr*(*B* \| *A*) = 1/3. Similar reasoning shows that *Pr*(¬*B* \| *A*) = 1/3. However, whatever happens to the red marbles, we know they all imply *B* ∨ ¬*B*. So *Pr*(*B* ∨ ¬*B* \| *A*) = 1. Hence *Pr*( • \| *A*) is not a constructivist probability function.
+
+The only way to get out of this problem is to define *Pr*(*B* \| *A*) using Bayes's rule, however hard it is to give a constructivist justification of this using the same approach we used in @sec-chap-3 for the classical justification of it. We might be able to get a better motivation using the Kripke trees discussed in section 4. The nodes in a Kripke tree were interpreted to be possible states of knowledge. If we discover *A* we must, therefore, move to one of the nodes at which *A* has been discovered. So if we amend the tree by eliminating all those nodes at which *A* is not forced and re-normalise the measure by multiplying through by a constant, we will have a plausible updated tree. And the updated measure of K~*B*~, i.e. the updated probability of *B*, will be given by Bayes's rule.
+
+There are some problems too with this approach. The first is that it isn't clear why we should re-normalise in this approach. We could re-normalise by something akin to imaging, moving the measure from the deleted nodes to the nearest undeleted nodes. There's no reason why we should do things this way, but on the other hand I can't see a knock-down argument as to why we shouldn't.
+
+The second is that the updated tree will not necessarily be grounded. This is connected to the problem I mentioned above that updating might not be a constructively acceptable concept. Again, it's simpler to see what's going on in the non-probabilistic case. The following sequent is not constructively valid.
+
+*A* ⊃ (*B* ∨ *C*)  *A* ⊃ *B* ∨ *A* ⊃ *C*
+
+This follows from the constructive interpretation of ⊃. There, *A* ⊃ *B* is interpreted as meaning there is a construction which transforms every proof of *A* into a proof of *B*. The above sequent fails because there might be a construction which transforms every proof of *A* into either a proof of *B* or a proof of *C*, but the transformation takes some proofs of *A* into proofs of *B* and some into proofs of *C*.
+
+So we can imagine a rational agent who believes *p* ⊃ (*q* ∨ *r*) without believing either *p* ⊃ *q* or *p* ⊃ *r*. Assume that this agent follows the intuitionist rule of never believing a disjunction without believing one or other disjunct. And assume too that the agent follows the plausible updating rule of coming to believe *B* iff there is some *A* such that they believe *A* ⊃ *B* and discover *A*. What should the agent do upon discovering only that *p* is true? At first it looks like they should come to believe *q* ∨ *r* without believing either disjunct. But this is misleading, for we cannot say constructively that they only discover *p*. When they discover *p* they must discover it by some process. And that process will either be one which is also a discovery of *q* or is also a discovery or *r*. So they will come to believe one of *q* and *r*, but without knowing how they have discovered *p* we can't know which one.
+
+The point of the story is that just saying that an agent discovers a certain proposition to be true without specifying a process of discovery is not constructively acceptable. In the probabilistic case, if the agent updates with respect to any full process of discovery they will, presumably, move to a certain node in the Kripke tree, and hence the updated tree will be grounded. Having our agents update on a proposition without a discovery process is not constructively acceptable.
+
+In sum, the only plausible constructivist updating rule is Bayes's rule. It isn't obvious that this can be justified, implying that there might be no justifiable updating rule. However, this mightn't be a problem if the constructivist can argue that they should not be required to produce an updating rule because such rules use non-constructive language. It doesn't make sense, goes the objection, to ask what a rational agent would do if they had discovered *A* but had no process of discovering *A*. On the other hand if they do have a process of discovery they have more information than just *A*, and this should be used too, and in these cases Bayes's rule seems unproblematic.
+
+## 8.7 Objections {#objections}
+
+Despite my promotion of the constructivist approach in the previous section, it is not the approach which I am endorsing in this dissertation. As mentioned above, it is a good candidate for the second best approach to representing rational states of uncertainty. The advantage it enjoys over the precise classical approach is that it has a way of representing complete ignorance. And this, I think, is a large advantage. So I think going constructivist would be a forward step for theorists who object to the classical approach, even in its imprecise form as advocated throughout this dissertation. There are, though, good objections to be raised. I suspect none of these will be good *ad hominen* arguments; they involve, on the whole, rejecting the constructivist program rather than specifically showing there to be flaws in the constructivist approach to probability.
+
+The first type of objection rests on simply rejecting the philosophical motivation. The motivations I mentioned above were verificationism and anti-realism. But neither of these seem at all attractive as philosophical theories. The defeat of verificationism is one of the great successes of twentieth-century philosophy. And while the realism / anti-realism debate has some life left in it, the kind of anti-realism needed to motivate this approach to probability seems much too far fetched.
+
+I used Shackle's anti-realism about the future to motivate a constructivist approach. And if we're anti-realist about the future we can reasonably have degrees of belief in statements about the future, say *A*, such that *Bel*(*A*) + *Bel*(¬*A*) \< 1. However, if this is plausible for statements about the future it seems just as plausible for statements about the past. There is little justification for requiring agents' degrees of belief about past-directed statements to be a classical probability function. Hence, to motivate a general constructivist approach we have to give up not only realism about the future, but realism about the past. And that just seems implausible.
+
+The second type of objection turns on the plausibility of classical standards of validity. That is, despite all that has been said above, it does seem we can assert *A* ∨ ¬*A* for any proposition *A* on any evidence whatsoever. Equivalently, we can assert if ¬¬*A* then *A* for any *A* again on any evidence. As an objection this is fairly question-begging; it is much like those occasions where someone claims they can show their opponent is wrong by simply stating their opponent's position loudly and clearly and exclaiming, "No one could believe that!" Still, sometimes it is worth doing. And in fundamental questions, where there is disagreement even about what counts as a conclusive argument, it will be difficult to get arguments which at the end of the day aren't question begging.
+
+Ramsey, in *Mathematical Logic* (1926b), thought he could dismiss intuitionism on this ground, and the extent of his argument was little more than a quote from Lewis Carroll.
+
+> "It's very long," said the Knight, "but it's very *very* beautiful. Everybody that hears me sing it -- either it brings the *tears* into their eyes, or else --". "Or else what?" said Alice, for the Knight had made a sudden pause. "Or else it doesn't, you know." (Carroll, 1871, 306)
+
+Ramsey of course had a conversion to intuitionism (not quite on his death-bed, but in the last year or so of his life), so perhaps arguments founded on Carroll's jokes are not too secure. For many, it's just a Moorean fact that sentences *A* ∨ ¬*A* are all true. Now Moorean facts come in many varieties; some aren't even facts. There is perhaps a scale with "Moore had two hands" at one end, and "A set has more elements than any of its proper subsets" at the other. Every claim on the scale is *prima facie* plausible. Somewhere down the line the claims stop being acceptable without argument; presumably, this is a little before they stop being true.
+
+There is a slightly less question-begging approach. It is well known that we cannot conservatively add a classical negation operator to constructivist logic. Assume we have a constructivist propositional logic, with ¬ as the negation operator. Then *A* ∨ ¬*A* is not a theorem. However, if we added a classical negation operator \~, so that we had \~\~*A* ⊃ *A*, and (*A* ⊃ ⊥) ⊃ \~*A*, we would be able to prove not only *A* ∨ \~*A*, (as we want) but *A* ∨ ¬*A*, which isn't wanted. Hence constructivists have to say that the classical interpretation of the connectives is "unintelligible" (Dummett 1977, 11) that they do not understand what the classical connectives mean. But this last claim beggars belief. When we look at the work constructivists have done in classical logic and mathematics it is perfectly clear they do understand the connectives, perhaps better than most of their opponents.
+
+I don't expect any of the above to change anyone's position. It is more a statement of why I don't think a constructivist approach ought, in the end, to be adopted, rather than an argument against it. The only argument for this which isn't question-begging is the difficulty constructivist approaches have in dealing with updating. Even here, there is the possibility of an argument that this would be an unfair requirement. So arguably what we have here are differing approaches which are each internally coherent and which are effectively immune to external challenge. This wouldn't be a disastrous result; if it were true, my preference for a classical approach would be just a matter of taste, and the theory developed in this chapter provides a useful alternative for those with different tastes.
+
+## Appendix 8A Proof of Soundness of the Axioms {#appendix-8a-proof-of-soundness-of-the-axioms}
+
+This appendix formally sets out the constructivist definition of degrees of belief, and proves that this definition entails that (CP1), (CP2) and (CP3) are coherence constraints on degrees of belief.
+
+Let *Bel*(*A*) be a function from sentences to the degrees of belief on an agent. Let Γ be a finite set of sentences, closed under negation, conjunction and disjunction, such that for all *A* in Γ, *Bel*(*A*) is rational, and *y* be the lowest common denominator of the values *Bel*(*A*) takes. Let *P* be the set of dummy propositions {*p*~1~, ..., *p~y~*}, which are defined such that the agent has no beliefs about any of the *p*~i~. In the classical case I could make this last condition strict; here, I need to employ a primitive notion of disconnectedness.
+
+The agent's beliefs about Γ are coherent iff they can be modelled by K^\*^, which is a set of sentences closed under (intuitionist) entailment, and satisfies the following conditions:
+
+\(1\) For all *A*, *x*, *Bel*(*A*) ≥ *x / y* iff ∃*S*: (*S* ⊆ *P* & \|*S*\| = *x* & (*S* ⊃ *A* ∈ K^\*^))
+
+\(2\) For all *S* ⊂ *P*, *S* ∉ K^\*^
+
+\(3\) *P* ∈ K^\*^
+
+\(4\) For all i, j ¬(*p*~i~ & *p*~j~) ∈ K^\*^
+
+\(5\) For all i, *A*, *B* if (*p*~i~ ⊃ *A* ∨ *p*~i~ ⊃ *B*) ∈ K^\*^ then *p*~i~ ⊃ *A* ∈ K^\*^ or *p*~i~ ⊃ *B* ∈ K^\*^
+
+As in the earlier account, for simplicity I sometimes identify a set with the disjunction of its elements. From (3) and (4) it follows that, for all i, *p*~i~ ∨ ¬*p*~i~ ∈ K^\*^, a fact I use in some of the proofs below. The justification of (5) is the constructive construal of disjunction. The idea is that we can't be able to say in the model that we either have evidence for *A* or for *B* without being able to say one or the other. The aim now is to prove that if *Bel* can be modelled by K^\*^ satisfying (1) to (4), it must be a constructivist probability function, that is it must satisfy (CP1) to (CP3).
+
+I have assumed that *Bel*(*A*) is a rational number whose denominator is a factor of *y*. Hence there are only finitely many values *Bel*(*A*) can take; *y* + 1 to be precise. We also know that it takes at least one value (we'll prove soon it takes at most one). So if we can prove that *Bel*(*A*) is not equal to *y* of these possible values, we will have proven that it must equal the other one. This insight allows us to use *reductio* arguments that are not in general constructively acceptable.
+
+Assume *Bel*(⊥) \> 0, so *Bel*(⊥) ≥ 1/*y*. Hence there is a *p*~i~ such that *p*~i~ ⊃ ⊥ ∈ K^\*^. Since this is the same as ¬*p*~i~ ∈ K^\*^, and since *P* ∈ K^\*^, it follows by disjunctive syllogism that *P* / {*p*~i~} ∈ K^\*^, contradicting (2). As *Bel*(⊥) must take some value, this implies it must be zero.
+
+As *A* ⊃ *A* is a theorem, so is *P* ⊃ (*A* ⊃ *A*). As K^\*^ is closed under entailment, *P* ⊃ (*A* ⊃ *A*) ∈ K^\*^. So by (1) *Bel*(*A* ⊃ *A*) = 1.
+
+Assume *A*  *B*. So *A* ⊃ *B* is a theorem, and hence is in K^\*^. Assume *Bel*(*A*) = *x / y*. So there is an *S* of size *x* such that *S* ⊃ *A* ∈ K^\*^. By *modus ponens*, this implies *S* ⊃ *B* ∈ K^\*^. So *Bel*(*B*) ≥ *x / y* = *Bel*(*A*). This proves (CP2), and as ⊥ *A* *A* ⊃ *A*, this completes the proof of (CP1).
+
+The proof of (CP3) meets one early difficulty. The following classically valid inference is not intuitionistically valid.
+
+*p*~i~ ⊃ (*A* ∨ *B*)  *p*~i~ ⊃ *A* ∨ *p*~i~ ⊃ *B*
+
+So I can't say straight away that evidence for *A* ∨ *B* is evidence for *A* or evidence for *B*. However, the following is valid.
+
+*p*~i~ ⊃ (*A* ∨ *B*), *p*~i~ ∨ ¬*p*~i~  *p*~i~ ⊃ *A* ∨ *p*~i~ ⊃ *B*
+
+Since I already have *p*~i~ ∨ ¬*p*~i~, the inference goes through. So if *p*~i~ ⊃ (*A* ∨ *B*) ∈ K^\*^, then *p*~i~ ⊃ *A* ∨ *p*~i~ ⊃ *B* ∈ K^\*^, and hence by (5) *p*~i~ ⊃ *A* ∈ K^\*^ or *p*~i~ ⊃ *B* ∈ K^\*^. Assume *Bel*(*A* ∨ *B*) = *x / y*, and *S* ⊃ (*A* ∨ *B*) ∈ K^\*^, with \|*S*\| = *x*. Then for all *p*~i~ in *S*, *p*~i~ ⊃ *A* ∈ K^\*^ or *p*~i~ ⊃ *B* ∈ K^\*^. For all *p*~i~ not in *S*, *p*~i~ ⊃ *A* ∨ *B* cannot be in K^\*^ or else (1) would be breached.
+
+Let *S~A~* be the set of *p*~i~ such that *p*~i~ ∈ *S* and *p*~i~ ⊃ *A* ∈ K^\*^, with *S~B~* defined similarly. Since *S~A~* is the largest subset *S*´ of *P* such that *S*´ ⊃ *A* ∈ K^\*^, so *Bel*(*A*) = \|*S~A~*\| / *y*. Similarly *Bel*(*B*) = \|*S~B~*\| / *y*. Further (*S~A~* ∩ *S~B~*) ⊃ (*A* & *B*) ∈ K^\*^, and this will not be the case for any larger set, again because if it were (1) would be breached. So *Bel*(*A* & *B*) = \|*S~A~* ∩ *S~B~*\| / *y*. Finally, because of the results of the last paragraph, *S* = *S~A~* ∪ *S~B~*, so *Bel*(*A* ∨ *B*) = \|*S~A~* ∪ *S~B~*\| / *y*. In general, for finite decidable sets, \|*S~A~*\| + \|*S~B~*\| = \|*S~A~* ∪ *S~B~*\| + \|*S~A~* ∩ *S~B~*\|, and this proves (CP3).
+

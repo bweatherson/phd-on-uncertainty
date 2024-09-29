@@ -13,13 +13,24 @@ book:
     - index.qmd
     - original.qmd
     - acknowledgments.qmd
-    - _take-one.qmd
+    - chap-01.qmd
+    - chap-02.qmd
+    - chap-03.qmd
+    - chap-04.qmd
+    - chap-05.qmd
+    - chap-06.qmd
+    - chap-07.qmd
+    - chap-08.qmd
+    - chap-09.qmd
+    - chap-10.qmd
+    - chap-11.qmd
+    - references.qmd
   sidebar:
     search: true
     collapse-level: 3
     title: "Knowledge: <br>A Human Interest Story"
   navbar:
-    title: "Brian Weatherson" 
+    title: "On Uncertainty, by Brian Weatherson"
     right:
       - text: "Papers"
         menu:

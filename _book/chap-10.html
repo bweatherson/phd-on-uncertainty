@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.523">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>On Uncertainty - 10&nbsp; Keynes and Probability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chap-11.html" rel="next">
+<link href="./chap-09.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Brian Weatherson</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-papers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Papers</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-papers">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/papers.html">
+ <span class="dropdown-text">All Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/epist.html">
+ <span class="dropdown-text">Epistemology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/gdt.html">
+ <span class="dropdown-text">Games and Decisions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/books.html">
+ <span class="dropdown-text">On Books</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-books" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Books</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-books">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/ne/">
+ <span class="dropdown-text">Normative Externalism</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://lda.weatherson.org/">
+ <span class="dropdown-text">A History of Philosophy Journals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/kahis/">
+ <span class="dropdown-text">Knowledge: A Human Interest Story</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/teaching.html"> 
+<span class="menu-text">Teaching Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/bweatherson/kahis-quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap-10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synopsis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Declaration of Originality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What Probability Isn’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What Degrees of Belief Are</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Probability Is</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Supervaluations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Economic Consequences of Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#introduction-4" id="toc-introduction-4" class="nav-link active" data-scroll-target="#introduction-4"><span class="header-section-number">10.1</span> 10.1 Introduction</a></li>
+  <li><a href="#keyness-pure-theory-of-probability" id="toc-keyness-pure-theory-of-probability" class="nav-link" data-scroll-target="#keyness-pure-theory-of-probability"><span class="header-section-number">10.2</span> 10.2 Keynes’s Pure Theory of Probability</a></li>
+  <li><a href="#keyness-applied-theory-of-probability" id="toc-keyness-applied-theory-of-probability" class="nav-link" data-scroll-target="#keyness-applied-theory-of-probability"><span class="header-section-number">10.3</span> 10.3 Keynes’s Applied Theory of Probability</a></li>
+  <li><a href="#keynes-and-conventions" id="toc-keynes-and-conventions" class="nav-link" data-scroll-target="#keynes-and-conventions"><span class="header-section-number">10.4</span> 10.4 Keynes and Conventions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/kahis-quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chap-10" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-4" class="level2 page-columns page-full" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction-4"><span class="header-section-number">10.1</span> 10.1 Introduction</h2>
+<p>I have earlier described the theory defended in this thesis as a Keynesian theory of probability. In this chapter I want to defend that description. The purpose of this is twofold. First, there is some scholarly interest in accurately tracing the ancestry of ideas. Secondly, and more importantly, Keynes thought that his theory of probability led to distinctive theories in economics. I don’t think he’s right about this, for reasons I’ll set out in the next chapter, but my argument turns on the theory of probability defended here being faithful to Keynes’s account.</p>
+<p>In the next section I’ll set out the theory of probability Keynes advanced in his <em>Treatise on Probability</em> (1921a), and show how my theory captures the crucial elements of his. In some respects Keynes’s theory is internally inconsistent: the detailed rendition does not capture the explicit motivating ideas. The theory here is closer to the spirit of Keynes’s approach in these cases than its letter. Whether this is taken as charitable interpretation or friendly revision is probably not very important.</p>
+<p>In section three I’ll note how Keynes incorporated his philosophical insights into his economics. This will be elaborated in the next chapter, when I look at the details of part of his theory of unemployment. The most important element of this section is a theory of Keynesian ‘uncertainty’ which there is strong evidence to show he adopted.</p>
+<p>There has been much debate in recent years over precisely what theory of probability Keynes was using when he wrote his <em>General Theory</em> (1936), and in particular how much the attacks of Ramsey and, perhaps, Wittgenstein had led him to abandon claims he had made in the earlier book. Much of this debate seems to assume that Keynes’s early theory was such a tight package that it couldn’t be amended without being lost. Hence we have arguments about whether Keynes kept or abandoned his early theory. There is no doubt that he conceded some attacks were justified, but the evidence is consistent with his abandoning no more than a couple of relatively unimportant theses. In the last section I’ll look at the claim he adopted a radically different theory of probability, a conventionalist theory. Again I argue the evidence is consistent with no change having occurred, and, a little more tentatively, I argue that it is inconsistent with his having adopted a conventionalist view. For convenience, in what follows I’ll refer to the <em>Treatise on Probability</em> and <em>General Theory</em> as the <em>TP</em> and <em>GT</em> respectively<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Strictly speaking, it wouldn’t hurt my story if Keynes had moved to a ‘vague subjectivist Bayesian’ position as in, say, Jeffrey (1983). This is precisely the position Runde (1994) has him adopt. I don’t think a great deal in his economics depends on probability relations being objective, though everything turns on their being vague. Since my story would be hurt if Keynes had made the amendments suggested by others (e.g.&nbsp;Bateman (1996)) a small interpretative detour is justified.</p></li></div></section>
+<section id="keyness-pure-theory-of-probability" class="level2 page-columns page-full" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="keyness-pure-theory-of-probability"><span class="header-section-number">10.2</span> 10.2 Keynes’s Pure Theory of Probability</h2>
+<p>The <em>TP</em> was Keynes’s first major academic work. An early version of it was submitted as a fellowship dissertation in 1908, and after that was rejected a revised version was submitted in 1909. For various reasons it was not published for 12 years, with again significant revisions being made. Included in these revisions was a long discussion of statistical reasoning which arose from a public debate he had with Karl Pearson about the foundations of statistics. Although there is little evidence of it in his early books, Keynes started working theories about expectations into his economics as early as 1910 (Skidelsky 1983: 208; Keynes 1910: 46-7).</p>
+<p>Keynes said hardly anything about probability for 10 years after his book was published. He didn’t even make much of an effort to respond to scholars who contacted him about it, with more worldly concerns being pressing. In 1931, he made some passing comments in his review of Ramsey’s book. Then in the <em>General Theory</em>, published in 1936, and the subsequent debate, he made some references to his theory of probability.</p>
+<p>The basis of Keynes’s theory is that probability is reasonable degree of belief, and this is a logical, non-numerical relation of ‘arguments’, which are just ordered pairs of propositions<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The probability of an argument is what it is by virtue of logical laws alone, in just the way that an argument is either valid or invalid by virtue of logical laws alone. Indeed, Keynes thinks that the theory of valid arguments is just a special case of his theory of probable arguments, an argument being valid just in case it has probability one.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;By non-numerical I don’t mean that it never takes numerical values, just that sometimes it does not.</p></li></div><p>Not only are these probability values non-numerical, they are not always comparable. Probability is a non-linear as well as a non-numerical relation. In Keynes’s terminology, the probability of an argument could be α, where α is a non-numerical degree of belief, comparable to some but not all numerical degrees of belief and to some but not all non-numerical degrees of belief. However, he says nothing about what type of entity α must be to have these properties. Because of this some later writers (eg T.&nbsp;Fine (1973), Runde (1994a)) have thought that Keynes’s theory was best classified as a theory of comparative probability. In one sense it isn’t, because it does make sense to talk about the probability of an argument being equal to some number, not just to compare the probabilities of different arguments. However, in a more important sense they are correct, because we know nothing about entities like α – which are the value of probability relations – except how they enter into comparisons. It seems that saying the probability of an argument is α is just shorthand for saying which comparisons between it and other probabilities are true.</p>
+<p>Keynes might dispute this last analysis. He does develop a rather sophisticated calculus of these values, which impressed some rather distinguished logicians at the time. However, this calculus gives little insight into the nature of the values. As I remarked in <a href="chap-06.html" class="quarto-xref"><span>Chapter&nbsp;6</span></a>, when we derive α&nbsp;+&nbsp;β&nbsp;=&nbsp;χ in a Keynesian system, where the Greek characters refer to the values of probability relations, there is no guarantee that ‘+’ means what we mean by <em>plus</em>. In the absence of such a guarantee, or a more comprehensive analysis of what such derivations mean, it seems perfectly fair to classify Keynes’s theory as comparative.</p>
+<p>The other distinctive feature of Keynes’s theory, and possibly the one which has aroused the most interest in the subsequent literature, is his concept of ‘weight’. The probability of <em>p</em> given <em>q</em> tells us, in a sense, how the evidence <em>q</em> is balanced between <em>p</em> and ¬<em>p</em>. Keynes thought it might be important in some contexts, particularly decision making, to know not only how the evidence was distributed, but how much of it there was. Thus for every argument he postulated not only a probability, but also a ‘weight’, which is intended to be a measure of the comprehensiveness of the evidence. If this all sounds a bit vague, it is because the original is just as vague.</p>
+<blockquote class="blockquote">
+<p>As the relevant evidence at our disposal increases, the magnitude of the probability of the argument may either decrease or increase, according as the new knowledge strengthens the unfavourable or the favourable evidence; but <em>something</em> seems to have increased in either case, – we have a more substantial basis upon which to rest our conclusion. I express this by saying that an accession of new evidence increases the <em>weight</em> of an argument. New evidence will sometimes decrease the probability of an argument, but it will always increase its ‘weight’ (<em>TP</em>: 77, italics in original).</p>
+</blockquote>
+<p>Keynes modifies this slightly, saying strictly irrelevant evidence does not increase the weight of our argument. Finally Keynes introduced a new notation, which he thought essential to the progress of the subject. Given the lack of popularity of his notation, and the progress in the theory of probability since his time, his predictive skills seem to have failed here. However, for expository purposes, it is sometimes convenient to adopt his notation. The essentials are to use <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;=&nbsp;α to mean the probability of <em>p</em> on evidence <em>q</em> is α, where α may, but need not, be a real number, and to use <em>V</em>(<em>p</em>&nbsp;/&nbsp;<em>q</em>) =&nbsp;β for the weight of the argument from <em>q</em> to <em>p</em>.</p>
+<p>The rest of this section aims to show how the theory of this dissertation captures the essential elements of Keynes’s theory. Some parts of the translation are straightforward. Let P be the set of all reasonable probability functions. Then the set <em>P</em> of values which <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>) takes, for <em>Pr</em>&nbsp;∈&nbsp;P corresponds in a straightforward way to Keynes’s non-numerical degrees. These sets are sometimes comparable with numbers. For real <em>x</em>, we say <em>P</em>&nbsp;&gt;&nbsp;<em>x</em> iff for all elements <em>y</em> of <em>P</em>, <em>y</em> &gt; <em>x</em>. And this holds if we replace ‘&gt;’ throughout with ‘=’, ‘&lt;’, ‘≥’ or ‘≤’. And sometimes the degrees cannot be compared with a real, as when none of these happen. Similarly the sets can sometimes be compared with each other, and sometimes not. Using Keynes’s notation, <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;&gt;&nbsp;<em>r</em>&nbsp;/&nbsp;<em>s</em> iff for all <em>Pr</em>&nbsp;∈&nbsp;P , <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>)&nbsp;&gt;&nbsp;<em>Pr</em>(<em>r</em>&nbsp;|&nbsp;<em>s</em>). Again this holds if we replace ‘&gt;’ throughout with any other comparative. And since it is possible that no such comparative sentence is true, probabilities can be incomparable. Finally, we can now add probabilities in a way that makes it clear we are using the ordinary concept of addition. <em>p</em>&nbsp;/&nbsp;<em>q</em> +&nbsp;<em>r</em>&nbsp;/&nbsp;<em>s</em> is the set {<em>x</em>: ∃<em>Pr</em>&nbsp;∈&nbsp;P : <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>) + <em>Pr</em>(<em>r</em>&nbsp;|&nbsp;<em>s</em>) = <em>x</em>}. A similar definition applies to multiplication and division<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;For some purposes it might be better to translate <em>p</em>&nbsp;/&nbsp;<em>q</em> as a function from P to [0,&nbsp;1], which takes every <em>Pr</em> to <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>). Then the talk of equality, inequality, incomparability, addition and multiplication is interpreted just as we ordinarily would for functions. For example where <em>f</em> and <em>g</em> are functions with a common domain <em>f</em>&nbsp;&gt;&nbsp;<em>g</em> iff for all <em>x</em>, <em>f</em>(<em>x</em>)&nbsp;&gt;&nbsp;<em>g</em>(<em>x</em>), and so on for the other definitions.</p></li></div><p>So far the connection seems quite close. Since the membership of P is non-contingent I almost capture Keynes’s idea that the value of <em>p</em>&nbsp;/&nbsp;<em>q</em> can always be determined by logic. As I showed in <a href="chap-01.html" class="quarto-xref"><span>Chapter&nbsp;1</span></a>, there are good grounds for parting with Keynes on this point, but not for going all the way to subjectivism. A bigger departure comes with the translation of weight.</p>
+<p>Keynes’s explicit pronouncements about the weight of arguments are inconsistent with his notation and with the underlying idea behind his concept. I think both problems arise because Keynes says that even though <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;=&nbsp; <em>r</em>&nbsp;/&nbsp;<em>q</em>, V(<em>p</em>&nbsp;/&nbsp;<em>q</em>) might be different from V(<em>r</em>&nbsp;/&nbsp;<em>q</em>). The analysis of weight I will adopt denies this, and thus avoids the pitfalls that beset Keynes.</p>
+<p>The notational flaw first. By representing the weight of the argument from <em>q</em> to <em>p</em> as V(<em>p</em> /&nbsp;<em>q</em>), Keynes writes as if weight is not a two-argument function, with arguments <em>p</em> and <em>q</em>, but a one argument function, with the argument <em>p</em> /&nbsp;<em>q</em>. Recall that <em>p</em> /&nbsp;<em>q</em> is Keynes’s notation for what I’d write <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>). This confusion in evident at the top of page 79 of the <em>TP</em> where Keynes says “Let us represent the evidential weight of <em>the</em> argument, whose probability is <em>p</em> /&nbsp;<em>q</em>, by V(<em>p</em> /&nbsp;<em>q</em>)” (my italics). Taken literally this seems to assume that there is only one argument with probability <em>p</em> /&nbsp;<em>q</em>, that is the one from <em>q</em> to <em>p</em>. Since this can’t be right, the most natural reading of this sentence is to replaced the italicised ‘the’ with ‘any’. Alternatively, we should write the weight V(<em>p</em>, <em>q</em>).</p>
+<p>The problem is not, however, just a notational one. There is an argument that arguments of equal probability should have equal weight, something which Keynes denies. The problem arises because of disjunctive evidence.</p>
+<p>One of the reasons Keynes wants to say that arguments of equal probability can have different weights is because he thinks that when <em>p</em>&nbsp;/&nbsp;(<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub>&nbsp;∧&nbsp;<em>q</em><sub>2</sub>) = <em>p</em>&nbsp;/&nbsp;<em>q</em>, but not <em>p</em>&nbsp;/&nbsp;(<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub>) = <em>p</em>&nbsp;/&nbsp;<em>q</em>, then V(<em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub>&nbsp;∧&nbsp;<em>q</em><sub>2</sub>) &gt; V(<em>p</em>&nbsp;/&nbsp;<em>q</em>). This follows from his strict principle of irrelevance. Information <em>q</em><sub>3</sub> is strictly irrelevant to the argument from <em>q</em> to <em>p</em> iff there is no conjunction <em>q</em><sub>1</sub>&nbsp;∧&nbsp;<em>q</em><sub>2</sub> such that <em>q</em><sub>1</sub>&nbsp;∧&nbsp;<em>q</em><sub>2</sub> is logically equivalent to <em>q</em><sub>3</sub> and it isn’t the case that <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub> = <em>p</em>&nbsp;/&nbsp;<em>q</em>.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This is to be distinguished from <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub>&nbsp;≠ <em>p</em>&nbsp;/&nbsp;<em>q</em>. By the formal definitions of comparatives I’ve given, that would only be true if for all <em>Pr</em>&nbsp;∈&nbsp;P&nbsp;, <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>1</sub>)&nbsp;≠&nbsp;<em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>). The expression in the text is intended to be true just in case this holds for some <em>Pr</em> or other. If the theory of <a href="chap-05.html" class="quarto-xref"><span>Chapter&nbsp;5</span></a> is correct, the two expressions have identical semantic content, but different conventional content. That, of course, is enough to communicate the relevant point!</p></li><li id="fn5"><p><sup>5</sup>&nbsp;It seems quite amazing that no one picked this up before Carnap. Whitehead read the <em>TP</em> twice as one of Keynes’s fellowship examiners, and Russell presumably read it closely before giving a strong endorsement of its formal work in Russell (1922). And while the other logicians with whom Keynes was in contact weren’t in the same class as Russell and Whitehead they were still quite proficient. And Keynes notes that this decomposition of a proposition causes some difficulties for his rendition of the Principle of Indifference just five pages after he states the strict principle of irrelevance.</p></li></div><p>This move to a strict principle of irrelevance appears to make it impossible for Keynes to ever say that a proposition is irrelevant to an argument. Let <em>q</em><sub>3</sub> be any proposition such that <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;∧&nbsp;<em>q</em><sub>3</sub> = <em>p</em>&nbsp;/&nbsp;<em>q</em> and <em>q</em><sub>3</sub> is in an intuitive sense irrelevant to the argument from <em>q</em> to <em>p</em>. For example, let <em>p</em> be the proposition that the die I am about to roll will land with six facing up, <em>q</em> be the background evidence, and <em>q</em><sub>3</sub> be that it is now raining in New York. Now the extra evidence is divisible into two components <em>q</em><sub>3</sub>&nbsp;∨&nbsp;<em>p</em> and <em>q</em><sub>3</sub>&nbsp;∨&nbsp;¬<em>p</em>. The conjunction of these components is logically equivalent to <em>q</em><sub>3</sub>, and each of them appear to be relevant pieces of information. Unless <em>q</em><sub>3</sub>&nbsp;/&nbsp;<em>q</em> = 1, <em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;∧&nbsp;(<em>q</em><sub>3</sub>&nbsp;∨&nbsp;<em>p</em>) &gt; <em>p</em>&nbsp;/&nbsp;<em>q</em>. So it seems by Keynes’s test, whether or not it is raining in New York is relevant to whether or not this die will land six. This information is relevant just because it is divisible into relevant components. Keynes notes this general move when discussing the principle of indifference on page 65 of the <em>TP</em>, but doesn’t pick it up here. Carnap (1950:&nbsp;420) seems to be the first to note that Keynes’s strict concept of irrelevance is degenerate for the reason listed here.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>What is less frequently noticed in the Keynes literature is that the strong theory of irrelevance is central for Keynes’s theory of weight. We are trying to find out whether or not <em>p</em>, and our current information is <em>q</em>. Assume that the strict concept of irrelevance is inapplicable when evaluating weight, so there is some information <em>q</em><sub>1</sub> which is irrelevant, but which is divisible into relevant components. The weight of our belief in <em>p</em> (i.e.&nbsp;the weight of the argument from our evidence to <em>p</em>) will be unchanged if we find <em>q</em><sub>1</sub>, as it is irrelevant. However, if we discover <em>q</em><sub>1</sub> by discovering its components sequentially then, if weight increases upon the acquisition of relevant evidence, the weight of our belief will have risen. So the weight of our beliefs will depend not just on what our evidence is, but on the order in which we acquired it. This is absurd, so it must be that weight doesn’t always increase upon acquiring relevant evidence, and may in fact decrease.</p>
+<p>This argument reinforces the intuitive idea that when <em>p</em>&nbsp;/&nbsp;<em>q</em> = <em>r</em>&nbsp;/&nbsp;<em>s</em> then V(<em>p</em> /&nbsp;<em>q</em>) = V(<em>r</em> /&nbsp;<em>s</em>). The analysis of weight in my theory does this, as well as capturing I hope the spirit of Keynes’s theory, although it departs radically from the letter of it<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Let P again be the set of values that <em>Pr</em>(<em>p</em>&nbsp;|&nbsp;<em>q</em>) takes for <em>Pr</em>&nbsp;∈&nbsp;P&nbsp;. Then P will be an interval, and V(<em>p</em>&nbsp;/&nbsp;<em>q</em>) is simply the one less length of that interval.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> As noted in the last chapter, the possibility of dilation means that we might be certain that on reception of the result of a trial (i.e.&nbsp;learning <em>q</em><sub>1</sub> or learning ¬<em>q</em><sub>1</sub>) the weight of the argument from our evidence to <em>p</em> might go down.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> This is odd, but considerably less odd than the alternatives. It is a consequence of my analysis of weight that when we know the chance of <em>p</em>, the weight of our argument to <em>p</em> is maximised. As we’ll soon see, this is a position which Keynes adopted when he applied his theory to economic matters in the 1930s.</p>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;There is a sense in which my departure from ‘what Keynes really meant’ isn’t that great. If we adopt semantic externalism, then Keynes’s references to ‘weight’ will refer to whatever it is in the world that best satisfies his descriptions of the role it plays. And that, I am confident, is what I have captured. Similar remarks will apply to ‘probability’ and other terms. Such an interpretation takes Keynes’s intention for his referring terms to have referents more seriously than his particular description of those referents.</p></li><li id="fn7"><p><sup>7</sup>&nbsp;A similar suggestion for capturing this concept is made in Kyburg (1961: 225), though the interval in question has a somewhat different meaning in his theory.</p></li><li id="fn8"><p><sup>8</sup>&nbsp;This is also a consequence of the quite different analysis advanced in Runde (1990). He suggests we analyse weight as the ratio of known to unknown evidence, then immediately gives this an epistemic interpretation, so that weight becomes a ratio between how much we know and how much we know we don’t know. Since new evidence might show that there is even more evidence we don’t know, weight might go down with new evidence. I don’t see, however, what the grounds are for the epistemic turn here; weight in Keynes seems to be objective enough that there could be a divergence between its value and our best estimate of it.</p></li></div></section>
+<section id="keyness-applied-theory-of-probability" class="level2 page-columns page-full" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="keyness-applied-theory-of-probability"><span class="header-section-number">10.3</span> 10.3 Keynes’s Applied Theory of Probability</h2>
+<p>Since the publication in 1983 of the first volume of Skidelsky’s biography of Keynes there has been a surge in interest in Keynes’s philosophy. A large motivation for this is the possibility that Keynes’s philosophical beliefs play an important role in his economic theories. Like all modern economists, Keynes was aware of the role of expectations in determining the value of goods. Whenever we consider deferring consumption today in the hope of greater consumption tomorrow, our decision will depend crucially on our expectations of what tomorrow will be like; on our partial beliefs about tomorrow. The story is in fact a little more complicated. Since tomorrow we might decide to defer consumption again, it also depends on our expectations about two days time, and hence about three days time, and so on.</p>
+<p>Here there is obviously a role for some theory of probability. However, many theories of probability fail to capture an important fact about this decision situation. We know more about tomorrow than about next year and more about the next year than the next decade. Keynes can represent this by saying that the weight of the argument from our evidence to propositions about tomorrow is greater than that of the argument from our evidence to propositions about next year. However, there is no way in which theories which say our degrees of belief ought be precise can do this. This applies whether the theories are subjectivist (like Ramsey) or logical (like Carnap). So Keynes has extra resources to bring to this problem, and he uses them.</p>
+<blockquote class="blockquote">
+<p>It would be foolish, in forming our expectations, to attach great weight to matters which are very uncertain. (In footnote:) By “very uncertain” I do not mean the same thing as “very improbable”. <em>Cf</em>.&nbsp;my <em>Treatise on Probability</em>, chap.&nbsp;6, on “The Weight of Arguments”. (<em>GT</em>: 148)</p>
+</blockquote>
+<p>He elaborated on this in a famous passage from a 1937 article responding to critics of his theory.</p>
+<blockquote class="blockquote">
+<p>By ‘uncertain’ knowledge, let me explain, I do not mean merely to distinguish what is known for certain from what is only probable. The game of roulette is not subject, in this sense, to uncertainty; nor is the prospect of a Victory bond being drawn. Or again, the expectation of life is only slightly uncertain. Even the weather is only moderately uncertain. The sense in which I am using the term is that in which the prospect of a European war is uncertain, or the price of copper and the rate of interest twenty years hence, or the obsolescence of a new invention, or the position of private wealth holders in the social system in 1970. About these matters there is no scientific basis on which to form any calculable probability whatever. We simply do not know. (1937a: 113-4)</p>
+</blockquote>
+<p>Finally, in some 1938 he indicated the effect this uncertainty might have on decision theory. The context is a letter he wrote to Hugh Townshend, a former student, who appears to have been the first to inquire about the connection between the <em>TP</em> and <em>GT</em>.</p>
+<blockquote class="blockquote">
+<p>One arrives presumably at the numerical estimates [of expected values] by some system of arranging alternative decisions in order of preference, some of which will provide a norm by being numerical. But that still leaves millions of cases over where one cannot even arrange an order of preference. When all is said and done, there is an arbitrary element in the situation. (1938a: 289)</p>
+</blockquote>
+<p>O’Donnell (1991) claims there are obviously distinct senses of uncertainty underlying these three quotes. Call these the 1936, 1937 and 1938 senses, by reference to the year from which the quote is drawn. I doubt that there are such distinct senses in play. There is a simple concept of uncertainty which can perform all the roles Keynes asks of it, and so the simplest explanation of the data is that Keynes was using that concept.</p>
+<p>‘Uncertainty’ has been distinguished in economics from pure risk (such as we face at the roulette table) ever since Knight’s <em>Risk, Uncertainty and Profit</em> (1921). However, Knight’s distinction was based on a frequentist theory of probability, so it isn’t overly important here. Say that <em>p</em> is uncertain for an agent with evidence <em>q</em> iff <em>p</em>&nbsp;/&nbsp;<em>q</em> is non-numerical<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. More generally, say <em>p</em> is more uncertain the smaller the weight of <em>p</em>&nbsp;/&nbsp;<em>q</em>.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;Or in the functional terminlogy of footnote 123, if <em>p</em>&nbsp;/&nbsp;<em>q</em> isn’t translated to a constant function. This suggestion first appears in Lawson (1985).</p></li><li id="fn10"><p><sup>10</sup>&nbsp;I.e. if <em>x</em> and <em>y</em> are the greatest and least values respectively such that <em>x</em>&nbsp;≤&nbsp;<em>p</em>&nbsp;/&nbsp;<em>q</em>&nbsp;≤&nbsp;<em>y</em>, the uncertainty of <em>p</em> is measured by <em>y</em>&nbsp;‑&nbsp;<em>x</em>.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;There are counterexamples, as in Monte Hall type cases, but we can be very confident that Keynes was ignorant of these. And we can be confident that these don’t threaten the claim in the text as to what is ‘usual’.</p></li></div><p>Since non-numerical probabilities are usually associated with having little evidence, this captures the 1936 sense of uncertainty<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. The examples from the 1937 quote seem to match my definition, at least given some plausible assumptions about when the probability of <em>p</em> would be numerical. I also suspect we can translate ‘calculable’ from the last line as ‘numerical’. Finally, non-numerical probabilities will easily lead to non-comparable goods. Say the probability of <em>p</em> is vague over [<em>x</em>, <em>y</em>], with <em>x</em>&nbsp;&lt;&nbsp;<em>z</em>&nbsp;&lt;&nbsp;<em>y</em>. Then a <em>p</em>‑bet will be incomparable with <em>z</em> cents. Further, incomparability (as compared to indifference) can’t arise without this type of uncertainty.</p>
+<p>As there is a simple sense of uncertainty which is definable in straightforward terms (indeed the definition uses no terminology not in Keynes) and which does the work needed for all three quotes, I disagree with O’Donnell’s claims that Keynes was using uncertainty differently every time. The main difference between our interpretations is that O’Donnell thinks the 1937 quote relied on the ‘unknown probabilities’ which are also introduced in the <em>TP</em>. We can all be ignorant of logical entailment relations. ‘Snow is white’ entails (at least on traditional definitions of entailment) Fermat’s Last Theorem, but most of us were ignorant of that until very recently. Similarly, thought Keynes, we can be ignorant of logical probability relations. O’Donnell claims this is what is being referred to in the last line of the 1937 quote. He is forced to make the (empirical) claim that we are more often ignorant of these relations when the evidence is small, and he does this. The first problem with O’Donnell’s position is that it is hard to see what the evidence for this could be. I am quite certain of the probability of ‘My carpet is blue’ given just ‘Snow is white’; it is represented in my terminology by the interval [0, 1]. The second is that given the audience for this paper (it was printed in the <em>Quarterly Journal of Economics</em>) it would be unusual to base one’s theory on the logical shortcomings of agents. I agree with O’Donnell that these shortcomings are hardly sufficient to say Keynes’s agents are ‘dim-witted’, but I still think it would be an odd assumption for Keynes to make in that forum without more explicit acknowledgment. The third problem for O’Donnell’s interpretation is that it seems to make uncertainty an ‘on-off’ property, rather than one admitting of degrees, as in my account. Yet Keynes’s examples show he intended uncertainty here to come by degrees. Even if none of these arguments work, on general methodological grounds I prefer my interpretation because it is the simplest one that explains all the data.</p>
+<p>There is a more important question on which I am in almost complete agreement with O’Donnell. In his (1989) he puts forward the most sustained defence of the position that Keynes’s philosophical outlook was, in broad terms, unchanged throughout his life<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. This is despite the evidence that Keynes adopted a conventionalist epistemology (which I’ll discuss in the next section) and that in his 1931 review of Ramsey’s book he appears to yield to Ramsey on some crucial questions. I am in general agreement with O’Donnell on these points and there is little need here to repeat his arguments. There is however one point on which I do think Keynes abandoned the <em>TP</em> position, and this may explain Keynes’s apparent yielding to Ramsey on some points.</p>
+<div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;The different senses of uncertainty aren’t a change of view on O’Donnell’s theory, they are different facets of a multifacted concept.</p></li></div><p>In the review of Ramsey, Keynes notes how the scope of logic, which looked so broad under Russell and Whitehead, was gradually reduced by Ramsey and Wittgenstein until it looked like logic had no content at all. I think this is a sign that Keynes abandoned the position that his probability relations were logical. He didn’t give up on their objectivity, he just now thought there were objective standards of rationality that were extra-logical. These objective standards, as opposed to logic, would provide the foundations of probability. Without going for a line-by-line exegesis, I’ll just note that Keynes’s text supports the claim that it was on this point that Keynes yielded to Ramsey.</p>
+<p>That much seems quite well grounded; what follows is rather speculative. A year before Keynes’s review of Ramsey appeared, Gödel announced his incompleteness theorems. These were widely taken to cast doubt on Russell and Whitehead’s program of incorporating all of maths into logic. If Keynes knew of this result and that reaction (which is at least possible, but is hardly certain) this might have convinced him there were objective epistemic norms (i.e.&nbsp;conformity with mathematical reasoning) which were not strictly logical, and this would have made his abandonment of the claim his probability relations were logical less dramatic. There is no reference to Gödel in Keynes’s review, which might look like evidence against my speculation that he was influenced by Gödel on this point, but on the other hand there is no reference in it to anyone at all outside Cambridge!</p>
+<p>This isn’t intended as a criticism of theorists who say that Keynes’s theory of probability was little changed over his life. I suspect that, from Keynes’s point of view, this was a little change. Another little change he may have made was dropping the view that his probability relations were non-natural<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. The difficulty facing all sides in this debate is that Skidelsky’s summary of Keynes’s later view seems unimpeachable: “[After 1921] Keynes no longer thought about probability, though probability permeated his thought.” (Skidelsky 1992: 73) If Skidelsky’s right, then the correct approach is what I’ve adopted. The only role for probability in Keynes’s later thought is in application.</p>
+<div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;I wonder if he might have been convinced they were not by Ramsey’s analysis of theoretical terms (Ramsey&nbsp;1929a). This could be pressed into giving a naturalist reading of apparently non-natural terms, but I rather doubt Keynes would have seen this, or even considered it an interesting object of study compared to his other projects at the time.</p></li></div></section>
+<section id="keynes-and-conventions" class="level2 page-columns page-full" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="keynes-and-conventions"><span class="header-section-number">10.4</span> 10.4 Keynes and Conventions</h2>
+<p>Many authors argue that Keynes adopted a conventionalist, intersubjectivist theory of probability. See, for example, Bateman (1996), Davis (1994), and Gillies (1988). I’ll focus on Bateman’s account, as it’s the most comprehensive and most recent. It isn’t always obvious what is meant by such a theory. In particular, it isn’t clear whether it is meant to be an empirical or a normative theory; whether Keynes is apparently claiming that we ought set our partial belief by convention or that we in general do. Since the empirical theory would be consistent with his objectivist norms, and stress is on the change in his views, I conclude that the claim is that this is a new normative view. According to this view, being reasonable is analysed as conforming to conventions; this contrasts with the <em>TP</em>’s position that being reasonable involves just making reasonable judgements in particular cases. This is not a very standard epistemological position, but something similar is often endorsed in ethics. In ethical language, it is a move from an act-based to a rule-based epistemology. Bateman marshals the evidence that Keynes moves from an objectivist to a conventionalist position in ethics as evidence for this epistemological shift, but this doesn’t seem of overwhelming significance<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn14"><p><sup>14</sup>&nbsp;If Keynes had adopted a framework which implied a tight connection between epistemological and ethical norms, such as utilitarianism, this would be important, since he couldn’t change ethics and keep his epistemology. But such frameworks aren’t compulsory, and, given the vehemence with which Keynes denounced utilitarianism (Keynes 1938b, 445), it seems he didn’t adopt one. Further, there is substantial evidence that, by the time the <em>TP</em> was completed, Keynes had already adopted a rule-based ethics as in effect a response to the war. See Keynes (1921b:&nbsp;298) for the most compelling such evidence. Hence there was no connection in Keynes’s mind between ethics and epistemology on this point.</p></li></div><p>Here’s the closest Bateman gets to a definition of what he means by an intersubjective theory of probability.</p>
+<blockquote class="blockquote">
+<p>When probabilities are formed according to group norms, they are referred to as intersubjective probabilities … I take it to be the case that in a world of subjective probabilities some individuals will form their own estimates and others will form them on the basis of group norms (50n).</p>
+</blockquote>
+<p>This makes it look very much like an empirical theory, since it refers to how people actually form beliefs, not how they ought. So his intersubjectivism looks perfectly consistent with Keynes’s objectivism. I am completely baffled by the ‘world of subjective probabilities’. I wonder what such a world looks like, and how it compares to our world of tables, chairs and stock markets?</p>
+<p>Fortunately there is a theory which does the work Bateman needs. Ayer (1936) rejects orthodox subjectivism about probability on the grounds that it doesn’t allow people to have mistaken probabilistic beliefs. But he can’t admit Keynesian probability relations into his sparse ontology. The solution he adopts is to define probability as degree of rational belief, but with this caveat.</p>
+<blockquote class="blockquote">
+<p>Here we may repeat that the rationality of a belief is defined, not by reference to any absolute standard, but by reference to part of our own actual practice (Ayer 1936: 101).</p>
+</blockquote>
+<p>The ‘our’ is a bit ambiguous; interpreting it to refer to the community doesn’t do violence to the text, though it is just as plausible that it refers to a particular agent. The ‘part of our practice’ referred to is just our general rules for belief formation. These aren’t justified by an absolute standard; they are justified by the fact they are our rules, and presumably by their generality. Given Bateman’s views about metaphysics<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>, it seems quite reasonable to suppose he’d follow Ayer on this point.</p>
+<div class="no-row-height column-margin column-container"><li id="fn15"><p><sup>15</sup>&nbsp;He thinks that ‘analytic philosophy is the last place one would expect to find metaphysics’ (Bateman 1996:&nbsp;39)</p></li></div><p>The evidence that Keynes adopted such a position is usually taken to be some passages from the <em>GT</em> and the 1937 <em>QJE</em> paper I quoted above. Here’s the key points from the two quotes Bateman uses to support his view.</p>
+<blockquote class="blockquote">
+<p>In practice we have agreed to fall back on what is, in truth, a <em>convention</em>. The essence of this convention – though it does not, of course, work out quite so simply – lies in assuming that the existing state of affairs will continue indefinitely, except in so far as we have specific reasons for expecting a change (<em>GT</em>: 152).</p>
+<p>How do we manage in such circumstances to behave in a manner which saves out faces as rational, economic men? We have devised for the purposes a variety of techniques, of which much the most important are the three following: …</p>
+<p>(3) Knowing that our own individual judgement is worthless, we endeavour to fall back on the judgement of the rest of the world which is perhaps better informed. That is, we endeavour to conform with the behaviour of the majority or the average. The psychology of a society of individuals each of whom is endeavouring to copy the others leads to what we may strictly term a <em>conventional</em> judgement (Keynes 1937a: 115).</p>
+</blockquote>
+<p>There are two problems with using this evidence the way Bateman does. The first is the old one that they seem expressly directed to empirical questions, though in economic writings with their assumptions of rationality such appearances can be deceptive. The more important one is that Keynes is attempting to answer a very specific question with these passages; in ignorance of the question, we can easily misinterpret the answer.</p>
+<p>How much ought one pay for a share in company X? Well, if one intends to hold the share come what may, all that matters is the expected prospective yield of X’s shares, appropriately discounted, as compared to the potential yield of that money in other uses. But as Keynes repeatedly stresses (<em>GT</em>: 149; Keynes 1937a: 113-4) we have no basis for forming such expectations. Were this the only reason for investing then purely commercial investment may never happen.</p>
+<p>There is another motivation for investment, one that avoids this problem. We might buy a share in X today on the hope that we will sell it next week (or next month or perhaps next year) for more than we paid. To judge whether such a purchase will be profitable, we need a theory about how the price next week will be determined. Presumably those buyers and sellers will be making much the same evaluations that we are. That is, they’ll be thinking about how much other people think X is worth.</p>
+<blockquote class="blockquote">
+<p>We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be. And there are some, I believe, who practice the fourth, fifth and higher degrees (<em>GT</em>: 156).</p>
+</blockquote>
+<p>There is simply no solution to this, except to fall back on convention. That is, we are forced into a conventionalist theory of value, at least of investment goods. But this doesn’t mean that we have a conventionalist epistemology. On the contrary, it means that our ordinary (objectivist) empiricism is unimpeded. For the question that Keynes has us solve by reference to convention is, what is the value of X? This is equivalent to, what will be value of X be, or again, to what are the conventional beliefs about X’s value? A question about the state of conventions needs answering; and, as good empiricists, we answer it by observing conventions.</p>
+<p>An analogy may help here. Here’s something that Hempel believed: to gain rational beliefs about the colour of ravens, one has to look at some birds. Did this mean he had an ornithological epistemology? No; he had an empiricist epistemology which when applied to a question about ravens issued the directive: Observe ravens! Similarly Keynes’s belief that to answer questions about value, i.e.&nbsp;about conventions, one has to look at conventions, does not imply a conventionalist epistemology. It just means he has an empiricist epistemology which when applied to a question about conventions issues the directive: Observe conventions!</p>
+<p>There might be another motivation for using conventions, again consistent with Keynes’s objectivist empiricism. Sometimes we may have not made enough observations, or may not have the mental power to convert these to a theory. So we’ll piggyback on someone else’s observations or mental powers. This seems to be what’s going on in the quote from Keynes (1937a). Or even better, we’ll piggyback on everyone’s work, the conventions. To see how this is consistent with an objectivist epistemology (if it isn’t already obvious) consider another analogy.</p>
+<p>What is the best way to work out the derivative of a certain function? Unless your memory of high-school calculus is clear, the simplest solution will be to consult an authority. Let’s assume for the sake of argument that the easiest authorities to consult are maths texts. It seems like the rational thing to do is to act as if the method advanced by the maths texts is the correct method. Does this mean that you have adopted some kind of authoritarian metaphysics of mathematics, where what it is for something to be correct is for it to be asserted by an authority? Not at all. It is assumed that what the textbook says is correct, but the authoritarian has to make the extra claim that the answer is correct <em>because</em> it is in the textbook. This is false; that answer is in the textbook because it is correct. In sum, the authoritarian gets the direction of fit wrong.</p>
+<p>Similarly, in the ‘piggyback’ cases, the intersubjectivist gets the direction of fit wrong. In some circumstances, I might assume that if <em>p</em> is ‘average opinion’, then it is reasonable to believe <em>p</em>. But I wouldn’t say it is reasonable to believe <em>p</em> because <em>p</em> is average opinion, as the intersubjectivist does; rather, I say that assuming <em>p</em> is average opinion because it is reasonable to believe <em>p</em>.</p>
+<p>The evidence so far suggests Keynes’s statements are consistent with his denying intersubjectivism. I might be able to go further and show they are inconsistent with his adopting that theory. After the quote on <em>GT</em> page 152 he spends the next page or so defending the use of conventions here. The defence is, in part, that decisions made in accord with conventions are reversible in the near future, so they won’t lead to great loss. If he really were an intersubjectivist, the use of conventions would either not need defending, or could be defended by general philosophical principles. Secondly, there is this quote which in context seems inconsistent with adopting a conventionalist view.</p>
+<blockquote class="blockquote page-columns page-full">
+<p>For it is not sensible to pay 25 for an investment which you believe will yield 30, if you also believe that the market will value it at 20 three months hence (<em>GT</em>: 155).<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;This might be considered odd if we take a market-orientated view of ‘yield’. We could plausibly just view the yield of an investment as the value the market will place on it three months hence. Indeed the argument in Chapter 12 of the <em>GT</em>, from where the quote is drawn, would support such a view. However, Keynes has made it clear from the context that he intends ‘yield’ to refer to the real returns of the investment over its lifetime, a question on which a sensible investor can disagree with the market.</p></li></div></blockquote>
+<p>The context is that he is discussing why reasonable professional investors base their valuations on convention rather than on long-term expectation. Hence the ‘you’ in the quote is assumed to be reasonable. Hence it is reasonable, Keynes thinks, to believe that an investment will yield 30, and that conventional wisdom is that it will yield much less. But if all reasonable beliefs were formed by accordance with conventional wisdom, this would be inconsistent. Hence Keynes cannot have adopted a conventionalist epistemology.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chap-09.html" class="pagination-link  aria-label=" &lt;span="" decision="" theory&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chap-11.html" class="pagination-link" aria-label="<span class='chapter-number'>11</span>&nbsp; <span class='chapter-title'>The Economic Consequences of Uncertainty</span>">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Economic Consequences of Uncertainty</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

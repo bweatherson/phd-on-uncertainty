@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.523">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>On Uncertainty - 6&nbsp; Objections</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chap-07.html" rel="next">
+<link href="./chap-05.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Brian Weatherson</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-papers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Papers</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-papers">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/papers.html">
+ <span class="dropdown-text">All Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/epist.html">
+ <span class="dropdown-text">Epistemology</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/gdt.html">
+ <span class="dropdown-text">Games and Decisions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/quarto/books.html">
+ <span class="dropdown-text">On Books</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-books" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Books</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-books">    
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/ne/">
+ <span class="dropdown-text">Normative Externalism</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://lda.weatherson.org/">
+ <span class="dropdown-text">A History of Philosophy Journals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://brian.weatherson.org/kahis/">
+ <span class="dropdown-text">Knowledge: A Human Interest Story</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://brian.weatherson.org/quarto/teaching.html"> 
+<span class="menu-text">Teaching Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/bweatherson/kahis-quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./On-Uncertainty.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chap-06.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synopsis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Declaration of Originality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What Probability Isn’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What Degrees of Belief Aren’t</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">What Degrees of Belief Are</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What Probability Is</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Supervaluations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-06.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Constructivist Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vague Decision Theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Keynes and Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chap-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The Economic Consequences of Uncertainty</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#introduction-2" id="toc-introduction-2" class="nav-link active" data-scroll-target="#introduction-2"><span class="header-section-number">6.1</span> 6.1 Introduction</a></li>
+  <li><a href="#there-are-no-such-things" id="toc-there-are-no-such-things" class="nav-link" data-scroll-target="#there-are-no-such-things"><span class="header-section-number">6.2</span> 6.2 There are no such things</a></li>
+  <li><a href="#probability-relations-between-simple-propositions" id="toc-probability-relations-between-simple-propositions" class="nav-link" data-scroll-target="#probability-relations-between-simple-propositions"><span class="header-section-number">6.3</span> 6.3 Probability Relations Between Simple Propositions</a></li>
+  <li><a href="#the-sorites-objection" id="toc-the-sorites-objection" class="nav-link" data-scroll-target="#the-sorites-objection"><span class="header-section-number">6.4</span> 6.4 The Sorites Objection</a></li>
+  <li><a href="#the-probability-calculus-1" id="toc-the-probability-calculus-1" class="nav-link" data-scroll-target="#the-probability-calculus-1"><span class="header-section-number">6.5</span> 6.5 The Probability Calculus</a></li>
+  <li><a href="#the-principle-of-indifference" id="toc-the-principle-of-indifference" class="nav-link" data-scroll-target="#the-principle-of-indifference"><span class="header-section-number">6.6</span> 6.6 The Principle of Indifference</a></li>
+  <li><a href="#uncertain-evidence" id="toc-uncertain-evidence" class="nav-link" data-scroll-target="#uncertain-evidence"><span class="header-section-number">6.7</span> 6.7 Uncertain Evidence</a></li>
+  <li><a href="#a-recent-addition---dependence-on-a-priori-assumptions" id="toc-a-recent-addition---dependence-on-a-priori-assumptions" class="nav-link" data-scroll-target="#a-recent-addition---dependence-on-a-priori-assumptions"><span class="header-section-number">6.8</span> 6.8 A Recent Addition - Dependence on <em>A Priori</em> Assumptions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/kahis-quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chap-6" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Objections</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-2" class="level2 page-columns page-full" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction-2"><span class="header-section-number">6.1</span> 6.1 Introduction</h2>
+<p>So far I have defended two distinctive views about probability. The first is that probability sentences, properly construed, are non-contingent. The second is that the probability relation between propositions is not always numerical. In <a href="chap-05.html" class="quarto-xref"><span>Chapter&nbsp;5</span></a>, I relied on the technique of supervaluations to explain how these non-numerical relations interact. I call any analysis of probability which defends the first of these theses a <em>necessitarian</em> analysis, and any analysis which defends the second an <em>imprecise</em> analysis. (The imprecision in question is in the values of the probability relations, not in the analysis!) The first writer to defend each of these theses was Keynes (1921a). Several of the objections that I’ll discuss in this chapter were first made by Ramsey and aimed at Keynes’s theory, so before commencing I need to note one important difference between my theory and his. Keynes, at least in his <em>Treatise on Probability</em> held a <em>logical</em> analysis of probability. Some of the objections to Keynes I’ll discuss are objections to the logical analysis, but are not objections to a necessitarian view. To defend my theses, I don’t need to respond to these. Indeed, as I pointed out in section 1.7, it is because I accept some of them that I reject the logical analysis.</p>
+<p>One other distinct feature of Keynes’s theory should be noted. I mentioned in <a href="chap-05.html" class="quarto-xref"><span>Chapter&nbsp;5</span></a> that we could think of the probability of <em>p</em> given <em>q</em> as a function from distributions to elements of [0,&nbsp;1]. Keynes says that probabilities can be non-numerical, but he doesn’t give this analysis of their ‘internal structure’. He is happy to say the probability of <em>p</em> given <em>q</em> is α, where we might know no more about α than α&nbsp;&gt;&nbsp;0.2 and α&nbsp;&lt;&nbsp;0.6. By means of some axioms, he shows how we can interpret addition and multiplication of these probability-values, but it is rather unclear whether or not addition and multiplication still have the same meaning they do in natural language once these axioms are added. As a consequence, when I claim that objections of Ramsey’s that are directed at Keynes’s refusal to discuss the structure of probability relations don’t harm my theory, I am not attacking Ramsey (his objections usually hit their intended target) but merely showing why my theory isn’t doomed because of his work.</p>
+<p>Since Ramsey levelled so many distinct objections to the Keynesian project in his 1926 paper <em>Truth and Probability</em> I will spend most of this chapter analysing and where necessary responding to those objections. It is commonly assumed, particularly in non-philosophical discussions of Keynes’s work<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, that the Keynesian theory was fatally wounded by Ramsey’s early attacks on it. I will argue that while Ramsey’s attacks seem to work against logical theories, they aren’t overly persuasive against necessitarian views. I will argue in <a href="chap-10.html" class="quarto-xref"><span>Chapter&nbsp;10</span></a> that Keynes held a similar, if less worked out, view of the value of Ramsey’s attacks. There are several separate arguments against Keynes squeezed into Ramsey’s paper. For ease of later reference, I’ll first simply list what I take to be the main arguments before attempting any kind of response.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;See, for example, Bateman (1996) and Runde (1994a). From a more philosophical perspective, the same assertion is made in Zabell (1991:&nbsp;224).</p></li></div><ul>
+<li><p>There aren’t any probability relations of the kind Keynes requires.</p></li>
+<li><p>If there are such relations, we can’t determine what their value is when the relata are simple.</p></li>
+<li><p>It is mysterious how the probability of <em>p</em> can go from being incomparable with any given number to being numerically precise by the addition of evidence.</p></li>
+<li><p>It is unclear why Keynes’s probability relations should obey the laws of the probability calculus.</p></li>
+<li><p>Keynes’s theory relies on the discredited Principle of Indifference.</p></li>
+<li><p>Keynes’s theory requires that our evidence be known for certain, but much of the time our evidence is vague and uncertain.</p></li>
+</ul>
+<p>Unlike Keynes, Carnap backed up his necessitarian theory with a detailed calculus for the probability logic. For various reasons, this calculus has attracted more attention than the philosophy underlying it. Howson and Urbach (1989) provides one exception, and I deal with their objection to Carnap at the end. I suspect their worry is widely shared, and their presentation sufficiently representative, so my replies may be relevant to many critics.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;All page references in this chapter unless otherwise stated are to Ramsey (1926a).</p></li></div></section>
+<section id="there-are-no-such-things" class="level2 page-columns page-full" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="there-are-no-such-things"><span class="header-section-number">6.2</span> 6.2 There are no such things</h2>
+<blockquote class="blockquote">
+<p>But let us now return to a more fundamental criticism of Mr.&nbsp;Keynes’ views, which is the obvious one that there really do not seem to be any such things as the probability relations he describes. He supposes that, at any rate in certain cases, they can be perceived; but speaking for myself I feel confident that this is not true. (161)</p>
+</blockquote>
+<p>In his original theory, Keynes held that we could perceive directly the probability relations between propositions, in the same way that we perceive entailment relations. Some have argued that this paragraph was a decisive refutation of Keynes’s Platonist assumptions. It is, of course, nothing of the sort. Ramsey does not deny that we can perceive, in some sense of that word, entailment relations. Nor does he deny that we can perceive relations, such as having a common subject or predicate, which hold between propositions, at least on a Tractarian view of what propositions are. All he rejects is that we can perceive the particular relations Keynes posits.</p>
+<p>From the way we have put forward the theory, this is a rather odd thing to say. He couldn’t be saying that he doesn’t perceive that there are some pairs of coherent belief states and evidence sets which are reasonable and some which are unreasonable. In fact he goes on to say that a person who doesn’t draw inductive conclusions from their evidence is unreasonable (197). However, he doesn’t believe that such an ‘unreasonable’ person would ‘sin against formal logic or formal probability’. Now this may be so on a narrow construal of ‘formal’. If, however, we are internalist about epistemic justification then we are committed to saying that we can perceive that such a person’s epistemic states are <em>necessarily</em> unreasonable<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. So, to perceive that such a person is unreasonable is to make a perception which, if it is correct, is necessarily correct.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;This will be false unless we take ‘epistemic states’ to be a rigid designator, which for ease of exposition I do.</p></li></div><p>On the theory advocated here, if for every value of <em>n</em> we can perceive whether believing <em>p</em> to degree <em>n</em> on a certain body of evidence <em>q</em> is reasonable or unreasonable, then we can perceive the probability relation between <em>p</em> and <em>q</em>. We won’t ordinarily be able to do this because the boundaries between the reasonable and the unreasonable will be vague, but this merely corresponds to the probability relation being vague. The crucial point is that there is nothing more (or less) to a probability relation than a bundle of facts of the form <em>It is</em> (<em>not) reasonable on such-and-such evidence to have this degree of belief in p</em>. Since Ramsey is happy to say we can perceive facts of this latter sort, it follows that we can perceive probability relations.</p>
+<p>Ramsey goes on to say that, because other people can’t agree on the value of probability relations, he believes no one else perceives them either. In part this criticism is met by the theory of vague probabilities set out in <a href="chap-05.html" class="quarto-xref"><span>Chapter&nbsp;5</span></a>. There it was argued that reasonable people could have different degrees of belief in the same proposition on the same evidence. However, in these cases, the probability of a proposition on some evidence isn’t <em>the</em> degree of belief a reasonable person would have in the proposition on that evidence. There is no such degree, even if we allow non-numerical degrees of belief. Rather there are a range of reasonable degrees, and the value of the probability relation is this set.</p>
+</section>
+<section id="probability-relations-between-simple-propositions" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="probability-relations-between-simple-propositions"><span class="header-section-number">6.3</span> 6.3 Probability Relations Between Simple Propositions</h2>
+<blockquote class="blockquote">
+<p>If, on the other hand, we take the simplest possible pairs of propositions such as ‘This is red’ and ‘That is blue’ or ‘This is red’ and ‘That is red’, whose logical relations should surely be easiest to see, no one, I think, pretends to be sure what is the probability relation which connects them. (162)</p>
+</blockquote>
+<p>Ramsey might concede that we can work out the probability relation between two complex propositions such as our entire current evidence and “Oswald killed JFK”. However, as the above quote indicates, we can’t tell what the probability relation is between simple propositions. This is entirely at odds with the rest of logic, where we are prepared to rely on agreement about the relationships between simple propositions to work out the relationships between complex propositions.</p>
+<p>The easiest way to shrug off Ramsey’s objection here would be to say that it only directly attacks logical analyses of probability rather than necessitarian analyses. However, the point deserves some more discussion. After all, even if these examples aren’t central on a necessitarian view, as they are on a logical view, we are still committed to saying that there is a probability relation between them.</p>
+<p>In previous chapters I have had occasion to identify probability relations with the set of values they take. This is a convenient shorthand, though it does lose some information. In this notation, I can say quite precisely what the conditional probability of <em>This is red</em> given <em>That is blue</em> is. It is the interval [0,&nbsp;1]. In other words, there is no degree of belief in <em>This is red</em> which is either ruled out as irrational or ruled in as the only rational response on this minimal evidence. This response to Ramsey doesn’t entirely succeed, because the interval notation isn’t fully informative, but it is a start.</p>
+<p>The other response we can make to this objection is that Ramsey’s assessment of simplicity is very much related to his Tractarian conception of propositions. This analysis of propositions is crucial to the logic of decision he develops, and for which the paper is more well-known. If we analyse propositions as sets of possible worlds, and assume possible worlds are the ‘ultimate organic unities’ (177) which are the subject of choices, we cannot use Ramsey’s method for determining beliefs and desires. On my preferred analysis of propositions, <em>This is blue</em> will not be a simple proposition in any interesting sense. On the contrary, it is as heterogenous a set of possible worlds as one could care to imagine. The truly simple propositions will be those which are true at one world only. However, the linguistic representation of such propositions will be infinitely complex. Hence <em>simplicity</em> is theory-dependent, and even if I agreed with Ramsey that not being able to say what the probability relation was between simple propositions was problematic, these examples wouldn’t count against my theory.</p>
+</section>
+<section id="the-sorites-objection" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="the-sorites-objection"><span class="header-section-number">6.4</span> 6.4 The Sorites Objection</h2>
+<blockquote class="blockquote">
+<p>[I]t is hard to suppose that as we accumulate instances there is suddenly a point, say after 233 instances, at which the probability relation becomes finite and so comparable with some numerical relations. (162)</p>
+</blockquote>
+<p>On Keynes’s view, as on mine, when we have observed a billion red round things, and no non-red round things, the probability that <em>a</em> is red given that <em>a</em> is round is greater than 0.99. That is, it enters into numerical comparison. This is necessary if we are to have any projectible predicates. However when we reduce the number of observations from a billion to, say, one, the resultant probability is not comparible with any numbers, or numerical relations as Ramsey puts it. Ramsey seems to think this combination is implausible, because it would require an arbitrary number of observations after which the probability does become numerically comparible.</p>
+<p>It is a remarkably weak objection, particularly by Ramsey’s standards. Assume a certain pile of sand is not a heap. I can, by adding one grain at a time, end up with a heap of sand. However, I don’t have to assume there is some point, say 233 grains, at which it suddenly becomes a heap. Given this it is hard to see what the basis of Ramsey’s objection is. As an attempt to give some bite to the objection in the previous section it doesn’t seem particularly plausible.</p>
+</section>
+<section id="the-probability-calculus-1" class="level2 page-columns page-full" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="the-probability-calculus-1"><span class="header-section-number">6.5</span> 6.5 The Probability Calculus</h2>
+<blockquote class="blockquote">
+<p>For now it is easily seen that if partial beliefs are consistent they will obey these axioms, but it is utterly obscure why Mr<em>.</em> Keynes’ mysterious logical relations should obey them. (188-9)</p>
+</blockquote>
+<p>As I noted in the introduction to this chapter, for Keynes the probability relation between two propositions may be some non-numerical value. There are then two related objections that can be made concerning the calculus of these values. The first is that it isn’t at all clear what we mean when we add or multiply them. For example, if the probability of <em>p</em> given <em>q</em> is α, and the probability of ¬<em>p</em> given <em>q</em> is β, Keynes says we can conclude α&nbsp;+&nbsp;β&nbsp;=&nbsp;1, but he doesn’t say what this might mean. The second objection is that it isn’t clear why he should want it to be the case that α&nbsp;+&nbsp;β&nbsp;=&nbsp;1. I take the results of <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a> to provide an answer to this question, though to be fair to Ramsey it is an answer which appears nowhere in Keynes.</p>
+<p>So the more important challenge is to the meaningfulness of the mathematical notation in Keynes’s theory. If P is the set of reasonable probability functions, we can identify the probability of <em>p</em> given <em>q</em> with a function from P to [0,&nbsp;1]. In this notation we’ll have to identify numbers with constant functions, i.e.&nbsp;identify 1 with the function, call it <strong>1</strong>, such that <strong>1</strong>(<em>Pr</em>) = 1 for all <em>Pr</em>. Now we have clear concepts of what it is to add and multiply functions, at least with common domains. For functions <em>f</em>, <em>g</em> and <em>h</em>, we can easily say <em>f</em>&nbsp;+&nbsp;<em>g</em>&nbsp;=&nbsp;<em>h</em> iff for all <em>x</em>, <em>f</em>(<em>x</em>) + <em>g</em>(<em>x</em>) = <em>h</em>(<em>x</em>). It seems plausible enough to say the ‘+’ in the first equation means the same as the ‘+’ in the second<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Similar definitions can be given for the multiplication and division of functions.</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Though perhaps ever since Wittgenstein (1953) we ought be a little sceptical about such claims of meaning extension. I hope everyone will agree that I have used ‘+’ in an acceptable way, and if Wittgenstein is right that will mean I have used it acceptably.</p></li></div><p>Now, with this notation, we can see how it is possible that α&nbsp;+&nbsp;β&nbsp;=&nbsp;<strong>1</strong> (which we are identifying with 1) how some probability relations can be non-numerical (because they are not constant functions), and how this doesn’t prevent us applying addition and multiplication operations. Thus I presume the challenge as to the meaningfulness of Keynes’s algebra is met, and its justification is given by <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a>.</p>
+</section>
+<section id="the-principle-of-indifference" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="the-principle-of-indifference"><span class="header-section-number">6.6</span> 6.6 The Principle of Indifference</h2>
+<blockquote class="blockquote">
+<p>Secondly, the Principle of Indifference can now be altogether dispensed with; we do not regard it as belonging to formal logic to say what should be a man’s expectations of drawing a white or a black ball from an urn; his original expectations may within the limits of consistency be any he likes; all we have to point out is that if he has certain expectations he is bound in consistency to have certain others. This is simply bringing probability into line with ordinary formal logic, which does not criticise premises but merely declares that certain conclusions are the only ones consistent with them. (189)</p>
+</blockquote>
+<p>This objection isn’t applicable to my theory, but it is worth considering as an objection to logical analyses of probability. A logical analysis of probability has to elevate the Principle of Indifference to a logical theorem. This might be thought problematic because of the various paradoxes of indifference discussed in 5.8.1. Even if I can avoid the paradoxes somehow, and as I noted there allowing probabilities to be vague seems to do the trick, there is a lasting impression that the ideal solution would have been to not allow the problems to arise. So I suspect the intuition Ramsey has, that if we can do away with the Principle we ought, is just the right one to have.</p>
+<p>It may be possible to develop a precise logical analysis of probability which is immune to all of the paradoxes, but given the calibre of the theorists who have tried and failed, it seems doubtful. It would be more plausible to think an imprecise logical analysis which avoided the paradoxes could be developed. The two grounds I have for thinking this won’t be done are, again, that we would expect if it can be done it would have been done already, and that there seems to be a fairly mechanical procedure for constructing objections to any approach.</p>
+<p>As it turns out, the formal logic of probability defended here is just the same as that Ramsey defended, with the only possible exception being that we might regard the Principal Principle as a logical rule. Nevertheless, when we say someone has made a logical error in their allocation of degrees of belief, we are just saying that their beliefs are inconsistent. In Ramsey’s terms, the person making an error has failed to do something they are ‘bound in consistency’ to do. As Carnap points out (1950: 337), the formal component of all theories prior to his shared a common logic. So even though Keynes had argued that there were logical restrictions on what degrees of belief people could reasonably have in propositions, when he wrote the formal component of his probability logic these restrictions were not incorporated.</p>
+<p>There is one infelicity of expression in the Ramsey quote above. When Ramsey says that a man’s expectations ‘may within the limits of consistency be any he likes’, the modal <em>may</em> is being used rather oddly. He doesn’t mean that having any old expectation would be epistemically acceptable all things considered. Rather he means that any expectation which is consistent is <em>logically</em> acceptable. As he goes on to say in his discussion of induction, there are restrictions on what is epistemically acceptable, i.e.&nbsp;on what is reasonable, which are not logical restrictions.</p>
+<p>Finally, we should note the oddity in the last sentence of the quote from Ramsey. It might not be part of logic to criticise the premises that various people hold, but it is part of epistemology broadly speaking. All we ought to conclude from what Ramsey says is that the logic of probability should have little to say with regard to criticising individual probabilistic judgements. I agree; the theory defended here does not make <em>logical</em> criticisms of agent’s whose beliefs are coherent. However, the boundaries of critical epistemology are not the boundaries of logic. This is true in non-probabilistic epistemology, and it is true in probabilistic epistemology. In sum, I agree with Ramsey that logical analyses of probability rely too heavily on a Principle of Indifference; but I disagree with his claim that we have no grounds for ruling as unreasonable any consistent beliefs. It is this last possibility which opens up an necessitarian theory of probability.</p>
+</section>
+<section id="uncertain-evidence" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="uncertain-evidence"><span class="header-section-number">6.7</span> 6.7 Uncertain Evidence</h2>
+<blockquote class="blockquote">
+<p>I think I perceive or remember something but am not sure; this would seem to give me some ground for believing it, contrary to Mr Keynes’ theory, by which the degree of belief in it which it would be rational for me to have is that given by the probability relation between the proposition in question and the things I know for certain. (190)</p>
+</blockquote>
+<p>There are two responses we can make to this objection. The first is that it doesn’t apply on my conception of evidence; the second is that this is a problem for the application of the theory, rather than the theory itself. Ramsey’s observation is of undoubted importance for anyone wishing to construct a machine which has reasonable beliefs, or if you doubt machines can have beliefs, functional states which behave like beliefs and would be reasonable were they believed. However, it is unclear why such practical worries should harm the theory under construction here.</p>
+<p>On the view endorsed here, the evidence in a probability relation is a set of worlds in all of which I have certain experiences. The worlds can differ from the actual world in any way at all, as long as my experiences are held constant. The upshot of this is that my evidence isn’t of the form <em>There is a blue book on my desk</em>, but rather <em>I am observing a blue book on my desk</em>. Even the latter isn’t a precise representation of the evidence, since my experiences might be being caused by an evil-demon, but for practical purposes it is as close as we can get in language. In cases considered by Ramsey, the evidence wouldn’t be of the form <em>It’s probable I saw a blue book on my desk last night</em>. Rather, it would be of the form <em>I am having a dim memory of seeing a blue book on my desk</em>. The reasonable degree of belief in the proposition that there was a blue book on my desk might be moderately high on the basis of the evidence, but the evidence is still something that is taken to be certain.</p>
+<p>The other response to make here is that the concept of ‘reasonableness’ I am using requires, at least in its technical aspects, superhuman ability. After all, it is unreasonable on this picture not to realise what can be entailed from what, not an ability many of us possess. Hence the question of how we should incorporate failing memories into the theory is of the same type as the question of how we should incorporate failing inferential processors. That is, not a relevant question at this level of abstraction. Rather it is something that need to be incorporated in less abstract theories. Is it legitimate to brush aside these concerns as, in effect, engineering problems? It is, because when we are designing practical systems to approximate ideally rational systems, we have to know what it is we’re approximating. The purpose of our theoretical pursuits, <em>vis a vis</em> such projects, is to work out where the goal posts are. Once there is agreement on what the theoretical aims of a practical rational system are, we can assess how well the system achieves those aims. However, without this agreement, we can’t evaluate such systems. Given then that our aim is to investigate the ideal, it might be plausible to abstract away from the difficulties such as failure of memory that worry Ramsey.</p>
+<p>Kaplan (1996: 36-8) suggests a useful way to understand the demands that theories like this one are making. When we say that, for example, epistemic states ought be consistent, we are not saying that it is a legitimate criticism of a believer that their belief states are inconsistent. However, it is a legitimate criticism of their belief states, something the believer will usually agree with, as they’ll attempt to remove inconsistencies brought to their attention. Similarly in the case of memory, it is no legitimate criticism of an agent that their memory is less than perfect, however it might well be a legitimate criticism of some states of that agent. And again the agent will often agree in the sense that they’ll say it is best, other things being equal, to remember more of our evidence rather than less. However, here other things are never equal, there are always trade offs to be made, and the agent is only subject to legitimate criticism if in making this trade off they don’t take the ideal of perfect evidence retention seriously enough.</p>
+</section>
+<section id="a-recent-addition---dependence-on-a-priori-assumptions" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="a-recent-addition---dependence-on-a-priori-assumptions"><span class="header-section-number">6.8</span> 6.8 A Recent Addition - Dependence on <em>A Priori</em> Assumptions</h2>
+<p>Most critics of Carnap’s theory of probability have focussed on the technical aspects of his theory. There are a few good reasons for doing this. First, his technical theory is interesting for its own sake. Secondly, if there are major flaws in the particular technical theory (as seems to be the case) this counts against the general approach, both because there is arguably a burden on Carnap and his followers to produce a sound technical theory, and more generally because we might suspect that if Carnap couldn’t complete this project it can’t be completed. However, it would be nice to see in the literature more discussion of the philosophy behind Carnap’s theory, and solid objections to it. As my necessitarian approach adopts Carnap’s philosophy, but not his technicalities, I incur a duty to answer those objections directed at that philosophy.</p>
+<p>The most serious objection is that Carnap’s method is too <em>a prioristic</em>. The discussion in Howson and Urbach (1989: 52‑56) seems to be the most substantial presentation of this objection. I say it is necessary, and arguably <em>a priori</em>, which functions <em>Pr</em> are reasonable. For example, let my evidence proposition be <em>E</em>, and let <em>q</em> be the proposition that the moon is made of green cheese. Then I say it is necessary that <em>Pr</em>(<em>q</em>&nbsp;|&nbsp;<em>E</em>)&nbsp;&lt;&nbsp;0.9 for all reasonable <em>Pr</em>. Note that every <em>Pr</em> is, as well as being a conditional probability distribution, an unconditional probability distribution, since we can define <em>Pr</em>(<em>A</em>) as <em>Pr</em>(<em>A</em>&nbsp;|&nbsp;T). Hence I’m committed to there being <em>a priori</em> probabilities. Howson and Urbach object.</p>
+<blockquote class="blockquote">
+<p>For any conditional probability distribution over the sentences of a language necessarily involves the assignment of unconditional probabilities to a partition of the space of possibilities representable within <em>L</em>. But what considerations can possibly justify any such <em>a priori</em> distribution? (Howson and Urbach 1989:&nbsp;53‑4)</p>
+<p>Any <em>a priori</em> probability distribution … is going to be arbitrary. For this reason we do not regard people who try to evaulate the probabilities of hypotheses relative to data as doing exercises in a genuine logic of generalised deduction, for we take logic to be essentially noncommittal on matters of fact. (Howson and Urbach 1989:&nbsp;55)</p>
+</blockquote>
+<p>Howson and Urbach back up these claims by pointing out, rightly, that considerations of symmetry or simplicity will not give us the <em>a priori</em> distributions. Any time we try to make the distributions symmetrical or simple relative to one set of considerations we will make them more skewed and more complex relative to others. I accept this, but not the conclusion they draw from it.</p>
+<p>Three relatively inessential points before we start. First, in my story (unlike Carnap’s), probabilities are assigned to pairs of propositions, not pairs of sentences, and propositions are just sets of possibile worlds. These ‘possibilities’ are in general not representable within any language. This I take it is no response at all to their objection. Secondly, I <em>could</em> avoid making my theory <em>a prioristic</em> if I let the reasonable probability functions be whatever play a certain role in the actual world. That is, I could consistently with my theory say that which probability distributions are reasonable is necessary <em>a posteriori</em>. As I noted in section 4.4, the relevant simplicity and symmetry considerations might be given by our actual practices. However, that approach has problems, and to adopt it just to avoid a charge of <em>a priorism</em> would be untenable. In any case, Howson and Urbach could rewrite their objection to deal with this. So I’ll write here as if necessary and <em>a priori</em> were interchangable.</p>
+<p>Thirdly, and this is a bit important, it isn’t true on my theory that a conditional probability distribution ‘necessarily involves the assignment of unconditional probabilities’ <em>a priori</em>. Let an epistemic state be represented by the set {<em>Pr</em>: <em>Pr</em>(<em>q</em>&nbsp;|&nbsp;<em>E</em>) = 0.2}. One conditional probability is quite precisely defined here, but no unconditional probabilities of contingent propositions are defined to be sharper than [0,&nbsp;1]. I suspect the reference to unconditional probabilities was more a rhetorical flourish than a crucial part of the argument, which is why I think this point is mostly unimportant.</p>
+<p>Those clarifications aside, I can proceed. I trust the reader agrees that having degree of belief 0.9 or higher in <em>q</em> on evidence <em>E</em> is unreasonable. If not, please reconsider. If so, read on. Following Lewis (1980) I have defined reasonable probability functions to be those which licence no unreasonable degrees of belief. So we can conclude that all reasonable probability functions <em>Pr</em> are such that <em>Pr</em>(<em>q</em>&nbsp;|&nbsp;<em>E</em>)&nbsp;&lt;&nbsp;0.9, because this just means that having degree of belief 0.9 or higher in <em>q</em> on evidence <em>E</em> is unreasonable. Call this conclusion <em>F</em>. Question: Is <em>F</em> empirical or <em>a priori</em>?</p>
+<p>If <em>F</em> is <em>a priori</em>, then I have a response to Howson and Urbach, for I can say that what determines the set of reasonable probability functions is just the set of <em>a priori</em> facts like <em>F</em>. Note that their claim that logic is noncommittal on matters of fact is clearly mistaken unless we say <em>a priori</em> truths are not ‘matters of fact’. This is perhaps a non-standard use of fact, but not an unintelligible one. However, on it, <em>F</em> does not turn out to be a matter of fact, so my ‘logic’ is noncommittal on matters of fact.</p>
+<p>Hence for their objection to work, <em>F</em> must be empirical. But what evidence could there possibly be for <em>F</em>? Or perhaps more strikingly, what evidence could there be for ¬<em>F</em>? What is one meant to say about my counterpart who has had exactly the same experiences as I, but believes to degree 0.9 that the moon is made of green cheese, and does so reasonably. I very much doubt I have such a counterpart. This does not show that <em>F</em> is not empirical, it might just show that <em>E</em> entails <em>F</em>. If that were true, it might be the case that <em>F</em> is empirical but nevertheless I could have no such counterpart. The problem with that is that it is inconsistent with the conclusions about updating I derived in <a href="chap-03.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a>. That is, it is inconsistent with my insistence on Conditionalisation. In fact, it is inconsistent with virtually any interpretation of conditional probability, as this example shows.</p>
+<p>Let <em>E</em><sub>1</sub> be strictly weaker than <em>E</em>. That is, <em>E</em> entails <em>E</em><sub>1</sub> but not <em>vice versa</em>. And let <em>E</em><sub>1</sub> be such that it doesn’t entail <em>F</em>. Now say I have a counterpart whose evidence is <em>E</em><sub>1</sub>. Perhaps it would be reasonable for him to believe <em>q</em> to degree 0.9. Since he doesn’t know <em>F</em>, his evidence is insufficient to support it, and for all I’ve said <em>F</em> might be false in his world. So, for all he knows, it is reasonable to have probability functions such that <em>Pr</em>(<em>q</em>&nbsp;|&nbsp;<em>E</em>)&nbsp;=&nbsp;0.9 in the representation of his epistemic state. In fact, if I’m right and any precisification of a reasonable epistemic state is reasonable, he could reasonably have his degrees of belief represented by just that function. But then were he to learn <em>E</em>, there would be nothing he could reasonably do. By conditionalisation, he would have to have degree of belief 0.9 in <em>q</em>. However, he would now know <em>F</em>, so he would know that his representative probability function was unreasonable. Hence, he would know that the only thing he can reasonably do – i.e.&nbsp;conditionalise – is unreasonable. So his epistemic state provides no consistent guidance in a possibility he envisages as possible. But, by definition, no reasonable state does this. Hence, his state was unreasonable to start with; so, having a function <em>Pr</em>(<em>q</em>&nbsp;|&nbsp;<em>E</em>) in one’s representor is always unreasonable. We can rephrase all this without the assumption that precisifications of reasonable degrees are reasonable, but it’s less clear. The point again is that, when my counterpart conditionalises on evidence <em>E</em>, he won’t be able to completely precisify.</p>
+<p>So my response to Howson and Urbach is in two parts. First, it is obvious we do believe in <em>F</em> and like claims. Secondly, it is implausible to say that <em>F</em> is empirical. So, that necessitarian theories are committed to <em>a priori</em> assumptions like <em>F</em> is no mark against them, and may in fact be a benefit.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chap-05.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Supervaluations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chap-07.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Philosophical Predecessors</span>">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Philosophical Predecessors</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
