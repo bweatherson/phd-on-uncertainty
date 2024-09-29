@@ -173,7 +173,7 @@ There is, however, a bigger problem. Despite what may be inferred from some phil
 
 [^8]: Could we have different languages for social sciences and physical sciences? It seems like a pretty desperate move. It would be hard then to explain sentences which referred to terms from both physical and social sciences, like 'It's more probable that a recession will occur than that this atom will decay in the next *n* days'.
 
-In any case, there's another problem for the syntactic account. For this account to be plausible, we have to be able to specify the evidence we have for a proposition in a finite sentence of some language. But this seems implausible, as @ramsey1926a and @jeffrey1991  have stressed, because of vague evidence. If we view probability as a semantic relationship between propositions, rather than a syntactic relationship between sentences, this is no longer a problem, as I outline in @sec-chap-2. The combined effect of these objections to Carnap's account is enough to suggest a different approach could be worthwhile.
+In any case, there's another problem for the syntactic account. For this account to be plausible, we have to be able to specify the evidence we have for a proposition in a finite sentence of some language. But this seems implausible, as @ramsey1926a and @jeffrey1992b have stressed, because of vague evidence. If we view probability as a semantic relationship between propositions, rather than a syntactic relationship between sentences, this is no longer a problem, as I outline in @sec-chap-2. The combined effect of these objections to Carnap's account is enough to suggest a different approach could be worthwhile.
 
 ## Probabilities are not Subjective {#sec-0108}
 
