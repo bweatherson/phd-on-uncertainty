@@ -1,4 +1,4 @@
-# Philosophical Predecessors {#sec-seven}
+# Philosophical Predecessors {#sec-chap-7}
 
 As has already been mentioned, several authors have argued that imprecise or non-numerical degrees of belief ought to be permissible. The aim of this chapter is to look at four recent exponents of this view, and in particular at their motivations for allowing imprecision and the technical frameworks they develop to deal with them. My discussion of the writer to whom my position is closest, Keynes, will wait to a separate chapter investigating the connections between Keynes's theory of probability and his economic theories.
 

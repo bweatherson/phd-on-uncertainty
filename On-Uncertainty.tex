@@ -1,0 +1,2638 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+  letterpaper,
+  twoside]{scrbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[ItalicFont=EB Garamond Italic,BoldFont=EB Garamond
+Bold]{EB Garamond Math}
+  \setsansfont[]{Europa-Bold}
+  \setmathfont[]{Garamond-Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{xcolor}
+\usepackage[left=1in, right=1in, top=0.8in, bottom=0.8in,
+paperheight=9.5in, paperwidth=6.5in, includemp=TRUE, marginparwidth=0in,
+marginparsep=0in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0ex}
+\usepackage[automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\cehead{
+  \leftmark
+  }
+\cohead{
+  \rightmark
+}
+\ohead{\bfseries \pagemark}
+\cfoot{}
+\makeatletter
+\newcommand*\NoIndentAfterEnv[1]{%
+  \AfterEndEnvironment{#1}{\par\@afterindentfalse\@afterheading}}
+\makeatother
+\NoIndentAfterEnv{itemize}
+\NoIndentAfterEnv{enumerate}
+\NoIndentAfterEnv{description}
+\NoIndentAfterEnv{quote}
+\NoIndentAfterEnv{equation}
+\NoIndentAfterEnv{longtable}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={On Uncertainty},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{On Uncertainty}
+\author{Brian Weatherson}
+\date{2024}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\setstretch{1.1}
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{Synopsis}\label{synopsis}
+\addcontentsline{toc}{chapter}{Synopsis}
+
+\markboth{Synopsis}{Synopsis}
+
+This dissertation looks at a set of interconnected questions concerning
+the foundations of probability, and gives a series of interconnected
+answers. At its core is a piece of old-fashioned philosophical analysis,
+working out what probability is. Or equivalently, investigating the
+semantic question of what is the meaning of `probability'? Like Keynes
+and Carnap, I say that probability is degree of reasonable belief. This
+immediately raises an epistemological question, which degrees count as
+reasonable? To solve that in its full generality would mean the end of
+human inquiry, so that won't be attempted here. Rather I will follow
+tradition and merely investigate which sets of partial beliefs are
+coherent.
+
+The standard answer to this question, what is commonly called the
+Bayesian answer, says that degrees of belief are coherent iff they form
+a probability function. I disagree with the way this is usually
+justified, but subject to an important qualification I accept the
+answer. The important qualification is that degrees of belief may be
+imprecise, or vague.
+
+Part one of the dissertation, chapters \ref{sec-chap-1} to
+\textbf{?@sec-chap-6}, looks largely at the consequences of this
+qualification for the semantic and epistemological questions already
+mentioned. It turns out that when we allow degrees of belief to be
+imprecise, we can discharge potentially fatal objections to some
+philosophically attractive theses. Two of these, that probability is
+degree of reasonable belief and that the probability calculus provides
+coherence constraints on partial beliefs, have been mentioned. Others
+include the claim, defended in \textbf{?@sec-chap-4}, that chance is
+probability given total history.
+
+As well as these semantic and epistemological questions, studies of the
+foundations of probability usually include a detailed discussion of
+decision theory. For reasons set out in Chapter~\ref{sec-chap-2}, I deny
+we can gain epistemological insights from decision theory. Nevertheless,
+it is an interesting field to study on its own, and it might be expected
+that there would be decision theoretic consequences of allowing
+imprecise degrees of belief. As I show in part two, this expectation
+seems to be mistaken. \textbf{?@sec-chap-9} shows that there aren't
+interesting consequences of this theory for decision theory proper, and
+chapters \textbf{?@sec-chap-10} and \textbf{?@sec-chap-11} show that
+Keynes's attempt to use imprecision in degrees of belief to derive a
+distinctive theory of interest rates is unsound.
+
+Chapters \textbf{?@sec-chap-7} and \textbf{?@sec-chap-8} provide a link
+between these two parts. In \textbf{?@sec-chap-7} I look at some
+previous philosophical investigations into the effects of imprecision.
+In \textbf{?@sec-chap-8} I develop what I take to be the best competitor
+to the theory defended here -- a constructivist theory of probability.
+On this view degrees of belief are precise, but the relevant coherence
+constraint is a constructivist probability calculus. This view is, I
+think, mistaken, but the calculus has some intrinsic interest, and there
+are at least enough arguments for it to warrant a chapter-length
+examination.
+
+\bookmarksetup{startatroot}
+
+\chapter*{Declaration of Originality}\label{declaration-of-originality}
+\addcontentsline{toc}{chapter}{Declaration of Originality}
+
+\markboth{Declaration of Originality}{Declaration of Originality}
+
+\begin{itemize}
+\item
+  This dissertation contains no material which has been submitted for
+  the award of any other degree or diploma in any university or other
+  institution.
+\item
+  To the best of my knowledge, this dissertation contains no material
+  previously published or written by another person, except where due
+  reference is made in the text of the thesis.
+\end{itemize}
+
+Brian Weatherson
+
+\bookmarksetup{startatroot}
+
+\chapter*{Acknowledgments}\label{acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\markboth{Acknowledgments}{Acknowledgments}
+
+As with any doctoral dissertation, this could not have been completed
+without supervisory support and assistance. My supervisors, Graham Oppy
+and Richard Holton, have excised many of the bad ideas from the
+dissertation and assisted greatly in the development of the good ones.
+The usual disclaimer about remaining mistakes applies. Graham's
+diligence in detecting spelling and grammatical errors was probably all
+that prevented an embarrassing surfeit of errors remaining herein.
+
+I also owe a great debt to the departments I attended while undertaking
+the degree: the Philosophy department at Monash University and the
+Philosophy Program in RSSS, Australian National University. In
+particular, I would like to thank John Bigelow, Lloyd Humberstone,
+Philip Pettit, Daniel Nolan, James Chase and Konrad Talmont-Kaminski for
+discussions on subjects in my dissertation, as well as the audiences at
+several seminars I presented in those departments over the last four
+years.
+
+\bookmarksetup{startatroot}
+
+\chapter{What Probability Isn't}\label{sec-chap-1}
+
+\section{Introduction}\label{sec-0101}
+
+Part one of this dissertation defends the view that we should analyse
+probability as reasonable degree of belief. So the correct analysis of
+the sentence \emph{The probability that Oswald killed JFK is greater
+than 0.5} is that the only degrees of belief in \emph{Oswald killed JFK}
+that are reasonable are greater than 0.5. This will obviously have to be
+relativised to some evidence; the sentence is not refuted by the
+existence of people who have never heard of Oswald or Kennedy and who
+can thus reasonably refrain from having a high degree of belief in
+\emph{Oswald killed JFK}. Hence I claim that probability sentences
+contain an elliptical reference to evidence; in \textbf{?@sec-chap-4}
+I'll say more about how this reference works. That probability sentences
+are in part elliptical is not at all controversial: virtually every
+theory of probability does this in some way.
+
+This approach to probability puts my account in the tradition of Keynes
+(\citeproc{ref-keynes1921a}{1921}) and Carnap
+(\citeproc{ref-carnap1950a}{1950}). They advocated this analysis of
+probability, and what I regard as one of its corollaries, that
+probability sentences are non-contingent. I differ from these theorists
+in one important respect. They thought that probability is a `logical'
+concept, in a rather narrow sense. That is, they thought that the truth
+of probability sentences could be deduced from their syntactical
+structure in an ideal language. As I will argue in
+Section~\ref{sec-0107}, there are pragmatic and theoretical reasons for
+rejecting this approach. Nevertheless, there is no reason why all
+non-contingent truths must be true in virtue of syntactic form, so I can
+differ from Keynes and Carnap on this point while holding on to their
+more important insight.
+
+Probability is not just used in sentences like \emph{The probability
+that Oswald killed Kennedy is} α. We also use probability in a purely
+mathematical sense when we talk about the probability calculus. Part of
+my theory of probability is to explain the connection between these two
+facets of probability. In Chapter~\ref{sec-chap-2} I argue that a very
+common way of proving a connection (the `Dutch Book argument') is
+unsound, however in \textbf{?@sec-chap-3} I give a new argument for this
+connection. The argument only works on the assumption that degrees of
+belief ought be precise, or what is equivalent, completely ordered, and
+that assumption is false. The argument is, however, illuminating as to
+what we ought say about situations where degrees of belief are partially
+ordered. The probability calculus will be so important to what follows
+that I give a brief introduction to it in Section~\ref{sec-0102}.
+
+The rest of this chapter is to set out the common objections to all the
+other analyses of probability on the market. The aim is not to provide a
+conclusive refutation, but as Ramsey said to ``show that {[}they are{]}
+not so completely satisfactory as to render futile any attempt to treat
+the subject from a rather different point of view'' Ramsey
+(\citeproc{ref-ramsey1926b}{1926/1931b: 166}). The most important
+objection to some of these theories is provided by the rest of the
+dissertation. In particular those theories of probability which are
+defended by showing necessitarian analyses to be implausible are
+weakened not so much by my direct attacks on them as by my defence of
+their rival.
+
+Section~\ref{sec-0103} argues that probability should not be analysed as
+actual frequency, and Section~\ref{sec-0104} shows that analysing
+probability as modal frequency is no better. In Section~\ref{sec-0105} I
+argue that Popper's conception of probability as propensity cannot
+explain probability sentences about past events, and hence cannot be a
+complete theory. Section~\ref{sec-0106} argues that we cannot adopt
+Ayer's conventionalist approach to probability, because of the problem
+of unknown conventions. Section~\ref{sec-0107} looks at the problems
+with the syntactic theories of probability defended by Keynes and
+Carnap. Finally, and perhaps most importantly, in Section~\ref{sec-0108}
+I examine the various kinds of theory of probability called
+`subjective'. This includes the necessitarian theory defended here.
+Following Carnap I argue that this theory is not properly called
+subjectivist, and following Ayer I argue that most other theories called
+subjectivist are flawed.
+
+A note on notation before I start. I will often talk about probability
+sentences; indeed the overall project here could be described as trying
+to analyse probability sentences. There are more types of probability
+sentence than I have indicated above. I also intend the term to refer to
+sentences like the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Oswald probably killed JFK.
+\item
+  It's more probable that Oswald killed JFK than that O. J. Simpson
+  killed his wife.
+\item
+  The probability that Oswald killed JFK is 0.6.
+\item
+  The probability that Oswald killed JFK given the forensic evidence is
+  0.6.
+\end{itemize}
+
+That is, I take probability sentences to come in qualitative,
+comparative, quantitative forms as well as in conditional and
+unconditional forms. Of course I could by mixing these forms come up
+with even more examples, but I hope this is enough to indicate the field
+in which I'm interested.
+
+\section{The Probability Calculus}\label{sec-0102}
+
+Mathematically, probability functions have as their domain a field of
+sets, and as their range reals in {[}0,~1{]}. However, the probability
+sentences that I'm taking to be the explicandum of our theory seem to
+refer to the probability of an event or sentence. We solve this little
+problem by saying that probability sentences talk about the probability
+of propositions, and propositions are just sets of possible worlds. The
+proposition \emph{p} is just the set of possible worlds in which
+\emph{p}. Hence we can interpret the `universe' in the mathematical
+representation as the set of all possible worlds, and the field as a set
+of propositions.
+
+We take as given a possibility space \emph{U}, and a field \emph{F} of
+subsets of \emph{U}. That \emph{F} is a field just means it includes
+\emph{U}, and is closed under complementation, union and intersection.
+\emph{Pr}:~\emph{F}~→~{[}0,~1{]} is a simple probability function just
+in case it satisfies the following three axioms.
+
+\begin{description}
+\tightlist
+\item[(Pr1)]
+For all \emph{A}~∈~\emph{F}, \emph{Pr}(\emph{A})~≥ 0;
+\item[(Pr2)]
+\emph{Pr}(\emph{U})~=~1
+\item[(Pr3)]
+If \emph{A},~\emph{B}~∈~\emph{F} and \emph{A}~∩~\emph{B}~=~∅ then
+\emph{Pr}(\emph{A})~+~\emph{Pr}(\emph{B})~=~\emph{Pr}(\emph{A}~∪~\emph{B})
+\end{description}
+
+In propositional terms, (Pr2) says that the probability of any
+(classical) tautology is 1, and (Pr3) says that if \emph{p} and \emph{q}
+are inconsistent then the probability of \emph{p}~∨ \emph{q} is the
+probability of \emph{p} plus the probability of \emph{q}. The canonical
+statement of all this is in Kolmogorov
+(\citeproc{ref-kolmogorov1933a}{1933/1950}). He makes two complications
+to the theory. The first is to extend it to conditional probability
+functions. Often the axiomatisations for conditional probability
+functions are given in such a way that probability could be conditional
+or non-conditional. I think it's neater to only allow conditional
+probabilities, and since I think all probability sentences make
+elliptical (or explicit) reference to evidence, there is a philosophical
+justification for this. So the axiomatisation for conditional
+probability functions \emph{Pr}:~\emph{F}~×~\emph{F}~→ \emph{U} is as
+follows.
+
+For all \emph{A}, \emph{B}, \emph{C}~∈~\emph{F}
+
+\begin{description}
+\tightlist
+\item[(CP1)]
+\emph{Pr}(\emph{A}~\textbar~\emph{B})~≥ 0
+\item[(CP2)]
+\emph{Pr}(\emph{U}~\textbar~\emph{A}) = 1
+\item[(CP3)]
+If \emph{A},~\emph{B},~\emph{C}~∈~\emph{F} and \emph{A}~∩~\emph{B}~=~∅
+then
+\emph{Pr}(\emph{A}~\textbar~\emph{C})~+~\emph{Pr}(\emph{B}~\textbar~\emph{C})~=~\emph{Pr}((\emph{A}~∪~\emph{B})~\textbar~\emph{C})
+\item[(CP4)]
+\emph{Pr}(\emph{A}~\textbar~\emph{B}~\&~\emph{C}) ·
+\emph{Pr}(\emph{B}~\textbar~\emph{C}) =
+\emph{Pr}(\emph{A}~\&~\emph{B}~\textbar~\emph{C})
+\end{description}
+
+The notation \emph{Pr}(\emph{A}~\textbar~\emph{B}) is read as `the
+probability of \emph{A} given \emph{B}'. We can recover the
+`unconditional' probability \emph{Pr}(\emph{A}) as
+\emph{Pr}(\emph{A}~\textbar~\emph{U}). When the simplification is
+harmless and aids the exposition I will occasionally talk about simple,
+or unconditional, probability functions, but the main focus will be on
+analysing probability sentences by using of conditional probability
+functions. Note that we can almost recover a conditional probability
+function from a simple one by setting
+\emph{Pr}(\emph{A}~\textbar~\emph{B})~=\textsubscript{df}
+\emph{Pr}(\emph{A}~\&~\emph{B}) / \emph{Pr}(\emph{B}). The problem is
+that this definition fails when \emph{Pr}(\emph{B}) = 0. It seems on the
+whole simpler to take conditional probability functions as
+basic.\footnote{It has been reported to me that Alan Hájek's as yet
+  unpublished Ph.D.~thesis contains a wide range of arguments for this
+  conclusion, including arguments against resolving the difficulty of
+  undefined conditional probabilities by moving to infinitesimals.
+  However, without having seen that thesis, I am unable to comment in
+  any detail on it.}
+
+The other complication Kolmogorov makes is to extend the additivity
+axiom, (Pr3) or (CP3), from a principle of `finite additivity' to one of
+`countable additivity'. This involves the adoption of a new axiom,
+(CP5).
+
+\begin{description}
+\tightlist
+\item[(CP5)]
+If \emph{A}\textsubscript{1},~\ldots, \emph{A\textsubscript{n}},
+\ldots{} are pairwise disjoint elements of \emph{F}, then
+∑\emph{Pr}(\emph{A\textsubscript{i}}~\textbar~\emph{C})~=~\emph{Pr}(⋃\emph{A\textsubscript{i}}~\textbar~\emph{C}).
+\end{description}
+
+It is hardly ever suggested that this be extended to cases where there
+are more than denumerably many \emph{A}'s, for example where there is
+one element of the \emph{A}'s for every real in {[}0,~1{]}.\footnote{Though
+  Lewis (1994) seems to suggest that we might need such `strong forms of
+  additivity' to deal with the infinitesimal-valued probabilities he
+  posits.} However, there is some debate about whether even extension to
+the countable case is plausible. Kolmogorov merely defended it on
+grounds of mathematical convenience, which is hardly telling. The
+following example shows both how (CP5) is independent of the other
+axioms, and why we might not want this axiom.
+
+Say we know \emph{x} is a natural number, but have no idea about which
+natural number it is. In this case we might think it appropriate to
+spread the probability evenly over every element of \emph{N}. That is,
+for any natural number \emph{n}, set \emph{Pr}(\emph{x}~=~\emph{n})~=~0.
+Or in conditional language, set
+\emph{Pr}(\emph{x}~=~\emph{n}~\textbar~\emph{x}~∈~\emph{N})~=~0. Now
+this is clearly consistent with the axioms apart from (CP5), and it is
+clearly inconsistent with (CP5). To see this, set
+\emph{A\textsubscript{i}} as \emph{x}~=~\emph{i} for all \emph{i}. The
+probability of each \emph{A\textsubscript{i}} is 0, but the probability
+of their union, \emph{x}~∈~\emph{N}, is 1. de Finetti thought this
+probability function was so obviously reasonable in the circumstances
+that he rejected Kolmogorov's axiom
+(\citeproc{ref-definetti1974a}{DeFinetti, 1974: 121}). In
+\textbf{?@sec-chap-3} I'll look into this in more detail, but to get
+ahead of myself a little bit, I don't think (CP5) has been proven to be
+appropriate for our usage of probability. And since I think there's a
+burden of proof on the proponent of a new axiom, for now I take de
+Finetti's side of this debate. However, I'm not as convinced as de
+Finetti that there will never be an argument for countable additivity.
+
+It might be worth noting one of the confusing nomenclatures in this
+field, if just to note that I won't be adopting it. Sometimes the term
+`finitely additive' is used for only those probability functions which
+do not satisfy countable additivity, our (CP5). This is misleading
+because of course countably additive functions are also finitely
+additive on the most natural interpretation of that term. That is, they
+satisfy (CP1) to (CP4). When I use the term `finitely additive' that is
+precisely what I will mean, but to minimise confusion I'll just try not
+to use it at all.
+
+So all I mean by a probability function is something satisfying (CP1) to
+(CP4). These will be important to our eventual analysis of probability
+sentences, but for now we can leave mathematics and return to
+philosophical analysis. Or at least to refuting philosophical analyses.
+
+\section{Probability is not Frequency}\label{sec-0103}
+
+It could be the case that \emph{The probability that Oswald killed JFK
+is more than 0.5}, which we'll abbreviate to \emph{O}, is true even if
+Oswald did not kill JFK. Since there was only one JFK assassination,
+that would make Oswald's frequency of being JFK's assassin 0. Yet this
+wouldn't, one suspects, make us say that \emph{O} is necessarily false
+now. If there is a lot of evidence for Oswald's guilt, as many people
+seem to believe, then \emph{O} will be true. Hence we cannot interpret
+\emph{O} as a statement about frequencies, in this simple sense.
+
+Nor could probability be long-run frequency. If probability is long-run
+frequency it must be that Oswald being the assassin is one type of
+event, and the JFK assassination is another, and the ratio of events of
+the first type amongst events of the second is more than 0.5. Now on the
+one hand if we specify these types too closely then we will be back to
+the problem that there is at most one event of each type, so the ratio
+will be 0 or 1. On the other hand if we specify too coarsely, we lose
+any theoretical motivation for linking probability and frequency.
+
+Consider, for example, some of the possible event types
+\emph{E}\textsubscript{1} and \emph{E}\textsubscript{2} such that Oswald
+being the assassin is an instance of \emph{E}\textsubscript{1} and the
+assassination is an instance of \emph{E}\textsubscript{2} and the
+probability of Oswald being the assassin is the frequency of
+\emph{E}\textsubscript{1} events amongst the \emph{E}\textsubscript{2}.
+(I.e.
+\emph{n}(\emph{E}\textsubscript{1}~\&~\emph{E}\textsubscript{2})~/~\emph{n}(\emph{E}\textsubscript{2})
+or some limit of this, where \emph{n}(\emph{E}) is the number of times
+\emph{E} occurs). If \emph{E}\textsubscript{1} is Oswald being the
+assassin and \emph{E}\textsubscript{2} is there being an assassination,
+then \emph{O} will be obviously false, but presumably it could be true.
+If \emph{E}\textsubscript{1} is the initial suspect being guilty then
+the probability of initial suspects being guilty at every assassination
+will be constant, which seems mistaken. Similar considerations preclude
+\emph{E}\textsubscript{1} being say, a communist sympathiser is guilty,
+or being that someone who killed someone else on the day of the
+assassination is the killer. If we start taking conjunctions of these,
+say \emph{E}\textsubscript{1} being the initial suspect, who is a
+communist sympathiser and a known killer, is guilty and
+\emph{E}\textsubscript{2} is that there is an assassination where the
+initial suspect is a communist sympathiser and a known killer we risk
+the classes contracting to size 1 again, and the frequencies hence being
+either 0 or 1.
+
+Even when the frequency analysis gives the correct output, it seems to
+get the direction of explanation wrong. Moving from assassinations to
+casinos, let \emph{E}\textsubscript{2} be the event that a standard
+(i.e.~37-slot) roulette wheel is spun and \emph{E}\textsubscript{1} the
+event that the ball lands in 1. The probability of the ball landing 1 is
+1/37, which is presumably also the frequency. I have just made a
+well-balanced, apparently fair 35-slot roulette wheel. The probability
+of the ball landing 1 on first spin is, it would seem, 1/35, even if
+this is the first ever spin of a 35-slot roulette wheel, and indeed even
+if it is the only ever spin of such a wheel. This is just the point of
+the previous argument, however there is a larger problem for the
+frequency analysis.
+
+Say that a schmoulette wheel is a 35-slot roulette wheel made today or a
+37-slot wheel made any other day. Let \emph{E}\textsubscript{2} be the
+event that a schmoulette wheel is spun, and \emph{E}\textsubscript{1}
+the event that the ball lands 1. The frequency of
+\emph{E}\textsubscript{1} amongst the \emph{E}\textsubscript{2} will in
+the long run be little different from 1/37. This doesn't alter the fact
+that the probability that the ball will land 1 on the first spin of my
+35-slot wheel is 1/35, even though the spin is an event of type
+\emph{E}\textsubscript{2} and the ball landing 1 of type
+\emph{E}\textsubscript{1}. The conclusion I draw is that the events in
+\emph{E}\textsubscript{1} and \emph{E}\textsubscript{2} must be
+homogenous in some way if the frequency analysis is to give the correct
+response. However, I suspect there will be no way of defining this
+homogeneity except by reference to probability. In other words, it seems
+that it must be probability that determines frequency, rather than
+frequency determining probability. Unless we already know the
+probability of particular events we can't determine appropriate event
+types, and without that we can't determine the frequency of a type of
+event\footnote{In \textbf{?@sec-0704} I argue against Kyburg's attempt
+  to define homogeneity in just this way. Kyburg is not a frequency
+  theorist; he is a logical theorist who thinks that probability refers
+  to a metalinguistic relation between a sentence and its evidence whose
+  value is determined by the most pertinent statement about frequencies
+  in the evidence.}.
+
+Russell (\citeproc{ref-russell1948a}{1948: 384}) showed, when the
+cardinality of \emph{E}\textsubscript{1} and \emph{E}\textsubscript{2}
+is infinite, the ratio of occurrences of \emph{E}\textsubscript{1} to
+¬\emph{E}\textsubscript{1} amongst the \emph{E}\textsubscript{2} can
+only be defined as a limit. That is, we list the occurrences of
+\emph{E}\textsubscript{2} in some order, and say the frequency of
+\emph{E}\textsubscript{1} is the limit as \emph{n} tends to infinity of
+the number of events in the first \emph{n} which are
+\emph{E}\textsubscript{1} to \emph{n}. However, the limit of this ratio
+depends not only on the membership of \emph{E}\textsubscript{2}, but on
+its ordering. For example, if we order the natural numbers in the
+standard way (i.e.~1, 2, 3, \ldots) then as \emph{n} tends to infinity
+the ratio of the number of primes less than or equal to \emph{n} to
+\emph{n} will tend to 0. So the long-run frequency of primes in the
+natural numbers is 0. However, if we simply re-order the numbers, we can
+make this limit be 1/2, or 1, or indeed any number we care to choose in
+{[}0,~1{]}. So frequency can't be defined as a relation between classes,
+but only as a ratio between sequences. As Russell remarked, ``This seems
+strange.'' (\citeproc{ref-russell1948a}{1948: 385}).
+
+There are also a multitude of theoretical reasons for not equating
+frequency and probability. One is what B. van Fraassen
+(\citeproc{ref-vanfraassen1989a}{1989}) calls the
+\emph{horizontal-vertical} problem. Assuming we're trying to work out
+the probability of an event that will (or will not) happen in 2000, say
+a Democrat winning the 2000 U.~S. Presidential election. Consider a
+branching-time model of the universe, with the possible world
+time-slices being points on a Cartesian plane, and with actual time as
+the ­\emph{y}-axis. This is drawn in the diagram below. Possible worlds
+are functions \emph{x}~=~\emph{f}(\emph{y}). In the diagram below the
+actual world @ (the bold line) is represented by the function
+\emph{x}~=~\emph{c}. The dotted horizontal lines then represent all the
+ways the world could be at various points in time. The large dot is the
+way the actual world is now. The other lines leaving this world
+represent worlds which have the same past as ours, but diverge between
+now and the year 2000. There are of course infinitely many such worlds,
+but only finitely many can be drawn.
+
+\includegraphics{sec-0104.jpg}
+
+To work out the relative frequency of one event type given another, we
+only have to look at @. In particular, we look at the vertical line
+\emph{x}~=~\emph{c}, and work out the ratio of points on it that are of
+type \emph{E}\textsubscript{1}~\&~\emph{E}\textsubscript{2} to those
+that are of type \emph{E}\textsubscript{2}. If this is impossible we
+work out the limit of this ratio as time tends to infinity. However, to
+work out the probability now of a certain event happening in 2000, we
+presumably have to look at the ratio of points on \emph{t}~=~2000 which
+are of that type to those that are not, or more likely some weighted
+average of this type, or more likely again a limit of some such weighted
+average. The important point is that what is important to the
+probability of a Democrat winning is a ratio of some kind on the
+horizontal line \emph{t}~=~2000, not on the vertical line @. Frequencies
+measure the wrong things to be probabilities.
+
+Finally, there is the problem Kyburg (\citeproc{ref-kyburg1961a}{1961:
+22}) noted about the applicability of the frequency analysis. Let's take
+a case where the frequentist should be on solid ground, the case where
+we try to work out the probability of a coin toss landing heads. Coin
+tosses happen often enough, and are homogenous enough, that at least
+some of the standard objections to frequentism are irrelevant. Perhaps
+then the frequentist can explain what we mean by `The probability of a
+coin toss landing heads is 1/2'. However, as Kyburg points out by their
+own lights we cannot mean anything by `The probability of the next coin
+toss landing heads is 1/2'. The frequentist can only talk about the
+probability of events which are outcomes of trials repeated very often,
+perhaps infinitely. However, `the next coin toss' is not a repeated
+trial, hence they can't talk about the probability of it. So even in
+cases where they appear most comfortable, the frequentist only gets away
+with their story by shifting from a definite to an indefinite article.
+
+\section{Probability is not Modal Frequency}\label{sec-0104}
+
+Recognising the horizontal-vertical problem, some people have argued
+that probability is modal frequency. That is, the probability of
+\emph{p} is the frequency of \emph{p} across the possible worlds, or the
+ratio of \emph{p}-worlds to all worlds. This does solve the
+horizontal-vertical problem, and it solves the problem of one-off events
+(like the JFK assassination) having a probability. But it seems to make
+a fundamental mistake about the nature of the possible worlds. There are
+just too many of them for this to get off the ground. Provided \emph{p}
+is contingent, there are infinitely many worlds in which \emph{p}, and
+infinitely many in which ¬\emph{p}. Now there are ways to get around
+this, indeed my theory could be considered such a way, but when we take
+it we seem to not have a modal frequency theory. Moreover, it is hard to
+see how on this analysis we could think the probability of a Democrat
+winning in 2000 is higher than that of a Republican winning. It's not
+that there are more worlds in which Democrats go on to win than in which
+Republicans do, just that (at present) the Democrat-winning worlds are
+more probable.
+
+We might hold that probability is modal frequency among the accessible
+worlds, or that it is some kind of weighted modal frequency. I have no
+objection to such a view; indeed it is quite similar to a view I adopt.
+However, adopting this as an analysis seems to me to get the order of
+explanation wrong. The frequency of a highly probable event among
+accessible worlds is high simply because the event is probable. That is,
+the accessible worlds are accessible because they are probable, they are
+not probable because they are accessible. So I think such analyses may
+be extensionally correct, but even if they are will be flawed as
+analyses because their `direction of fit' is wrong.
+
+\section{Probability is not Propensity}\label{sec-0105}
+
+Popper (\citeproc{ref-popper1959a}{1959}) held that probability should
+be analysed as propensity. This seems to make sense when we are looking
+to analyse probability statements in, say, quantum mechanics. But it
+doesn't make sense in a number of senses in which probability is used.
+In particular, it doesn't seem to work when we are considering the
+probability of events which, if they did happen, would have happened in
+the past, or the probability of laws of nature.
+
+As an example of the first type of problem, note that it makes sense to
+talk about the probability that Oswald is guilty. Now this doesn't mean
+(and nor would Popper have said it meant) that Oswald is likely to
+commit more crimes. Even if we are now totally convinced that Oswald's
+current propensity to commit crimes is low (because he's dead), the
+probability that he was a killer can be high. So we can at most talk
+about what the propensity was. Even this seems implausible, as the
+following is not contradictory: ``It seems highly probable on the basis
+of the forensic evidence that Oswald did it, though it would have been
+completely out of character for him''. Assuming Oswald's character
+determines his propensity to commit crimes, this means we can
+distinguish between probability and past propensity. So it must be
+current propensity that matters. But the current propensity must be
+either 0 or 1. The world is already either an `Oswald‑did‑it' world or
+an `Oswald‑didn't‑do‑it' world, so its propensity to become one of these
+is 0 or 1. Yet the probability that Oswald did it on the basis of a
+certain body of evidence can be between 0 and 1.
+
+As an example of the second type of problem, note that it seems
+plausible, at least when doing historical reconstructions, to talk about
+the probability that the laws are one way rather than another. We can
+talk sensibly about a certain experiment making one theory more or less
+probable. But we can't, it would seem, make any sense of propensity
+statements without assuming laws as given. What is usually referred to
+as the propensity of, say, atoms to decay is at best a matter of natural
+law. If we take the law as up for question, the propensity is
+indeterminate. Since Popper does not think that all probabilities are
+indeterminate, it must be that we take laws as given when determining
+probabilities. Hence the probability of any actual law must be 1, and
+the probability of any counterlegal is 0. But this goes against our
+evidence that the probability of a purported law can change with
+experiments. So the propensity analysis must fail. These two
+counterexamples can be connected. The propensity theory cannot explain
+statements like `On the evidence the ancient Egyptians had, it was
+highly probable that the earth was flat, but on the evidence we have
+today, this is highly improbable' both because it discusses the
+probability of prior events and it allows for counterlegals to have a
+positive probability.
+
+\section{Probability is not What Everyone Believes}\label{sec-0106}
+
+Before getting onto orthodox subjectivist analyses in
+Section~\ref{sec-0108}, I want to address here conventionalist theories
+of probability, which are quite similar. The conventionalist, or
+intersubjectivist, argues that the probability of \emph{p} given some
+evidence \emph{q} is the degree of belief which the community holds to
+be appropriate in \emph{p} given that evidence. On some tellings, the
+conventionalist agrees with the necessitarian position advocated here
+that probability should be analysed in terms of reasonable degrees of
+belief. They even proffer a broadly realist conception of what is
+reasonable. However, that conception is so different to what I am
+defending that it amounts to a different analysis.
+
+The conventionalist account is historically important because it seems
+to be the theory of probability in Ayer's \emph{Language, Truth and
+Logic}. I say `seems' because Ayer isn't particularly explicit on this
+point, and the discussion amounts to no more than a couple of pages. The
+main evidence is the following quotes.
+
+\begin{quote}
+To say that an observation increases the probability of a hypothesis
+\ldots{} is equivalent to saying that the observation increases the
+degree of confidence with which it is rational to entertain the
+hypothesis. And here we may repeat that the rationality of a belief is
+defined, not by reference to any absolute standard, but by reference to
+our own actual practice.
+
+{[}W{]}hen a man relates belief to observation in a way which is
+inconsistent with the accredited scientific method of evaluating
+hypotheses \ldots{} he is mistaken about the probability of the
+propositions which he believes Ayer (\citeproc{ref-ayer1936a}{1936:
+100--101}).
+\end{quote}
+
+More recently various writers such as Gillies
+(\citeproc{ref-gillies1988a}{1988}, \citeproc{ref-gillies1991a}{1991}),
+Runde (\citeproc{ref-runde1994a}{1994}), Davis
+(\citeproc{ref-davis1994a}{1994}), and Bateman
+(\citeproc{ref-bateman1996a}{1996}) have held that Keynes moved to a
+conventionalist position when he wrote his later economics. Some of
+these writers, particularly Gillies and Runde, seem to endorse this
+shift.
+
+It is a little surprising at first that Ayer takes this position on
+probability. I expected Ayer to adopt a position that was both
+subjectivist and non-cognitivist about probability, much as he does
+about ethics. The reason he does not do this is two-fold. First, he
+recognised some of the good objections to subjectivism, at least as it
+is commonly presented. Secondly, his verification principle is expressed
+in terms of probability. A sentence is meaningful, says Ayer, iff it is
+verifiable. But to make this plausible we have to adopt what Ayer calls
+the `weak' conception of verifiability. ``{[}A proposition{]} is
+verifiable, in the weak sense, if it is possible for experience to
+render it probable'' (\citeproc{ref-ayer1936a}{Ayer, 1936: 37}). Now if
+what was probable varied from person to person (as some subjectivists
+assert) it would turn out that which sentences were meaningful varied
+from person to person. This is much too implausible for Ayer.
+Alternatively, if we go fully expressivist (or non-cognitivist) about
+probability, and say that there is no fact of the matter as to whether
+or not a proposition has been rendered probable, there will be no fact
+of the matter as to whether some sentences are verifiable. This is again
+not a conclusion Ayer wants.
+
+However, the conventionalist move has problems of its own. There is one
+argument against it which seems quite powerful to me, but which is
+obviously question-begging. On Ayer's story whether \emph{q} renders
+\emph{p} probable will depend not just upon \emph{p} and \emph{q}, and
+perhaps on background facts, but on the prevailing scientific standards.
+Probability sentences for Ayer presumably have an elliptical reference
+to these standards. Now this seems completely implausible, but since
+Ayer happily accepts it we can hardly urge it as an argument. I only
+mention it to remind the reader that their intuitions on this matter may
+differ from Ayer's.
+
+The more substantial problem for Ayer is what I call the problem of
+unknown conventions. Since it is an empirical fact that convention
+\emph{A} is operative in our society, rather than say convention
+\emph{B}, this is only something we can learn by experience. That is, we
+learn it because we acquire evidence for it. Presumably this evidence,
+like all other evidence, could be misleading. So say an agent has
+evidence \emph{q}, and that evidence provides strong but misleading
+support for the proposition that convention \emph{B} is operative. Now
+assume, as again seems possible, that conventions \emph{A} and \emph{B}
+provide different directions as to the appropriate degree of belief in
+\emph{p} given \emph{q}. Say \emph{A} says \emph{p} ought be believed to
+degree 0.3, and \emph{B} says it should be believed to degree 0.8. Now,
+what ought our agent do?
+
+The conventionalist says that the agent ought believe \emph{p} to degree
+0.3. Note, however, that if the agent does the best they can do to
+accord with the conventions, that is, arrange their beliefs in accord
+with what they reasonably believe to be the conventions, they will
+believe \emph{p} to degree 0.8. I don't see how the conventionalist can
+criticise an agent who does follow convention \emph{B} in these
+circumstances. After all, that agent has done what they could to satisfy
+conventionalist doctrines; they have arranged their beliefs in accord
+with what they have reasonably taken to be the conventions of society.
+So I think the conventionalist is forced to say this kind of person both
+is and is not reasonable.
+
+We can make the same point in a more dramatic way. The conventions in
+which we are interested are just rules for converting evidence to
+reasonable degrees of belief. If someone believes all the conversions,
+they believe the convention, even if they can't express it. And
+plausibly we can analyse believing a particular conversion as being
+disposed to make it in the right circumstances. That is, if an agent is
+disposed to believe \emph{p} to degree \emph{x} on evidence \emph{q},
+they believe that the relevant rule converts evidence \emph{q} to degree
+of belief \emph{x} in \emph{p}. They might, in some circumstances, not
+know that they believe it, but believe it they do. The conventionalist
+says reasonable agents will always have these dispositions. Hence all
+reasonable agents will believe the conventions are what they actually
+are, even on no evidence whatsoever. Since, as was noted, what the
+conventions are is for Ayer an empirical fact, he imposes upon his
+rational agents a requirement to believe an empirical fact on no
+evidence at all. This is hardly plausible, so Ayer's conventionalism
+about probability fails.
+
+\section{Probability is not a Syntactic Relation}\label{sec-0107}
+
+In his (\citeproc{ref-keynes1921a}{1921}) Keynes argued that probability
+referred to `partial entailment' relationships, of which classical
+entailment is merely a limiting case. The spirit of this approach was
+adopted by Carnap in his (\citeproc{ref-carnap1950a}{1950}) and
+subsequent works. There are, as I have noted, strong similarities
+between my approach and the Keynes‑Carnap approach. However, there are
+two crucial points on which I differ from Carnap, and the point of this
+section is to briefly set out Carnap's theory and my grounds for
+dissenting from it.
+
+The exposition of Carnap's position given here largely follows the
+exposition in Fine (\citeproc{ref-fine1973a}{1973}, Ch. 7) and Carnap's
+own summary in his (\citeproc{ref-carnap1963a}{1963}). In simple terms,
+Carnap analyses probability in terms of degree of belief. The
+probability of \emph{h} given \emph{e} is the degree of rational belief
+in \emph{h} given \emph{e}. That's entirely accurate, but Carnap didn't
+like it as a description because it might have misleadingly subjectivist
+connotations. So as a next approximation he said the probability of
+\emph{h} given \emph{e} is the degree of confirmation of \emph{h} by
+\emph{e}. But this term too could be misinterpreted, as his exchange
+with Popper in the 1950s indicated. So he eventually defined the
+probability of \emph{h} given \emph{e} as the `rational subjective
+value' in utils of a bet which pays 1 util if \emph{h} and nothing
+otherwise to an agent with evidence \emph{e}.
+
+It isn't clear why Carnap thinks this explanation of probability should
+imply it is always numerically valued. The comments at
+(\citeproc{ref-carnap1963a}{1963: 972}) suggest he thinks this is
+necessary for probability to be used in rational decision making. In any
+case, he set himself the task of developing a quantitative theory of
+probability in account with the above analysis. Carnap thinks, correctly
+in my opinion, that the concept of probability\footnote{Actually Carnap
+  thought there were two concepts of probability, one based on `logical
+  probability' and the other based on frequency, so the text might be a
+  bit misleading here. However, it was the logical concept, his
+  probability\textsubscript{1} which attracted most attention, and which
+  in later writings he referred to simply as probability. Hence most
+  commentators have adopted the convention I'm using of referring to
+  probability\textsubscript{1} as Carnap's conception of probability.}
+he is working with is crucial to induction. Sound inductions are those
+where the logical probability of the conclusion given the premises is
+high. So he draws the following conclusions:
+
+\begin{quote}
+(a) The reasons {[}for accepting axioms of inductive logic{]} are based
+upon our intuitive judgements concerning inductive validity,
+i.e.~concerning inductive rationality of practical decisions (e.g.~about
+bets); therefore:
+
+(b) It is impossible to give a purely deductive justification of
+induction.
+
+(c) The reasons are \emph{a priori} (\citeproc{ref-carnap1963a}{Carnap,
+1963: 978}).
+\end{quote}
+
+I think (c) is correct, but Carnap goes further. He has taken \emph{h}
+and \emph{e} to be sentences, not propositions, and he thinks that the
+probability of \emph{h} given \emph{e}, like the provability of \emph{h}
+from \emph{e}, can be determined by purely syntactic considerations. The
+position I will take is that while probability sentences are
+non-contingent, they are like `All bachelors are unmarried' in being
+true in virtue of their non-syntactic features.
+
+To spell out this qualitative concept of logical probability, Carnap
+attempts to develop a \emph{c}-function which will give the value for
+the `degree of confirmation' of \emph{h} given \emph{e} for any
+\emph{h}, \emph{e} in a given language, written as
+\emph{c}(\emph{h},~\emph{e}). To narrow down the class of functions
+which could serve the role of \emph{c}, he adopts a number of axioms.
+These fall into three categories. The first category does enough to say
+\emph{c} is a conditional probability function. The second are symmetry
+constraints. So for example we have an axiom saying that universal
+substitution of one name for another throughout \emph{h} and \emph{e}
+leaves the value of \emph{c}(\emph{h}, \emph{e}) unchanged. And
+similarly universally substituting one predicate for another from the
+same family\footnote{A family of predicates is a set of predicates such
+  that every possible individual satisfies exactly one of them.}, or
+substituting one family of predicates for another family with the same
+number of elements leaves \emph{c}(\emph{h},~\emph{e}) unchanged.
+Finally, adding new families of predicates to the language will leave
+\emph{c}(\emph{h}, \emph{e}) unchanged, as will adding terms for new
+individuals, provided \emph{h} and \emph{e} contain no quantifiers. It
+is these invariance postulates which prompt me to describe Carnap's as a
+`syntactic' theory of probability. Finally, Carnap has three axioms
+asserting that \emph{c} must allow an agent to learn from experience.
+However, as Fine shows these don't do much to restrict the class of
+permissible \emph{c}‑functions, and in some cases are simply redundant.
+
+I will note two types of objection to Carnap's approach. The first
+essentially object to his claim to have developed a quantitative theory;
+the alleged faults are caused by his claim that \emph{c} is real-valued.
+The second object to the claim that probability is syntactic. I think
+both classes of objection will succeed, though the first class can be
+met by a simple alteration to the theory.
+
+There are four problems with Carnap's claim to have developed a
+quantitative account. B. van Fraassen
+(\citeproc{ref-vanfraassen1989a}{1989: 119--125}) stresses the point
+that despite Carnap's aim, the axioms he gives do not suffice to specify
+a unique \emph{c}‑function. Carnap of course knew that we had to posit a
+continuum of \emph{c}‑functions, but could say little about how to
+choose between them (\citeproc{ref-carnap1952a}{Carnap, 1952}). Fine
+notes that if we make a seemingly plausible extension of Carnap's
+axioms, if we insist that uniform substitutions of one complete
+description of the world for another leaves probability unchanged, we
+are led into inconsistency. From this we conclude that not all symmetry
+requirements are met, that Carnap's axioms aren't as plausible as seemed
+at first (since the intuitions which grounded them perhaps provide equal
+support to inconsistent axioms) and, Fine argues, that Carnap must say
+that the probability of \emph{h} given \emph{e} is not determined by the
+meaning of \emph{h} and \emph{e}. The point here is that if the language
+includes the family of predicates \{\emph{red}, \emph{not-red}\} then
+the probability of \emph{a is not-red} given a tautology is 1/2, whereas
+if it includes the family \{\emph{dark red}, \emph{light red},
+\emph{not-red}\} the probability of \emph{a is not-red} given a
+tautology is 1/3. Thirdly, as Howson \& Urbach
+(\citeproc{ref-howson1989a}{1989}, Ch. 3) urge, not all symmetry
+requirements can be met at once. They note that different symmetry
+requirements are inconsistent. Fourthly, as Keynes
+(\citeproc{ref-keynes1921a}{1921}) notes, there is no principled way to
+avoid the paradoxes of indifference if we insist that all probabilities
+are numerically valued.
+
+Some of these problems look like they'll go away if we allow there to be
+more than one permissible \emph{c}‑function. Carnap at one point
+(\citeproc{ref-carnap1963a}{1963: 971}) goes very close to endorsing
+just this. However, there are a separate set of objections which can be
+levelled at the syntactic parts of Carnap's theory. There are two
+objections which can be levelled at this, the first based around the
+problem of non-projectability and the second around some objections of
+Jeffrey to Carnap's theory of evidence.
+
+For our purposes it will be preferable to use the discussion of
+non-projectability in Russell (\citeproc{ref-russell1948a}{1948}) rather
+than the more standard discussion in Goodman.\footnote{Discovery of the
+  problems for induction caused by non-projectability is usually
+  credited to Goodman (\citeproc{ref-goodman1954a}{1954}), or perhaps
+  his (\citeproc{ref-goodman1947a}{1947}). However, the discussion in
+  the earlier paper is rather brief, indeed just confined to the
+  predicate \emph{P} of an artificial language. Further the problem of
+  non-projectability is urged more as a problem for the analysis of
+  counterfactuals rather than for induction, as is now standard. So for
+  these reasons I prefer giving credit to Russell. It would be
+  interesting to discover when Russell discovered this problem. In his
+  (\citeproc{ref-russell1940a}{1940}) he is obviously ignorant of it. In
+  the introduction to (\citeproc{ref-russell1948a}{1948}) he mentions
+  that parts of it are based on lectures he gave in 1944‑45, but doesn't
+  make clear which parts. And the papers published from this time in his
+  \emph{Collected Papers} yield little light on the matter. My crediting
+  Russell with this discovery is not meant to say Goodman's book was
+  anything less than an independent discovery, and of course it moved
+  the debate forward and promoted the idea of non-projectability in a
+  way which in the long run proved more effective.} As Russell notes,
+for many predicates \emph{F} and \emph{G}, the inference `All \emph{F}s
+observed so far have been \emph{G}s' therefore `The probability that all
+\emph{F}s are \emph{G}s is high' is sound. Or again, the probability
+that all \emph{F}s are \emph{G}s given all \emph{F}s observed so far
+have been \emph{G}s must be high. If we are to base probability around
+syntactic considerations and get started at all, we will have to accept
+this rule. However, as Russell also notes, some inferences of this form
+are clearly unsound. If a farmer has only seen cows in Heresfordshire so
+far in his life, this is no justification for believing that probably
+all cows are in Heresfordshire. That is, the inference is unsound when
+\emph{F} is `is a cow' and \emph{G} is `is in Heresfordshire'. But the
+unsound inference has the same syntactic form as some sound inferences.
+So probability can't be based on syntactic form.
+
+Perhaps there is a way out of this problem. We could, for example,
+restrict the language in which we allow inferences to be made, so there
+is no way in the language to represent the troublesome inference as
+being of the same syntactic form as the sound inferences. This is what
+Kyburg does in his logical approach. Recently Tooley
+(\citeproc{ref-tooley1987a}{1987}) has argued that if we are realist
+about universals, we can restrict the predicates of our canonical
+language to those universals which exist, and presumably all the
+universals are projectible. If the existence of universals is
+non-contingent this might do the work required, though if not the
+probability sentences will not be \emph{a priori} as Carnap required.
+
+There is, however, a bigger problem. Despite what may be inferred from
+some philosophy texts, we don't just make inductive inferences or use
+probability sentences in physical sciences. The idea behind Kyburg's and
+Tooley's approach is that the ideal language of science will not include
+troublesome predicates like `is in Heresfordshire' or Goodman's `grue'.
+While it \emph{might} be true that no absolute positional predicates are
+needed in physical science\footnote{Clearly predicates referring to
+  relative positions are needed.}, this just isn't true in social
+sciences. At the very least we are going to need predicates like `in a
+city', `in the country' to do the most primitive sociology. So the ideal
+language of science generally will most likely include predicates which
+are not projectible.\footnote{Could we have different languages for
+  social sciences and physical sciences? It seems like a pretty
+  desperate move. It would be hard then to explain sentences which
+  referred to terms from both physical and social sciences, like `It's
+  more probable that a recession will occur than that this atom will
+  decay in the next \emph{n} days'.} This isn't yet an argument for
+saying that we will always end up with gruesome predicates, just an
+argument for saying that quite a lot more needs to be done to show we
+are rid of them.
+
+In any case, there's another problem for the syntactic account. For this
+account to be plausible, we have to be able to specify the evidence we
+have for a proposition in a finite sentence of some language. But this
+seems implausible, as Ramsey (\citeproc{ref-ramsey1926a}{1926/1931a})
+and Jeffrey (\citeproc{ref-jeffrey1992b}{1991}) have stressed, because
+of vague evidence. If we view probability as a semantic relationship
+between propositions, rather than a syntactic relationship between
+sentences, this is no longer a problem, as I outline in
+Chapter~\ref{sec-chap-2}. The combined effect of these objections to
+Carnap's account is enough to suggest a different approach could be
+worthwhile.
+
+\section{Probabilities are not Subjective}\label{sec-0108}
+
+Theories of probability which are called `subjective', either by their
+proponents or detractors, abound in the modern literature. Surprisingly
+then, it is hard to get a clear picture of what is meant by a subjective
+theory. So my first task in this section is to draw a brief taxonomy of
+subjective positions. I divide subjective positions into four types,
+depending on how they deal with two questions. The theories can either
+define probability in terms of rational degrees of belief or something
+less, perhaps actual or coherent degrees of belief. And they can be
+assertoric or expressivist theories. An assertoric theory says that
+probability sentences make a truth-apt claim about degrees of belief; an
+expressivist theory says that probability sentences make no claim about
+how the world is, they just express an attitude. This distinction can be
+quite clearly seen in looking at different subjectivist ethical
+theories. An assertoric subjectivist analyses \emph{Torture is wrong} as
+\emph{Someone} (\emph{perhaps me}) \emph{disapproves of torture}. On an
+expressivist analysis it comes out as \emph{Boo torture}! or some more
+sophisticated variant on that. There is a fact as to whether I
+disapprove of torture, hence the assertoric theory is truth-apt, but
+\emph{Boo torture}! says nothing even plausibly truth-apt. It is, I
+think, surprising that more subjectivists in probability have not been
+drawn to expressivist analyses.
+
+One important clarification needs to be made to the above account.
+Despite some of the quotes I will adduce below, no one seriously
+believes that probability can be defined purely in terms of actual
+degrees of belief. If this were the case, there would be no laws of
+probability at all; as B. van Fraassen
+(\citeproc{ref-vanfraassen1990a}{1990}) put it, any such law could be
+refuted by the existence of a moron. So our moron's degrees of belief
+have to be made coherent before they can enter into the analysis of
+probability sentences. As Max Black (\citeproc{ref-black1967a}{1967})
+put it, degrees of belief have to be at least `rectified' before we can
+use them in analysis. Rectified degrees of belief satisfy some minimal
+coherence requirements, but nothing more. That these coherence
+requirements should amount to conformity with the probability calculus
+is argued for by Dutch Book arguments (see Chapter~\ref{sec-chap-2}) or
+some variant on them. In non-probabilistic (or classical) epistemology,
+consistency is not normally considered a sufficient ground for
+reasonableness. One can consistently believe \emph{The moon is made of
+green cheese}. Similarly rectified degrees of belief can contain a high
+degree of belief in \emph{The moon is made of green cheese}. Such a
+belief state would not be reasonable on any ordinary usage of that term.
+Despite this, some subjectivists (especially Savage and de Finetti) use
+reasonable to just mean rectified, and this leads to some confusion. I
+find Black's terminology clearer, and I'll employ it in what follows.
+
+So we have our four types of subjectivist theory, outlined in the table
+below.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2297}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4324}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3243}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Assertoric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Expressivist
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Rectified & Type 1 de Finetti, Howson and Urbach & Type 3 \\
+Rational & Type 2 Keynes, Carnap & Type 4 Blackburn \\
+\end{longtable}
+
+The names under each type list adherents of each position. My claim will
+be that there are strong objections to types 1, 3 and 4 and that type 2
+is not properly regarded as subjectivist. The objections to types 1 and
+3 are quite old, I will say little about them that is not said by Ayer.
+My argument that type 2 is not a breed of subjectivism is found entirely
+in Carnap. And whether or not type 4 subjectivism works seems to turn on
+whether or not a broadly expressivist program could work, a topic that
+could cover several chapters on its own. I'll simply note some of the
+arguments in the literature as to why it fails. So the originality of
+this section is confined to its organisation.
+
+Before starting on these objections, I should note one way in which the
+organisation itself is derivative. Kyburg
+(\citeproc{ref-kyburg1978a}{1978: 79--80}) gives a different four-fold
+taxonomy of subjectivist positions. The rows are the same as in my
+table, but the columns refer to a different property. He divides
+subjectivist theories into theories of decision and theories of degrees
+of belief. Since I don't regard theories of decision as theories of
+probability I could hardly adopt this division. Kyburg in turn doesn't
+consider the distinction between assertoric and expressivist theories.
+But the motivation for the four-fold taxonomy is in part his paper.
+
+\subsection{Type 1}\label{type-1}
+
+It might be thought that type 1 subjectivism is a mere straw man,
+something I would set up to be knocked down to show the weaknesses of
+subjectivism. However, it is very hard to read the following quotes as
+endorsing any other type of subjective theory.
+
+\begin{quote}
+Let us suppose that an individual is obliged to evaluate the rate at
+which he would be ready to exchange the possession of an arbitrary sum
+\emph{S} (positive or negative) dependent on the occurrence of a given
+event \emph{E}, for the possession of the sum \emph{pS}; we will say by
+definition that this number \emph{p} is the measure of the degree of
+probability attributed by the individual considered to the event
+\emph{E}, or, more simply, that \emph{p} is the probability of \emph{E}
+(according to the individual concerned; this specification can be
+implicit if there's no ambiguity).
+(\citeproc{ref-definetti1937a}{Finetti \& Bruno, 1937: 102})
+
+In the personalistic {[}i.e.~subjectivist{]} concept, probability is an
+index -- in an operational sense to be explained later -- of a person's
+opinion about an event. (\citeproc{ref-savage1964a}{Savage, 1964: 176})
+
+We shall argue that \ldots{} {[}probabilities{]} should be understood as
+subjective assessments of credibility, regulated by the requirement that
+they be overall consistent. (\citeproc{ref-howson1989a}{Howson \&
+Urbach, 1989: 39})
+\end{quote}
+
+Perhaps these might be interpreted as saying that the ordinary language
+concept of probability is so useless we ought replace it with the
+concept degree of belief. This might be one interpretation of
+de~Finetti's later view that ``Probability does not exist'', printed in
+capitals on his (\citeproc{ref-definetti1974a}{1974} i). However, these
+quotes seem to be claiming we can analyse \emph{probability} simply as
+\emph{degree of belief}. And this must be a mistake, because of two
+arguments from Ayer.
+
+Ayer (\citeproc{ref-ayer1936a}{1936: 101}) rejects this kind of
+subjectivism about probability because of the `obvious objection' that
+it doesn't allow a person to be mistaken about the probability of a
+proposition. Since the probability of \emph{p} is just your degree of
+belief that \emph{p}, whatever you believe is the probability of
+\emph{p} will be its probability. Strictly this mightn't be quite
+correct. Presumably a person might believe \emph{p} to degree 0.2 and
+believe they believe it to degree 0.3, and hence falsely believe the
+probability of \emph{p} is 0.3. So Ayer is wrong to say the subjectivist
+doesn't allow mistakes, but they don't allow mistakes from perfectly
+introspective agents, which is still implausible.
+
+With this objection Ayer is content to dismiss type 1 subjectivism about
+probability. There is another objection which we can extract from his
+dismissal of a simple subjectivist position in metaethics. He dismisses
+analyses of ``\emph{X} is wrong'' as ``I disapprove of \emph{X}'' by
+noting that a person can consistently say that they disapprove of things
+which are not wrong. The equivalent point is a little harder to put in
+epistemology because of Moore's paradox, but it can easily be brought
+out in a little dialogue. If the subjectivist were right, \emph{B}'s
+utterance would be consistent.
+
+\begin{description}
+\tightlist
+\item[\emph{A}]
+It is highly probable that the moon is made of green cheese.
+\item[\emph{B}]
+What \emph{A} says is true, but it is not probable that the moon is made
+of green cheese.
+\end{description}
+
+According to type 1 subjectivism, \emph{A} is making a report about his
+mental state. \emph{B} can presumably assent to that report, he agrees
+\emph{A} thinks it probable that the moon is made of green cheese, while
+consistently saying that \emph{A} is mistaken. But our intuition surely
+is that \emph{B}'s utterance is inconsistent, which makes type 1
+subjectivism implausible.
+
+As an aside, it is possible subjectivists were trying to capture a
+concept other than \emph{probability}. For instance, in later papers,
+whenever Savage went to say what the subjectivist (he preferred
+`personalist') is claiming, he would give his preferred definition of
+the \emph{probability for a person} of a proposition. (See for example
+Savage (\citeproc{ref-savage1967a}{1967a},
+\citeproc{ref-savage1967b}{1967b}).) Plausibly he is right \emph{vis a
+vis} this question, but that concept is not central to probability
+sentences generally. I am no more making a report about my mental state
+when I utter \emph{The moon is probably made of green cheese} than when
+I utter \emph{The moon is made of green cheese}.
+
+\subsection{Type 2}\label{type-2}
+
+Type 2 is called subjectivist by Kyburg
+(\citeproc{ref-kyburg1978a}{1978}) who opposes it, and Lewis
+(\citeproc{ref-lewis1980a}{1980}) who endorses it. Keynes
+(\citeproc{ref-keynes1921a}{1921: 4}) vacillates, saying the concept is
+in part subjectivist, because probability is relative to evidence, and
+partially not, because it is independent of what anyone thinks. Carnap
+(\citeproc{ref-carnap1950a}{1950: 37--50}) argues at length that this
+approach is not properly called subjectivist. I will just rehearse some
+of Carnap's arguments.
+
+Carnap has two primary arguments for calling his
+probability\textsubscript{1} concept (what I call probability)
+`objectivist'. These are that probability sentences are non-contingent
+and that whether or not they are true is not dependent on anyone's
+thinking about them. We do use psychologistic terms when giving an
+analysis of probability, we talk about beliefs, but Carnap has two
+further reasons for thinking this doesn't imply subjectivism. First, we
+never define probability in terms of beliefs \emph{simpliciter}, always
+in terms of reasonable beliefs. So ours is, in Carnap's language, a
+\emph{qualified psychologism}. The second reason, which is in part a
+consequence of the first, is that we can eliminate the psychologistic
+references from formal presentations. So Carnap defines probability not
+in terms of degree of reasonable belief, but in what amounts to the same
+thing, degree of confirmation. Maybe this isn't an improvement, perhaps
+we can only explain confirmation by reference to reasonable beliefs, but
+the first two arguments seem sound enough. Hence I think it is possible
+to define probability in terms of reasonable degrees of belief and
+oppose subjectivism\footnote{It should be remembered that Type 2
+  theories themselves form a large class, so that Lewis, Keynes and
+  Carnap appear to all endorse theories from this class, but this does
+  not imply there is close similarity between their respective views.}.
+
+\subsection{Type 3}\label{type-3}
+
+The difficulty with looking at possible objections to expressivist
+interpretations of probability is that there has been so little said
+about them. This is surprising given the well-known difficulties
+attending type 1 subjectivism. However, at least this type of
+expressivist theory seems to do no better. Indeed, it isn't obvious how
+we avoid the two problems Ayer raises for type 1 subjectivism by saying
+probability sentences are expressive rather than assertive.
+
+In fact we acquire a new problem. To say that the primary function of a
+sentence is expressive is no theory at all; we have to say what is being
+expressed. But it is hard to see how type 3 subjectivism can solve this
+problem. If we say that what is being expressed is a belief, it looks
+like probability sentences really are assertoric. After all, the type of
+utterances that express beliefs are assertions. Perhaps the situation is
+different when we express a partial belief, but it's hard to see how.
+And it is hard to see how we could say that probability sentences
+express anything else without giving up the hope of analysing
+probability sentences in terms of merely rectified beliefs, rather than
+say rational belief. So for these three reasons type 3 subjectivism
+seems untenable.
+
+\subsection{Type 4}\label{type-4}
+
+Moving to type 4 subjectivism solves all three of these difficulties in
+one stroke, which bodes rather well for its success. The idea behind
+this theory is that probability sentences express commendation of
+certain epistemic states and disapproval of others, or perhaps express
+some more subtle dispositions to commend and disapprove. The idea is
+just to extend the analysis of ethical sentences offered in Ayer
+(\citeproc{ref-ayer1936a}{1936}), Blackburn
+(\citeproc{ref-blackburn1984a}{1984}), and Gibbard
+(\citeproc{ref-gibbard1990a}{1990}) to probability sentences. Indeed,
+Gibbard explicitly endorses an expressivist analysis of `reasonable' and
+Blackburn (\citeproc{ref-blackburn1980a}{1980}) suggests a very similar
+account of `chance', though he uses the term in much the way that
+`probability' would now be used.\footnote{For example, he argues that we
+  can talk about non-integer chances in a deterministic world. We can
+  certainly talk about probabilities in a deterministic world, but
+  standard usage now seems to be that we can't talk about such chances.
+  See Lewis (\citeproc{ref-lewis1986a}{1986: 118}).} Blackburn claims
+that Ramsey also adopted this account, which might be correct.
+
+One unimportant technical point before proceeding. We can't analyse `The
+probability of \emph{p} is 0.2' as a commendation of believing \emph{p}
+to degree 0.2. The simple reason is that `The probability of \emph{p} is
+0.2' entails `The probability of \emph{p} is not 0.3' but we can commend
+believing \emph{p} to degree 0.2 without disapproving of believing
+\emph{p} to degree 0.3, because in some circumstances we might regard
+different, and indeed incompatible, states worthy of commendation.
+Similar remarks apply if we analyse probability sentences as expressions
+of something more complicated. But this problem is solved by just
+analysing an utterance of `The probability of \emph{p} is 0.2' as
+commendation of believing \emph{p} to degree 0.2 and disapproval of all
+other degrees. Anti-expressivist, or cognitivist, analyses of
+probability in terms of reasonable beliefs will have to make a similar
+complication to their story, so this is no argument against expressivism
+generally.
+
+That unimportant point aside, there is a more pressing difficulty for
+expressivist theories generally. I won't go into great detail here, in
+part because a fair discussion of this point would require a thesis
+length exposition on its own. In part, however, my lack of detail is
+caused by the possibility that there is less distance between my
+position and the expressivist position than appears at first. Some
+modern theorists, including some disposed to expressivism, have thought
+that an expressivist approach to some class of utterances, ethics being
+most frequently discussed, is compatible with believing utterances in
+that class to be truth-apt (e.g. Price
+(\citeproc{ref-price1984a}{1984}), Horwich
+(\citeproc{ref-horwich1994a}{1994})). Since the traditional statement of
+expressivism is precisely that certain classes of utterances are not
+truth-apt, this might seem like a fairly substantial change, but there
+are reasons for the move\footnote{For Price, it is to escape from the
+  Frege point I'll set out presently; for Horwich, it is because of his
+  minimalist conception of truth.}. Price, for example, argues that the
+essence of expressivism in ethics lies in the claim that the function of
+moral utterances like `Stealing is wrong' is significantly different
+from the function of non-moral subject-predicate sentences like `Snow is
+white' despite their common syntactic form. The latter class have as
+their primary aim making (accurate) descriptions of the physical world;
+moral sentences have as their primary aim expressing a certain outlook.
+If Price is right then the difference between Type 2 and Type 4
+theorists lies only in the \emph{pragmatics} of probability sentences,
+not in their semantics, or for that matter their syntactical rules. This
+is undoubtedly an important question, but it's not one I've sought to
+address here. So I regard this type of expressivism as compatible with
+the theories I'm promoting.
+
+The important problem for expressivism is what has become known as the
+Frege point. This was first explicitly set out in Geach
+(\citeproc{ref-geach1965a}{1965}), though Geach had hinted at it
+earlier. The point is that the following argument is clearly valid.
+
+(1) If stealing is wrong, then getting little brother to steal is
+wrong.\\
+(2) Stealing is wrong.\\
+(3) Getting little brother to steal is wrong.
+
+There are two problems intertwined here for the expressivist. The first
+is explaining how we get the meaning of (1) from its components. That
+is, it clearly isn't a full explanation of the meaning of (2) to say
+that when uttered it expresses a con-attitude towards stealing, for this
+doesn't explain how it contributes to the meaning of (1). This is a
+decisive refutation of some primitive expressivist theories (like that
+in Ayer (\citeproc{ref-ayer1936a}{1936})) but is no problem for modern
+approaches which acknowledge this question and present answers to it.
+However, it is a constraint on those answers that they be consonant, in
+some broad sense, with the expressivist analysis of (2). In part this
+consonance is imposed for theoretical considerations; it would hardly be
+plausible to say moral words like `wrong' function in a radically
+different way in antecedents to the way they function in simple
+sentences. And it's imposed because of the second problem for the
+expressivist; they have to explain how the argument is valid. That is,
+they have to show the logical incoherence of accepting (1) and (2) and
+not accepting, or worse denying, (3). And in part this will require
+showing there is no equivocation in meaning between (1) and (2), else we
+will not have a clearly valid argument.
+
+Price (\citeproc{ref-price1984a}{1984}) suggests we can get out of this
+with an expressivist analysis of conditionals. His theory of
+conditionals might be on the right track, and seems to do the work the
+expressivist needs\footnote{See Barker
+  (\citeproc{ref-barker1995a}{1995}) for an outline of a pragmatic
+  theory of conditionals that seems broadly correct and compatible with
+  Price's version of expressivism.}. But I don't think this solves the
+overall problem. The problem arises because of a convergence of two
+facts: moral sentences occur in unasserted positions in sentences, and
+those sentences combine with simple moral sentences to form valid
+arguments. This is exemplified by conditionals like (1), but it is also
+exemplified by disjunctions like (1´).
+
+(1´) Either stealing isn't wrong or getting little brother to steal is.
+
+The truth functional analysis of conditionals has prominent supporters,
+but it is highly controversial and it hardly seems to be a refutation of
+a theory that it needs to deny it. On the other hand the truth
+functional analysis of disjunction is so entrenched, and so
+explanatorily successful, that it would require some large trade offs
+for it to be given up. And disjunctive syllogism is slightly more
+contentious than \emph{modus ponens}, but still commonly enough accepted
+that it would be a cost for the expressivist to give it up. So I suspect
+the expressivist has to explain how moral sentences function as
+disjuncts, and how this story combines with the ordinary story about
+disjunction and validity to yield the validity of the argument from
+(1´), (2) to (3).
+
+The problem has been the subject of a number of attempted solutions.
+However, I agree with Hale's contention that these solutions fall to a
+simple dilemma (\citeproc{ref-hale1993a}{Hale, 1993: 340}). Either the
+solutions do not explain how arguments like (1´) and (2) to (3) are
+logically valid in the sense that a person asserting the premises and
+denying the conclusion would suffer from a \emph{logical} shortcoming,
+or they fail to explain the meaning of the disjunction in a way
+consonant with the expressive explanation of the meaning of the
+disjuncts. Hale argues that the solution proposed by Blackburn in his
+(\citeproc{ref-blackburn1984a}{1984}) falls to the first horn, and the
+new solution proposed in Blackburn (\citeproc{ref-blackburn1988a}{1988})
+falls to the second.
+
+In (\citeproc{ref-blackburn1984a}{1984}) Blackburn argued that we could
+interpret (1) (and (1´)) as expressions of a con-attitude towards
+disendorsing stealing but not disendorsing `getting little brother to
+steal'. The problem with this approach, as Blackburn came to realise,
+was that it posits the wrong kind of incoherence on the part of the
+person who asserts the premises and denies the conclusion. Such a person
+seems to suffer from the moral fault of not upholding their own
+second-order principles, but this is hardly a logical fault, which is
+what the expressivist needed to show. Blackburn has subsequently
+developed a different approach to explaining (1) and (1´)
+(\citeproc{ref-blackburn1988a}{Blackburn, 1988}). Hale argues that the
+interpretation adopted there is ambiguous, either disjunctions and
+conditionals are read truth-functionally, in which case we don't have a
+reading consonant with the expressivist reading of simple sentences, or
+they are read expressively, in which case they still don't underlie the
+validity of the relevant arguments. There are more arguments to be had
+on this point, but there are enough problems here to suggest there is
+value in exploring a non-expressivist approach, as I do in subsequent
+chapters.
+
+\subsection{The Exchangeability Point}\label{the-exchangeability-point}
+
+Given the objections I've made to subjectivism, the following defence of
+subjectivism may not seem immediately relevant, but perhaps its
+proponents intend it to defuse Ayer's objection that subjectivism
+doesn't allow for the obvious fact that epistemic states can be coherent
+but mistaken. In any case, the point may provide some defence of the
+Type 2 theory I want to defend. The idea is that coherence alone
+requires convergence of degrees of belief over time, so perhaps the
+epistemic states I described as coherent but mistaken are not really
+coherent at all.
+
+The crucial concept is de Finetti's idea of \emph{exchangeability}. I'll
+just deal with a very simple version of this idea, because it does well
+enough at bringing out all the philosophical points involved. Assume
+that \emph{m} trials will be conducted, each trial having two possible
+results, say that for some variable \emph{x} either \emph{x}~=~0 or
+\emph{x}~=~1. So there are 2\textsuperscript{\emph{m}} possible outcomes
+for the series of trials. That is, we identify outcomes with the
+sequence of values of \emph{x} according to each trial. Call the sum of
+an outcome the number of ones it contains. An agent regards the trials
+as exchangable over this sequence of trials iff they have the same
+degree of belief in any two outcomes with the same sum, and exchangable
+generally iff they would regard any sequence of \emph{m} trials as
+exchangable, whatever the length of \emph{m}.
+
+Exchangeability is not the same thing as probabilistic
+independence\footnote{Formally propositions \emph{A} and \emph{B} are
+  probabilistically independent iff \emph{Pr}(\emph{A}~\&~\emph{B}) =
+  \emph{Pr}(\emph{A})~·~\emph{Pr}(\emph{B}), or, equivalently,
+  \emph{Pr}(\emph{A}~\textbar~\emph{B}) = \emph{Pr}(\emph{A}).}. An
+agent can regard the trials as highly interdependent in the sense that
+once they learn the outcome of an initial sequence of trials they would
+change their degrees of belief about the results of subsequent trials.
+For example, assume a biased coin is about to be tossed 5 times, with
+\emph{x}~=~1 meaning it lands heads and \emph{x}~=~0 meaning it lands
+tails. An agent regards the coin as so biased that she is certain it
+will land the same way on every trial. But she has no idea of the
+direction of the bias, so she assigns probability 1/2 to the sequence
+\textless1,~1,~1,~1,~1\textgreater{} and 1/2 to the sequence
+\textless0,~0,~0,~0,~0\textgreater. Then she regards the trials as
+exchangable in this sense, but clearly not independent.
+
+The importance of exchangeability lies in some convergence results
+developed by de Finetti. Assume two agents update their beliefs by
+conditionalisation\footnote{That is, upon learning \emph{B} they assign
+  to \emph{Pr}(\emph{A}) whatever value they used to assign to
+  \emph{Pr}(\emph{A}~\textbar~\emph{B}).}, and regard a long sequence of
+trials as exchangable. Then, provided they don't completely rule out
+some possibilities to start with, their degrees of belief about success
+on the next trial will converge. That is, for any ε~\textgreater{} 0,
+there is an \emph{n} such that after \emph{n} trials their degrees of
+belief in success on the next trial will differ by at most ε. One
+philosophical interpretation is to say that this removes the more
+perniciously subjectivistic elements from subjectivism. The subjectivist
+now has an explanation of not just why convergence of opinion occurs
+(most dramatically perhaps in the convergence of opinion about decay
+times for radioactive elements), but of why it ought occur. Perhaps, the
+argument could continue, anyone who differed from this great convergence
+would be unreasonable in a way that even Type 1 subjectivists could
+object to.
+
+The problem with this move is simply that there is nothing in Type 1
+subjectivism which grounds the claim that agents should regard certain
+trials as exchangable. Indeed, in seeking to discriminate between
+different coherent states on the grounds of their reasonableness
+(i.e.~between those that do and don't regard trials as exchangable) we
+have slipped towards Type 2 theory, which Carnap showed is not
+subjectivist at all. This point is made by Kyburg
+(\citeproc{ref-kyburg1978a}{1978: 67}) who attributes it to discussions
+with Nagel.
+
+Matters are even worse for the Type 1 subjectivist. An event can be
+interpreted as many different types of trial. For example, drawing an
+emerald from an urn can be regarded as a trial of whether the emerald is
+green or not-green, and whether it's round or not-round. More
+interestingly, we can regard it as a trial of whether the emerald is
+grue or not-grue. And of course once we've recognised grue we can
+recognise all sorts of other predicates, such as green on an even
+numbered trial or blue on an odd numbered trial. We can't, consistently,
+regard all such sequences of trials as exchangable. So we must make a
+selection, before the evidence comes in, as to what we will regard as
+the exchangable trials. But that we must make such choices before seeing
+any evidence is what distinguishes Carnap's Type 2 approach from de
+Finetti's Type 1 approach.
+
+Indeed, we can turn around de Finetti's result to be a defence of a
+variant of Carnap's position. The Type 2 theorist is burdened by the
+necessity of saying something about what is reasonable on zero evidence.
+Carnap rose to that challenge by trying to give the precise numerical
+value of every proposition on zero evidence, but as we saw in section
+1.7, his attempts seemed doomed. Keynes allowed more flexibility by
+letting probability values be non-numerical, and I'll essentially be
+following Keynes here. I think Carnap's program is best served by not
+trying to find \emph{the} reasonable probability function, but the set
+of such reasonable functions. de Finetti's convergence theorem can be
+used to argue that what distinguishes elements of this set is not the
+value they give to particular propositions under no evidence, as Carnap
+thought, but what sequences of trials they regard as exchangable.
+Roughly, reasonable probability functions are reasonable by virtue of
+their content, not as Carnap thought by virtue of their form. We are,
+however, getting ahead of ourselves. I'll return to this matter in my
+defence of this theory against various objections in
+\textbf{?@sec-chap-6}.
+
+\bookmarksetup{startatroot}
+
+\chapter{What Degrees of Belief Aren't}\label{sec-chap-2}
+
+Ramsey objected to Keynes's view that \emph{probability} means
+reasonable degree of belief on the grounds that Keynes had provided no
+explanation of what degrees of belief were. So he proceeded to provide
+such an explanation, what I'll call the betting analysis. The point of
+this chapter is to show that Ramsey's analysis can't work, and that even
+if it did work the Dutch Book arguments based upon it are unsound. With
+this a major motivation for the betting analysis disappears.
+
+\section{Analyses of Degree of Belief}\label{sec-0201}
+
+At his first, and most famous, attempt Ramsey said that having degree of
+belief \emph{r} in \emph{A} is thinking the bet
+(1~‑~\emph{r},~\emph{A},~\emph{r})\footnote{The bet
+  (\emph{x},~\emph{p},~\emph{y}) is the bet which pays \emph{x} if
+  \emph{p} and costs \emph{y} otherwise.} is fair. That is, its expected
+worth is zero, and an agent who makes this evaluation will be prepared
+to buy this bet for any price less than zero, or sell it for any price
+greater than zero. I'll call this the betting analysis of degrees of
+belief. There is an important qualification to this analysis. I haven't
+specified in what units the payouts are quantified. If the payouts are
+quantified in units like dollars with a declining marginal utility, what
+I'm calling Ramsey's approach won't work. It only works when the payouts
+are quantified in `utils' or something equivalent. We can get around
+this problem in two ways. First, we can follow Ramsey and work out the
+utility of every possible outcome. Alternatively, we could set the
+payouts in a good which ought have constant marginal utility. Savage
+(\citeproc{ref-savage1954a}{1954}) and Smith
+(\citeproc{ref-smith1961a}{1961}) suggest that lottery tickets have this
+property, and hence develop their theories using lottery tickets as a
+currency.
+
+There are, however, approaches to defining degrees of belief other than
+in terms of evaluations of bets and dispositions to bet. Indeed, one of
+these is set out by Ramsey himself in a later paper. For this approach
+we have to assume that people can compare, introspectively, their
+degrees of belief in different propositions. In his earlier paper Ramsey
+puts forward some arguments against this, but I think these arguments
+have to fail. To see why we just have to consider Ramsey's arguments
+carefully.
+
+Ramsey discusses and rejects various possible introspective feelings
+that could serve as degrees of belief. One of these is `intensity of
+feeling' (\citeproc{ref-ramsey1926b}{1926/1931b: 169}). Ramsey simply
+rejects this by an example. We have much more intense feelings about
+some beliefs which, if pressed, we would admit we believe to a lower
+degree than those things which we take for granted. For example, in
+terms of intensity, my belief that `Lowering tariffs improves welfare'
+is stronger than my belief `The earth is round'. On the other hand, my
+degree of belief in the latter is higher than in the former. Indeed, I
+suspect my degree of belief that the latter is true is stronger than is
+my degree of belief that the former is even truth-apt. So my degrees of
+belief are not mapped by my intensity of feelings. I suspect that for
+most people we can find examples showing the same effect.
+
+So this particular argument of Ramsey's is effective. But look at what
+we take as evidence. I simply accepted the introspective evidence that
+my degree of belief in those things which I take for granted, such as
+`The earth is round' is high. Now perhaps even if we didn't have such
+introspective evidence we could still run Ramsey's argument by looking
+at the external evidence, such as betting behaviour, to determine our
+relative degrees of belief in the two propositions. However, I suspect
+no reader actually did that or anything like it when considering the
+examples. As Mellor (1980) notes, this point of Ramsey's serves to
+highlight the pretheoretic plausibility of saying we can introspectively
+make \emph{qualitative} judgements about our degrees of belief.
+
+This is an important positive argument for the analysis in the next
+chapter, but it is also a negative argument against the betting
+analysis. Because Ramsey thinks degrees of belief don't relate to any
+property determinable by introspection, he thinks that we have to look
+at what causal impact they have. That is, we have to look at their
+behavioural implications. Given this the betting analysis seems the most
+plausible candidate. I agree that if ``the kind of measurement of belief
+with which probability is concerned is \ldots{} belief \emph{qua} basis
+of action'' (\citeproc{ref-ramsey1926b}{1926/1931b: 171}) the betting
+analysis seems the only plausible approach. However, the above argument,
+and the existence of the analysis developed in the next chapter, make
+this premise dubious. The reason the existence of a positive analysis is
+important is that the early Ramsey denies that there is any
+`introspected feeling' which could be measured in the right type of
+units to be probability. The equivalence analysis shows that we can find
+such a feeling.
+
+\section{Why the Betting Analysis of Degrees of Belief
+Fails}\label{sec-0202}
+
+Since the definition of degrees of belief in terms of bets is the
+orthodoxy, I have to show why I think it is untenable before I can
+justify an alternative outlook. Before going into detail about why I
+think the identification of degrees of belief with propensities to bet
+is wrong, I'll simply list the objections:
+
+\begin{itemize}
+\tightlist
+\item
+  Our propensity to bet is affected by our attitudes towards gambling.
+\item
+  Our intuitions about what is reasonable to do on the assumption that
+  the marginal utility of the currency is constant are distorted by our
+  intuitions about everyday situations.
+\item
+  On a betting analysis we can't get our probability logic in order
+  until we have worked out our logic of preference, but this has many
+  foundational difficulties.
+\item
+  In betting situations there is no operational difference between a
+  proposition being true and its truth being discovered, and if these
+  are significantly different, the betting mechanism will determine our
+  degree of belief in the wrong proposition.
+\item
+  The betting analysis presupposes that norms of practice are epistemic
+  norms, but if this is true it is something which must be proven not
+  presupposed.
+\item
+  For at least \emph{some} incoherent agents, the analysis looks like it
+  gives the wrong answers.
+\item
+  The betting analysis cannot support Dutch Book arguments, as is
+  commonly assumed, and hence does not ground the norms we want, whereas
+  the analysis in this dissertation does ground these norms.
+\end{itemize}
+
+The first objection is a common one, and perhaps not too serious. It has
+been suggested that we get around this problem by not looking at whether
+people would bet but rather at which gambles they would accept if
+offered a choice from a set of desirable gambles\footnote{This move is
+  made in Savage (\citeproc{ref-savage1954a}{1954: 28}). He credits
+  Finetti \& Bruno (\citeproc{ref-definetti1937a}{1937}) as the
+  inspiration for it.}. The latter approach runs into problems of its
+own because, in cases where agents are susceptible to Dutch Books, the
+problem won't be the relatively serious one that they can be made to
+lose money, but the relatively trivial one that they will receive a
+smaller gift than they could have. Even in these cases, the experimental
+evidence is that people have a preference for choices which seem to
+involve less of a gamble, in some undefined and possibly incoherent
+sense\footnote{The experiments I am thinking of are of the following
+  form. Assume we have two goods, \emph{B} and \emph{C}, such that
+  \emph{C} is considerably better than \emph{B} but not overwhelmingly
+  so. If we aren't paying our experimental subjects, \emph{B} could be
+  \$1 million and \emph{C} \$5 million. If offered the choice between a
+  20\% chance of \emph{C} and a 25\% chance of \emph{B}, subjects will,
+  on the whole, choose the former. The same choice can be seemingly set
+  up as a two-stage process. Whatever the subjects choose, there is a
+  25\% chance of qualifying for the `second round'. If they qualify they
+  will receive either \emph{B} for certain or an 80\% chance of
+  \emph{C}, but they have to say before they know whether they've
+  qualified which they would choose. Even though this seems functionally
+  equivalent to the first choice, here subjects will overwhelmingly
+  choose \emph{B}, because it doesn't involve a gamble. There is no
+  consequentialist sense in which these choices are coherent. These
+  experiments are reported in Kahnemann \& Tversky
+  (\citeproc{ref-kahnemann1979a}{1979: 273ff}). They refer to the choice
+  pattern exhibited as `the isolation effect'. I'll discuss the
+  relationship between dynamic and static choices in appendix 3C and
+  also in \textbf{?@sec-chap-9}.}. The worry is just that these
+dispositions for or against gambling itself will pollute our information
+about degrees of belief. Indeed the fact that we can, it appears,
+sensibly talk about attitudes to gambling polluting the information
+about degrees of belief seems to count against the idea that we can
+\emph{analyse} degrees of belief as dispositions to gamble. Certainly
+attitudes to gambling do not pollute any information we might get about
+dispositions to gamble. Perhaps though this last point merely shows that
+the betting analysis is not obviously true, not that it is false.
+
+The second objection is related to the first, but it is more pragmatic.
+Ramsey argues that what we mean when we say a belief is reasonable is
+that it was formed by a reasonable habit
+(\citeproc{ref-ramsey1926b}{1926/1931b: 194ff}). But what habits are
+reasonable depends in part on our surroundings. In particular, our
+reasonable habits may become unreasonable if we are placed in a
+radically different situation. A similar situation arises in ethics
+where if we think behaving ethically is behaving in accord with certain
+sets of rules we have to acknowledge the possibility that in certain
+unusual situations good actions will have less desirable expected
+outcomes than bad actions. The objection is that in situations where we
+are making bets in `utils' are so different to everyday life that what
+is reasonable in our situation may be unreasonable in those. Hence our
+intuitions about what would be reasonable seem unreliable. Since the
+main point of the betting analysis is to work out what is reasonable,
+and our basic data is our intuitions about the reasonableness of
+specific acts, this vitiates the usefulness of the analysis.
+
+On a betting analysis, we work out what degrees of belief are reasonable
+by looking at what preferences are reasonable. This, however, increases
+unduly our workload in the foundations of probability. For example, Good
+(\citeproc{ref-good1952a}{1952}) notes that we have to work out how to
+deal with infinite utilities (or show their impossibility) as a
+foundational task in probability logic on a betting analysis. I don't
+doubt there are various plausible ways of doing this, but I would prefer
+my theory of probability was \emph{not} held hostage to a particular
+analysis of infinity if possible. For a different example, Savage's
+axioms of preference in his (\citeproc{ref-savage1954a}{1954}) are much
+more contentious than the probability logic he derived from them. The
+point is simply the pragmatic one that the less contentious philosophy
+we have in our foundations the better.
+
+When we place a bet, we don't care directly about whether or not the
+proposition on which we bet is true. On the contrary, we care directly
+about whether we and our bettor will come to know that it is true, so we
+can claim our winnings. So the betting analysis of degrees of belief
+should lead to our logic of degrees of belief being intuitionist not
+classical (\citeproc{ref-harman1983a}{Harman, 1983}). Ramsey gets around
+this by assuming the bookmaker has the power of the Almighty. It would
+be distressing if our commitment to classical logic depended on being
+theists. (There is an interesting comparison here with Dummett's
+arguments in `Truth' for the claim that opposing intuitionism requires
+some kind of commitment to the supernatural.) Even if we accept that it
+is possible for the bookmaker to have this power, the concern from the
+last paragraph about the usefulness of our intuitions in these
+circumstances remains.
+
+It has been pointed out by several authors that Dutch Book arguments
+grounded on the betting analysis, even if sound, make a large
+presupposition\footnote{For a recent example, see Kvanvig
+  (\citeproc{ref-kvanvig1994a}{1994}).}. That presupposition is that
+norms of action, such as `don't buy Dutch Books', are epistemic norms.
+Now it may be possible to prove that prudential norms are epistemic;
+indeed I suspect the analysis here goes some way to proving that. But it
+is a surprising result, and one for which we ought develop arguments. It
+isn't something that can be safely supposed, as it appears to be under a
+betting analysis.
+
+Christensen (\citeproc{ref-christensen1996a}{1996}) argues for what he
+calls a `metaphysical separation' between degrees of belief and betting
+practices. At one level his argument is an old-fashioned open question
+argument. Even if we know that someone has degree of belief 0.2 in
+\emph{p}, we can still ask what evaluations they would make of bets on
+\emph{p}. Now such arguments aren't particularly telling; it's no
+refutation of an analysis that it isn't obvious. Christensen, however,
+has in reserve a somewhat more subtle argument. Assume I will pay 30
+cents for the bet (\$1, \emph{p}, 0) but only 20 cents for the bet (\$1,
+\emph{p}~∨~\emph{q},~0). My evaluations are, in a sense I will get to,
+incoherent. The best justification for the betting analysis is that we
+have to identify mental states by their functional role. If we were to
+assume the only role a degree of belief plays is in bet-evaluation,
+there might be a functionalist argument for the betting analysis. As
+Christensen notes, however, in this case my degree of belief in
+\emph{p}, whatever it is, performs at least two roles. One is in helping
+determine how much I'll pay for (\$1, \emph{p}, 0), and the other in
+helping determine how much I'll pay for (\$1, \emph{p}~∨~\emph{q}, 0).
+In fact there is a third role; helping determine what my degree of
+belief in \emph{p}~∨~\emph{q} is. When we're coherent, there will be no
+tension between these roles. But incoherence, at least of preference, is
+clearly possible. Christensen's point, I take it, is that for incoherent
+cases the betting analysis unjustifiably privileges one particular
+functional role to the exclusion of others, and hence it can be
+challenged on its own ground.
+
+Finally, one of the advertised strengths of the betting analysis is that
+through Dutch Book arguments we can provide a justification for degrees
+of belief obeying axioms of the probability calculus. This was
+originally argued by Ramsey, and has been extended to dynamic settings
+by Lewis and van Fraassen. If these arguments succeed they show that the
+betting analysis has great practical usefulness. However, I show in the
+next section that these arguments are invalid, or at least unsound. On
+the other hand, I prove in the next chapter that all the results which
+Dutch Book arguments claim to achieve can be grounded in a purely
+epistemic analysis.
+
+\section{Dutch Book Arguments Fail}\label{sec-0203}
+
+For simplicity, let's define \emph{the A‑bet} to be the bet
+(1,~\emph{A},~0), where the unit is of some currency with constant
+marginal utility and \emph{Bel}(\emph{A}) to be my degree of belief in
+\emph{A}. The following is a paradigm Dutch Book argument. Assume
+\emph{Bel}(\emph{p}) is 0.6 and \emph{Bel}(¬\emph{p}) is 0.55. Then, by
+the betting analysis, I will be prepared to pay \emph{Bel}(\emph{A})
+units for an \emph{A} bet, or at least \emph{Bel}(\emph{A})~‑~ε, for
+arbitrarily small ε. We'll assume for the sake of the argument that the
+marginal utility of money is constant in small amounts\footnote{This is
+  a common enough assumption in this field, but I don't see any economic
+  reason for it. If we assume, as is standard, that the utility of any
+  particular level of wealth is independent of our actual wealth, there
+  is no reason to think that the marginal utility of money will be
+  constant around our actual position than it would be around any other
+  positions. If, on the other hand, the marginal utility of money in
+  small quantities really is constant, this leads to problems for
+  orthodox utility theory. I don't want to argue for either of these
+  assumptions and against the other, but it is worth noting that despite
+  the frequency with which each is assumed they are in strong tension.}.
+Hence I will pay \$1.15 for a \emph{p}‑bet together with a
+¬\emph{p}‑bet. The sum of these bets is
+((\$2,~¬\emph{p},~\$1),~\emph{p},~(\$1,~¬\emph{p},~0)) or, in other
+words, a bet which pays \$2 if \emph{p}~and~¬\emph{p}, \$1 if
+\emph{p}~or ¬\emph{p} but not both, and nothing if neither \emph{p} nor
+¬\emph{p}. Since it is impossible that \emph{p} and ¬\emph{p} it is
+impossible that this bet will pay more than \$1, hence my betting
+practices are normatively flawed. And since by assumption norms of
+betting behaviour are epistemic norms, I must be irrational. Such
+arguments can be used to show that my beliefs ought obey all the axioms
+of the probability calculus.
+
+I agree that if I was prepared to pay 60 cents for a \emph{p}‑bet and 55
+cents for a ¬\emph{p}‑bet this would be irrational. That is, I accept
+for the sake of argument the identification of norms of betting with
+epistemic norms. However, I don't see how it follows from having certain
+degrees of belief that I ought be prepared to pay these amounts. The
+problem is that the argument assumes I will not use any strategic
+pricing, yet it gives no reason for thinking that I oughtn't price
+strategically. Indeed it seems implicit in the argument that I ought
+price strategically. By strategic pricing I mean setting a price for a
+good that is not determined solely by its intrinsic usefulness, but by
+how much I could either sell the good for or obtain the good from other
+sources.
+
+Adam Smith noted some 220 years ago that the price of goods bore no
+interesting relationship to their usefulness. Nothing is more useful
+than water, yet it is almost free, nor less useful than diamonds, but
+they have massive value. We have since learnt that there is in some
+specified circumstances a determinate relationship between what we'll
+call the value of a good and its usefulness. If a consumer's budget is
+at equilibrium then the ratio of the marginal utility of a good to its
+marginal price will be constant for all goods the consumer purchases
+provided the utility function of every good is differentiable
+(\citeproc{ref-slutsky1915a}{Slutsky, 1915}). Still, in general, i.e.~at
+disequilibrium, Smith's observation holds. Moreover, since we are
+assuming that, for the bets in question, the marginal utility of both
+the payouts of the bets and the currency we use to buy them is constant,
+unless all people have the same degree of belief in all propositions we
+can't trade our way to an equilibrium position.
+
+The principle flaw in Dutch Book arguments is that they ignore Smith's
+observation. My degree of belief in \emph{A} can determine at most the
+usefulness of an \emph{A}‑bet. Yet it is assumed that it will also
+determine the price I am prepared to pay for \emph{A}‑bets. Hence it is
+assumed that there is a correlation between how useful bets are and how
+much I will or ought be prepared to pay for them. As Smith showed, in
+general this cannot be the case.
+
+We can find simple examples where it would be unreasonable to pay
+\emph{Bel}(\emph{A}) for an \emph{A}‑bet. Assume that I know I can sell
+a \emph{p}‑bet for 90 cents, and \emph{Bel}(\emph{p}) is 0.7. I am
+offered a \emph{p}‑bet for 80 cents, should I accept? According to the
+betting analysis I should not, because I am being asked to pay 80 cents
+for something which has an expected value of 70. However, it seems at
+least plausible that I should accept the bet and then sell it for a sure
+profit. Alternatively, assume I know I can buy as many \emph{p}‑bets as
+I like for 70 cents each in the market, and \emph{Bel}(\emph{p}) is 0.9.
+Again I am offered a \emph{p}‑bet for 80 cents. The betting analysis
+says I should accept, but again it's plausible that I should instead buy
+\emph{p}‑bets at the cheaper market price.
+
+This may not look at first like a major difficulty. After all, we know
+the correlation between fair prices for \emph{A}‑bets and degrees of
+belief in \emph{A} only holds under restricted conditions. All these
+examples show is that we have to be more careful in specifying the
+initial conditions. As far as it goes, this response is correct.
+Provided we have good reason to believe that we oughtn't use strategic
+pricing, the correlation will hold. The problem for Dutch Book arguments
+is that the only way we can know this is if there is no possibility of
+later bets, so we can know that we can't buy the bets for less on the
+market nor make a profit by resale. However, as we saw above Dutch Book
+arguments in general only work by using retrade. Hence they rely on the
+correlation between degree of beliefs and betting prices for rational
+agents holding in a context in which only irrational agents would price
+bets this way, so the arguments fail.
+
+This conclusion is of major importance for what follows, so I should
+restate the argument which I have used. Dutch Book arguments rely on
+there being entailments from agents having certain degrees of belief to
+their propensity to buy certain bets. They conclude that if some set of
+our degrees of belief are probabilistically incoherent, we will buy a
+set of bets which incurs sure loss, and hence we must be irrational.
+However, the entailment in question only holds under restricted
+circumstances. One of the restrictions is that there be no possibility
+for later trade in bets. When there are retrade possibilities, as there
+must be for most types of Dutch Books to be made, the entailment does
+not hold. So Dutch Book arguments make inconsistent presuppositions, and
+hence fail.
+
+It might be objected that if an agent whose beliefs were not coherent
+with the probability calculus believed falsely that there was no
+possibility of retrade they would make trades which led to sure loss.
+However, the only way a bookmaker could exploit this is if she had more
+knowledge than the agent. And the fact that a bookmaker with more
+knowledge than us can sell us bets which, given the bookmaker's
+knowledge, have to lose, is no proof that we are irrational. If it was
+we would be able to show that any person whose degree of belief was less
+than 1 for any true proposition, or greater than 0 for any false
+proposition, is irrational. Moreover, even if we regard such an agent as
+irrational, it is not clear that it is because her beliefs don't follow
+the probability calculus that she's irrational. All we can tell from the
+fact that she will suffer a sure loss is that she's made a mistake
+somewhere; this might be concerning her misplaced certainty that the
+market is closed rather than her degrees of belief in the proposition on
+which bets are placed.
+
+Alternatively, it might be objected that an agent who is completely
+ignorant of the state of the market will price bets by their expected
+return even if they think there is the possibility of retrade. The
+problem with this objection is that it is, famously, very hard to pin
+down what it is to be completely ignorant. Saying that if I am
+completely ignorant of whether or not it is the case that \emph{p} then
+my degree of belief in \emph{p} is, or ought to be, 1/2 leads to
+well-known contradictions. It certainly would be odd to say that if we
+are completely ignorant of the likely effects of a certain class of
+events we should ignore them, which would seem to be the line of attack
+here. In part 2, particularly in \textbf{?@sec-chap-9}, I'll look at
+various theories about how we ought make decisions under ignorance.
+Under several of these (particularly maximin approaches) if the agent
+knows nothing about the market she should make no trades at all rather
+than pricing according to mathematical expectation. Finally, if the
+approach advocated in this dissertation is correct and there are
+necessary probabilities, then in many circumstances an agent is
+irrational to be completely ignorant in some strong sense. So again,
+even if the agent is irrational, the Dutch Book argument can't prove
+that it is the incoherence of degrees of belief with the probability
+calculus that is making the agent irrational.
+
+In the literature there is generally a distinction drawn between
+synchronic and diachronic Dutch Book arguments, with the latter being
+referred to as Dutch Strategy arguments. These latter type are used to
+infer coherence constraints on how our degrees of belief should change
+over time. Though the above argument refutes both Dutch Book and Dutch
+Strategy arguments, the results concerning Dutch Strategy arguments are
+more striking. Unlike Dutch Book arguments, Dutch Strategy arguments
+appear to have occasionally led to authors drawing mistaken conclusions.
+
+In his latest argument for a principle called Reflection, van Fraassen
+discusses the case of Pierino, whom he claims is irrational
+(\citeproc{ref-vanfraassen1995a}{1995: 11}). Pierino is a young child
+who today prefers blocks to marbles, but knows that in a year when he
+has acquired older tastes, he will prefer marbles to blocks. He is in
+the predicament of today having 9 marbles. Van Fraassen stipulates that
+Pierino is indifferent between keeping his 9 marbles and trading them
+for 3 blocks, knowing full well that in a year's time he'll be
+indifferent between holding these blocks and trading them for a single
+marble. And this, van Fraassen claims, must be irrational, for if he
+made the two trades he would have lost 8 marbles. To the obvious
+response that he will have gained in enjoyment in the short term by
+having more blocks which he can use now, van Fraassen replies that since
+he was indifferent to the trades, he can't gain anything.
+
+Van Fraassen's reply makes the mistake we have attempted to highlight
+here. Pierino's indifference to the trades tells us that at each time
+the exchange-value of the bundles on offer was equal, but we can't from
+this infer that the use-value of the two bundles was equivalent. Indeed,
+assuming Pierino preferred more marbles to fewer in year 2, we must
+assume that the value of having 3 blocks in year 1 was greater than the
+value of having 9 marbles, and indeed so much greater that it made up
+for the expected losses in year 2.
+
+We can make a formal model for Pierino that satisfies these constraints.
+Assume that U\textsubscript{1} is the utility he gets from toys in year
+1, and U\textsubscript{2} the utility he gets in year 2. Assume his aim
+is to maximise U\textsubscript{1}U\textsubscript{2}, and hence that he
+is indifferent as to the amount of toys he holds at the end of year 2.
+Let B\textsubscript{i} and M\textsubscript{i} be the amounts of marbles
+and blocks he has in year i, and assume his utility functions are as
+follows.
+
+\begin{quote}
+U\textsubscript{1} = 27B\textsubscript{1} + M\textsubscript{1};\\
+U\textsubscript{2} = B\textsubscript{2} + 3M\textsubscript{2}.
+\end{quote}
+
+Given that he starts with 9 marbles, if he just holds marbles his net
+utility across the two years will be 9~·~27~=~243. If he trades the 9
+marbles for 3 blocks, knowing that these can only be traded for 1 marble
+at the end of year 1, his net utility will be 81~·~3~=~243. Hence his
+indifference to the trade. He could increase his utility if it is
+possible to trade say 6 marbles for 2 blocks, but we have no reason to
+assume that that trade is allowed. For reasons I will outline in the
+next chapter, I think van Fraassen's main conclusion, that all rational
+agents are Reflective, is sound, but the arguments he uses to get there
+are mistaken.
+
+One final point ought be noted. When an agent holds a Dutch Book what is
+important is not that there is no winning outcome. What's important is
+that all the winning outcomes are impossible. Assume as above that I
+bought a \emph{p}‑bet for 60 cents and a ¬\emph{p}‑bet for 55 cents.
+Then if it's the case that \emph{p} and ¬\emph{p} I will win 85 cents,
+and if it's the case that neither \emph{p} nor ¬\emph{p} I will lose
+\$1.15. However, in all possible situations I will lose 15 cents. This
+has two interesting consequences.
+
+First, Dutch Book arguments presuppose a certain logic; in particular
+one where \emph{p} \& ¬\emph{p} is impossible and \emph{p}~∨~¬\emph{p}
+is a tautology. There's nothing wrong with this, but it is a
+presupposition which should be noted. (Harman
+(\citeproc{ref-harman1983a}{1983}) notes that because of this attempts
+to use the probability calculus to prove the semantics for natural
+language ought be classical are question-begging). Unless otherwise
+stated, I will presuppose classical logic. That is, when I say \emph{A}
+is impossible I will mean ¬\emph{A} is a classical theorem, and when I
+say \emph{A} entails \emph{B} I will mean it classically entails
+\emph{B}.
+
+Secondly, there is a \emph{sound} Dutch Book argument which can be made
+against a person whose degree of belief in any contradiction is
+positive, or whose degree of belief in any tautology is less than 1.
+I'll just illustrate the first. Assume my degree of belief that the
+four-colour map theorem is false is 0.1. Then I'll buy a bet against it
+for 5 cents. As there's no possibility of this bet winning, this is a
+sure loser. And since there's only one bet involved, I didn't assume
+that retrade was possible, so the above objections to Dutch Book
+arguments don't apply. The objector who says that it is an
+\emph{epistemic} possibility that the four colour map theorem is false
+has a much deeper objection to Dutch Book arguments than I. After all,
+\emph{p}~\&~¬\emph{p} might be an epistemic possibility too, so on this
+approach we could object directly to the toy Dutch Book argument with
+which I opened this section. Rather than take this road, I will simply
+assume that in this field we are interested in an epistemology for
+agents whose beliefs are closed under entailment.
+
+\section{Other Critiques of Dutch Book Arguments}\label{sec-0204}
+
+The critique of Dutch Book arguments given here is unique in two
+respects. First, it is the only one, to my knowledge, to rely on Adam
+Smith's distinction between usefulness and exchange-value. Secondly, as
+will be seen in the next chapter I concur with the most famous
+conclusions of Dutch Book arguments. The usual motivation for
+criticising these arguments is to motivate dissent with their
+conclusions. Here the motivation is to provide a cleaner separation of
+epistemology and decision-theory.
+
+The closest argument in the literature to mine is given by Schick
+(\citeproc{ref-schick1986a}{1986}). He argues that Dutch Book arguments
+fail because they assume that the value of bets is additive. That is,
+they assume the value of an \emph{A}‑bet is independent of whether or
+not the agent holds a \emph{B}‑bet. Since bets might be complementary in
+an economic sense, this is a false assumption, so these arguments fail.
+This objection is similar to mine in that it relies on a simple economic
+theory to refute the Dutch Book argument, and because as Schick notes it
+doesn't apply to `single‑bet' books (\citeproc{ref-schick1986a}{1986:
+116}). However, it is not a successful refutation.
+
+The alleged flaw with Dutch Book arguments on which Schick relies was
+noted by Ramsey when he originally put the argument.
+(\citeproc{ref-ramsey1926b}{Ramsey, 1926/1931b: 173--4}). Not only does
+Ramsey point out the alleged flaw, he notes its prima facie
+implausibility and offers a small argument to try and defend it. Ramsey
+claims that when all the final payouts\footnote{When I say the `final
+  payouts' of bets are of type \emph{X} I mean the following. The set of
+  all bets whose `final payouts' are of type \emph{X} is the smallest
+  set of bets including all those whose payouts are of type \emph{X}
+  such that any bet such that each of the payouts is a bet in the set is
+  also in the set. If we allow bets to have more than two possible
+  payouts we can amend this last condition accordingly.} of all bets are
+`ultimate goods', the value of the bets is additive. Now Ramsey's claim
+here might be wrong, but we should get an argument to this end. Instead,
+Schick simply assumes that when bets are denominated in utils
+(equivalently when the marginal utility of money is assumed to be
+constant) we will get similar economic results to those we'd get were
+bets denominated in dollars. Schick's mistake (if it is a mistake) is
+instructive; as I noted above the fact that we don't, even on
+reflection, have particularly clear intuitions about trading utils is a
+good reason for not founding our theory of probability on the types of
+bets Ramsey discusses.
+
+Levi (\citeproc{ref-levi1987a}{1987}) and Maher
+(\citeproc{ref-maher1992a}{1992}) argue that agents who are not
+Reflective will `see the Dutch Book coming' and hence refuse to take the
+bets which lead to being Dutch Booked. Their argument is principally
+developed to defeat van Fraassen's conclusion that ideally rational
+agents are Reflective, though it isn't clear why it wouldn't also apply
+to synchronic Dutch Book arguments. Since it doesn't actually work it
+isn't particularly worthwhile to speculate how far it would reach were
+it successful.
+
+The kinds of cases they are thinking of are like the following. Assume I
+today believe that the probability of \emph{p} is 0.5, and believe that
+tomorrow I'll believe the chance is 0.3. Assume also I'm offered a
+\emph{p}‑bet for 40 cents. I know that if I buy it I will be prepared to
+sell it tomorrow for say 32 cents, for a sure 8-cent loss. That is, I'll
+be Dutch Booked. But wait! If I see this coming I won't buy the original
+bet for 40 cents, and thus avoid holding the book. Levi and Maher claim
+that the availability of this path to unreflective agents blocks the
+Dutch Book argument.
+
+This response to Reflection fails for the simple reason that being
+`Dutch Bookable' is not a necessary condition of irrationality. Assume I
+don't buy the original 40 cent bet. I won't now be able to sell this bet
+for 32 cents tomorrow. However, I will still be able to buy a ¬\emph{p}
+bet for 68 cents. If I take Levi and Maher's advice, I'll have converted
+a sure loss of 8 cents into an expected loss of 18 cents. There might be
+an argument to show that this is a rational option, but I'd like to see
+what it is\footnote{The practicalities of this situation are very
+  difficult, and it is impossible to get clear intuitions about what we
+  should do given the assumption of constant marginal utility of money.
+  If I know that tomorrow my degree of belief in \emph{p} will be 0.3,
+  ideally I will take steps to prevent myself acting on this later
+  belief. That is, I should take the Ulysses option. Now buying
+  \emph{p}‑bets today for 40 cents to sell tomorrow at a sure loss will,
+  as is noted in the text, reduce my \emph{expected} loss. However, that
+  is assuming that the number of ¬\emph{p}‑bets I will buy (number of
+  \emph{p}‑bets I will sell) tomorrow is independent of the number of
+  \emph{p}‑bets I buy today. The idea is that taking Levi and Maher's
+  advice \emph{may} in some circumstances, have the effect of tying me
+  to the mast and not trading tomorrow. It \emph{will} have this
+  consequence if the marginal utility of money is not constant, but when
+  it is there are few clear intuitions on the matter.}.
+
+There is a bigger problem for Levi and Maher's approach. As we saw
+above, when used by de Finetti and Savage the Dutch Book argument does
+not require the agent to incur an actual dollar loss. Rather, since the
+choices are between gifts, the incoherent agent incurs a sure
+\emph{opportunity} loss. Now when I refuse the original offer of a
+\emph{p}‑bet for 40 cents, I have already incurred an opportunity loss.
+Admittedly it is again an \emph{expected} opportunity loss rather than a
+sure one, but it isn't clear why incurring an expected loss rather than
+a sure one is an epistemic improvement.
+
+Bacchus, Kyburg, \& Thalos (\citeproc{ref-bacchus1990a}{1990}) run a
+series of responses to Dutch Book arguments. Their responses to dynamic
+Dutch Book arguments will be discussed in \textbf{?@sec-chap-3} as
+possible objections to my arguments for dynamic coherence; here I'll
+stick to discussing their general comments on Dutch Book arguments. Put
+in slogan form, they endorse the position that bad betting is bad
+betting, not bad believing. I agree, but I'm a bit worried about the way
+they get to this slogan.
+
+Having incoherent degrees of belief (and even the disposition to convert
+these directly into bets) does not guarantee sure loss. Only this
+combined with a rather clever and devious bookie does. Note two
+important consequences of this qualification. First, we now say that
+certain sets of degrees of belief will not \emph{always} lead to losses,
+but will sometimes lead to losses. But we knew all along that any
+degrees of belief (except certain kinds of dogmatic acceptance of only
+tautologies) \emph{might} lead to losses. Why, we can ask, are the
+losses caused by devious bookies signs of irrationality, but not the
+losses caused by taking attractive but ultimately losing bets? I suspect
+this raises problems for a certain type of pragmatist, but I can't see
+it as a general problem. The problem isn't that some possibility claim,
+i.e.~we might lose if a certain type of bookie exists, is true, but
+rather an existence claim, i.e.~that a certain type of acceptable but
+losing bet exists. The second consequence Bacchus, Kyburg and Thalos
+draw is that the Dutch Book argument only works if we make the paranoid
+assumption that devious bookies exist. Consistency isn't just the sign
+of a small mind, but of a paranoid one too. Again, this looks like a
+good refutation of a certain strictly pragmatic Dutch Book argument.
+However, we don't need to formulate Dutch Book arguments as strictly
+pragmatic, and when we don't I suspect this objection loses its force.
+That is, the possibility of the agent buying a Dutch Book seems at least
+as great an epistemic flaw as actually making the purchase, and hence
+anyone who runs a Dutch Book argument is just making an avoidable
+mistake if they assume an actual pernicious bookie.
+
+\section{The Betting Analysis as Analogy}\label{sec-0205}
+
+Although I don't regard the betting analysis as correct, or even that
+useful generally given the failure of Dutch Book arguments, it may be a
+helpful analogy. Much of this section is motivated by Shafer
+(\citeproc{ref-shafer1981a}{1981}), who also regards betting prices as
+an occasionally useful analogy to degrees of belief, though he's
+considerably more sceptical than I about the applicability of this
+analogy. To see when this analogy might be useful, we first have to
+consider the known limitations on its applicability.
+
+The only way I will use betting examples is to test whether
+\emph{Bel}(\emph{p}) is reasonable by considering whether it is
+reasonable to accept or reject offers to buy or sell \emph{p}‑bets. If,
+for example, in appropriate circumstances it would be unreasonable to
+reject an offer of a \emph{p}‑bet for 0.2, this can be taken as a good
+argument for saying that \emph{Bel}(\emph{p})~≤~0.2 is unreasonable.
+First we must consider what circumstances are `appropriate', or since
+this seems a bit open-ended, which circumstances are known to be
+inappropriate. The following have already been mentioned.
+
+\begin{itemize}
+\tightlist
+\item
+  When the units in which the bet is denominated or traded are of
+  variable marginal utility.
+\item
+  When there is a time-delay between when the bet is or would be traded
+  and when winnings would be paid.
+\item
+  When there is a possibility of trading in other bets at a later time.
+\end{itemize}
+
+The last is actually a bit broader than what we used above. We have to
+rule out not just trade in this particular bet, but in other bets as
+well because some bets are complementary in the economic sense. This is
+very common in real life. For example, it is worthwhile to buy insurance
+on your car but not on someone else's despite the fact that the cost of
+the bets are the same and the expected returns may well be identical
+(unless say you know you are a worse driver than other people). In part
+this will be because insurance bets are denominated in a currency with
+declining marginal utility. However, it seems presumptive to think that
+complementation is only caused by this effect. Experimental evidence
+suggests that for many agents the fact that their degree of belief in
+some propositions is vague leads to a complementation effect. So we have
+in general to assume this is the last possible trade.
+
+This assumption also gets us around a problem noted by Davidson \&
+Pargetter (\citeproc{ref-davidson1985a}{1985}). Assume I know that your
+degree of belief in \emph{p} is 0.7, and mine is 0.9. You offer to sell
+me a \emph{p}‑bet for 0.85. Assuming all other circumstances are in
+order, this trade will be worthwhile for me. However, I know that if I
+counter-offer to buy it for 0.71, you will still find the trade
+worthwhile, and I will have bought the bet for 0.14 less. Davidson and
+Pargetter thought we could only get around this by assuming the agent
+under investigation knows the bookmaker has the same degrees of belief
+as they. However, once we know this is the last chance to bet, i.e.~that
+the counter-offer possibility is closed, we don't need to make this
+extra restriction, and since we need to have a closed market after the
+bet in question for other reasons, Davidson and Pargetter's restriction
+seems redundant.
+
+Even though it is not needed in these cases, however, we might want to
+restrict attention to cases where each party to the bet is known to have
+the same information for the following reason. Degrees of belief can at
+most determine dispositions to bet, not actual betting practices. Even
+if I have a disposition to buy \emph{p}‑bets for 0.2, if I am offered a
+\emph{p}‑bet for that price I might not buy. This seems contradictory,
+but it is not. Dispositions can be finkish
+(\citeproc{ref-lewis1997a}{Lewis, 1997};
+\citeproc{ref-martin1994a}{Martin, 1994}). I might have a disposition to
+in circumstances \emph{C}, yet be in a situation such that whenever
+circumstances \emph{C} arise I will lose the disposition.
+
+Assume I have next to no evidence about the players in a certain tennis
+match, and let \emph{p} be the proposition that the player who serves
+first will win. Even if I have a disposition to buy \emph{p}‑bets for
+0.1, say, if someone were to offer me a \emph{p}‑bet for that price I
+would most likely refuse. That is, the disposition would be finkish. The
+reason I would refuse is that the fact I was offered the bet would count
+as a new piece of information (the information that someone who most
+likely knows more about the match than I thinks \emph{p}‑bets are worth
+less than 0.1) and in the state with this extra information I'm not
+disposed to make the purchase. If I did have the disposition this would
+be just like paradigm cases of finkish dispositions because the
+occurrence of the circumstances which are meant to `trigger' the
+disposition causes me to lose that disposition in an easily identifiable
+way.
+
+How could we tell that I originally had a finkish disposition rather
+than having no disposition at all? The best test seems to be whether I
+would buy the bet if I knew that the person offering it had the same
+information I did, and hence that there was little information in the
+fact that the bet was offered. So the Davidson and Pargetter restriction
+to circumstances where the offeree knows the offerer has the same
+beliefs they do is important for cases of complete ignorance to
+eliminate the effect of finkish dispositions. This will be used in later
+chapters.
+
+Given these restrictions, it seems the analogy with bets is worthwhile.
+We will have to be careful to use it only in appropriate circumstances,
+and to remember that it is only an analogy, and perhaps not the only
+one. Where possible it will be preferable to use the analysis of degrees
+of belief to be developed in \textbf{?@sec-chap-3}.
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-ayer1936a}
+Ayer, Alfred. (1936). \emph{Language, truth and logic} (Second edition
+1947. References to second). Gollantz.
+
+\bibitem[\citeproctext]{ref-bacchus1990a}
+Bacchus, Fahiem, Henry Kyburg, and Mariam Thalos. (1990). Against
+conditionalisation. \emph{Synthese}, \emph{85}, 475--506.
+
+\bibitem[\citeproctext]{ref-barker1995a}
+Barker, Stephen. (1995). Towards a pragmatic theory of {`if'}.
+\emph{Philosophical Studies}, \emph{79}, 185--211.
+
+\bibitem[\citeproctext]{ref-bateman1996a}
+Bateman, Brad. (1996). \emph{Keynes's uncertain revolution.} University
+of Michigan Press.
+
+\bibitem[\citeproctext]{ref-black1967a}
+Black, Max. (1967). Probability. In Paul Edwards (Ed.), \emph{The
+encyclopaedia of philosophy} (Vol. 8, 464 479). Macmillan.
+
+\bibitem[\citeproctext]{ref-blackburn1980a}
+Blackburn, Simon. (1980). \emph{Opinions and chances} (Mellor, Ed.).
+Cambridge University Press.
+
+\bibitem[\citeproctext]{ref-blackburn1984a}
+Blackburn, Simon. (1984). \emph{Spreading the word}. Clarendon Press.
+
+\bibitem[\citeproctext]{ref-blackburn1988a}
+Blackburn, Simon. (1988). Attitudes and contents. \emph{Ethics},
+\emph{98}, 501--517.
+
+\bibitem[\citeproctext]{ref-carnap1950a}
+Carnap, Rudolf. (1950). \emph{Logical foundations of probability}.
+Chicago: University of Chicago Press.
+
+\bibitem[\citeproctext]{ref-carnap1952a}
+Carnap, Rudolf. (1952). \emph{The continuum of inductive methods}.
+University of Chicago Press.
+
+\bibitem[\citeproctext]{ref-carnap1963a}
+Carnap, Rudolf. (1963). Replies and systematic expositions. In Paul
+Schilpp (Ed.), \emph{The philosophy of rudolf carnap} (859--1016). Open
+Court.
+
+\bibitem[\citeproctext]{ref-christensen1996a}
+Christensen, David. (1996). Dutch-book arguments de-pragmatized.
+\emph{Journal of Philosophy}, \emph{93}, 450--479.
+
+\bibitem[\citeproctext]{ref-davidson1985a}
+Davidson, Barbara, and Robert Pargetter. (1985). In defence of the dutch
+book argument. \emph{Canadian Journal of Philosophy}, \emph{15},
+405--424.
+
+\bibitem[\citeproctext]{ref-davis1994a}
+Davis, John. (1994). \emph{Keynes's philosophical development}.
+Cambridge University Press.
+
+\bibitem[\citeproctext]{ref-definetti1974a}
+DeFinetti, Bruno. (1974). \emph{Theory of probability}. Wiley.
+
+\bibitem[\citeproctext]{ref-fine1973a}
+Fine, Terrence. (1973). \emph{Theories of probability: An examination of
+foundations}. Academic Press.
+
+\bibitem[\citeproctext]{ref-definetti1937a}
+Finetti, and Bruno. (1937). La pr{é}vision; ses lois logiques, ses
+sources subjectives. \emph{Annales de l'Institute Henri Poincar{é}},
+\emph{7}, 1--68.
+
+\bibitem[\citeproctext]{ref-vanfraassen1989a}
+Fraassen, Bas van. (1989). \emph{Laws and symmetry}. Clarendon Press.
+
+\bibitem[\citeproctext]{ref-vanfraassen1990a}
+Fraassen, Bas van. (1990). Figures in a probability landscape. In J.
+Dunn \& A. Gupta (Eds.), \emph{Truth or consequences} (345--356).
+Kluwer.
+
+\bibitem[\citeproctext]{ref-vanfraassen1995a}
+Fraassen, and Bas. (1995). Belief and the problem of ulyssess and the
+sirens. \emph{Philosophical Studies}, \emph{77}, 7--37.
+
+\bibitem[\citeproctext]{ref-geach1965a}
+Geach, Peter. (1965). Assertion. \emph{Philosophical Review}, \emph{74},
+449--465.
+
+\bibitem[\citeproctext]{ref-gibbard1990a}
+Gibbard, Alan. (1990). \emph{Wise choices, apt feelings}. Clarendon
+Press.
+
+\bibitem[\citeproctext]{ref-gillies1988a}
+Gillies, Donald. (1988). Keynes as a methodologist. \emph{British
+Journal for the Philosophy of Science}, \emph{39}, 117--29.
+
+\bibitem[\citeproctext]{ref-gillies1991a}
+Gillies, Donald. (1991). Intersubjective probability and confirmation
+theory. \emph{British Journal for Philosophy of Science}, \emph{42},
+513--533.
+
+\bibitem[\citeproctext]{ref-good1952a}
+Good, I. J. (1952). Rational decisions. \emph{Journal of the Royal
+Statistical Society Series B}, \emph{14}, 107--114.
+
+\bibitem[\citeproctext]{ref-goodman1947a}
+Goodman, Nelson. (1947). The problem of counterfactual conditionals.
+\emph{Journal of Philosophy}, \emph{44}, 113--128.
+
+\bibitem[\citeproctext]{ref-goodman1954a}
+Goodman, Nelson. (1954). \emph{Fact, fiction and forecast}. Harvard
+University Press.
+
+\bibitem[\citeproctext]{ref-hale1993a}
+Hale, Bob. (1993). Can there be a logic of attitudes. In John Haldane \&
+Crispin Wright (Eds.), \emph{Reality, representation and projection}
+(337--364). Oxford University Press.
+
+\bibitem[\citeproctext]{ref-harman1983a}
+Harman, Gilbert. (1983). Problems with probabilistic semantics. In A.
+Orenstein \& R. Stern (Eds.), \emph{Developments in semantics}
+(243--247). Haven.
+
+\bibitem[\citeproctext]{ref-horwich1994a}
+Horwich, Paul. (1994). The essence of expressivism. \emph{Analysis},
+\emph{54}, 19--20.
+
+\bibitem[\citeproctext]{ref-howson1989a}
+Howson, Colin, and Peter Urbach. (1989). \emph{Scientific reasoning}.
+Open Court.
+
+\bibitem[\citeproctext]{ref-jeffrey1992b}
+Jeffrey, Richard. (1991). Radical probabilism (prospectus for a user's
+manual). \emph{Philosophical Issues}, \emph{2}, 193--204.
+
+\bibitem[\citeproctext]{ref-kahnemann1979a}
+Kahnemann, Daniel, and Amos Tversky. (1979). Prospect theory: An
+analysis of decision under risk. \emph{Econometrica}, \emph{47},
+263--291.
+
+\bibitem[\citeproctext]{ref-keynes1921a}
+Keynes, John Maynard. (1921). \emph{Treatise on probability}. Macmillan.
+
+\bibitem[\citeproctext]{ref-kolmogorov1933a}
+Kolmogorov, A. N. (1950). \emph{Foundations of the theory of
+probability}. New York: Chelsea Publishing Company. (Original work
+published 1933)
+
+\bibitem[\citeproctext]{ref-kvanvig1994a}
+Kvanvig, J. (1994). A critique of van fraassen's voluntaristic
+epistemology. \emph{Synthese}, \emph{98}, 325--348.
+
+\bibitem[\citeproctext]{ref-kyburg1961a}
+Kyburg, Henry. (1961). \emph{Probability and the logic of rational
+belief}. Wesleyan University Press.
+
+\bibitem[\citeproctext]{ref-kyburg1978a}
+Kyburg, Henry. (1978). Subjective probability: Criticisms, reflections
+and problems. \emph{Journal of Philosophical Logic}, \emph{7}, 157--180.
+
+\bibitem[\citeproctext]{ref-levi1987a}
+Levi, Isaac. (1987). The demons of decision. \emph{Monist}, \emph{70},
+193--211.
+
+\bibitem[\citeproctext]{ref-lewis1980a}
+Lewis, David. (1980). A subjectivist's guide to objective chance. In R.
+C. Jeffeey (Ed.), \emph{Studies in inductive logic and probability}
+(Vol. 2, 83 132). Retrieved from \href{https://his\%20(1986b),}{his
+(1986b),}
+
+\bibitem[\citeproctext]{ref-lewis1986a}
+Lewis, David. (1986). Probabilities of conditionals and conditional
+probability II. \emph{Philosophical Review}, \emph{95}, 581--589.
+
+\bibitem[\citeproctext]{ref-lewis1997a}
+Lewis, David. (1997). Finkish dispositions. \emph{Philosophical
+Quarterly}, \emph{47}, 143--158.
+
+\bibitem[\citeproctext]{ref-maher1992a}
+Maher, Patrick. (1992). Diachronic rationality. \emph{Philosophy of
+Science}, \emph{59}, 120--141.
+
+\bibitem[\citeproctext]{ref-martin1994a}
+Martin, C. B. (1994). Dispositions and conditionals. \emph{Philosophical
+Quarterly}, \emph{44}, 1--8.
+
+\bibitem[\citeproctext]{ref-popper1959a}
+Popper, Karl. (1959). The propensity interpretation of probability.
+\emph{British Journal for the Philosophy of Science}, \emph{10}, 25--42.
+
+\bibitem[\citeproctext]{ref-price1984a}
+Price, Huw. (1984). Mellor, chance and the single case. \emph{British
+Journal for the Philosophy of Science}, \emph{35}, 11--23.
+
+\bibitem[\citeproctext]{ref-ramsey1926a}
+Ramsey, Frank. (1931a). The foundations of mathematics. In \emph{The
+foundations of mathematics} (62--81). Routledge. (Original work
+published 1926)
+
+\bibitem[\citeproctext]{ref-ramsey1926b}
+Ramsey, Frank. (1931b). Truth and probability. In R. B. Braithwaite
+(Ed.), \emph{The foundations of mathematics} (156--198). Routledge.
+(Original work published 1926)
+
+\bibitem[\citeproctext]{ref-runde1994a}
+Runde, Jochen. (1994). Keynes after ramsey: In defence of {`a treatise
+on probability'}. \emph{Studies in the History and Philosophy of
+Science}, \emph{25}, 97--124.
+
+\bibitem[\citeproctext]{ref-russell1940a}
+Russell, Bertrand. (1940). \emph{An inquiry into meaning and truth}.
+Allen; Unwin.
+
+\bibitem[\citeproctext]{ref-russell1948a}
+Russell, Bertrand. (1948). \emph{Human knowledge: Its scope and limits}.
+Allen; Unwin.
+
+\bibitem[\citeproctext]{ref-savage1954a}
+Savage, Leonard. (1954). \emph{The foundations of statistics}. John
+Wiley.
+
+\bibitem[\citeproctext]{ref-savage1964a}
+Savage, Leonard. (1964). \emph{The foundations of statistics
+reconsidered} (Kyburg \& Smokler, Eds.).
+
+\bibitem[\citeproctext]{ref-savage1967a}
+Savage, Leonard. (1967a). Difficulties in the theory of personal
+probability. \emph{Philosophy of Science}, \emph{34}, 305--310.
+
+\bibitem[\citeproctext]{ref-savage1967b}
+Savage, Leonard. (1967b). Implications of personal probability for
+induction. \emph{Journal of Philosophy}, \emph{64}, 593--607.
+
+\bibitem[\citeproctext]{ref-schick1986a}
+Schick, Frederick. (1986). Dutch bookies and money pumps. \emph{Journal
+of Philosophy}, \emph{83}, 112--119.
+
+\bibitem[\citeproctext]{ref-shafer1981a}
+Shafer, Glenn. (1981). Constructive probability. \emph{Synthese},
+\emph{48}, 1--60.
+
+\bibitem[\citeproctext]{ref-slutsky1915a}
+Slutsky, E. (1915). On the theory of the budget of the consumer.
+\emph{Giornale Delgi Economisti}, \emph{51}, 1--26.
+
+\bibitem[\citeproctext]{ref-smith1961a}
+Smith, Cedric A. B. (1961). Consistency in statistical inference and
+decision. \emph{Journal of the Royal Statistical Society Series B},
+\emph{23}, 1--37.
+
+\bibitem[\citeproctext]{ref-tooley1987a}
+Tooley, Michael. (1987). \emph{Causation: A realist approach}. Oxford
+University Press.
+
+\end{CSLReferences}
+
+
+\backmatter
+
+\end{document}

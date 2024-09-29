@@ -16,26 +16,38 @@ table {
     margin-left: auto;
     margin-right: auto;
     border-spacing: 0;
-    border-top: 2px solid white;
+    border-top: 2px solid #002b36;
 }
 table th, td, tr {
     padding: 2px 2px;
-    border-top: dashed 2px white;
+    border-top: dashed 2px #002b36;
     border-left: none;
     border-right: none;
     border-bottom: none;
-    background-color: white;
+    background-color: #002b36;
 }
 
+td { font-size: var(--bs-body-font-size); }
+th { font-size: var(--bs-body-font-size); }
+
 dt {
-  float: none;
-  width: 500px;
+  float: left;
+  width: 50px;
   text-align: left;
   font-weight: bold;
 }
 
 dl {
   margin: 0.5em 0.5em 0.5em 1em;
+}
+
+dd {
+  margin: 0 0 0 50px;
+}
+
+.blockquote {
+  border-left: none;
+  color: black;
 }
 
 /*caption {
