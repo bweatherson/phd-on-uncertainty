@@ -259,7 +259,7 @@ I haven't required here, as I did for the precise models approach, that *y* be r
 
 The idea behind (3) is that if \|*S*\| = *x* then for any proposition *B* such that *S*^\*^  *B*^\*^ is in the model, *Bel*(*B*) = *x / y*. As I showed above, for precise models it is a theorem that whenever *B* → *A* is believed fully, it is a coherence requirement that *Bel*(*B*) ≤ *Bel*(*A*). I assume (without strictly proving it) that this holds for imprecise credences too, and this is sufficient for the reverse direction of (3). The forward direction follows from the fact that **K**^\*^ is a model of the agent's credences. If the largest *S* satisfying *S*^\*^ → *A*^\*^∈ **K**^\*^ had a cardinality *x* ‑ , then it would seem the agent's credence in *A* should, according to the model, be (*x* ‑ ) / *y*. Hence either the model is inaccurate, or the agent's beliefs are incoherent in some way. A similar justification applies to (4).
 
-### The Three Prisoners Problem
+### The Three Prisoners Problem {#sec-tpp}
 
 To see how this might work, consider the well-known Three Prisoners Problem (TPP). There are three prisoners, *a*, *b* and *c*, scheduled to be executed. The governor has decided to reprieve one of them, chosen at random by a fair chance mechanism. He makes his decision, and notifies the guards of it. However, he doesn't tell the prisoners. Prisoner *a*, desperate for information, asks a guard if he is to spared. The guard won't say, so *a* asks him for the name of one of the other prisoners who isn't going to be spared, and the guard agrees to answer this. We'll look in @sec-0308 about how *a* should react to the guard's answer, but here we'll just show how *a*'s beliefs can be modelled to demonstrate the Single Model Approach[^36].
 
@@ -281,9 +281,21 @@ As Ω is a set of possibilities[^37], we can define its power set **Po**(Ω). 
 
 Formally, when there is a possibility space Ω, a mass function *m*: **Po**(Ω) → \[0, 1\] and a Shafer belief function *Bel*~S~ the following must hold.
 
+
+
+
+
+
 **FIND THESE!!***
 
 ![](media/image3.emf) ![](media/image4.emf)
+
+
+
+
+
+
+
 
 It should be clear that once the mass function *m* is defined the *Bel*~S~ function is also defined. It is less obvious that once the *Bel*~S~ is defined function the mass function is determined, however this can be proven [@shafer1976a 39]. Usually I'll define mass functions only, because they are clearer and shorter.
 
@@ -295,34 +307,45 @@ Intuitively, this seems to show that the Shafer functions can model *some* impor
 
 Shafer functions are important to this project because of theorem 3.6.1, a proof of which is given in appendix 3B.
 
+::: {#thm-belshaf}
 
+## Bel-to-Shafer
 
+Let *Bel* be a vague belief function such that there is a model **K**^\*^ for *Bel* satisfying (1), (3) and (4). Let Γ be any finite field of propositions such that *Bel*(*A*) is vague over an interval bounded by rational numbers for all elements of Γ. Then there is a Shafer function *Bel*~S~ such that for all *A* in Γ, *Bel*(*A*) is vague over the interval \[*Bel*~S~(*A*), *Pl*(*A*)\].
 
+:::
 
+The proof works by constructing a mass function from **K**^\*^. The core idea is to allocate mass 1/*y* to the set of possibilities which are left open by *p*~i~ for each i ∈ {1, ..., *y*}. Now to complete the proof that Single Model Approach is stricter than the Many Models Approach, we only need the following theorem, which was proved by @dempster1968a.
 
-*Theorem 3.6.1*. Let *Bel* be a vague belief function such that there is a model **K**^\*^ for *Bel* satisfying (1), (3) and (4). Let Γ be any finite field of propositions such that *Bel*(*A*) is vague over an interval bounded by rational numbers for all elements of Γ. Then there is a Shafer function *Bel*~S~ such that for all *A* in Γ, *Bel*(*A*) is vague over the interval \[*Bel*~S~(*A*), *Pl*(*A*)\].
+::: {#thm-dempster}
 
-The proof works by constructing a mass function from **K**^\*^. The core idea is to allocate mass 1/*y* to the set of possibilities which are left open by *p*~i~ for each i ∈ {1, ..., *y*}. Now to complete the proof that Single Model Approach is stricter than the Many Models Approach, we only need the following theorem, which was proved by Dempster (1968).
+## Dempster
 
-*Theorem 3.6.2*. Let *Bel*~S~ be a Shafer function defined on a possibility space Ω. Then there is a convex family P of probability functions defined on the same possibility space with the following properties.
+Let *Bel*~S~ be a Shafer function defined on a possibility space Ω. Then there is a convex family P of probability functions defined on the same possibility space with the following properties.
 
-\(i\) For each *A* ⊆ Ω and *Pr* ∈ P, *Bel*~S~(*A*) ≤ *Pr*(*A*) ≤ 1 ‑ *Bel*~S~(¬*A*) = *Pl*(*A*)
+> \(i\) For each *A* ⊆ Ω and *Pr* ∈ P, *Bel*~S~(*A*) ≤ *Pr*(*A*) ≤ 1 ‑ *Bel*~S~(¬*A*) = *Pl*(*A*)    
+> \(ii\) For each *A* ⊆ Ω, there is a *Pr* ∈ P such that *Pr*(*A*) = *Bel*~S~(*A*).    
+> \(iii\) For each *A* ⊆ Ω, there is a *Pr* ∈ P such that *Pr*(*A*) = *Pl*(*A*).
 
-\(ii\) For each *A* ⊆ Ω, there is a *Pr* ∈ P such that *Pr*(*A*) = *Bel*~S~(*A*).
-
-\(iii\) For each *A* ⊆ Ω, there is a *Pr* ∈ P such that *Pr*(*A*) = *Pl*(*A*).
-
-Let *W*(*Bel*~S~) denote the largest such family. Generally, for a given convex family of probability functions, define *inf*(*A*) as the lowest value that *Pr*(*A*) takes for *Pr* in the family[^38]. Then *sup*(*A*) = 1 ‑ *inf*(¬*A*) is the maximal value that *A* takes. It is well-known (see for example Shafer (1976: 5)) that all Shafer functions satisfy the following property, which we'll call **complete monotonicity**. Let *A*~1~, ..., *A*~n~ be propositions (not necessarily disjoint) on Ω.
+Let *W*(*Bel*~S~) denote the largest such family. Generally, for a given convex family of probability functions, define *inf*(*A*) as the lowest value that *Pr*(*A*) takes for *Pr* in the family[^38]. Then *sup*(*A*) = 1 ‑ *inf*(¬*A*) is the maximal value that *A* takes. It is well-known (see for example @shafter1976a [5]) that all Shafer functions satisfy the following property, which we'll call **complete monotonicity**. Let *A*~1~, ..., *A*~n~ be propositions (not necessarily disjoint) on Ω.
 
 [^38]: Or if this does not exist, the greatest number *x* such that *x* \< *Pr*(*A*) for all *Pr* in the family. I am generally dealing with closed families here, so I won't attend to the added complications arising from this possibility.
 
+
+
+
 *Bel*~S~(*A*~1~ ∨ ... ∨ *A*~n~) ≥ ![](media/image5.emf)
 
-For example, for n = 2, the condition requires that *Bel*~S~(*A*~1~ ∨ *A*~2~) ≥ *Bel*~S~(*A*~1~) + *Bel*~S~(*A*~2~) - *Bel*~S~(*A*~1~ & *A*~2~). However, if we substitute *inf*(*A*) for *Bel*~S~(*A*), complete monotonicity is not a property of all families of probability functions. To take a simple example (this is due to Williams (1978)), consider the family {*Pr*: *Pr*(*A*~1~) ≥ 1/2 & *Pr*(*A*~2~) ≥ 1/2}. In this family, *inf*(*A*~1~) = *inf*(*A*~2~) = *inf*(*A*~1~ ∨ *A*~2~) = 1/2 and *inf*(*A*~1~ & *A*~2~) = 0. This shows that the Single Model approach is strictly stronger than the Many Models approach. So if we are to adopt this approach to modelling reasonable imprecise degrees of belief we need a justification for this extra restriction.
+
+
+
+
+For example, for n = 2, the condition requires that *Bel*~S~(*A*~1~ ∨ *A*~2~) ≥ *Bel*~S~(*A*~1~) + *Bel*~S~(*A*~2~) - *Bel*~S~(*A*~1~ & *A*~2~). However, if we substitute *inf*(*A*) for *Bel*~S~(*A*), complete monotonicity is not a property of all families of probability functions. To take a simple example (this is due to @williams1978a), consider the family {*Pr*: *Pr*(*A*~1~) ≥ 1/2 & *Pr*(*A*~2~) ≥ 1/2}. In this family, *inf*(*A*~1~) = *inf*(*A*~2~) = *inf*(*A*~1~ ∨ *A*~2~) = 1/2 and *inf*(*A*~1~ & *A*~2~) = 0. This shows that the Single Model approach is strictly stronger than the Many Models approach. So if we are to adopt this approach to modelling reasonable imprecise degrees of belief we need a justification for this extra restriction.
 
 All families *W*(*Bel*~S~) have a further property, which is independent of monotonicity, but which isn't shared by all families of probability functions. I'll call it, for want of a better name, **event defined**. Families which have this property are such that once we have given all the intervals in which the probability of every proposition falls, we have said all there is to say about the family. Formally, a family P is event defined relative to a possibility space Ω iff it meets the following condition.
 
-*Event Defined*: For all *w*~i~ in Ω, let *x*~i~ be any element of \[*inf*({*w*~1~}), *sup*({*w*~1~})\]. Then there is a *Pr* ∈ P such that for all i, *Pr*({*w*~i~}) = *x*~i~.
+> **Event Defined**    
+> For all *w*~i~ in Ω, let *x*~i~ be any element of \[*inf*({*w*~1~}), *sup*({*w*~1~})\]. Then there is a *Pr* ∈ P such that for all i, *Pr*({*w*~i~}) = *x*~i~.
 
 A family is event defined *simpliciter* iff it is event defined relative to all possibility spaces Ω. Since *W*(*Bel*~S~) is simply defined with respect to the interval within which the degree of belief of each proposition falls, it follows it is event defined.
 
@@ -332,17 +355,17 @@ Let *Bel* be a belief function represented by the convex monotone family of prob
 
 So if we require that all vague belief functions must be capable of being modelled under this approach, we aren't requiring that *Bel* be event defined, but we are requiring it to be monotone (I will drop the 'completely' unless clarity demands it). What arguments are there, then, that non-monotone belief functions are somehow less reasonable than monotone ones? Well, the plausibility of (1), (3) and (4) is an argument already. However, the non-monotone family of probability functions Williams describes also seems reasonable enough. So we might need some stronger arguments to get to monotonicity.
 
-### 3.6.4 Uncertainty Aversion
+### Uncertainty Aversion
 
-Schmeidler (1989) has one reason. He argues that any belief function which licences uncertainty averse behaviour will be monotone. I'm not convinced uncertainty aversion is a requirement of rationality. Schmeidler doesn't say it is; I'm adapting his argument somewhat, because some people might reason this way. Schmeidler develops his account of uncertainty aversion by explicit analogy with the standard account of risk aversion. And herein lies the difficulty, for the standard theory of risk aversion is mistaken. That is, there is no way which a person is averse to risk in the everyday sense iff they are *risk averse* in the standard economist's sense. By analogy, Schmeidler's account of uncertainty aversion does not capture correctly the everyday concept of aversion to uncertainty. Hence we have no reason to apply it as a coherence constraint.
+@schmeidler1989a has one reason. He argues that any belief function which licences uncertainty averse behaviour will be monotone. I'm not convinced uncertainty aversion is a requirement of rationality. Schmeidler doesn't say it is; I'm adapting his argument somewhat, because some people might reason this way. Schmeidler develops his account of uncertainty aversion by explicit analogy with the standard account of risk aversion. And herein lies the difficulty, for the standard theory of risk aversion is mistaken. That is, there is no way which a person is averse to risk in the everyday sense iff they are *risk averse* in the standard economist's sense. By analogy, Schmeidler's account of uncertainty aversion does not capture correctly the everyday concept of aversion to uncertainty. Hence we have no reason to apply it as a coherence constraint.
 
 Standardly, an agent is said to be risk averse with respect to some good (usually money) iff the marginal utility of that good is declining. More formally, if U(*x*) is the amount of utility received from *x* units of that good, the agent is risk averse iff U´´(*x*) \< 0 for all *x*. This is thought to represent risk aversion because it means that the agent will always prefer receiving (*a* + *b*) / 2 units of the good to having a 1/2 chance of receiving *a* units and a 1/2 chance of receiving *b* units if *a* *b*. In particular the agent will prefer the status quo to a bet on *p*, where the chance of *p* is known to be 1/2, and she wins *a* units if *p* and loses *a* units if ¬*p*. It is a direct consequence of this definition, and the definition that the expected utility of a gamble is the sum of the utility of each possible outcome times its probability, that if an agent is risk averse they will prefer the mix of any two gambles to at least one of those gambles. If *f* and *g* are gambles their mixes, α*f* + (1 ‑ α)*g* for α ∈ \[0, 1\] are defined as bets which pay whatever *f* pays if *p* and whatever *g* pays if ¬*p*, where *p* is a proposition whose chance is known to be α.
 
 Following this, Schmeidler defines uncertainty aversion in the following way. The binary relation ≥ is a preference ordering on gambles. The set of gambles (what Schmeidler calls 'acts') is called L.
 
-> A binary relation ≥ on L is said to reveal uncertainty aversion if for any three acts *f*, *g* and *h* in L and any α in \[0, 1\]: If *f* ≥ *h* and *g* ≥ *h* then α*f* + (1 ‑ α)*g* ≥ *h*. Equivalently we may state: If *f* ≥ *g*, then α*f* + (1 ‑ α)*g* ≥ *g*. (Schmeidler 1989: 582).
+> A binary relation ≥ on L is said to reveal uncertainty aversion if for any three acts *f*, *g* and *h* in L and any α in \[0, 1\]: If *f* ≥ *h* and *g* ≥ *h* then α*f* + (1 ‑ α)*g* ≥ *h*. Equivalently we may state: If *f* ≥ *g*, then α*f* + (1 ‑ α)*g* ≥ *g*. [@schmeidler1989a 582]
 
-I don't want to criticise Schmeidler's extraction of a principle of uncertainty aversion from the classical principle of risk aversion. What I will criticise is that classical principle of risk aversion. The arguments given by Hansson (1988) seem to me to show conclusively that the classical concept of risk aversion does not accurately capture the everyday concept of aversion to risk. Hence we can run similar arguments to show that Schmeidler's concept does not capture the everyday concept of aversion to uncertainty. Any good ideas in what follows here can be found in Hansson.
+I don't want to criticise Schmeidler's extraction of a principle of uncertainty aversion from the classical principle of risk aversion. What I will criticise is that classical principle of risk aversion. The arguments given by @hansson1988a seem to me to show conclusively that the classical concept of risk aversion does not accurately capture the everyday concept of aversion to risk. Hence we can run similar arguments to show that Schmeidler's concept does not capture the everyday concept of aversion to uncertainty. Any good ideas in what follows here can be found in Hansson.
 
 Joe is a gambler, a person who likes risk. He also is a student of the foundations of mathematics, and as such would like to get a copy of Russell and Whitehead's *Principia Mathematica* (hereafter *PM*). I offer Joe a choice between a copy of *PM* for certain or a gamble. The gamble pays 3 copies of *PM* if a coin lands heads, or nothing if it lands tails. Joe, who has little use for any extra copies of *PM*, chooses the single copy. Hence we can infer that Joe's utility curve in copies of *PM* is convex, hence Joe is risk averse. But we said at the start that Joe liked risk. Indeed we can specify that if I had increased the payout of the gamble to say 6 copies of *PM*, Joe would have accepted it even though he had less use for the 5 extra copies than for the original one. This seems sufficient to say Joe is *attracted* to risk, not averse to it.
 
@@ -350,15 +373,23 @@ The example shows not only that the classical concept of risk aversion is mistak
 
 I conclude that there is no reason to think that the concept picked out by *U*´´(*x*) \< 0 is our concept of risk aversion. So the concept picked out by Schmeidler is not our concept of aversion to uncertainty. Hence this can't provide a reason for thinking that it is a requirement of rationality.
 
-### 3.6.5 Fagin-Halpern Models
 
-Fagin and Halpern (1991) define *probability spaces* as follows. Probability spaces are triples \<*S*, X, *P*\> such that *S* is a set of possibilities, X a σ-algebra on *S* and *P* a probability function defined on X. Now for any proposition *A*, (i.e. for any subset *A* of *S*), its inner probability, *Pr*~\*~ and outer probability *Pr*^\*^ are defined as follows.
 
-*Pr*~\*~(*A*) = *sup*{*Pr*(*X*) \| *X* ⊆ *A* and *X* ∈ X }
 
-*Pr*^\*^(*A*) = *inf* {*Pr*(*X*) \| *X* ⊇ *A* and *X* ∈ X }
+Check for X and P when they should be in math
 
-It turns out that *Pr*~\*~ is a DS belief function. More surprisingly, for every Shafer function *Bel*~S~ on a set *S*, there is a probability space \<*S*, X, *P*\> such that *Pr*~\*~ = *Bel*~S~. (A similar relation holds between *Pr*^\*^ and *Pl*). The motivation behind Fagin and Halpern's approach is that we can't assign a numerical probability to every subset of *S*. However, for some sets the agent will have "sufficient information to assign a probability." (349) These are the *measurable* sets. We can work out the limits on the probability of the other sets by reference to the measurable sets. A similar motivation appears to be at work in Jeffrey (1983a).
+
+
+
+
+### Fagin-Halpern Models
+
+@fagin1991a define *probability spaces* as follows. Probability spaces are triples \<*S*, X, *P*\> such that *S* is a set of possibilities, X a σ-algebra on *S* and *P* a probability function defined on X. Now for any proposition *A*, (i.e. for any subset *A* of *S*), its inner probability, *Pr*~\*~ and outer probability *Pr*^\*^ are defined as follows.
+
+> *Pr*~\*~(*A*) = *sup*{*Pr*(*X*) \| *X* ⊆ *A* and *X* ∈ X }    
+> *Pr*^\*^(*A*) = *inf* {*Pr*(*X*) \| *X* ⊇ *A* and *X* ∈ X }
+
+It turns out that *Pr*~\*~ is a DS belief function. More surprisingly, for every Shafer function *Bel*~S~ on a set *S*, there is a probability space \<*S*, X, *P*\> such that *Pr*~\*~ = *Bel*~S~. (A similar relation holds between *Pr*^\*^ and *Pl*). The motivation behind Fagin and Halpern's approach is that we can't assign a numerical probability to every subset of *S*. However, for some sets the agent will have "sufficient information to assign a probability." (349) These are the *measurable* sets. We can work out the limits on the probability of the other sets by reference to the measurable sets. A similar motivation appears to be at work in @jeffrey1983a.
 
 Even though everything to this point has been written in terms of bounds, this could be analysed in terms of families of probability functions. Indeed this is exactly the approach Fagin and Halpern take. A probability space \<*S*, X, *P*\> determines a family, P , of probability functions on *S* such that for every function *Pr* ∈ P and every element *X* of X, *P*(*X*) = *Pr*(*X*). Then *Pr*~\*~(*A*) is just the minimal value of *P*(*A*) in P.[^40]
 
@@ -368,19 +399,19 @@ Fagin and Halpern don't appear to take this approach, but we could view their ac
 
 Assume an agent is in this unfortunate state. On Fagin and Halpern's approach, the only way we can move away from this is by coming to have a precise degree of belief in some proposition. If there is no proposition in which the agent has a precise degree of belief our belief, then she must have vacuous beliefs. This seems unreasonable; we can be partially (rather than completely) vague about something without being precise about anything. Hence I don't think it is a requirement of rationality that our degrees of belief be representable by Fagin-Halpern probability spaces, so this can't provide an argument as to why the lower bound on reasonable families of probability functions should be a Shafer function.
 
-### 3.6.6 Convexity
+### Convexity
 
-Even if we were assured that if an agent's representor should, if convex, be monotone, there is a case to be made against requiring convexity in the first place. If this argument appears to succeed it will strengthen our case that the single model approach is too restrictive. Jeffrey (1987) argues that the set of probability functions {*Pr*: *Pr*(*A* & *B*) = *Pr*(*A*) · *Pr*(*B*)}, which just says that *A* and *B* are probabilistically independent, can represent a reasonable epistemic state. However, as can be easily seen, it is not a convex family. The functions *Pr*~0~, *Pr*~0~(*A*) = *Pr*~0~(*B*) = *Pr*~0~(*A* & *B*) = 0, and *Pr*~1~, *Pr*~1~(*A*) = *Pr*~1~(*B*) = *Pr*~1~(*A* & *B*) = 1, are both in P, but no linear mixture of them is. Since on the single model approach an agent's representor can only be a convex set of probability functions, the plausibility of Jeffrey's claim that for some *A*, *B* this set represents a reasonable state suggests again the single model approach is too restrictive.
+Even if we were assured that if an agent's representor should, if convex, be monotone, there is a case to be made against requiring convexity in the first place. If this argument appears to succeed it will strengthen our case that the single model approach is too restrictive. @jeffrey1987a argues that the set of probability functions {*Pr*: *Pr*(*A* & *B*) = *Pr*(*A*) · *Pr*(*B*)}, which just says that *A* and *B* are probabilistically independent, can represent a reasonable epistemic state. However, as can be easily seen, it is not a convex family. The functions *Pr*~0~, *Pr*~0~(*A*) = *Pr*~0~(*B*) = *Pr*~0~(*A* & *B*) = 0, and *Pr*~1~, *Pr*~1~(*A*) = *Pr*~1~(*B*) = *Pr*~1~(*A* & *B*) = 1, are both in P, but no linear mixture of them is. Since on the single model approach an agent's representor can only be a convex set of probability functions, the plausibility of Jeffrey's claim that for some *A*, *B* this set represents a reasonable state suggests again the single model approach is too restrictive.
 
-### 3.6.7 Summary
+### Summary
 
 The core aim of this section was to put forward a single model approach to modelling vague degrees of belief. It turned out this approach was stricter than the many models approach of the previous section. Hence I looked at various possible arguments for this extra restriction, but it turned out that none of these were particularly compelling. In the next section I'll look at a different type of model which is less restrictive.
 
-## 3.7 Many-Urn Models {#many-urn-models}
+## Many-Urn Models {#sec-0307}
 
 The models discussed in @sec-0306 seemed too restrictive. Belief states which intuitively seem coherent cannot be modelled within the scope of this theory. Hence we might be tempted to look for a different type of model, such as the Many-Urn model set out in this section. I will discuss this model's properties, show how it gets around some of the difficulties of the Single Model discussed above, and then set out some other benefits and costs of this model. I conclude that it is ultimately not a viable approach, because it is too permissive.
 
-### 3.7.1 The Model
+### The Model
 
 The example of a belief state which couldn't be modelled using the Single Model approach was one represented by the family of probability functions {*Pr*: *Pr*(*A*~1~) ≥ 0.5 & *Pr*(*A*~2~) ≥ 0.5}. The idea here is that the agent has degree of belief greater than 0.5 in each of two propositions, but is completely ignorant about the probabilistic dependence between these two propositions. We can't represent this in the single model because within that approach there is no way to represent this kind of ignorance. We can have vague degrees of absolute belief, but the allowable vagueness in degrees of conditional belief is somewhat restricted.
 
@@ -388,9 +419,8 @@ Many-Urn models are designed to deal with this specific case. I said earlier it 
 
 Most, if not all, of the interesting properties of many-urn models are displayed by 2-urn models, so we will restrict our attention to these. We'll start by doing the precise version, and then weaken this to the imprecise version. So *p*~i1~ is the proposition that the i'th ball was drawn from urn 1, and *p*~i2~ the proposition that the i'th ball was drawn from urn 2. Let *P*~1~ be the set of propositions *p*~i1~ for all i, and *P*~2~ the set of propositions *p*~i2~, again for all i. In this approach, the agents probabilistic beliefs are modelled as propositional beliefs about subsets of *W* × *P*~1~ × *P*~2~, with **K**^\*^ and ∆^\*^ defined as above. A model must then satisfy the following two constraints, which are just translations of (1) and (2). The definition of the asterisk operator is trivially extended to the new setting.
 
-(1´) (*S* ⊆ *P*~1~ × *P*~2~ & *S*^\*^ ∈ **K**^\*^) → *S* = *P*~1~ × *P*~2~
-
-(2´) If *Bel*(*A*) = *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & (\|*S*\| = *x* & *S*^\*^  *A*^\*^ ∈ **K**^\*^))
+> (1´) (*S* ⊆ *P*~1~ × *P*~2~ & *S*^\*^ ∈ **K**^\*^) → *S* = *P*~1~ × *P*~2~    
+> (2´) If *Bel*(*A*) = *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & (\|*S*\| = *x* & *S*^\*^  *A*^\*^ ∈ **K**^\*^))
 
 If a function *Bel* satisfies these conditions, then it must be a probability function. The proof of this is a little less neat, because we can't prove the equivalent of (T6). That is, there doesn't seem to be any contradiction in saying there are sets *S*~1~ ⊆ *P*~1~ and *S*~2~ ⊆ *P*~2~ such that \|*S*~1~\|  \|*S*~2~\| and *S*~1~^\*^  *A*  *S*~2~^\*^ ∈ **K**^\*^. So we'll just stipulate that *Bel* is a function. Although this possibility isn't formally inconsistent, it is rather odd since we have in some sense *Bel*(*S*~1~^\*^) = *Bel*(*S*~2~^\*^) and *Bel*(*S*~1~^\*^)  *Bel*(*S*~2~^\*^). Of course this use of '=' isn't formally permissible if *Bel* is a relation rather than a function, but it is a motivation for restricting our attention to belief functions.[^41]
 
@@ -398,65 +428,57 @@ If a function *Bel* satisfies these conditions, then it must be a probability fu
 
 Given this, the proofs that *Bel* must satisfy the three conditions of probability functions follows quite easily. It can be simply observed that *Bel* only takes non-negative values, since sets only have non-negative cardinality, and *Bel* is equal to the ratio of the cardinality of two sets. Similarly the proof that *Bel*(T) = 1 is just as above. The only difficulty is in proving *Bel* satisfies (Pr3). First we'll prove (L4).
 
-(L4) ¬∃i, j *w*: \<*w*, *p*~i1~, *p*~j2~\> ∉ ∆^\*^.
+> (L4) ¬∃i, j *w*: \<*w*, *p*~i1~, *p*~j2~\> ∉ ∆^\*^.
 
 Assume there are i, j satisfying this condition. Then let *S* = {\<*p*~α1~, *p*~β2~\>: α  i & β  j}. By the definition of ∆^\*^ it follows that *S*^\*^ ∈ **K**^\*^. Hence by (1) *S* = *P*~1~ × *P*~2~, a contradiction. This proves (L4).
 
 Now assume that for some *A*, *B* such that ¬(*A* & *B*) is provable, **K**^\*^ includes *S*~1~^\*^  *A*^\*^ and *S*~2~^\*^  *B*^\*^ such that *S*~1~ ⊆ *P*~1~ and *S*~2~ ⊆ *P*~2~. Let *p*~i~ be an element of *S*~1~ and *p*~j~ an element of *S*~2~. It follows that for any world *w*, \<*w*, *p*~i1~, *p*~j2~\> is an element of *S*~1~^\*^ ∩ *S*~2~^\*^. Since **K**^\*^ is closed it contains ¬(*A*^\*^ & *B*^\*^), so by substitutivity of material equivalents it contains ¬(*S*~1~^\*^ & *S*~2~^\*^). Hence for all *w*, \<*w*, *p*~i1~, *p*~j2~\> ∉ ∆^\*^, contradicting (L4). Hence *S*~1~ and *S*~2~ are each subsets of *P*~1~ or of *P*~2~. By a similar proof we can show that they cannot have any common members, hence \|*S*~1~ ∪ *S*~2~\| = \|*S*~1~\| + \|*S*~2~\|, and \|*S*~1~ ∪ *S*~2~\| ⊆ *P*~1~ or *P*~2~, so *Bel*(*A* ∨ *B*) = *Bel*(*A*) + *Bel*(*B*), as required.
 
-### 3.7.2 Imprecision
+### Imprecision
 
 So moving to a Many-Urn model does not show that *Bel*, if always rational-valued, may be something other than a probability function. The only interesting difference arises when we move to imprecise models, for there we do perceive a real difference. As above, we drop axiom (2´) and import axioms (3´) and (4´).
 
-(3´) Iff *Bel*(*A*) ≥ *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & \|*S*\| = *x*) & (*S*^\*^ → *A*^\*^ ∈ **K**^\*^)
-
-(4´) Iff *Bel*(*A*) ≤ *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & \|*S*\| = *x*) & (*A*^\*^ → *S*^\*^ ∈ **K**^\*^)
+> (3´) Iff *Bel*(*A*) ≥ *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & \|*S*\| = *x*) & (*S*^\*^ → *A*^\*^ ∈ **K**^\*^)    
+> (4´) Iff *Bel*(*A*) ≤ *x / y* then ∃*S*: ((*S* ⊆ *P*~1~ ∨ *S* ⊆ *P*~2~) & \|*S*\| = *x*) & (*A*^\*^ → *S*^\*^ ∈ **K**^\*^)
 
 Again, if *Bel*(*A*) always takes precise values (3´) and (4´) reduce to (2´). However, if it doesn't then we can have a more general system of models. Indeed, we now have a system so general that we can model the family of probability functions we mentioned at the start of this section. **K**^\*^ is the following set, with *y* = 2.
 
-**K**^\*^ = *Cn*({*p*~11~ → *A*~1~, *p*~12~ → *A*~2~})
+> **K**^\*^ = *Cn*({*p*~11~ → *A*~1~, *p*~12~ → *A*~2~})
 
 If *Bel* can be modelled in this way, then *Bel*~\*~ and *Bel*^\*^ have the following rather neat properties.
 
-(M1) *Bel*~\*~(T) = 1
+> (M1) *Bel*~\*~(T) = 1    
+> (M2) *Bel*^\*^(⊥) = 0    
+> (M3) If *A*  *B* then *Bel*~\*~(*B*) ≤ *Bel*~\*~(*A*)    
+> (M4) *Bel*~\*~(*A*) = 1 - *Bel*^\*^(*A*)    
+> (M5) If  ¬(*A* & *B*) then *Bel*~\*~(*A* ∨ *B*) ≥ *Bel*~\*~(*A*) + *Bel*~\*~(*B*) and *Bel*^\*^(*A* ∨ *B*) ≤ *Bel*^\*^(*A*) + *Bel*^\*^(*B*)
 
-(M2) *Bel*^\*^(⊥) = 0
+@walley1991 [600] calls a function that satisfies these conditions 3-coherent. They are regarded as sufficient conditions for a lower probability function by @suppes1974a, @wolfenson1982a and @fine1983a. I won't go through the proofs because they are quite similar to the proofs already given. (In particular the proof for (M5) just uses the same move we made to prove (Pr3).) However, this is not sufficient to show that any *Bel* which can be modelled in this way is coherent. In particular, the following theorem, which seems intuitively plausible, is not validated by this model.
 
-(M3) If *A*  *B* then *Bel*~\*~(*B*) ≤ *Bel*~\*~(*A*)
-
-(M4) *Bel*~\*~(*A*) = 1 - *Bel*^\*^(*A*)
-
-(M5) If  ¬(*A* & *B*) then *Bel*~\*~(*A* ∨ *B*) ≥ *Bel*~\*~(*A*) + *Bel*~\*~(*B*) and *Bel*^\*^(*A* ∨ *B*) ≤ *Bel*^\*^(*A*) + *Bel*^\*^(*B*)
-
-Walley (1991: 600) calls a function that satisfies these conditions 3-coherent. They are regarded as sufficient conditions for a lower probability function by Suppes (1974), Wolfenson and Fine (1982) and Fine (1983). I won't go through the proofs because they are quite similar to the proofs already given. (In particular the proof for (M5) just uses the same move we made to prove (Pr3).) However, this is not sufficient to show that any *Bel* which can be modelled in this way is coherent. In particular, the following theorem, which seems intuitively plausible, is not validated by this model.
-
-(M6) Assume *A*~0~, *A*~1~, ..., *A*~n~ are pairwise disjoint, and that *Bel*~\*~(*A*~0~ ∨ *A*~1~) + ... + *Bel*~\*~(*A*~0~ ∨ *A*~n~) \> 1. Then *Bel*~\*~(*A*~0~) \> 0.
+> (M6) Assume *A*~0~, *A*~1~, ..., *A*~n~ are pairwise disjoint, and that *Bel*~\*~(*A*~0~ ∨ *A*~1~) + ... + *Bel*~\*~(*A*~0~ ∨ *A*~n~) \> 1. Then *Bel*~\*~(*A*~0~) \> 0.
 
 If a betting analysis of credences is adopted it is clear why we should want (M6). Assume that *Bel*~\*~(*A*) is our minimum buy-price for *A*‑bets, and that the assumptions in (M6) hold. Then we will be prepared to buy bets on *A*~0~ ∨ *A*~1~ through to *A*~0~ ∨ *A*~n~ in such a way that we will have spent more than \$1. This set of bets can only have a return greater than \$1 if *A*~0~. Hence we are prepared to buy a set of bets which have the same effect as placing a bet on *A*~0~. But if *Bel*~\*~(*A*~0~) = 0 then we have said we are not prepared to bet on *A*~0~ at any odds. So there is some incoherence in our betting practices.
 
 Even if we don't adopt a betting analysis there is something wrong with belief functions which don't obey (M6). Assume *Bel*~\*~(*A*~0~) = 0. Then *Bel*(*A*~0~) is vague over an interval which includes 0. So it should be coherent with the rest of our beliefs that *Bel*(*A*~0~) = 0. If it isn't we can say we've ruled that possibility out, so we aren't vague over it after all. So assume *Bel*(*A*~0~) = 0. Since for all i in {1, .., n} *Bel*(*A*~0~ ∨ *A*~i~) ≥ *Bel*~\*~(*A*~0~ ∨ *A*~i~) from the definition of *Bel*~\*~, and *Bel*(*A*~0~) = 0 it follows that *Bel*(*A*~0~ ∨ *A*~i~) = *Bel*(*A*~i~), so we get *Bel*(*A*~1~) + ... + *Bel*(*A*~n~) \> 1, a contradiction. So we couldn't have permitted *Bel*(*A*~0~) = 0 after all, so we were not vague over that value.
 
-To show that the Many-Urn model does not validate (M6), assume the possibility space is Ω = {*A*~0~, *A*~1~, *A*~2~, *A*~3~, *A*~4~}, and **K**^\*^ is defined as the following, with *y* = 3. (This example is derived from one in Walley 1991: 86).
+To show that the Many-Urn model does not validate (M6), assume the possibility space is Ω = {*A*~0~, *A*~1~, *A*~2~, *A*~3~, *A*~4~}, and **K**^\*^ is defined as the following, with *y* = 3. (This example is derived from one in @walley1991a [86]).
 
-**K**^\*^ = *Cn*({*p*~11~ → (*A*~0~ ∨ *A*~1~), *p*~21~ → (*A*~0~ ∨ *A*~2~), *p*~12~ → (*A*~0~ ∨ *A*~3~), *p*~22~ → (*A*~0~ ∨ *A*~4~)})
+> **K**^\*^ = *Cn*({*p*~11~ → (*A*~0~ ∨ *A*~1~), *p*~21~ → (*A*~0~ ∨ *A*~2~), *p*~12~ → (*A*~0~ ∨ *A*~3~), *p*~22~ → (*A*~0~ ∨ *A*~4~)})
 
 For any proposition *A*, *Bel*~\*~(*A*) is given by the following rules.
 
-If there is no *A*~i~ (i ∈ {1, ..., 4}) such that {*A*~0~, *A*~i~} ⊆ *A*, *Bel*~\*~(*A*) = 0;
-
-If {*A*~0~, *A*~1~, *A*~2~} ⊆ *A* or {*A*~0~, *A*~3~, *A*~4~} ⊆ *A* and *A*  Ω, *Bel*~\*~(*A*) = 2/3;
-
-If *A* = Ω, then *Bel*~\*~(Ω) = 1; and
-
-If *A* satisfies none of the above conditions, *Bel*~\*~(*A*) = 1/3.
+- If there is no *A*~i~ (i ∈ {1, ..., 4}) such that {*A*~0~, *A*~i~} ⊆ *A*, *Bel*~\*~(*A*) = 0;
+- If {*A*~0~, *A*~1~, *A*~2~} ⊆ *A* or {*A*~0~, *A*~3~, *A*~4~} ⊆ *A* and *A*  Ω, *Bel*~\*~(*A*) = 2/3;
+- If *A* = Ω, then *Bel*~\*~(Ω) = 1; and
+- If *A* satisfies none of the above conditions, *Bel*~\*~(*A*) = 1/3.
 
 It can be seen by inspection that **K**^\*^ is a model for *Bel* in the sense set out here. Note particularly that although (*p*~11~ & *p*~12~) → *A*~0~ ∈ **K**^\*^, there is no subset *S* of *P*~1~ × *P*~2~ such that *S* → ⊥ ∈ **K**^\*^ (as is required by (1´)), nor is there a subset *S* of either *P*~1~ or *P*~2~ such that *S* → *A*~0~ ∈ **K**^\*^. Hence *Bel*~\*~(*A*~0~) = 0. However, Σ*Bel*~\*~(*A*~0~ ∨ *A*~i~) = 4/3, contradicting (M6).
 
-### 3.7.3 Summary
+### Summary
 
 Many‑Urn models have a number of nice properties. First, they enable us to remove some of the restrictions of the Single urn models discussed in @sec-0306. Secondly, they preserve the conclusion that precise belief functions should be probability functions. Thirdly, the lower bounds of the belief functions they define satisfy the requirements given by Suppes, Wolfenson and Fine for lower probability functions. However, these functions do not satisfy other intuitively plausible requirements, such as (M6). For this reason I think this approach to modelling probability functions oughtn't be taken.
 
-## 3.8 Updating {#updating}
+## Updating {#sec-0308}
 
 So far I have discussed three possible approaches to modelling vague belief functions. The third of these I found reason to reject, but the other two seemed to be live possibilities. I take it that the failure of the positive arguments in @sec-0306 doesn't constitute a negative argument. So this section looks at how credences ought be updated according to these two approaches.
 
@@ -464,83 +486,89 @@ On the many models approach the question is a rather trivial one, as I have alre
 
 P ~*B*~ = {*Pr*( · \| *B*): *Pr* ∈ P }.
 
-As noted earlier, I take conditional probability as basic, so *Pr*( • \| *B*) is defined even when *Pr*(*B*) is zero. If we adopt a betting analysis of degrees of belief then there is an argument to show this is the only coherent way to update degrees of belief. Walley (1991: 297) uses the betting analysis and a condition he calls full conglomerability to get this conclusion. I don't want to rely on Walley's arguments because, for reasons I'll set out in the next section, I don't find full conglomerability a persuasive restriction on updates.
+As noted earlier, I take conditional probability as basic, so *Pr*( · \| *B*) is defined even when *Pr*(*B*) is zero. If we adopt a betting analysis of degrees of belief then there is an argument to show this is the only coherent way to update degrees of belief. @alley1991a [297] uses the betting analysis and a condition he calls full conglomerability to get this conclusion. I don't want to rely on Walley's arguments because, for reasons I'll set out in the next section, I don't find full conglomerability a persuasive restriction on updates.
 
-### 3.8.1 Updating Shafer Functions
+### Updating Shafer Functions
 
 The above I take to follow uncontroversially from what I have already shown. However, when we look at the Single Model Approach, and the associated Shafer functions, which updating approach should be adopted becomes a slightly harder question. One of the difficulties is that Dempster and Shafer themselves adopt an updating rule which seems incoherent.
 
 Recall that for every Shafer function *Bel*~S~ defined on a possibility space Ω, there is an associated mass function *m*: **Po**(Ω) → \[0, 1\]. The Dempster and Shafer (DS) updating rule is easiest to explain in terms of this mass function. When we receive evidence *B*, the possibility space shrinks from Ω to Ω ∩ *B*. The mass of every subset *A* of this space is given by the following formula.
 
+
+
+
+
 ![](media/image6.emf)
+
+
+
+
 
 The idea is that the mass previously assigned to *C* goes to *C* ∩ *B*. However, the mass that was previously assigned to subsets of ¬*B* cannot be allocated in this way. So we normalise to take Σ*m* back up to 1. This gives the following formula for the conditional degree of belief in *A* given *B*.
 
+
+
+
+
 ![](media/image7.emf)
+
+
+
+
 
 We can define *Pl*(*A* \| *B*) in a similar way, or just set it to be 1 ‑ *Bel*~S~(*A* \| *B*). If we try and extend the analysis of updating in section 3.4 to the imprecise models, it seems we will get a similar updating rule. Presumably the updating rule will take **K**^\*^ to *Cn*(**K**^\*^ ∩ {*B*}). More directly, it will take ∆^\*^ to ∆^\*^ ∩ *B*. Now instead of having *y* dummy propositions, there will only be *y* · (1 ‑ *Bel*(¬*B*)) such propositions left, as *y* · *Bel*(¬*B*) of them are contained within ¬*B* in the model **K**^\*^.
 
 Now recall how we defined Shafer functions from the single models. For each *p*~i~, we assigned mass 1/*y* to the smallest set *A*~i~ ⊆ *W* such that *p*~i~ → *A*~i~ ∈ **K**^\*^. Now consider what happens when we take the intersection of **K**^\*^ with *B*. In the new model, the smallest set *A*~i~ such that *p*~i~ → *A*~i~ ∈ *Cn*(**K**^\*^ ∩ {*B*}) will be *A*~i~ ∩ *B*. If *A*~i~  ¬*B*, this set will be empty. This in effect means that some dummy propositions will be discarded. For the remaining dummy propositions, we will assign mass 1/( *y* · (1 ‑ *Bel*(¬*B*))) to each *A*~i~ ∩ *B*. This is exactly the same construction as Dempster and Shafer use to create the updated mass function. Hence viewed this way, when we update a Single Model the updated belief function is determined by the DS updating rule.
 
-### 3.8.2 The Three Prisoners Problem Again
+### The Three Prisoners Problem Again
 
-In sub@sec-0306.2 we described the Three Prisoners Problem (TPP). At that stage we only discussed the problem of how to represent prisoner *a*'s initial belief state. Now we want to look at the problem of how to update that prisoner's belief given what the guard says. The situation is entirely symmetric about *b* and *c*, so assume without loss of generality the guard says *b*. Then the only possibilities left are *ab* and *cb*. The mass previously allocated to {*ab*, *ac*} will now be entirely allocated to *ab*, and then every mass allocation will be scaled up because *bc*, which previously received mass 1/3, is now impossible. Hence *m*({*ab*}) = *m*({*cb*}) = 1/2, so *Bel*~S~(*ab* \| *ab* ∨ *cb*) = 1/2.
+In @sec-tpp we described the Three Prisoners Problem (TPP). At that stage we only discussed the problem of how to represent prisoner *a*'s initial belief state. Now we want to look at the problem of how to update that prisoner's belief given what the guard says. The situation is entirely symmetric about *b* and *c*, so assume without loss of generality the guard says *b*. Then the only possibilities left are *ab* and *cb*. The mass previously allocated to {*ab*, *ac*} will now be entirely allocated to *ab*, and then every mass allocation will be scaled up because *bc*, which previously received mass 1/3, is now impossible. Hence *m*({*ab*}) = *m*({*cb*}) = 1/2, so *Bel*~S~(*ab* \| *ab* ∨ *cb*) = 1/2.
 
 This is absurd. Originally *a* believes to degree 1/3 that he will be reprieved. However, if the guard says that *b* will be executed, his degree of belief that he will be freed rises to 1/2, and the same happens if the guard says *c*. But the guard is going to say one of them. As Gardner points out, were this reasoning correct *a* should believe to degree 1/2 that he is going to be freed before the guard says anything, since he knows that whatever the guard says that will be his degree of belief.
 
 Formally, what has gone wrong is that our belief rule has breached a condition called finite conglomerability. Let Π be a partition {*B*~1~, ..., *B*~n~} of the possibility space such that for every *B*~i~, *Bel*~\*~(*A* \| *B*~i~) \> *Bel*~\*~(*A*). Then *Bel*~\*~ is not finitely conglomerable. This seems to be a problem because whatever element of Π is true (and we know exactly one of them is true), *Bel*~\*~(*A*) would rise were we to discover it. We will look in the next section at the plausibility of conglomerability more generally. It suffices to note that here, even without the general rule, it seems the result mandated by the DS updating rule is absurd.
 
-### 3.8.3 Updating Single Models
+### Updating Single Models
 
 If the DS updating rule leads to absurdity, and we update Single Models by using that rule, that model has a difficulty. Fortunately it is one which can be solved. The problem rests with how we interpreted the updated models. In the updated model *Cn*(**K**^\*^ ∩ {*B*}) there are *y* · (1 ‑ *Bel*(¬*B*)) dummy propositions. However, not all of these dummy propositions are created equal.
 
 In the precise case, when we updated on *B*, all of the dummy propositions remaining in the model were on an equal footing. All of the dummy propositions outside *B* had been discovered to be attached to a false proposition. This is in effect what it is for a dummy proposition to be false. However, we learnt nothing new about whether the dummy propositions inside *B* were attached to a false proposition. Hence we increase the 'weight' of each dummy accordingly. In the imprecise case things aren't quite so simple. Consider the model for the TPP set out in 3.6.2, which I'll repeat here.
 
-**K**^\*^ = *Cn*({*p*~1~  *bc*, *p*~2~  *cb*, *p*~3~  *ab* ∨ *ac*})
+> **K**^\*^ = *Cn*({*p*~1~  *bc*, *p*~2~  *cb*, *p*~3~  *ab* ∨ *ac*})
 
 When *a* finds out *ab* ∨ *cb* (in other words, when the guard says *b*) he finds out that *p*~1~ is attached to a false proposition. However, while he has found out nothing to discredit *p*~2~, the new information he has *might* be sufficient to make *p*~3~ false. What went wrong with the approach to updating described above was that we lost this information. All dummies which weren't definitely ruled out by the new evidence were treated on a par. What it seems should have been done was to divide the dummies into three categories, those that are definitely out, those that are definitely in, and those that might be in or out. The new evidence *ab* ∨ *cb* puts *p*~1~ into the first of these categories, *p*~2~ into the second and *p*~3~ into the third.
 
 Given this, how do we work out conditional degrees of belief? Or since these degrees will presumably be vague, how do we work out their bounds? To do this we need a more fine-grained taxonomy of what happens to the dummy propositions under conditionalisation. The required taxonomy depends on the proposition whose conditional degree of belief is being evaluated. We'll call this *A*.
 
-\(i\) α of the dummy propositions definitely go to *A*.
-
-\(ii\) β either go to *A* or are excluded.
-
-\(iii\) χ either go to *A* or go to ¬*A* or are excluded.
-
-\(iv\) δ either go to ¬*A* or are excluded.
-
-\(v\) ε definitely go to ¬*A*.
-
-\(vi\) φ are definitely excluded.
+> \(i\) α of the dummy propositions definitely go to *A*.    
+> \(ii\) β either go to *A* or are excluded.    
+> \(iii\) χ either go to *A* or go to ¬*A* or are excluded.    
+> \(iv\) δ either go to ¬*A* or are excluded.    
+> \(v\) ε definitely go to ¬*A*.    
+> \(vi\) φ are definitely excluded.
 
 By excluded I mean that they are ruled out by the new evidence. In the above example, letting *A* = *ab*, α = 0, β = 1, χ = 0, δ = 0, ε = 1, φ = 1. The minimal value for *A* given *B* will be reached if we exclude all the dummies in (ii) and allocate all the dummies in (iii), (iv) and (v) to ¬*A*. The maximal value will be reached when we assign all the dummies in (i), (ii) and (iii) to *A* and exclude those in (iv). So we get the following formulae.
 
-*Bel*~\*~(*A* \| *B*) = α /(α + χ + δ + ε) *Bel*^\*^(*A* \| *B*) = (α + β + χ) / (α + β + χ + ε)
+> *Bel*~\*~(*A* \| *B*) = α /(α + χ + δ + ε) *Bel*^\*^(*A* \| *B*) = (α + β + χ) / (α + β + χ + ε)
 
 Now, it follows from the above definitions that the following formulae hold.
 
-φ / *y* = *Bel*~\*~(¬*B*) = 1 - *Bel*^\*^(*B*)
-
-α / *y* = *Bel*~\*~(*A* & *B*)
-
-ε / *y* = *Bel*~\*~(¬*A* & *B*)
-
-(α + β + χ) / *y* = *Bel*^\*^(*A* & *B*)
-
-(χ + δ + ε) / *y* = *Bel*^\*^(¬*A* & *B*)
+> φ / *y* = *Bel*~\*~(¬*B*) = 1 - *Bel*^\*^(*B*)    
+> α / *y* = *Bel*~\*~(*A* & *B*)    
+> ε / *y* = *Bel*~\*~(¬*A* & *B*)    
+> (α + β + χ) / *y* = *Bel*^\*^(*A* & *B*)    
+> (χ + δ + ε) / *y* = *Bel*^\*^(¬*A* & *B*)    
 
 Combining these two sets of formulae, we get the following.
 
-(C1) *Bel*~\*~(*A* \| *B*) = *Bel*~\*~(*A* & *B*) / (*Bel*~\*~(*A* & *B*) + *Bel*^\*^(¬*A* & *B*))
-
-(C2) *Bel*^\*^(*A* \| *B*) = *Bel*^\*^(*A* & *B*) / (*Bel*^\*^(*A* & *B*) + *Bel*~\*~(¬*A* & *B*))
+> (C1) *Bel*~\*~(*A* \| *B*) = *Bel*~\*~(*A* & *B*) / (*Bel*~\*~(*A* & *B*) + *Bel*^\*^(¬*A* & *B*))    
+> (C2) *Bel*^\*^(*A* \| *B*) = *Bel*^\*^(*A* & *B*) / (*Bel*^\*^(*A* & *B*) + *Bel*~\*~(¬*A* & *B*))
 
 These should both have some intuitive force. To make *A* given *B* as unlikely as possible, we make *A* & *B* minimally likely and ¬*A* & *B* maximally likely. The reverse applies for maximising the likelihood of *A* given *B*. Indeed this result has been reached by a number of different authors. (See for example Fagin and Halpern (1991) and the references therein.) More importantly, as is again pointed out by these authors, if *Bel* can be modelled by a Single Model and P is its associated family of probability functions, then the bounds on *Bel*(*A*) we get by conditioning P on *B* are just those given by (C1) and (C2).
 
-So we have some justifications from within the model to use conditionalisation as our updating rule, even if we don't adopt the Many Models approach. We noted that not every family of probability functions can be represented by a Single Model. In particular only the monotone families can be represented. If we are to adopt the Single Model and update by conditionalisation it becomes important to work out whether the updated family can also be represented. It is rather non-trivial to prove, but Fagin and Halpern (1991) have shown that it always can be. That paper contains their proof and references to some other proofs developed independently of theirs.
+So we have some justifications from within the model to use conditionalisation as our updating rule, even if we don't adopt the Many Models approach. We noted that not every family of probability functions can be represented by a Single Model. In particular only the monotone families can be represented. If we are to adopt the Single Model and update by conditionalisation it becomes important to work out whether the updated family can also be represented. It is rather non-trivial to prove, but @fagin1991a have shown that it always can be. That paper contains their proof and references to some other proofs developed independently of theirs.
 
-### 3.8.4 Difficulties
+### Difficulties
 
 So far it seems there is nothing wrong with adopting the Single Model as long as we update by conditionalisation and not by DS updating. However, there is a cloud on the horizon. Updating by just using (C1) and (C2), which from now on I'll call 'FH conditionalisation' after Fagin and Halpern, is not commutative. Updating with respect to *B*~1~ and then with respect to *B*~2~ is not necessarily the same as updating with respect to *B*~2~ and then *B*~1~.
 
@@ -548,41 +576,42 @@ This seems rather odd. After all, it looks like all we've done is conditioned ev
 
 Let *A*, *B*, *C* and *D* be exclusive and exhaustive possibilities, with the DS belief function on them defined by *m*(*A*) = *m*(*B*) = 1/4, *m*({*C*, *D*}) = 1/2. Let φ~1~ = *A* ∨ *B*, φ~2~ = *A* ∨ *B* ∨ *C*. Then FH conditionalisation with respect to φ~1~ and then with respect to φ~2~ gives a different result to FH conditionalising with respect to φ~2~ and then with respect to φ~1~. Hence it can't be that each is equivalent to conditionalising with respect to φ~1~ & φ~2~.[^42]
 
-[^42]: This is pointed out by Paris (1994).
+[^42]: This is pointed out by @paris1994a.
 
 The problem can be defined in another way. Recall our definition of *W*(*Bel*~S~) as the largest family of probability functions bounded by *Bel*~S~. Define *Bel*~S~(· \| *B*) by (C1) and (C2). This is a DS belief function, so we can determine *W*(*Bel*~S~( · \| *B*)). We can also defined *W~B~*(*Bel*~S~) as the result of conditionalising every element of *W*(*Bel*~S~) on *B*. For any proposition *A*, the maximal and minimal value of *Pr*(*A*) in *W*(*Bel*~S~( · \| *B*)) and *W~B~*(*Bel*~S~) will be the same. However, the following theorem cannot be strengthened to be an equality.
 
-*W*(*Bel*~S~( · \| *B*)) ⊇ *W~B~*(*Bel*~S~)
+> *W*(*Bel*~S~( · \| *B*)) ⊇ *W~B~*(*Bel*~S~)
 
 When *W*(*Bel*~S~( · \| *B*)) is strictly larger *W~B~*(*Bel*~S~), we lose information by just modelling the belief state by the boundaries of every proposition. Hence the Single Model approach, even in its most plausible form, has real difficulties. If we insist on modelling agents this way we will lose information about their belief states. This loss of information may lead to bizarre results, like the non-commutativity of updating.
 
-### 3.8.5 Figures
+### Figures
 
-These results are not unknown. Fagin and Halpern themselves point out the failure of commutativity under their form of conditionalisation, and supporters of the DS updating rule are aware of its odd consequence in the TPP. Why then are these rules kept? In large part it is because our theoretically preferred model, representing belief states by sets of probability functions and updating them by conditionalisation, has such high computational costs. Given this, some results of van Fraassen (1990) might be important, because they point the way to a reduction in these costs.
+These results are not unknown. Fagin and Halpern themselves point out the failure of commutativity under their form of conditionalisation, and supporters of the DS updating rule are aware of its odd consequence in the TPP. Why then are these rules kept? In large part it is because our theoretically preferred model, representing belief states by sets of probability functions and updating them by conditionalisation, has such high computational costs. Given this, some results of @vanfraassen1990a might be important, because they point the way to a reduction in these costs.
 
 Rather than taking sets of probability functions as his given, van Fraassen takes bounds on expected values of gambles. This gives us more information than just looking at the bounds on bets. For example, we saw above that there was no way by looking just at its bounds to represent the distinct information contained in P  = {*Pr*: *Pr*(*A*~1~) = *Pr*(*A*~2~)}. However, we can represent this by looking at bounds on gambles. In this case the gamble that pays 1 if *A*~1~ & ¬*A*~2~, and -1 if ¬*A*~1~ & *A*~2~ will have expectation 0, whereas if P was the set of probability functions its expectation would be vague over the range \[-1, 1\]. We can't do everything we want with just expectation, but as van Fraassen shows we can do quite a bit.
 
 In fact we don't even need to take bounds on gambles as basic. Rather, we can just take as our basic information that certain gambles have non-negative expectation. Every time we say that a gamble has non-negative expectation according to an agent's belief, we rule out some probability functions as being possible members of that agent's representor (i.e. those functions according to which the gamble has negative expectation). Now, say P is the set of all those probability functions such that for each function in P each gamble in a finite class *G* has non-negative expectation. If this occurs, say P is a *G*'s figure. Any family which is a figure of some finite class of gambles is a figure. The complexity of a figure is the size smallest class for which it is a figure. Van Fraassen gives a constructive proof of the following theorem.
 
-*Figure Theorem*: If P is a figure of complexity *n*, then conditionalising P with respect to *B* results in a figure of complexity at most *n* + 2.
+> *Figure Theorem*    
+> If P is a figure of complexity *n*, then conditionalising P with respect to *B* results in a figure of complexity at most *n* + 2.
 
-The proof of this is summarised in section 9.2.2. This shows that once we have represented P as the figure of a class of gambles there is a simple algorithm for updating it. Given this, some of the motivation for using incoherent but efficient updating rules should be removed.
+The proof of this is summarised in @sec-090202. This shows that once we have represented P as the figure of a class of gambles there is a simple algorithm for updating it. Given this, some of the motivation for using incoherent but efficient updating rules should be removed.
 
-### 3.8.6 Gilboa and Schmeidler's Updating Rule
+### Gilboa and Schmeidler's Updating Rule
 
-There are other approaches in the literature to updating vague degrees of belief. The theory of Gilboa and Schmeidler (1993) is based around *v*-functions, which are called non-additive probabilities. Again, Ω is a possibility space and propositions are subsets of Ω. There are only three restrictions on *v*, which are listed below.
+There are other approaches in the literature to updating vague degrees of belief. The theory of @gilboa1993a is based around *v*-functions, which are called non-additive probabilities. Again, Ω is a possibility space and propositions are subsets of Ω. There are only three restrictions on *v*, which are listed below.
 
-*v*(∅) = 0; *v*(Ω) = 1; and If *p*  *q* then *v*(*p*) ≤ *v*(*q*).
+> *v*(∅) = 0; *v*(Ω) = 1; and If *p*  *q* then *v*(*p*) ≤ *v*(*q*).
 
-Returning to our prisoner *a*, the function defined by *v*(*p*) = *Bel*~S~(*p*) for the DS belief function defined in sub@sec-0306.2. would be a non-additive probability. There are a continuum of updating methods for non-additive probabilities, we'll just consider the extremum cases. These are described by Gilboa and Schmeidler as 'optimistic' and 'pessimistic' rules. The pessimistic rule we've already seen, it is just the Dempster-Shafer rule. The optimistic rule is defined by the following formula.
+Returning to our prisoner *a*, the function defined by *v*(*p*) = *Bel*~S~(*p*) for the DS belief function defined in @sec-tpp. would be a non-additive probability. There are a continuum of updating methods for non-additive probabilities, we'll just consider the extremum cases. These are described by Gilboa and Schmeidler as 'optimistic' and 'pessimistic' rules. The pessimistic rule we've already seen, it is just the Dempster-Shafer rule. The optimistic rule is defined by the following formula.
 
-*v~r~*(*p*) = *v*(*p* & *r*) / *v*(*r*).
+> *v~r~*(*p*) = *v*(*p* & *r*) / *v*(*r*).
 
 The TPP seems to be just the right place to apply optimistic and pessimistic rules. The proposition that *a* is to reprieved is *ab* ∨ *ac*. Let this be *p*, and let *r* be the proposition that the guard says *b* is to be executed. As we noted above, on the pessimistic view *v~r~*(*p*) = 1/2. On the optimistic view *v~r~*(*p*) = 1. Of course this wouldn't change if the guard had said that *c* rather than *b* was to be executed. Optimism is all well and good, but this looks more like fanciful thinking!
 
 We might have been a little unfair to Gilboa and Schmeidler. They formulate their rule in terms of preferences over acts rather than degrees of belief. Still, should *a* have a choice, then, under the optimistic rule, he should accept a gamble which pays \$1 if he's reprieved and has an arbitrarily high penalty if he isn't. (Of course he already faces such a penalty, so decision theory starts to break down here). Again this seems like optimism gone mad. None of the axioms Gilboa and Schmeidler employ look that implausible, yet their results are absurd. It would be an interesting research program to see where the absurdity creeps in, but this isn't our research program.
 
-### 3.8.7 Summary
+### Summary
 
 At the start of this section there were two approaches to modelling which seemed plausible. For one of these, the Many Models approach, it is trivial to give an updating rule, because we have already given an updating rule for the precise case. For the Single Model approach, we had to do more work to find an updating rule which was even plausible. However, once we did this we found that updating a belief function can take us from a function which can be accurately modelled (i.e. one that is event defined) to one that cannot. Hence this approach to modelling seems mistaken. The section concluded with a summary of two other discussions of updating vague belief states.
 
