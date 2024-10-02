@@ -305,7 +305,7 @@ We can represent prisoner *a*'s state of belief as a Shafer function. The possib
 
 Intuitively, this seems to show that the Shafer functions can model *some* important epistemic property, but it is doubtful that it is credence. If *Bel*~S~ is the appropriate representation for some agent, then she should be convinced that her credence in *A* is at least *Bel*~S~(*A*), not that it's exactly *Bel*~S~(*A*). Even on Shafer's preferred analogy of the secret message, it seems more plausible to say that *Bel*~S~ defines a lower bound on credences, not the actual credences. If we can prove *A* from the message this would be conclusive reason to believe *A*, but it is possible that we won't be able to prove *A* yet *A* still be true. Hence we should say our credence in *A* is bounded below by our credence in *A*'s provability. From here I'll assume that the point of a Shafer function is to set bounds on credences, as this seems to be the only plausible interpretation. This move is not original; as will be seen below, there have been some detailed investigations into its plausibility.
 
-Shafer functions are important to this project because of theorem 3.6.1, a proof of which is given in appendix 3B.
+Shafer functions are important to this project because of @thm-belshaf, a proof of which is given in appendix 3B.
 
 ::: {#thm-belshaf}
 
@@ -399,7 +399,7 @@ Fagin and Halpern don't appear to take this approach, but we could view their ac
 
 Assume an agent is in this unfortunate state. On Fagin and Halpern's approach, the only way we can move away from this is by coming to have a precise degree of belief in some proposition. If there is no proposition in which the agent has a precise degree of belief our belief, then she must have vacuous beliefs. This seems unreasonable; we can be partially (rather than completely) vague about something without being precise about anything. Hence I don't think it is a requirement of rationality that our degrees of belief be representable by Fagin-Halpern probability spaces, so this can't provide an argument as to why the lower bound on reasonable families of probability functions should be a Shafer function.
 
-### Convexity
+### Convexity {#sec-030606}
 
 Even if we were assured that if an agent's representor should, if convex, be monotone, there is a case to be made against requiring convexity in the first place. If this argument appears to succeed it will strengthen our case that the single model approach is too restrictive. @jeffrey1987a argues that the set of probability functions {*Pr*: *Pr*(*A* & *B*) = *Pr*(*A*) · *Pr*(*B*)}, which just says that *A* and *B* are probabilistically independent, can represent a reasonable epistemic state. However, as can be easily seen, it is not a convex family. The functions *Pr*~0~, *Pr*~0~(*A*) = *Pr*~0~(*B*) = *Pr*~0~(*A* & *B*) = 0, and *Pr*~1~, *Pr*~1~(*A*) = *Pr*~1~(*B*) = *Pr*~1~(*A* & *B*) = 1, are both in P, but no linear mixture of them is. Since on the single model approach an agent's representor can only be a convex set of probability functions, the plausibility of Jeffrey's claim that for some *A*, *B* this set represents a reasonable state suggests again the single model approach is too restrictive.
 
